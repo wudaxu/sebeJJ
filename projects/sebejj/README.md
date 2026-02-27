@@ -1,7 +1,7 @@
 # 赛博机甲 SebeJJ - Unity 2D 游戏项目
 
-![项目状态](https://img.shields.io/badge/状态-Beta开发阶段-orange)
-![版本](https://img.shields.io/badge/版本-v0.2.0--Beta-blue)
+![项目状态](https://img.shields.io/badge/状态-正式发布-green)
+![版本](https://img.shields.io/badge/版本-v1.0.0-blue)
 ![Unity](https://img.shields.io/badge/Unity-2022.3%20LTS-black)
 
 ## 🎮 项目概述
@@ -196,8 +196,8 @@ chore: 构建/工具
 |------|------|------|
 | MVP (4周) | Week 1-4 | ✅ 已完成 |
 | Alpha (6周) | Week 5-10 | ✅ 已完成 |
-| Beta (8周) | Week 11-18 | 🟡 进行中 (v0.2.0-Beta) |
-| Release (10周) | Week 19-26 | ⚪ 未开始 |
+| Beta (8周) | Week 11-18 | ✅ 已完成 |
+| Release (10周) | Week 19-26 | ✅ 已完成 |
 
 ---
 
@@ -216,4 +216,4 @@ chore: 构建/工具
 ---
 
 *最后更新: 2026-02-27*
-*版本: v0.2.0-Beta*
+*版本: v1.0.0*
