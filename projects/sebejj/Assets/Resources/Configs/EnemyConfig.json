@@ -1,0 +1,93 @@
+{
+    "version": "1.0",
+    "enemyTypes": [
+        {
+            "id": "mech_fish",
+            "name": "机械鱼",
+            "health": 40,
+            "damage": 6,
+            "moveSpeed": 2.8,
+            "attackRange": 1.5,
+            "detectionRange": 8.0,
+            "attackCooldown": 2.0,
+            "minDepth": 20,
+            "maxDepth": 60,
+            "spawnWeight": 30,
+            "lootTable": [
+                { "itemId": "scrap_metal", "chance": 0.6, "minQty": 1, "maxQty": 3 },
+                { "itemId": "circuit_board", "chance": 0.3, "minQty": 1, "maxQty": 1 }
+            ]
+        },
+        {
+            "id": "mech_crab",
+            "name": "机械蟹",
+            "health": 100,
+            "damage": 15,
+            "moveSpeed": 1.2,
+            "attackRange": 2.0,
+            "detectionRange": 6.0,
+            "attackCooldown": 3.0,
+            "defense": 0.3,
+            "minDepth": 40,
+            "maxDepth": 80,
+            "spawnWeight": 20,
+            "lootTable": [
+                { "itemId": "scrap_metal", "chance": 0.8, "minQty": 2, "maxQty": 5 },
+                { "itemId": "hardened_shell", "chance": 0.5, "minQty": 1, "maxQty": 2 }
+            ]
+        },
+        {
+            "id": "mech_jellyfish",
+            "name": "机械水母",
+            "health": 50,
+            "damage": 10,
+            "moveSpeed": 1.8,
+            "attackRange": 4.0,
+            "detectionRange": 10.0,
+            "attackCooldown": 4.0,
+            "isRanged": true,
+            "minDepth": 60,
+            "maxDepth": 100,
+            "spawnWeight": 15,
+            "lootTable": [
+                { "itemId": "bio_gel", "chance": 0.7, "minQty": 1, "maxQty": 3 },
+                { "itemId": "energy_cell", "chance": 0.4, "minQty": 1, "maxQty": 2 }
+            ]
+        }
+    ],
+    "bossConfig": {
+        "id": "ironclaw_behemoth",
+        "name": "铁钳巨兽",
+        "phases": [
+            {
+                "phase": 1,
+                "healthThreshold": 1.0,
+                "health": 1000,
+                "damage": 25,
+                "moveSpeed": 0.8,
+                "attackPattern": ["claw_slash", "charge"]
+            },
+            {
+                "phase": 2,
+                "healthThreshold": 0.6,
+                "health": 1000,
+                "damage": 35,
+                "moveSpeed": 1.0,
+                "attackPattern": ["claw_slash", "charge", "ground_pound"]
+            },
+            {
+                "phase": 3,
+                "healthThreshold": 0.3,
+                "health": 1000,
+                "damage": 50,
+                "moveSpeed": 1.2,
+                "attackPattern": ["claw_slash", "charge", "ground_pound", "laser_beam"]
+            }
+        ],
+        "lootTable": [
+            { "itemId": "legendary_core", "chance": 1.0, "minQty": 1, "maxQty": 1 },
+            { "itemId": "behemoth_claw", "chance": 0.8, "minQty": 1, "maxQty": 2 },
+            { "itemId": "ancient_technology", "chance": 0.5, "minQty": 1, "maxQty": 1 }
+        ]
+    }
+}

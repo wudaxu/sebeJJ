@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 远景模糊渐变 -->
+    <linearGradient id="farGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1B2A;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#1B263B;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#0D1B2A;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 城市光晕 -->
+    <linearGradient id="cityGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00E5FF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00E5FF;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 透明背景 -->
+  <rect width="1920" height="1080" fill="transparent"/>
+  
+  <!-- 远景山脉轮廓 - 极模糊 -->
+  <g opacity="0.4" filter="blur(8px)">
+    <path d="M0 700 Q 200 600 400 650 Q 600 550 800 620 Q 1000 500 1200 580 Q 1400 480 1600 550 Q 1800 450 1920 520 L 1920 1080 L 0 1080 Z" 
+          fill="url(#farGradient)"/>
+  </g>
+  
+  <!-- 水下城市轮廓 - 极远处 -->
+  <g opacity="0.25" filter="blur(6px)">
+    <!-- 建筑群剪影 -->
+    <rect x="100" y="550" width="40" height="150" fill="#1B263B"/>
+    <rect x="150" y="520" width="60" height="180" fill="#162035"/>
+    <rect x="220" y="580" width="35" height="120" fill="#1B263B"/>
+    <rect x="280" y="500" width="50" height="200" fill="#162035"/>
+    <rect x="350" y="560" width="45" height="140" fill="#1B263B"/>
+    
+    <rect x="1200" y="540" width="55" height="160" fill="#162035"/>
+    <rect x="1270" y="510" width="40" height="190" fill="#1B263B"/>
+    <rect x="1330" y="570" width="50" height="130" fill="#162035"/>
+    <rect x="1400" y="530" width="45" height="170" fill="#1B263B"/>
+    <rect x="1470" y="580" width="35" height="120" fill="#162035"/>
+    <rect x="1520" y="550" width="50" height="150" fill="#1B263B"/>
+    <rect x="1600" y="520" width="40" height="180" fill="#162035"/>
+    <rect x="1700" y="560" width="60" height="140" fill="#1B263B"/>
+    <rect x="1800" y="540" width="45" height="160" fill="#162035"/>
+  </g>
+  
+  <!-- 城市灯光 - 微弱 -->
+  <g opacity="0.3" filter="blur(4px)">
+    <rect x="160" y="530" width="10" height="10" fill="#00E5FF"/>
+    <rect x="180" y="550" width="8" height="8" fill="#00E5FF"/>
+    <rect x="295" y="510" width="12" height="12" fill="#00E5FF"/>
+    <rect x="1285" y="520" width="10" height="10" fill="#00E5FF"/>
+    <rect x="1415" y="540" width="8" height="8" fill="#00E5FF"/>
+    <rect x="1620" y="530" width="10" height="10" fill="#00E5FF"/>
+  </g>
+  
+  <!-- 深海海沟轮廓 -->
+  <g opacity="0.35" filter="blur(10px)">
+    <path d="M0 900 Q 480 850 960 880 T 1920 900 L 1920 1080 L 0 1080 Z" 
+          fill="#000000"/>
+  </g>
+  
+  <!-- 巨大结构物剪影 - 神秘遗迹 -->
+  <g opacity="0.2" filter="blur(12px)">
+    <path d="M600 400 L 650 200 L 700 400 L 750 250 L 800 400 L 850 300 L 900 400 L 950 280 L 1000 400 L 1050 320 L 1100 400 L 1150 350 L 1200 400 L 1200 700 L 600 700 Z" 
+          fill="#0D1B2A"/>
+  </g>
+  
+  <!-- 光柱效果 - 从上方照射 -->
+  <g opacity="0.15">
+    <path d="M300 0 L 200 1080 L 400 1080 L 500 0 Z" fill="url(#cityGlow)"/>
+    <path d="M900 0 L 800 1080 L 1000 1080 L 1100 0 Z" fill="url(#cityGlow)"/>
+    <path d="M1500 0 L 1400 1080 L 1600 1080 L 1700 0 Z" fill="url(#cityGlow)"/>
+  </g>
+</svg>

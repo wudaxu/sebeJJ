@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Glow Filters -->
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="coreGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2332"/>
+      <stop offset="50%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#0A0A0F"/>
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a4a5c"/>
+      <stop offset="50%" style="stop-color:#1a2332"/>
+      <stop offset="100%" style="stop-color:#0D1B2A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background (transparent for game use) -->
+  <rect width="256" height="256" fill="none"/>
+  
+  <!-- Left Thruster -->
+  <path d="M75 180 L105 180 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+  <ellipse cx="90" cy="220" rx="8" ry="4" fill="#00F0FF" filter="url(#cyanGlow)"/>
+  
+  <!-- Right Thruster -->
+  <path d="M151 180 L181 180 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+  <ellipse cx="166" cy="220" rx="8" ry="4" fill="#00F0FF" filter="url(#cyanGlow)"/>
+  
+  <!-- Left Arm -->
+  <rect x="55" y="120" width="30" height="60" rx="3" fill="url(#metalGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+  <circle cx="70" cy="130" r="8" fill="#0D1B2A" stroke="#00F0FF" stroke-width="1"/>
+  <rect x="62" y="170" width="16" height="25" rx="2" fill="#1a2332" stroke="#00F0FF" stroke-width="1"/>
+  
+  <!-- Right Arm -->
+  <rect x="171" y="120" width="30" height="60" rx="3" fill="url(#metalGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+  <circle cx="186" cy="130" r="8" fill="#0D1B2A" stroke="#00F0FF" stroke-width="1"/>
+  <rect x="178" y="170" width="16" height="25" rx="2" fill="#1a2332" stroke="#00F0FF" stroke-width="1"/>
+  
+  <!-- Main Body -->
+  <path d="M88 100 L168 100 L178 180 L78 180 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+  
+  <!-- Chest Armor Plates -->
+  <path d="M95 110 L128 110 L128 150 L90 150 Z" fill="#1a2332" stroke="#00F0FF" stroke-width="1"/>
+  <path d="M128 110 L161 110 L166 150 L128 150 Z" fill="#1a2332" stroke="#00F0FF" stroke-width="1"/>
+  
+  <!-- Reactor Core -->
+  <circle cx="128" cy="135" r="18" fill="#0A0A0F" stroke="#00F0FF" stroke-width="2"/>
+  <circle cx="128" cy="135" r="12" fill="#00F0FF" filter="url(#coreGlow)"/>
+  <circle cx="128" cy="135" r="6" fill="#FFFFFF"/>
+  
+  <!-- Core Ring Detail -->
+  <circle cx="128" cy="135" r="22" fill="none" stroke="#00F0FF" stroke-width="1" stroke-dasharray="4,2"/>
+  
+  <!-- Cockpit -->
+  <path d="M108 70 L148 70 L155 100 L101 100 Z" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+  <path d="M112 75 L144 75 L149 95 L107 95 Z" fill="#00F0FF" opacity="0.3"/>
+  <line x1="128" y1="75" x2="128" y2="95" stroke="#00F0FF" stroke-width="1" opacity="0.5"/>
+  <line x1="112" y1="85" x2="144" y2="85" stroke="#00F0FF" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Headlight -->
+  <ellipse cx="128" cy="68" rx="20" ry="6" fill="#1a2332" stroke="#00F0FF" stroke-width="1.5"/>
+  <ellipse cx="128" cy="68" rx="12" ry="3" fill="#FFFFFF" filter="url(#cyanGlow)"/>
+  
+  <!-- Light Beam (subtle) -->
+  <path d="M108 68 L60 40 L60 96 Z" fill="url(#cyanBeam)" opacity="0.1"/>
+  <path d="M148 68 L196 40 L196 96 Z" fill="url(#cyanBeam)" opacity="0.1"/>
+  
+  <!-- Detail Lines -->
+  <line x1="88" y1="140" x2="78" y2="140" stroke="#00F0FF" stroke-width="1"/>
+  <line x1="168" y1="140" x2="178" y2="140" stroke="#00F0FF" stroke-width="1"/>
+  
+  <!-- Vent Grills -->
+  <line x1="95" y1="165" x2="115" y2="165" stroke="#00F0FF" stroke-width="1"/>
+  <line x1="95" y1="170" x2="115" y2="170" stroke="#00F0FF" stroke-width="1"/>
+  <line x1="141" y1="165" x2="161" y2="165" stroke="#00F0FF" stroke-width="1"/>
+  <line x1="141" y1="170" x2="161" y2="170" stroke="#00F0FF" stroke-width="1"/>
+  
+  <!-- Panel Seams -->
+  <line x1="128" y1="100" x2="128" y2="180" stroke="#00F0FF" stroke-width="0.5" opacity="0.5"/>
+</svg>

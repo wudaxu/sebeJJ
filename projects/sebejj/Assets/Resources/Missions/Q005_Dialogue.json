@@ -1,0 +1,74 @@
+{
+  "missionId": "Q005",
+  "dialogues": [
+    {
+      "id": "start",
+      "speaker": "指挥官",
+      "text": "我们收到报告，50-150米深度区域出现了机械鱼群。这些失控的机械体会攻击任何靠近的目标，已经威胁到了我们的航道安全。你的任务是清除它们。",
+      "options": [
+        {
+          "text": "交给我吧！",
+          "next": "start_confirm"
+        },
+        {
+          "text": "机械鱼是什么？",
+          "next": "start_info"
+        }
+      ]
+    },
+    {
+      "id": "start_info",
+      "speaker": "指挥官",
+      "text": "机械鱼是早期深海探测用的自动机器人，但它们的控制系统已经损坏，现在只会盲目攻击。它们数量不少，小心应对。",
+      "options": [
+        {
+          "text": "明白，我出发了。",
+          "next": "start_confirm"
+        }
+      ]
+    },
+    {
+      "id": "start_confirm",
+      "speaker": "系统",
+      "text": "战斗任务已接受。目标：击败5只机械鱼。",
+      "options": [],
+      "action": "start_mission"
+    },
+    {
+      "id": "progress_1",
+      "speaker": "系统",
+      "text": "第一只机械鱼已被摧毁。继续保持！",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "progress_3",
+      "speaker": "系统",
+      "text": "已完成过半目标。侦测到更多机械鱼信号。",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "complete",
+      "speaker": "指挥官",
+      "text": "漂亮！航道威胁已经解除。你的战斗技巧令人印象深刻。2000信用点奖励已发放，同时战斗类委托现在对你开放了。",
+      "options": [
+        {
+          "text": "随时准备接受新任务！",
+          "next": "end"
+        }
+      ]
+    },
+    {
+      "id": "fail",
+      "speaker": "指挥官",
+      "text": "任务失败。机甲受损过重，立即撤退！",
+      "options": [
+        {
+          "text": "撤退中...",
+          "next": "end"
+        }
+      ]
+    }
+  ]
+}

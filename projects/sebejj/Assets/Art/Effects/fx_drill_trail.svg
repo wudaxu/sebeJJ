@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="sparkGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#FFFFAA"/>
+      <stop offset="60%" stop-color="#FFAA00"/>
+      <stop offset="100%" stop-color="#FF4400" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 钻头攻击轨迹特效 -->
+  <!-- 用于钻头武器旋转攻击时的轨迹效果 -->
+  <!-- 动画建议: 旋转+缩放，4-6帧循环 -->
+  
+  <g id="drill-trail">
+    <!-- 旋转轨迹环 -->
+    <ellipse cx="64" cy="64" rx="45" ry="45" fill="none" stroke="#FF6600" stroke-width="3" stroke-dasharray="20,10" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- 内圈旋转 -->
+    <ellipse cx="64" cy="64" rx="30" ry="30" fill="none" stroke="#FFAA00" stroke-width="2" stroke-dasharray="15,8" opacity="0.9" filter="url(#neonGlow)"/>
+    
+    <!-- 核心火花 -->
+    <circle cx="64" cy="64" r="12" fill="url(#sparkGrad)" filter="url(#neonGlow)"/>
+    
+    <!-- 旋转方向指示 -->
+    <path d="M 100 64 L 90 58 L 90 70 Z" fill="#FF4400" filter="url(#neonGlow)"/>
+    
+    <!-- 飞溅金属碎片 -->
+    <rect x="35" y="35" width="4" height="4" fill="#888888" transform="rotate(45 37 37)"/>
+    <rect x="90" y="90" width="4" height="4" fill="#666666" transform="rotate(30 92 92)"/>
+    <rect x="25" y="75" width="3" height="3" fill="#999999" transform="rotate(60 26.5 76.5)"/>
+    <rect x="85" y="30" width="3" height="3" fill="#777777" transform="rotate(15 86.5 31.5)"/>
+    
+    <!-- 火花飞溅 -->
+    <circle cx="30" cy="45" r="2" fill="#FFFF00"/>
+    <circle cx="98" cy="55" r="2" fill="#FFFF00"/>
+    <circle cx="45" cy="100" r="2" fill="#FFAA00"/>
+    <circle cx="85" cy="25" r="2" fill="#FFAA00"/>
+    
+    <!-- 能量残留 -->
+    <path d="M 50 50 Q 64 30 78 50" fill="none" stroke="#FF6600" stroke-width="2" opacity="0.6" filter="url(#neonGlow)"/>
+    <path d="M 50 78 Q 64 98 78 78" fill="none" stroke="#FF6600" stroke-width="2" opacity="0.6" filter="url(#neonGlow)"/>
+    <path d="M 30 64 Q 50 64 30 64" fill="none" stroke="#FFAA00" stroke-width="2" opacity="0.5"/>
+    <path d="M 98 64 Q 78 64 98 64" fill="none" stroke="#FFAA00" stroke-width="2" opacity="0.5"/>
+  </g>
+</svg>

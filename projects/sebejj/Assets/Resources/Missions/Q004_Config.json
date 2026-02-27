@@ -1,0 +1,35 @@
+{
+  "missionId": "Q004",
+  "missionName": "深海初探",
+  "missionType": "exploration",
+  "description": "探索100米深度的深海区域，收集环境数据并安全返回。",
+  "objectives": [
+    {
+      "id": 1,
+      "description": "到达100米深度",
+      "type": "reach_depth",
+      "target": 100,
+      "completed": false
+    },
+    {
+      "id": 2,
+      "description": "安全返回水面",
+      "type": "return_surface",
+      "completed": false
+    }
+  ],
+  "rewards": {
+    "credits": 1500,
+    "experience": 300,
+    "unlocks": ["depth_100_zone"]
+  },
+  "requirements": {
+    "minDepth": 0,
+    "maxDepth": 100,
+    "prerequisites": []
+  },
+  "difficulty": 1,
+  "estimatedTime": 600,
+  "dialogueFile": "Q004_Dialogue.json",
+  "scriptFile": "Q004_Script.cs"
+}

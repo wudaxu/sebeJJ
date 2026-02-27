@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- 生物荧光渐变 -->
+    <radialGradient id="bioGlow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#80FF80"/>
+      <stop offset="50%" stop-color="#40FF40"/>
+      <stop offset="100%" stop-color="#00FF00" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="bioGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#80FFFF"/>
+      <stop offset="50%" stop-color="#40FFFF"/>
+      <stop offset="100%" stop-color="#00FFFF" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="bioGlow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF80FF"/>
+      <stop offset="50%" stop-color="#FF40FF"/>
+      <stop offset="100%" stop-color="#FF00FF" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- 柔和发光 -->
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    
+    <!-- 微弱脉动 -->
+    <filter id="faintPulse" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="512" height="512" fill="none"/>
+  
+  <!-- 大型荧光粒子 - 绿色 -->
+  <g id="bio-particles-large-green" filter="url(#softGlow)">
+    <circle cx="80" cy="100" r="15" fill="url(#bioGlow1)" opacity="0.7"/>
+    <circle cx="350" cy="180" r="12" fill="url(#bioGlow1)" opacity="0.6"/>
+    <circle cx="200" cy="300" r="18" fill="url(#bioGlow1)" opacity="0.8"/>
+    <circle cx="420" cy="400" r="14" fill="url(#bioGlow1)" opacity="0.7"/>
+    <circle cx="100" cy="420" r="16" fill="url(#bioGlow1)" opacity="0.6"/>
+  </g>
+  
+  <!-- 大型荧光粒子 - 青色 -->
+  <g id="bio-particles-large-cyan" filter="url(#softGlow)">
+    <circle cx="180" cy="80" r="13" fill="url(#bioGlow2)" opacity="0.7"/>
+    <circle cx="400" cy="120" r="16" fill="url(#bioGlow2)" opacity="0.6"/>
+    <circle cx="300" cy="250" r="14" fill="url(#bioGlow2)" opacity="0.8"/>
+    <circle cx="60" cy="300" r="12" fill="url(#bioGlow2)" opacity="0.7"/>
+    <circle cx="450" cy="320" r="15" fill="url(#bioGlow2)" opacity="0.6"/>
+  </g>
+  
+  <!-- 大型荧光粒子 - 紫色 -->
+  <g id="bio-particles-large-purple" filter="url(#softGlow)">
+    <circle cx="280" cy="60" r="14" fill="url(#bioGlow3)" opacity="0.6"/>
+    <circle cx="120" cy="200" r="16" fill="url(#bioGlow3)" opacity="0.7"/>
+    <circle cx="380" cy="280" r="13" fill="url(#bioGlow3)" opacity="0.8"/>
+    <circle cx="250" cy="420" r="15" fill="url(#bioGlow3)" opacity="0.6"/>
+    <circle cx="480" cy="180" r="12" fill="url(#bioGlow3)" opacity="0.7"/>
+  </g>
+  
+  <!-- 中型荧光粒子 -->
+  <g id="bio-particles-medium" filter="url(#faintPulse)">
+    <!-- 绿色 -->
+    <circle cx="150" cy="150" r="8" fill="#40FF40" opacity="0.6"/>
+    <circle cx="320" cy="100" r="6" fill="#40FF40" opacity="0.5"/>
+    <circle cx="50" cy="380" r="7" fill="#40FF40" opacity="0.6"/>
+    <circle cx="400" cy="450" r="8" fill="#40FF40" opacity="0.5"/>
+    
+    <!-- 青色 -->
+    <circle cx="220" cy="180" r="7" fill="#40FFFF" opacity="0.6"/>
+    <circle cx="450" cy="250" r="6" fill="#40FFFF" opacity="0.5"/>
+    <circle cx="80" cy="250" r="8" fill="#40FFFF" opacity="0.6"/>
+    <circle cx="350" cy="380" r="7" fill="#40FFFF" opacity="0.5"/>
+    
+    <!-- 紫色 -->
+    <circle cx="160" cy="350" r="6" fill="#FF40FF" opacity="0.6"/>
+    <circle cx="420" cy="50" r="8" fill="#FF40FF" opacity="0.5"/>
+    <circle cx="30" cy="180" r="7" fill="#FF40FF" opacity="0.6"/>
+    <circle cx="280" cy="480" r="6" fill="#FF40FF" opacity="0.5"/>
+  </g>
+  
+  <!-- 小型荧光粒子 -->
+  <g id="bio-particles-small">
+    <!-- 绿色小点 -->
+    <circle cx="40" cy="50" r="3" fill="#80FF80" opacity="0.5"/>
+    <circle cx="250" cy="140" r="2" fill="#80FF80" opacity="0.4"/>
+    <circle cx="480" cy="100" r="3" fill="#80FF80" opacity="0.5"/>
+    <circle cx="180" cy="380" r="2" fill="#80FF80" opacity="0.4"/>
+    <circle cx="380" cy="350" r="3" fill="#80FF80" opacity="0.5"/>
+    <circle cx="120" cy="480" r="2" fill="#80FF80" opacity="0.4"/>
+    
+    <!-- 青色小点 -->
+    <circle cx="100" cy="60" r="2" fill="#80FFFF" opacity="0.5"/>
+    <circle cx="300" cy="160" r="3" fill="#80FFFF" opacity="0.4"/>
+    <circle cx="460" cy="380" r="2" fill="#80FFFF" opacity="0.5"/>
+    <circle cx="60" cy="450" r="3" fill="#80FFFF" opacity="0.4"/>
+    <circle cx="200" cy="480" r="2" fill="#80FFFF" opacity="0.5"/>
+    <circle cx="430" cy="200" r="3" fill="#80FFFF" opacity="0.4"/>
+    
+    <!-- 紫色小点 -->
+    <circle cx="60" cy="150" r="3" fill="#FF80FF" opacity="0.5"/>
+    <circle cx="340" cy="320" r="2" fill="#FF80FF" opacity="0.4"/>
+    <circle cx="150" cy="40" r="2" fill="#FF80FF" opacity="0.5"/>
+    <circle cx="480" cy="280" r="3" fill="#FF80FF" opacity="0.4"/>
+    <circle cx="260" cy="200" r="2" fill="#FF80FF" opacity="0.5"/>
+    <circle cx="40" cy="350" r="3" fill="#FF80FF" opacity="0.4"/>
+  </g>
+  
+  <!-- 微型荧光粒子 -->
+  <g id="bio-particles-tiny" opacity="0.3">
+    <circle cx="20" cy="80" r="1" fill="#C0FFC0"/>
+    <circle cx="180" cy="20" r="1" fill="#C0FFFF"/>
+    <circle cx="400" cy="30" r="1" fill="#FFC0FF"/>
+    <circle cx="490" cy="150" r="1" fill="#C0FFC0"/>
+    <circle cx="300" cy="490" r="1" fill="#C0FFFF"/>
+    <circle cx="80" cy="490" r="1" fill="#FFC0FF"/>
+    <circle cx="490" cy="420" r="1" fill="#C0FFC0"/>
+    <circle cx="20" cy="280" r="1" fill="#C0FFFF"/>
+  </g>
+  
+  <!-- 连接线/丝状物 -->
+  <g id="bio-threads" stroke-width="1" opacity="0.3" fill="none">
+    <path d="M80 100 Q120 120 150 150" stroke="#40FF40"/>
+    <path d="M350 180 Q300 200 250 200" stroke="#40FF40"/>
+    <path d="M180 80 Q220 100 220 180" stroke="#40FFFF"/>
+    <path d="M400 120 Q380 180 350 180" stroke="#40FFFF"/>
+    <path d="M280 60 Q300 100 320 100" stroke="#FF40FF"/>
+    <path d="M120 200 Q150 250 160 350" stroke="#FF40FF"/>
+  </g>
+  
+  <!-- 光晕效果 -->
+  <g id="bio-halos" opacity="0.2">
+    <circle cx="80" cy="100" r="30" fill="#40FF40"/>
+    <circle cx="350" cy="180" r="25" fill="#40FF40"/>
+    <circle cx="200" cy="300" r="35" fill="#40FF40"/>
+    <circle cx="180" cy="80" r="28" fill="#40FFFF"/>
+    <circle cx="400" cy="120" r="32" fill="#40FFFF"/>
+    <circle cx="280" cy="60" r="26" fill="#FF40FF"/>
+    <circle cx="120" cy="200" r="30" fill="#FF40FF"/>
+  </g>
+  
+  <!-- 闪烁点 -->
+  <g id="twinkle-points">
+    <circle cx="128" cy="128" r="1" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="256" cy="256" r="1" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="384" cy="128" r="1" fill="#FFFFFF" opacity="0.7"/>
+    <circle cx="128" cy="384" r="1" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="384" cy="384" r="1" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+</svg>

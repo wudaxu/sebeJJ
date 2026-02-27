@@ -1,0 +1,51 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 深海晶体图标 -->
+  <defs>
+    <linearGradient id="crystalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0CCFF"/>
+      <stop offset="40%" style="stop-color:#9966FF"/>
+      <stop offset="70%" style="stop-color:#6600FF"/>
+      <stop offset="100%" style="stop-color:#4400AA"/>
+    </linearGradient>
+    
+    <linearGradient id="crystalCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="50%" style="stop-color:#CCAAFF"/>
+      <stop offset="100%" style="stop-color:#8844FF"/>
+    </linearGradient>
+    
+    <filter id="crystalGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 晶体光晕 -->
+  <polygon points="16,2 28,10 28,22 16,30 4,22 4,10" fill="#6600FF" opacity="0.2" filter="url(#crystalGlow)"/>
+  
+  <!-- 晶体主体 -->
+  <polygon points="16,4 26,11 26,21 16,28 6,21 6,11" fill="url(#crystalGrad)" stroke="#4400AA" stroke-width="1"/>
+  
+  <!-- 晶体面 -->
+  <polygon points="16,4 26,11 16,18 6,11" fill="url(#crystalCore)" opacity="0.6"/>
+  <polygon points="16,18 26,11 26,21 16,28" fill="#8844FF" opacity="0.5"/>
+  <polygon points="16,18 6,11 6,21 16,28" fill="#5500CC" opacity="0.5"/>
+  
+  <!-- 核心光芒 -->
+  <polygon points="16,10 20,13 20,19 16,22 12,19 12,13" fill="#FFFFFF" opacity="0.8" filter="url(#crystalGlow)"/>
+  
+  <!-- 能量射线 -->
+  <line x1="16" y1="4" x2="16" y2="2" stroke="#CCAAFF" stroke-width="1" opacity="0.7"/>
+  <line x1="26" y1="11" x2="28" y2="9" stroke="#CCAAFF" stroke-width="1" opacity="0.7"/>
+  <line x1="26" y1="21" x2="28" y2="23" stroke="#CCAAFF" stroke-width="1" opacity="0.7"/>
+  <line x1="16" y1="28" x2="16" y2="30" stroke="#CCAAFF" stroke-width="1" opacity="0.7"/>
+  <line x1="6" y1="21" x2="4" y2="23" stroke="#CCAAFF" stroke-width="1" opacity="0.7"/>
+  <line x1="6" y1="11" x2="4" y2="9" stroke="#CCAAFF" stroke-width="1" opacity="0.7"/>
+  
+  <!-- 标签 --
+  <rect x="20" y="2" width="10" height="8" rx="1" fill="#001133" stroke="#9966FF" stroke-width="0.5"/>
+  <text x="25" y="8" font-family="monospace" font-size="5" fill="#9966FF" text-anchor="middle">CR</text>
+</svg>

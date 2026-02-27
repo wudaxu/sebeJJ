@@ -1,0 +1,57 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 机甲移动动画帧1 - 静止/待机 -->
+  <defs>
+    <linearGradient id="mechBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#445566"/>
+      <stop offset="100%" style="stop-color:#223344"/>
+    </linearGradient>
+    <linearGradient id="cockpit" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FFFF"/>
+      <stop offset="100%" style="stop-color:#0088AA"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 推进器火焰 - 短 -->
+  <ellipse cx="18" cy="52" rx="3" ry="5" fill="#00FFFF" opacity="0.6"/>
+  <ellipse cx="46" cy="52" rx="3" ry="5" fill="#00FFFF" opacity="0.6"/>
+  <ellipse cx="24" cy="54" rx="2" ry="4" fill="#0088FF" opacity="0.5"/>
+  <ellipse cx="40" cy="54" rx="2" ry="4" fill="#0088FF" opacity="0.5"/>
+  
+  <!-- 机械臂左 -->
+  <rect x="8" y="28" width="10" height="6" rx="2" fill="url(#mechBody)"/>
+  <rect x="6" y="30" width="4" height="4" rx="1" fill="#556677"/>
+  
+  <!-- 机械臂右 -->
+  <rect x="46" y="28" width="10" height="6" rx="2" fill="url(#mechBody)"/>
+  <rect x="54" y="30" width="4" height="4" rx="1" fill="#556677"/>
+  
+  <!-- 货舱 -->
+  <rect x="20" y="38" width="24" height="12" rx="2" fill="#334455"/>
+  <rect x="22" y="40" width="20" height="8" rx="1" fill="#223344"/>
+  
+  <!-- 主体框架 -->
+  <ellipse cx="32" cy="32" rx="18" ry="14" fill="url(#mechBody)"/>
+  <ellipse cx="32" cy="32" rx="14" ry="10" fill="#2A3A4A"/>
+  
+  <!-- 驾驶舱 -->
+  <circle cx="32" cy="30" r="8" fill="url(#cockpit)" filter="url(#glow)"/>
+  <circle cx="32" cy="30" r="6" fill="#00FFFF" opacity="0.3"/>
+  
+  <!-- 传感器 -->
+  <circle cx="22" cy="24" r="2" fill="#00FF88" filter="url(#glow)"/>
+  <circle cx="42" cy="24" r="2" fill="#00FF88" filter="url(#glow)"/>
+  
+  <!-- 推进器主体 -->
+  <rect x="14" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  <rect x="42" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  
+  <!-- 装饰线条 -->
+  <line x1="28" y1="38" x2="36" y2="38" stroke="#00FFFF" stroke-width="1" opacity="0.5"/>
+</svg>

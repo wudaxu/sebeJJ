@@ -1,0 +1,107 @@
+{
+    "version": "1.0",
+    "resources": [
+        {
+            "id": "copper_ore",
+            "name": "铜矿石",
+            "type": "mineral",
+            "value": 5,
+            "weight": 2.0,
+            "rarity": "common",
+            "minDepth": 0,
+            "maxDepth": 300,
+            "scanDifficulty": 1,
+            "collectTime": 1.0
+        },
+        {
+            "id": "iron_ore",
+            "name": "铁矿石",
+            "type": "mineral",
+            "value": 8,
+            "weight": 3.0,
+            "rarity": "common",
+            "minDepth": 20,
+            "maxDepth": 500,
+            "scanDifficulty": 1,
+            "collectTime": 1.2
+        },
+        {
+            "id": "gold_ore",
+            "name": "金矿石",
+            "type": "mineral",
+            "value": 25,
+            "weight": 4.0,
+            "rarity": "uncommon",
+            "minDepth": 100,
+            "maxDepth": 800,
+            "scanDifficulty": 2,
+            "collectTime": 1.5
+        },
+        {
+            "id": "crystal_shard",
+            "name": "水晶碎片",
+            "type": "crystal",
+            "value": 40,
+            "weight": 1.5,
+            "rarity": "rare",
+            "minDepth": 200,
+            "maxDepth": 900,
+            "scanDifficulty": 2,
+            "collectTime": 2.0
+        },
+        {
+            "id": "ancient_relic",
+            "name": "古代遗物",
+            "type": "artifact",
+            "value": 100,
+            "weight": 5.0,
+            "rarity": "legendary",
+            "minDepth": 500,
+            "maxDepth": 1000,
+            "scanDifficulty": 3,
+            "collectTime": 3.0
+        },
+        {
+            "id": "bio_gel",
+            "name": "生物凝胶",
+            "type": "bio_material",
+            "value": 15,
+            "weight": 0.5,
+            "rarity": "uncommon",
+            "minDepth": 50,
+            "maxDepth": 600,
+            "scanDifficulty": 1,
+            "collectTime": 0.8
+        },
+        {
+            "id": "scrap_metal",
+            "name": "金属废料",
+            "type": "tech_scrap",
+            "value": 3,
+            "weight": 1.0,
+            "rarity": "common",
+            "minDepth": 0,
+            "maxDepth": 1000,
+            "scanDifficulty": 0,
+            "collectTime": 0.5
+        },
+        {
+            "id": "circuit_board",
+            "name": "电路板",
+            "type": "tech_scrap",
+            "value": 20,
+            "weight": 0.3,
+            "rarity": "uncommon",
+            "minDepth": 100,
+            "maxDepth": 800,
+            "scanDifficulty": 2,
+            "collectTime": 1.0
+        }
+    ],
+    "spawnSettings": {
+        "baseSpawnRate": 0.3,
+        "depthMultiplier": 0.001,
+        "maxResourcesPerZone": 50,
+        "respawnTime": 300.0
+    }
+}

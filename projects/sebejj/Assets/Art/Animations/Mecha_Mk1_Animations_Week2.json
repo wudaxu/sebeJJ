@@ -1,0 +1,36 @@
+{
+  "name": "Mecha_Mk1_Animations_Week2",
+  "version": "1.0",
+  "sprite_size": { "w": 256, "h": 256 },
+  "animations": {
+    "idle": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true,
+      "description": "悬浮待机动画，轻微上下浮动",
+      "file": "Animations/Frames/Mecha_Mk1_Anim_Idle.svg"
+    },
+    "move": {
+      "frames": 6,
+      "fps": 12,
+      "loop": true,
+      "description": "推进器喷射，机甲前倾",
+      "file": "Animations/Frames/Mecha_Mk1_Anim_Move.svg"
+    },
+    "collect": {
+      "frames": 6,
+      "fps": 10,
+      "loop": false,
+      "description": "机械爪抓取动作",
+      "file": "Animations/Frames/Mecha_Mk1_Anim_Collect.svg"
+    },
+    "hit": {
+      "frames": 3,
+      "fps": 12,
+      "loop": false,
+      "description": "受击闪烁，向后位移",
+      "file": "Animations/Frames/Mecha_Mk1_Anim_Hit.svg"
+    }
+  },
+  "notes": "Week 2 新增动画帧，包含完整的机甲动作循环"
+}

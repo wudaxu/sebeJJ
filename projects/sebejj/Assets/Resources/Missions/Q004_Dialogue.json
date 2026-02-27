@@ -1,0 +1,67 @@
+{
+  "missionId": "Q004",
+  "dialogues": [
+    {
+      "id": "start",
+      "speaker": "指挥官",
+      "text": "驾驶员，你准备好了吗？这次任务需要你下潜到100米深度，收集深海环境数据。记住，安全第一，一旦发现异常立即返回。",
+      "options": [
+        {
+          "text": "明白，准备出发！",
+          "next": "start_confirm"
+        },
+        {
+          "text": "我需要更多信息。",
+          "next": "start_info"
+        }
+      ]
+    },
+    {
+      "id": "start_info",
+      "speaker": "指挥官",
+      "text": "100米深度是浅海与深海的交界处，水压会明显增加。你的机甲已经做了抗压处理，但不要在那里停留太久。到达目标深度后，系统会自动记录环境数据。",
+      "options": [
+        {
+          "text": "了解了，开始任务。",
+          "next": "start_confirm"
+        }
+      ]
+    },
+    {
+      "id": "start_confirm",
+      "speaker": "系统",
+      "text": "任务已接受。深度监测已启动。",
+      "options": [],
+      "action": "start_mission"
+    },
+    {
+      "id": "reach_depth",
+      "speaker": "系统",
+      "text": "已到达100米深度。正在收集环境数据...数据收集完成。请返回水面。",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "complete",
+      "speaker": "指挥官",
+      "text": "干得好！你成功完成了首次深海探索。这些数据对我们了解深海环境非常重要。1500信用点已转入你的账户，100米深度区域现已对你开放。",
+      "options": [
+        {
+          "text": "感谢指挥官！",
+          "next": "end"
+        }
+      ]
+    },
+    {
+      "id": "fail",
+      "speaker": "指挥官",
+      "text": "任务失败。机甲损坏严重，立即返回基地进行维修。",
+      "options": [
+        {
+          "text": "收到...",
+          "next": "end"
+        }
+      ]
+    }
+  ]
+}

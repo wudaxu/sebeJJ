@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 赛博青霓虹光晕 -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- 核心发光 -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 机械鱼 Idle 帧1 - 基础姿态 -->
+  <g id="mech-fish-idle-1">
+    <!-- 尾鳍 - 静止 -->
+    <path d="M 40 128 L 20 108 L 20 148 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2" filter="url(#neonGlow)"/>
+    
+    <!-- 身体主体 -->
+    <ellipse cx="128" cy="128" rx="70" ry="35" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 身体装甲板块 -->
+    <path d="M 90 108 L 110 108 L 105 128 L 95 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <path d="M 115 108 L 135 108 L 130 128 L 120 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <path d="M 140 108 L 160 108 L 155 128 L 145 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 下装甲 -->
+    <path d="M 100 148 L 120 148 L 115 128 L 105 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <path d="M 125 148 L 145 148 L 140 128 L 130 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 背鳍 -->
+    <path d="M 128 93 L 138 70 L 148 93 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2" filter="url(#neonGlow)"/>
+    
+    <!-- 侧鳍 - 静止 -->
+    <path d="M 118 143 L 128 165 L 138 143 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2" filter="url(#neonGlow)"/>
+    
+    <!-- 头部 -->
+    <ellipse cx="185" cy="128" rx="25" ry="22" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 探照灯/眼睛 -->
+    <circle cx="195" cy="122" r="6" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="195" cy="134" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 核心反应堆 -->
+    <circle cx="128" cy="128" r="12" fill="url(#coreGlow)" opacity="0.8"/>
+    <circle cx="128" cy="128" r="8" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 机械细节 - 铆钉 -->
+    <circle cx="90" cy="118" r="2" fill="#00F0FF"/>
+    <circle cx="160" cy="118" r="2" fill="#00F0FF"/>
+    <circle cx="90" cy="138" r="2" fill="#00F0FF"/>
+    <circle cx="160" cy="138" r="2" fill="#00F0FF"/>
+    
+    <!-- 推进器喷口 -->
+    <ellipse cx="45" cy="128" rx="8" ry="12" fill="#00F0FF" opacity="0.6" filter="url(#neonGlow)"/>
+  </g>
+</svg>

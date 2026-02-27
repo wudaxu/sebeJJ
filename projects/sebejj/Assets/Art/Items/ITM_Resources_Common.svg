@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 64">
+  <defs>
+    <filter id="copperGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8B89D"/>
+      <stop offset="50%" style="stop-color:#B87333"/>
+      <stop offset="100%" style="stop-color:#8B4513"/>
+    </linearGradient>
+    
+    <linearGradient id="ironGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C0C0C0"/>
+      <stop offset="50%" style="stop-color:#708090"/>
+      <stop offset="100%" style="stop-color:#2F4F4F"/>
+    </linearGradient>
+    
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="50%" style="stop-color:#C0C0C0"/>
+      <stop offset="100%" style="stop-color:#808080"/>
+    </linearGradient>
+    
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFACD"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Copper Ore -->
+  <g transform="translate(0,0)">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#0D1B2A" stroke="#B87333" stroke-width="2"/>
+    
+    <path d="M15 20 L25 15 L40 18 L50 28 L48 45 L35 52 L20 48 L12 35 Z" fill="url(#copperGrad)" stroke="#8B4513" stroke-width="1" filter="url(#copperGlow)"/>
+    
+    <path d="M20 25 L30 22 L38 28 L35 38 L25 40 L18 32 Z" fill="#D2691E" opacity="0.6"/>
+    
+    <text x="32" y="58" text-anchor="middle" fill="#B87333" font-family="monospace" font-size="8">Cu</text>
+  </g>
+  
+  <!-- Iron Ore -->
+  <g transform="translate(64,0)">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#0D1B2A" stroke="#708090" stroke-width="2"/>
+    
+    <path d="M18 18 L35 15 L48 22 L52 38 L45 50 L28 52 L15 42 L12 28 Z" fill="url(#ironGrad)" stroke="#2F4F4F" stroke-width="1" filter="url(#copperGlow)"/>
+    
+    <path d="M25 25 L38 24 L42 35 L35 44 L22 42 L20 30 Z" fill="#A9A9A9" opacity="0.5"/>
+    
+    <line x1="20" y1="20" x2="25" y2="25" stroke="#2F4F4F" stroke-width="1"/>
+    
+    <line x1="40" y1="18" x2="42" y2="24" stroke="#2F4F4F" stroke-width="1"/>
+    
+    <line x1="45" y1="45" x2="48" y2="48" stroke="#2F4F4F" stroke-width="1"/>
+    
+    <text x="32" y="58" text-anchor="middle" fill="#708090" font-family="monospace" font-size="8">Fe</text>
+  </g>
+  
+  <!-- Silver Ore -->
+  <g transform="translate(128,0)">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#0D1B2A" stroke="#C0C0C0" stroke-width="2"/>
+    
+    <path d="M20 18 L38 15 L50 25 L48 42 L35 50 L18 45 L15 30 Z" fill="url(#silverGrad)" stroke="#808080" stroke-width="1" filter="url(#copperGlow)"/>
+    
+    <path d="M25 25 L38 22 L42 32 L35 42 L22 38 L20 28 Z" fill="#FFFFFF" opacity="0.7"/>
+    
+    <ellipse cx="30" cy="30" rx="3" ry="5" fill="#FFFFFF" opacity="0.9" transform="rotate(-30,30,30)"/>
+    
+    <text x="32" y="58" text-anchor="middle" fill="#C0C0C0" font-family="monospace" font-size="8">Ag</text>
+  </g>
+  
+  <!-- Gold Ore -->
+  <g transform="translate(192,0)">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#0D1B2A" stroke="#FFD700" stroke-width="2"/>
+    
+    <path d="M18 20 L32 15 L45 20 L52 35 L45 48 L28 50 L15 40 L12 28 Z" fill="url(#goldGrad)" stroke="#B8860B" stroke-width="1" filter="url(#copperGlow)"/>
+    
+    <path d="M22 28 L35 24 L42 32 L38 42 L25 44 L18 35 Z" fill="#FFFACD" opacity="0.8"/>
+    
+    <path d="M28 20 L32 15 L36 20" fill="none" stroke="#B8860B" stroke-width="1"/>
+    
+    <path d="M42 35 L52 35 L48 42" fill="none" stroke="#B8860B" stroke-width="1"/>
+    
+    <text x="32" y="58" text-anchor="middle" fill="#FFD700" font-family="monospace" font-size="8">Au</text>
+  </g>
+  
+  <!-- Titanium Ore -->
+  <g transform="translate(256,0)">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#0D1B2A" stroke="#4682B4" stroke-width="2"/>
+    
+    <path d="M16 22 L30 15 L45 18 L52 32 L48 48 L32 52 L18 45 L12 32 Z" fill="#5F9EA0" stroke="#2F4F4F" stroke-width="1.5" filter="url(#copperGlow)"/>
+    
+    <path d="M22 28 L35 22 L45 28 L42 40 L30 45 L20 38 Z" fill="#87CEEB" opacity="0.5"/>
+    
+    <line x1="25" y1="25" x2="40" y2="40" stroke="#4682B4" stroke-width="1.5"/>
+    
+    <line x1="40" y1="25" x2="25" y2="40" stroke="#4682B4" stroke-width="1.5"/>
+    
+    <text x="32" y="58" text-anchor="middle" fill="#4682B4" font-family="monospace" font-size="8">Ti</text>
+  </g>
+  
+  <!-- Glow Algae -->
+  <g transform="translate(320,0)">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#0D1B2A" stroke="#39FF14" stroke-width="2"/>
+    
+    <ellipse cx="32" cy="35" rx="15" ry="20" fill="#228B22" stroke="#39FF14" stroke-width="1" filter="url(#copperGlow)"/>
+    
+    <ellipse cx="32" cy="35" rx="10" ry="15" fill="#32CD32" opacity="0.7"/>
+    
+    <ellipse cx="32" cy="35" rx="5" ry="8" fill="#39FF14" opacity="0.9" filter="url(#copperGlow)"/>
+    
+    <path d="M32 15 L32 10 M20 20 L15 15 M44 20 L49 15 M15 35 L10 35 M49 35 L54 35 M20 50 L15 55 M44 50 L49 55" stroke="#39FF14" stroke-width="2" opacity="0.6"/>
+    
+    <text x="32" y="58" text-anchor="middle" fill="#39FF14" font-family="monospace" font-size="8">BIO</text>
+  </g>
+  
+  <!-- Deep Crystal -->
+  <g transform="translate(384,0)">
+    <rect x="2" y="2" width="60" height="60" rx="8" fill="#0D1B2A" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <polygon points="32,10 48,25 48,45 32,55 16,45 16,25" fill="#4B0082" stroke="#8B5CF6" stroke-width="2" filter="url(#copperGlow)"/>
+    
+    <polygon points="32,18 42,28 42,42 32,48 22,42 22,28" fill="#663399" stroke="#9370DB" stroke-width="1"/>
+    
+    <polygon points="32,25 37,32 37,40 32,44 27,40 27,32" fill="#8B5CF6" opacity="0.9"/>
+    
+    <line x1="32" y1="10" x2="32" y2="55" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+    
+    <line x1="16" y1="25" x2="48" y2="45" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+    
+    <line x1="48" y1="25" x2="16" y2="45" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+    
+    <text x="32" y="58" text-anchor="middle" fill="#8B5CF6" font-family="monospace" font-size="8">CRY</text>
+  </g>
+</svg>

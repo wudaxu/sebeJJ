@@ -1,0 +1,36 @@
+{
+  "missionId": "Q008",
+  "missionName": "巨型机械蟹",
+  "missionType": "hunt",
+  "description": "击败盘踞在深海区域的Boss'铁钳巨兽'，解除海域威胁。",
+  "objectives": [
+    {
+      "id": 1,
+      "description": "击败Boss'铁钳巨兽'",
+      "type": "defeat_boss",
+      "target": "iron_claw_behemoth",
+      "completed": false
+    }
+  ],
+  "rewards": {
+    "credits": 8000,
+    "experience": 1500,
+    "items": ["behemoth_claw", "rare_core"],
+    "unlocks": ["advanced_missions", "legendary_gear"]
+  },
+  "requirements": {
+    "minDepth": 150,
+    "maxDepth": 200,
+    "prerequisites": ["Q004", "Q005", "Q006", "Q007"]
+  },
+  "difficulty": 5,
+  "estimatedTime": 1800,
+  "bossData": {
+    "name": "铁钳巨兽",
+    "health": 5000,
+    "attackPatterns": ["claw_slam", "bubble_burst", "charge_attack"],
+    "weakness": "electric_damage"
+  },
+  "dialogueFile": "Q008_Dialogue.json",
+  "scriptFile": "Q008_Script.cs"
+}

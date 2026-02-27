@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="laserHitCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#FFAAFF"/>
+      <stop offset="40%" stop-color="#FF00FF"/>
+      <stop offset="70%" stop-color="#FF00A0"/>
+      <stop offset="100%" stop-color="#FF0040" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="laserHitOuter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF00FF" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FF00A0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF0040" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 激光命中爆炸特效 -->
+  <!-- 用于激光武器击中目标时的爆炸效果 -->
+  <!-- 动画建议: 快速膨胀后消散，6-8帧 -->
+  
+  <g id="laser-explosion">
+    <!-- 外圈光晕 -->
+    <circle cx="64" cy="64" r="55" fill="url(#laserHitOuter)" opacity="0.5"/>
+    
+    <!-- 爆炸主体 -->
+    <circle cx="64" cy="64" r="35" fill="url(#laserHitCenter)" filter="url(#strongGlow)"/>
+    
+    <!-- 核心强光 -->
+    <circle cx="64" cy="64" r="18" fill="#FFFFFF" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- 能量飞溅 - 十字 -->
+    <path d="M 64 15 L 68 40 L 64 48 L 60 40 Z" fill="#FF00FF" filter="url(#neonGlow)"/>
+    <path d="M 64 113 L 68 88 L 64 80 L 60 88 Z" fill="#FF00FF" filter="url(#neonGlow)"/>
+    <path d="M 15 64 L 40 68 L 48 64 L 40 60 Z" fill="#FF00FF" filter="url(#neonGlow)"/>
+    <path d="M 113 64 L 88 68 L 80 64 L 88 60 Z" fill="#FF00FF" filter="url(#neonGlow)"/>
+    
+    <!-- 对角飞溅 -->
+    <path d="M 30 30 L 48 48 L 52 44 L 34 26 Z" fill="#FFAAFF" filter="url(#neonGlow)"/>
+    <path d="M 98 30 L 80 48 L 76 44 L 94 26 Z" fill="#FFAAFF" filter="url(#neonGlow)"/>
+    <path d="M 30 98 L 48 80 L 52 84 L 34 102 Z" fill="#FFAAFF" filter="url(#neonGlow)"/>
+    <path d="M 98 98 L 80 80 L 76 84 L 94 102 Z" fill="#FFAAFF" filter="url(#neonGlow)"/>
+    
+    <!-- 能量粒子 -->
+    <circle cx="22" cy="45" r="3" fill="#FFFFFF"/>
+    <circle cx="106" cy="38" r="3" fill="#FFFFFF"/>
+    <circle cx="35" cy="105" r="3" fill="#FFFFFF"/>
+    <circle cx="95" cy="108" r="3" fill="#FFFFFF"/>
+    <circle cx="18" cy="80" r="2" fill="#FFAAFF"/>
+    <circle cx="110" cy="75" r="2" fill="#FFAAFF"/>
+    <circle cx="50" cy="18" r="2" fill="#FFAAFF"/>
+    <circle cx="78" cy="115" r="2" fill="#FFAAFF"/>
+    
+    <!-- 残留能量环 -->
+    <circle cx="64" cy="64" r="45" fill="none" stroke="#FF00FF" stroke-width="1" opacity="0.4" filter="url(#neonGlow)"/>
+    <circle cx="64" cy="64" r="52" fill="none" stroke="#FF00A0" stroke-width="0.5" opacity="0.3"/>
+  </g>
+</svg>

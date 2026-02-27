@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="thrusterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#FFFF00"/>
+      <stop offset="50%" stop-color="#FF8800"/>
+      <stop offset="80%" stop-color="#FF4400"/>
+      <stop offset="100%" stop-color="#FF0040" stop-opacity="0"/>
+    </linearGradient>
+    
+    <linearGradient id="thrusterCore" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#00F0FF"/>
+      <stop offset="70%" stop-color="#0080FF"/>
+      <stop offset="100%" stop-color="#0040FF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 推进器尾焰特效 -->
+  <!-- 用于机甲推进器喷射效果 -->
+  <!-- 动画建议: 尾焰长度随机变化，添加抖动效果 -->
+  
+  <g id="thruster-flame">
+    <!-- 尾焰外圈 -->
+    <path d="M 45 20 Q 30 64 45 108 L 55 100 Q 45 64 55 28 Z" fill="#FF4400" opacity="0.4" filter="url(#neonGlow)"/>
+    <path d="M 83 20 Q 98 64 83 108 L 73 100 Q 83 64 73 28 Z" fill="#FF4400" opacity="0.4" filter="url(#neonGlow)"/>
+    
+    <!-- 尾焰主体 -->
+    <path d="M 50 20 Q 40 64 50 108 L 60 100 Q 52 64 60 28 Z" fill="url(#thrusterGrad)" opacity="0.7" filter="url(#neonGlow)"/>
+    <path d="M 78 20 Q 88 64 78 108 L 68 100 Q 76 64 68 28 Z" fill="url(#thrusterGrad)" opacity="0.7" filter="url(#neonGlow)"/>
+    
+    <!-- 尾焰核心 -->
+    <path d="M 55 20 Q 48 64 55 108 L 62 102 Q 56 64 62 30 Z" fill="url(#thrusterCore)" opacity="0.9" filter="url(#neonGlow)"/>
+    <path d="M 73 20 Q 80 64 73 108 L 66 102 Q 72 64 66 30 Z" fill="url(#thrusterCore)" opacity="0.9" filter="url(#neonGlow)"/>
+    
+    <!-- 中心尾焰 -->
+    <path d="M 60 20 Q 56 64 60 108 L 64 104 Q 60 64 64 32 Z" fill="#FFFFFF" opacity="0.8"/>
+    <path d="M 68 20 Q 72 64 68 108 L 64 104 Q 68 64 64 32 Z" fill="#FFFFFF" opacity="0.8"/>
+    
+    <!-- 尾焰粒子 -->
+    <circle cx="40" cy="50" r="2" fill="#FFFF00" opacity="0.8"/>
+    <circle cx="35" cy="70" r="2" fill="#FFAA00" opacity="0.7"/>
+    <circle cx="42" cy="90" r="1.5" fill="#FF8800" opacity="0.6"/>
+    <circle cx="88" cy="55" r="2" fill="#FFFF00" opacity="0.8"/>
+    <circle cx="93" cy="75" r="2" fill="#FFAA00" opacity="0.7"/>
+    <circle cx="86" cy="95" r="1.5" fill="#FF8800" opacity="0.6"/>
+    
+    <!-- 能量火花 -->
+    <circle cx="30" cy="60" r="1" fill="#FFFFFF"/>
+    <circle cx="25" cy="80" r="1" fill="#00F0FF"/>
+    <circle cx="98" cy="65" r="1" fill="#FFFFFF"/>
+    <circle cx="103" cy="85" r="1" fill="#00F0FF"/>
+    
+    <!-- 喷射口光晕 -->
+    <ellipse cx="64" cy="20" rx="15" ry="5" fill="#FFFFFF" opacity="0.5" filter="url(#neonGlow)"/>
+    <ellipse cx="64" cy="20" rx="12" ry="4" fill="#00F0FF" opacity="0.7" filter="url(#neonGlow)"/>
+  </g>
+</svg>

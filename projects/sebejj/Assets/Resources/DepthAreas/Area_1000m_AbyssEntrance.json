@@ -1,0 +1,175 @@
+{
+  "areaId": "abyss_entrance_1000m",
+  "areaName": "深渊入口",
+  "areaNameEn": "Abyss Entrance",
+  "depth": 1000,
+  "sceneConfig": {
+    "visibility": 0.2,
+    "pressureDamage": 5,
+    "pressureDamageInterval": 1.0,
+    "ambientColor": "#050a15",
+    "fogDensity": 0.4,
+    "lightIntensity": 0.2,
+    "backgroundMusic": "bgm_abyss_horror",
+    "bioluminescence": true
+  },
+  "enemies": [
+    {
+      "enemyId": "mech_jellyfish_swarm",
+      "enemyName": "机械水母群",
+      "enemyNameEn": "Mech Jellyfish Swarm",
+      "spawnRate": 0.5,
+      "maxGroupSize": 12,
+      "minGroupSize": 6,
+      "aggroRange": 30.0,
+      "patrolRange": 50.0,
+      "stats": {
+        "health": 60,
+        "damage": 35,
+        "speed": 5.0,
+        "armor": 5,
+        "energyShield": 40
+      },
+      "behaviors": ["drift", "electric_discharge", "swarm", "phase_shift"],
+      "abilities": [
+        {
+          "abilityId": "electric_pulse",
+          "abilityName": "电击脉冲",
+          "damage": 45,
+          "range": 15.0,
+          "cooldown": 8.0,
+          "effect": "paralyze",
+          "duration": 3.0
+        },
+        {
+          "abilityId": "energy_drain",
+          "abilityName": "能量吸取",
+          "drainAmount": 25,
+          "range": 10.0,
+          "cooldown": 12.0
+        }
+      ],
+      "lootTable": ["jellyfish_tentacle", "energy_core", "bioluminescent_gel"]
+    },
+    {
+      "enemyId": "abyss_sentinel",
+      "enemyName": "深渊哨兵",
+      "enemyNameEn": "Abyss Sentinel",
+      "isElite": true,
+      "spawnRate": 0.1,
+      "maxCount": 2,
+      "stats": {
+        "health": 800,
+        "damage": 60,
+        "speed": 3.0,
+        "armor": 50,
+        "energyShield": 200
+      },
+      "behaviors": ["guard_position", "heavy_attack", "summon_minions"],
+      "lootTable": ["sentinel_core", "abyss_shard", "legendary_scrap"]
+    }
+  ],
+  "resources": [
+    {
+      "resourceId": "abyss_crystal",
+      "resourceName": "深渊水晶",
+      "resourceNameEn": "Abyss Crystal",
+      "spawnRate": 0.12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "respawnTime": 1200,
+      "value": 500,
+      "rarity": "epic",
+      "specialEffect": "energy_amplification"
+    },
+    {
+      "resourceId": "living_metal",
+      "resourceName": "活体金属",
+      "resourceNameEn": "Living Metal",
+      "spawnRate": 0.08,
+      "minQuantity": 1,
+      "maxQuantity": 2,
+      "respawnTime": 1800,
+      "value": 800,
+      "rarity": "legendary",
+      "specialEffect": "self_repair"
+    }
+  ],
+  "specialMechanics": {
+    "mechanicId": "boss_outpost",
+    "mechanicName": "Boss前哨战",
+    "description": "深渊入口是通往更深处的必经之路，玩家需要击败守护者才能继续前进",
+    "properties": {
+      "outpostStages": 3,
+      "minibossCount": 2,
+      "finalGuardian": true
+    },
+    "stages": [
+      {
+        "stageId": "stage_1_swarm",
+        "stageName": "水母狂潮",
+        "description": "抵御机械水母群的疯狂攻击",
+        "enemyType": "mech_jellyfish_swarm",
+        "enemyCount": 20,
+        "timeLimit": 180,
+        "reward": "stage_1_chest"
+      },
+      {
+        "stageId": "stage_2_sentinel",
+        "stageName": "哨兵拦截",
+        "description": "击败深渊哨兵的精英部队",
+        "enemyType": "abyss_sentinel",
+        "enemyCount": 2,
+        "additionalEnemies": {
+          "type": "mech_jellyfish_swarm",
+          "count": 10
+        },
+        "reward": "stage_2_chest"
+      },
+      {
+        "stageId": "stage_3_guardian",
+        "stageName": "深渊守护者",
+        "description": "与深渊守护者展开最终决战",
+        "bossId": "abyss_guardian_boss",
+        "bossName": "深渊守护者",
+        "bossHealth": 5000,
+        "bossPhases": 3,
+        "reward": "guardian_legendary_chest",
+        "unlockNextArea": true
+      }
+    ],
+    "environmentalHazards": [
+      {
+        "hazardId": "pressure_zone",
+        "hazardName": "高压区域",
+        "damageMultiplier": 2.0,
+        "movementPenalty": 0.5
+      },
+      {
+        "hazardId": "darkness_veil",
+        "hazardName": "黑暗帷幕",
+        "visibilityReduction": 0.5,
+        "fearEffect": true
+      }
+    ]
+  },
+  "unlockRequirements": {
+    "requiredDepth": 1000,
+    "requiredMechLevel": 10,
+    "requiredQuest": "quest_shipwreck_master",
+    "requiredItems": ["pressure_suit_mk3", "abyss_dive_permit", "guardian_key_fragment"],
+    "requiredPreviousArea": "shipwreck_zone_500m",
+    "requiredBossDefeated": "shipwreck_leviathan"
+  },
+  "checkpoint": {
+    "checkpointId": "abyss_safe_zone",
+    "position": { "x": 200, "y": -1000, "z": 100 },
+    "radius": 10.0,
+    "healRate": 10,
+    "oxygenRefill": true,
+    "ammoRestock": true,
+    "savePoint": true,
+    "specialFeature": "boss_teleport",
+    "preBossCheckpoint": true
+  }
+}

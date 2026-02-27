@@ -1,0 +1,70 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 机甲采集动画帧 -->
+  <defs>
+    <linearGradient id="mechBody3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#445566"/>
+      <stop offset="100%" style="stop-color:#223344"/>
+    </linearGradient>
+    <linearGradient id="cockpit3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FFFF"/>
+      <stop offset="100%" style="stop-color:#0088AA"/>
+    </linearGradient>
+    <linearGradient id="laserBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#00FFFF;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00FFFF;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 采矿激光束 -->
+  <rect x="54" y="29" width="20" height="4" fill="url(#laserBeam)" filter="url(#glow3)"/>
+  <circle cx="74" cy="31" r="3" fill="#00FFFF" opacity="0.6" filter="url(#glow3)"/>
+  
+  <!-- 火花粒子 -->
+  <circle cx="76" cy="28" r="1" fill="#FF8800"/>
+  <circle cx="78" cy="32" r="1" fill="#FFAA00"/>
+  <circle cx="75" cy="34" r="1" fill="#FFFFFF"/>
+  
+  <!-- 推进器火焰 - 短 -->
+  <ellipse cx="18" cy="52" rx="3" ry="5" fill="#00FFFF" opacity="0.6"/>
+  <ellipse cx="46" cy="52" rx="3" ry="5" fill="#00FFFF" opacity="0.6"/>
+  
+  <!-- 机械臂左 -->
+  <rect x="8" y="28" width="10" height="6" rx="2" fill="url(#mechBody3)"/>
+  <rect x="6" y="30" width="4" height="4" rx="1" fill="#556677"/>
+  
+  <!-- 机械臂右 - 伸展采矿 -->
+  <rect x="46" y="28" width="14" height="6" rx="2" fill="url(#mechBody3)"/>
+  <rect x="58" y="29" width="6" height="4" rx="1" fill="#FF8800"/>
+  <circle cx="62" cy="31" r="2" fill="#00FFFF" filter="url(#glow3)"/>
+  
+  <!-- 货舱 -->
+  <rect x="20" y="38" width="24" height="12" rx="2" fill="#334455"/>
+  <rect x="22" y="40" width="20" height="8" rx="1" fill="#223344"/>
+  
+  <!-- 主体框架 -->
+  <ellipse cx="32" cy="32" rx="18" ry="14" fill="url(#mechBody3)"/>
+  <ellipse cx="32" cy="32" rx="14" ry="10" fill="#2A3A4A"/>
+  
+  <!-- 驾驶舱 -->
+  <circle cx="32" cy="30" r="8" fill="url(#cockpit3)" filter="url(#glow3)"/>
+  <circle cx="32" cy="30" r="6" fill="#00FFFF" opacity="0.3"/>
+  
+  <!-- 传感器 - 采集模式闪烁 -->
+  <circle cx="22" cy="24" r="2" fill="#FF8800" filter="url(#glow3)"/>
+  <circle cx="42" cy="24" r="2" fill="#FF8800" filter="url(#glow3)"/>
+  
+  <!-- 推进器主体 -->
+  <rect x="14" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  <rect x="42" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  
+  <!-- 采集指示器 -->
+  <text x="32" y="18" font-family="monospace" font-size="6" fill="#FF8800" text-anchor="middle" filter="url(#glow3)">MINING</text>
+</svg>

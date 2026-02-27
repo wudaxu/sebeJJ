@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 200">
+  <defs>
+    <linearGradient id="rockGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2F4F4F"/>
+      <stop offset="50%" style="stop-color:#1a3a3a"/>
+      <stop offset="100%" style="stop-color:#0D1B2A"/>
+    </linearGradient>
+    
+    <linearGradient id="rockGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a4a4a"/>
+      <stop offset="50%" style="stop-color:#2F2F2F"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    
+    <linearGradient id="rockGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#36454F"/>
+      <stop offset="100%" style="stop-color:#1C2C35"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Rock Formation 1: Large Boulder -->
+  <g transform="translate(120,100)">
+    <!-- Main rock body -->
+    <path d="M-80 80 L-70 20 L-40 -30 L0 -50 L50 -40 L90 10 L100 80 Z" fill="url(#rockGrad1)" stroke="#1a3a3a" stroke-width="2"/>
+    
+    <!-- Rock detail lines -->
+    <path d="M-40 -30 L-20 20 L0 -50" fill="none" stroke="#0D1B2A" stroke-width="1" opacity="0.5"/>
+    
+    <path d="M-20 20 L30 40 L50 -40" fill="none" stroke="#0D1B2A" stroke-width="1" opacity="0.5"/>
+    
+    <path d="M30 40 L90 10" fill="none" stroke="#0D1B2A" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Highlights -->
+    <path d="M-60 30 L-50 0 L-30 -10" fill="none" stroke="#4a6a6a" stroke-width="2" opacity="0.4"/>
+    
+    <path d="M10 -35 L40 -25" fill="none" stroke="#4a6a6a" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Small cracks -->
+    <line x1="20" y1="10" x2="35" y2="5" stroke="#0D1B2A" stroke-width="1"/>
+    
+    <line x1="-50" y1="50" x2="-35" y2="45" stroke="#0D1B2A" stroke-width="1"/>
+    
+    <text x="0" y="100" text-anchor="middle" fill="#708090" font-family="monospace" font-size="10">ROCK 01</text>
+  </g>
+  
+  <!-- Rock Formation 2: Cluster of smaller rocks -->
+  <g transform="translate(360,100)">
+    <!-- Back rock -->
+    <path d="M-60 60 L-50 10 L-20 -20 L20 -15 L50 20 L55 60 Z" fill="url(#rockGrad2)" stroke="#2F2F2F" stroke-width="1.5"/>
+    
+    <!-- Middle rock -->
+    <path d="M-30 70 L-25 30 L0 5 L35 15 L45 50 L40 70 Z" fill="url(#rockGrad3)" stroke="#1C2C35" stroke-width="1.5"/>
+    
+    <!-- Front rock -->
+    <path d="M10 75 L15 40 L40 25 L70 35 L75 75 Z" fill="url(#rockGrad1)" stroke="#1a3a3a" stroke-width="1.5"/>
+    
+    <!-- Detail lines -->
+    <line x1="-30" y1="30" x2="0" y2="20" stroke="#0D1B2A" stroke-width="1" opacity="0.4"/>
+    
+    <line x1="20" y1="40" x2="40" y2="35" stroke="#0D1B2A" stroke-width="1" opacity="0.4"/>
+    
+    <line x1="-10" y1="50" x2="20" y2="45" stroke="#0D1B2A" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Small debris -->
+    <circle cx="-70" cy="65" r="5" fill="#2F4F4F"/>
+    
+    <circle cx="80" cy="70" r="4" fill="#2F4F4F"/>
+    
+    <circle cx="85" cy="60" r="3" fill="#1a3a3a"/>
+    
+    <text x="0" y="95" text-anchor="middle" fill="#708090" font-family="monospace" font-size="10">ROCK 02</text>
+  </g>
+  
+  <!-- Rock Formation 3: Jagged rock with mineral veins -->
+  <g transform="translate(600,100)">
+    <!-- Main jagged rock -->
+    <path d="M-70 80 L-60 30 L-40 -10 L-20 -40 L10 -30 L40 0 L60 40 L80 80 Z" fill="url(#rockGrad3)" stroke="#1C2C35" stroke-width="2"/>
+    
+    <!-- Mineral vein (copper) -->
+    <path d="M-40 -10 L-30 20 L-10 40 L10 35" fill="none" stroke="#B87333" stroke-width="3" opacity="0.7"/>
+    
+    <path d="M-35 5 L-25 15" fill="none" stroke="#E8B89D" stroke-width="1" opacity="0.8"/>
+    
+    <!-- Mineral vein (silver) -->
+    <path d="M20 -25 L35 10 L50 30" fill="none" stroke="#C0C0C0" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Rock texture lines -->
+    <line x1="-20" y1="-40" x2="-10" y2="10" stroke="#0D1B2A" stroke-width="1" opacity="0.5"/>
+    
+    <line x1="10" y1="-30" x2="25" y2="20" stroke="#0D1B2A" stroke-width="1" opacity="0.5"/>
+    
+    <line x1="40" y1="0" x2="55" y2="50" stroke="#0D1B2A" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Shadow base -->
+    <ellipse cx="5" cy="80" rx="75" ry="8" fill="#0A0A0F" opacity="0.5"/>
+    
+    <text x="0" y="100" text-anchor="middle" fill="#708090" font-family="monospace" font-size="10">ROCK 03</text>
+  </g>
+  
+  <!-- Rock Formation 4: Flat platform rock -->
+  <g transform="translate(840,100)">
+    <!-- Flat top rock -->
+    <path d="M-90 70 L-80 30 L-50 10 L0 5 L50 15 L80 35 L90 70 Z" fill="url(#rockGrad2)" stroke="#2F2F2F" stroke-width="2"/>
+    
+    <!-- Top surface detail -->
+    <path d="M-70 35 L-40 20 L0 18 L40 25 L70 40" fill="none" stroke="#4a4a4a" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Side texture -->
+    <line x1="-50" y1="10" x2="-45" y2="40" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
+    
+    <line x1="0" y1="5" x2="5" y2="38" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
+    
+    <line x1="50" y1="15" x2="55" y2="42" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Small rocks around base -->
+    <path d="M-100 75 L-95 60 L-85 65 L-80 75 Z" fill="#2F4F4F"/>
+    
+    <path d="M85 75 L90 55 L100 60 L105 75 Z" fill="#2F4F4F"/>
+    
+    <circle cx="-60" cy="72" r="4" fill="#1a3a3a"/>
+    
+    <circle cx="70" cy="70" r="3" fill="#1a3a3a"/>
+    
+    <text x="0" y="95" text-anchor="middle" fill="#708090" font-family="monospace" font-size="10">ROCK 04</text>
+  </g>
+</svg>

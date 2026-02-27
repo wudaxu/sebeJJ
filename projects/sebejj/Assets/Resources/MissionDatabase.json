@@ -1,0 +1,145 @@
+{
+    "missionDatabase": [
+        {
+            "missionId": "mission_001",
+            "title": "初探深海",
+            "description": "下潜到100米深度，收集3个深海水晶。这是你的第一个委托，小心氧气消耗。",
+            "type": "Collection",
+            "difficulty": 1,
+            "objectives": [
+                {
+                    "objectiveId": "obj_depth",
+                    "description": "到达100米深度",
+                    "targetId": "depth",
+                    "requiredAmount": 100
+                },
+                {
+                    "objectiveId": "obj_crystal",
+                    "description": "收集深海水晶",
+                    "targetId": "crystal_deep",
+                    "requiredAmount": 3
+                }
+            ],
+            "timeLimit": 0,
+            "minDepth": 0,
+            "maxDepth": 200,
+            "rewardCredits": 200,
+            "rewardItems": [],
+            "reputationReward": 10
+        },
+        {
+            "missionId": "mission_002",
+            "title": "矿物采集",
+            "description": "采集5个深海铁矿和3个铜矿。这些矿物对基地的建设至关重要。",
+            "type": "Collection",
+            "difficulty": 1,
+            "objectives": [
+                {
+                    "objectiveId": "obj_iron",
+                    "description": "收集深海铁矿",
+                    "targetId": "mineral_iron",
+                    "requiredAmount": 5
+                },
+                {
+                    "objectiveId": "obj_copper",
+                    "description": "收集铜矿",
+                    "targetId": "mineral_copper",
+                    "requiredAmount": 3
+                }
+            ],
+            "timeLimit": 0,
+            "minDepth": 50,
+            "maxDepth": 300,
+            "rewardCredits": 350,
+            "rewardItems": [],
+            "reputationReward": 15
+        },
+        {
+            "missionId": "mission_003",
+            "title": "深渊探索",
+            "description": "探索500米以下的危险区域，扫描并标记至少3个未知生物信号。",
+            "type": "Exploration",
+            "difficulty": 3,
+            "objectives": [
+                {
+                    "objectiveId": "obj_depth_500",
+                    "description": "到达500米深度",
+                    "targetId": "depth",
+                    "requiredAmount": 500
+                },
+                {
+                    "objectiveId": "obj_scan_bio",
+                    "description": "扫描生物信号",
+                    "targetId": "bio_signal",
+                    "requiredAmount": 3
+                }
+            ],
+            "timeLimit": 600,
+            "minDepth": 400,
+            "maxDepth": 700,
+            "rewardCredits": 800,
+            "rewardItems": [
+                {
+                    "itemId": "upgrade_scanner",
+                    "itemName": "高级扫描模块",
+                    "quantity": 1
+                }
+            ],
+            "reputationReward": 30
+        },
+        {
+            "missionId": "mission_004",
+            "title": "科技废料回收",
+            "description": "在深海中寻找并回收旧时代的科技废料。据说在600-800米区域有大量遗留。",
+            "type": "Collection",
+            "difficulty": 4,
+            "objectives": [
+                {
+                    "objectiveId": "obj_scrap",
+                    "description": "回收科技废料",
+                    "targetId": "tech_scrap",
+                    "requiredAmount": 8
+                }
+            ],
+            "timeLimit": 900,
+            "minDepth": 600,
+            "maxDepth": 900,
+            "rewardCredits": 1200,
+            "rewardItems": [],
+            "reputationReward": 40
+        },
+        {
+            "missionId": "mission_005",
+            "title": "极限挑战",
+            "description": "突破800米极限深度，寻找传说中的远古遗物。只有最优秀的机甲驾驶员才能完成。",
+            "type": "Exploration",
+            "difficulty": 5,
+            "objectives": [
+                {
+                    "objectiveId": "obj_depth_800",
+                    "description": "到达800米深度",
+                    "targetId": "depth",
+                    "requiredAmount": 800
+                },
+                {
+                    "objectiveId": "obj_artifact",
+                    "description": "找到远古遗物",
+                    "targetId": "rare_artifact",
+                    "requiredAmount": 1
+                }
+            ],
+            "timeLimit": 1200,
+            "minDepth": 700,
+            "maxDepth": 1000,
+            "rewardCredits": 3000,
+            "rewardItems": [
+                {
+                    "itemId": "mech_blueprint_rare",
+                    "itemName": "稀有机甲蓝图",
+                    "quantity": 1
+                }
+            ],
+            "reputationReward": 100
+        }
+    ]
+}

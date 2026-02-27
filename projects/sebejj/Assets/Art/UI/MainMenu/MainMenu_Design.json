@@ -1,0 +1,82 @@
+{
+  "name": "MainMenu_Design",
+  "type": "main_menu",
+  "style": "cyberpunk_dark",
+  "background": {
+    "type": "gradient",
+    "colors": ["#0A0A0F", "#0D1B2A", "#001a33"],
+    "direction": "vertical"
+  },
+  "elements": [
+    {
+      "name": "logo",
+      "type": "title",
+      "text": "SEBEJJ",
+      "subtext": "赛博机甲",
+      "position": { "x": 960, "y": 200 },
+      "font": "Rajdhani Bold",
+      "size": 72,
+      "color": "#00F0FF",
+      "glow": true,
+      "glow_color": "#00F0FF",
+      "glow_intensity": 2.0
+    },
+    {
+      "name": "tagline",
+      "type": "text",
+      "text": "深渊资源猎人",
+      "position": { "x": 960, "y": 280 },
+      "font": "ShareTechMono",
+      "size": 24,
+      "color": "#8B5CF6",
+      "tracking": 8
+    },
+    {
+      "name": "btn_start",
+      "type": "button",
+      "text": "开始任务",
+      "position": { "x": 960, "y": 450 },
+      "size": { "w": 280, "h": 60 },
+      "style": "neon_outline",
+      "color": "#00F0FF",
+      "hover_color": "#FFFFFF",
+      "glow_on_hover": true
+    },
+    {
+      "name": "btn_upgrade",
+      "type": "button",
+      "text": "机甲改装",
+      "position": { "x": 960, "y": 530 },
+      "size": { "w": 280, "h": 60 },
+      "style": "neon_outline",
+      "color": "#00F0FF",
+      "hover_color": "#FFFFFF"
+    },
+    {
+      "name": "btn_settings",
+      "type": "button",
+      "text": "系统设置",
+      "position": { "x": 960, "y": 610 },
+      "size": { "w": 280, "h": 60 },
+      "style": "neon_outline",
+      "color": "#00F0FF",
+      "hover_color": "#FFFFFF"
+    },
+    {
+      "name": "btn_exit",
+      "type": "button",
+      "text": "退出系统",
+      "position": { "x": 960, "y": 690 },
+      "size": { "w": 280, "h": 60 },
+      "style": "neon_outline",
+      "color": "#FF00A0",
+      "hover_color": "#FFFFFF"
+    }
+  ],
+  "ambient": {
+    "particles": "dust",
+    "scanlines": true,
+    "vignette": true,
+    "mecha_silhouette": true
+  }
+}

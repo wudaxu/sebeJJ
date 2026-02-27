@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="clawGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+    
+    <radialGradient id="tearGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#00F0FF"/>
+      <stop offset="70%" stop-color="#0080FF"/>
+      <stop offset="100%" stop-color="#0040FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 机械爪撕裂特效 -->
+  <!-- 用于机械爪攻击时的撕裂效果 -->
+  <!-- 动画建议: 爪痕从左到右划过，4-6帧 -->
+  
+  <g id="claw-tear">
+    <!-- 撕裂轨迹背景 -->
+    <path d="M 20 40 Q 64 35 108 45" fill="none" stroke="#0080FF" stroke-width="8" opacity="0.3" filter="url(#neonGlow)"/>
+    <path d="M 20 64 Q 64 59 108 69" fill="none" stroke="#0080FF" stroke-width="8" opacity="0.3" filter="url(#neonGlow)"/>
+    <path d="M 20 88 Q 64 83 108 93" fill="none" stroke="#0080FF" stroke-width="8" opacity="0.3" filter="url(#neonGlow)"/>
+    
+    <!-- 主爪痕 - 上 -->
+    <path d="M 15 35 L 40 38 L 70 36 L 100 42 L 115 45" fill="none" stroke="url(#clawGrad)" stroke-width="4" stroke-linecap="round" filter="url(#strongGlow)"/>
+    <path d="M 15 35 L 25 50 L 20 55" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 40 38 L 50 53 L 45 58" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 70 36 L 80 51 L 75 56" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 100 42 L 110 57 L 105 62" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    
+    <!-- 主爪痕 - 中 -->
+    <path d="M 15 60 L 45 63 L 75 61 L 105 67 L 115 70" fill="none" stroke="url(#clawGrad)" stroke-width="4" stroke-linecap="round" filter="url(#strongGlow)"/>
+    <path d="M 15 60 L 25 75 L 20 80" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 45 63 L 55 78 L 50 83" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 75 61 L 85 76 L 80 81" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 105 67 L 115 82 L 110 87" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    
+    <!-- 主爪痕 - 下 -->
+    <path d="M 15 85 L 40 88 L 70 86 L 100 92 L 115 95" fill="none" stroke="url(#clawGrad)" stroke-width="4" stroke-linecap="round" filter="url(#strongGlow)"/>
+    <path d="M 15 85 L 25 100 L 20 105" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 40 88 L 50 103 L 45 108" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 70 86 L 80 101 L 75 106" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 100 92 L 110 107 L 105 112" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    
+    <!-- 撕裂点高光 -->
+    <circle cx="25" cy="50" r="5" fill="url(#tearGrad)" filter="url(#neonGlow)"/>
+    <circle cx="55" cy="53" r="5" fill="url(#tearGrad)" filter="url(#neonGlow)"/>
+    <circle cx="85" cy="51" r="5" fill="url(#tearGrad)" filter="url(#neonGlow)"/>
+    <circle cx="115" cy="57" r="5" fill="url(#tearGrad)" filter="url(#neonGlow)"/>
+    
+    <!-- 能量碎片 -->
+    <circle cx="30" cy="45" r="2" fill="#FFFFFF"/>
+    <circle cx="60" cy="48" r="2" fill="#FFFFFF"/>
+    <circle cx="90" cy="46" r="2" fill="#FFFFFF"/>
+    <circle cx="120" cy="52" r="2" fill="#FFFFFF"/>
+    
+    <!-- 火花 -->
+    <path d="M 35 30 L 37 35 L 35 40 L 33 35 Z" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <path d="M 65 28 L 67 33 L 65 38 L 63 33 Z" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <path d="M 95 32 L 97 37 L 95 42 L 93 37 Z" fill="#00F0FF" filter="url(#neonGlow)"/>
+  </g>
+</svg>

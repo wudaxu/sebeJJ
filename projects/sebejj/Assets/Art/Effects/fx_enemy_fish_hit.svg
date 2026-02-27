@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="flashCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#FFFF88"/>
+      <stop offset="60%" stop-color="#FFAA00"/>
+      <stop offset="100%" stop-color="#FF4400" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 机械鱼受击闪烁特效 -->
+  <!-- 用于机械鱼被击中时的闪烁反馈 -->
+  <!-- 动画建议: 快速闪烁3-5次后消失，每帧切换显示/隐藏 -->
+  
+  <g id="enemy-fish-hit">
+    <!-- 受击主体轮廓 (白色高亮) -->
+    <ellipse cx="64" cy="64" rx="50" ry="30" fill="#FFFFFF" opacity="0.6" filter="url(#neonGlow)"/>
+    
+    <!-- 内部填充 -->
+    <ellipse cx="64" cy="64" rx="40" ry="24" fill="#FFFFAA" opacity="0.4" filter="url(#neonGlow)"/>
+    
+    <!-- 核心闪光 -->
+    <circle cx="64" cy="64" r="20" fill="url(#flashCenter)" filter="url(#neonGlow)"/>
+    
+    <!-- 鱼尾闪烁 -->
+    <path d="M 20 64 L 5 45 L 10 64 L 5 83 Z" fill="#FFFFFF" opacity="0.7" filter="url(#neonGlow)"/>
+    
+    <!-- 鱼鳍闪烁 -->
+    <path d="M 50 40 L 45 20 L 55 35 Z" fill="#FFFF88" opacity="0.6" filter="url(#neonGlow)"/>
+    <path d="M 50 88 L 45 108 L 55 93 Z" fill="#FFFF88" opacity="0.6" filter="url(#neonGlow)"/>
+    
+    <!-- 受击火花 -->
+    <circle cx="35" cy="50" r="4" fill="#FFFFFF"/>
+    <circle cx="85" cy="55" r="3" fill="#FFFFFF"/>
+    <circle cx="55" cy="75" r="3" fill="#FFFF00"/>
+    <circle cx="75" cy="70" r="2" fill="#FFFF00"/>
+    
+    <!-- 电路短路效果 -->
+    <path d="M 30 55 L 35 60 L 32 65" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.8" filter="url(#neonGlow)"/>
+    <path d="M 80 60 L 85 55 L 88 62" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.8" filter="url(#neonGlow)"/>
+    <path d="M 55 80 L 60 85 L 58 90" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- 小碎片 -->
+    <rect x="25" y="45" width="3" height="3" fill="#888888" transform="rotate(30 26.5 46.5)"/>
+    <rect x="95" y="70" width="3" height="3" fill="#888888" transform="rotate(45 96.5 71.5)"/>
+    <circle cx="40" cy="80" r="1.5" fill="#FFAA00"/>
+    <circle cx="90" cy="45" r="1.5" fill="#FFAA00"/>
+  </g>
+</svg>

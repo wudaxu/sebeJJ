@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 256" width="1792" height="256">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2332"/>
+      <stop offset="100%" style="stop-color:#0D1B2A"/>
+    </linearGradient>
+    
+    <linearGradient id="drillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C0C0C0"/>
+      <stop offset="50%" style="stop-color:#E8E8E8"/>
+      <stop offset="100%" style="stop-color:#C0C0C0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Frame 1: Drill Start -->
+  <g transform="translate(0,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <!-- Left Thruster -->
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <!-- Right Thruster -->
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <!-- Left Arm (normal) -->
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Right Arm (with drill) -->
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Drill - Position 1 -->
+    <g transform="translate(186, 170)">
+      <polygon points="0,0 15,-8 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="15,-8 30,-12 30,12 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="30,-12 45,-6 45,6 30,12" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <line x1="20" y1="-5" x2="20" y2="5" stroke="#666" stroke-width="1"/>
+      <line x1="35" y1="-8" x2="35" y2="8" stroke="#666" stroke-width="1"/>
+    </g>
+    
+    <!-- Body -->
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Core -->
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <!-- Cockpit -->
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <!-- Headlight -->
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 2: Drill Rotate 1 -->
+  <g transform="translate(256,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Drill - Position 2 (rotated) -->
+    <g transform="translate(186, 170) rotate(45)">
+      <polygon points="0,0 15,-8 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="15,-8 30,-12 30,12 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="30,-12 45,-6 45,6 30,12" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+    </g>
+    
+    <!-- Sparks -->
+    <circle cx="240" cy="180" r="2" fill="#FF6B00"/>
+    <circle cx="245" cy="175" r="1.5" fill="#FFD700"/>
+    
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 3: Drill Rotate 2 -->
+  <g transform="translate(512,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Drill - Position 3 -->
+    <g transform="translate(186, 170) rotate(90)">
+      <polygon points="0,0 15,-8 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="15,-8 30,-12 30,12 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="30,-12 45,-6 45,6 30,12" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+    </g>
+    
+    <!-- More Sparks -->
+    <circle cx="235" cy="185" r="2" fill="#FF6B00"/>
+    <circle cx="242" cy="178" r="1.5" fill="#FFD700"/>
+    <circle cx="248" cy="182" r="2" fill="#FF6B00"/>
+    <path d="M250 175 L252 170" stroke="#FFD700" stroke-width="1"/>
+    
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 4: Drill Rotate 3 -->
+  <g transform="translate(768,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Drill - Position 4 -->
+    <g transform="translate(186, 170) rotate(135)">
+      <polygon points="0,0 15,-8 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="15,-8 30,-12 30,12 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="30,-12 45,-6 45,6 30,12" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+    </g>
+    
+    <!-- Sparks -->
+    <circle cx="238" cy="180" r="2" fill="#FF6B00"/>
+    <circle cx="244" cy="173" r="1.5" fill="#FFD700"/>
+    
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 5: Drill Rotate 4 -->
+  <g transform="translate(1024,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Drill - Position 5 -->
+    <g transform="translate(186, 170) rotate(180)">
+      <polygon points="0,0 15,-8 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="15,-8 30,-12 30,12 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="30,-12 45,-6 45,6 30,12" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+    </g>
+    
+    <!-- Heavy Sparks -->
+    <circle cx="240" cy="178" r="3" fill="#FF6B00"/>
+    <circle cx="235" cy="185" r="2" fill="#FFD700"/>
+    <circle cx="246" cy="182" r="2" fill="#FF6B00"/>
+    <path d="M252 175 L256 168" stroke="#FFD700" stroke-width="2"/>
+    <path d="M248 188 L252 195" stroke="#FF6B00" stroke-width="1"/>
+    
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 6: Drill Rotate 5 -->
+  <g transform="translate(1280,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Drill - Position 6 -->
+    <g transform="translate(186, 170) rotate(225)">
+      <polygon points="0,0 15,-8 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="15,-8 30,-12 30,12 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="30,-12 45,-6 45,6 30,12" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+    </g>
+    
+    <!-- Sparks -->
+    <circle cx="242" cy="180" r="2" fill="#FF6B00"/>
+    <circle cx="238" cy="175" r="1.5" fill="#FFD700"/>
+    
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 7: Drill Rotate 6 -->
+  <g transform="translate(1536,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Drill - Position 7 -->
+    <g transform="translate(186, 170) rotate(270)">
+      <polygon points="0,0 15,-8 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="15,-8 30,-12 30,12 15,8" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+      <polygon points="30,-12 45,-6 45,6 30,12" fill="url(#drillGrad)" stroke="#888" stroke-width="1"/>
+    </g>
+    
+    <!-- Final Sparks Burst -->
+    <circle cx="240" cy="175" r="3" fill="#FF6B00"/>
+    <circle cx="235" cy="182" r="2" fill="#FFD700"/>
+    <circle cx="246" cy="180" r="2" fill="#FF6B00"/>
+    <path d="M250 170 L254 162" stroke="#FFD700" stroke-width="2"/>
+    <path d="M252 185 L258 192" stroke="#FF6B00" stroke-width="1"/>
+    
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+</svg>

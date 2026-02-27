@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <!-- 赛博朋克发光滤镜 -->
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- 渐变定义 -->
+    <linearGradient id="hullGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a3a4a"/>
+      <stop offset="50%" style="stop-color:#1a2a3a"/>
+      <stop offset="100%" style="stop-color:#0a1a2a"/>
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5a6a"/>
+      <stop offset="50%" style="stop-color:#3a4a5a"/>
+      <stop offset="100%" style="stop-color:#2a3a4a"/>
+    </linearGradient>
+    <radialGradient id="cockpitGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.8"/>
+      <stop offset="70%" style="stop-color:#0088aa;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#004466;stop-opacity:0.9"/>
+    </radialGradient>
+    <linearGradient id="thrusterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff"/>
+      <stop offset="50%" style="stop-color:#0088ff"/>
+      <stop offset="100%" style="stop-color:#0044aa"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景网格 -->
+  <g opacity="0.1">
+    <defs>
+      <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00ffff" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="500" fill="url(#grid)"/>
+  </g>
+  
+  <!-- 机甲主体 -->
+  <g transform="translate(200, 250)">
+    
+    <!-- 底部推进器组 -->
+    <g id="thrusters">
+      <!-- 左下推进器 -->
+      <g transform="translate(-60, 180)">
+        <path d="M-15,0 L15,0 L12,40 L-12,40 Z" fill="url(#metalGrad)" stroke="#556677" stroke-width="2"/>
+        <ellipse cx="0" cy="40" rx="12" ry="4" fill="#00ffff" filter="url(#strongGlow)" opacity="0.9"/>
+        <ellipse cx="0" cy="45" rx="8" ry="3" fill="#00ffff" opacity="0.6"/>
+        <ellipse cx="0" cy="50" rx="4" ry="2" fill="#00ffff" opacity="0.3"/>
+      </g>
+      <!-- 右下推进器 -->
+      <g transform="translate(60, 180)">
+        <path d="M-15,0 L15,0 L12,40 L-12,40 Z" fill="url(#metalGrad)" stroke="#556677" stroke-width="2"/>
+        <ellipse cx="0" cy="40" rx="12" ry="4" fill="#00ffff" filter="url(#strongGlow)" opacity="0.9"/>
+        <ellipse cx="0" cy="45" rx="8" ry="3" fill="#00ffff" opacity="0.6"/>
+        <ellipse cx="0" cy="50" rx="4" ry="2" fill="#00ffff" opacity="0.3"/>
+      </g>
+      <!-- 左辅助推进器 -->
+      <g transform="translate(-80, 140)">
+        <path d="M-10,0 L10,0 L8,25 L-8,25 Z" fill="url(#metalGrad)" stroke="#556677" stroke-width="1.5"/>
+        <ellipse cx="0" cy="25" rx="8" ry="3" fill="#00ffff" filter="url(#cyanGlow)" opacity="0.8"/>
+      </g>
+      <!-- 右辅助推进器 -->
+      <g transform="translate(80, 140)">
+        <path d="M-10,0 L10,0 L8,25 L-8,25 Z" fill="url(#metalGrad)" stroke="#556677" stroke-width="1.5"/>
+        <ellipse cx="0" cy="25" rx="8" ry="3" fill="#00ffff" filter="url(#cyanGlow)" opacity="0.8"/>
+      </g>
+    </g>
+    
+    <!-- 货舱模块 -->
+    <g id="cargo" transform="translate(0, 100)">
+      <rect x="-50" y="0" width="100" height="60" rx="5" fill="url(#hullGrad)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+      <!-- 货舱细节 -->
+      <rect x="-40" y="10" width="80" height="8" rx="2" fill="#1a2a3a" stroke="#445566" stroke-width="1"/>
+      <rect x="-40" y="25" width="80" height="8" rx="2" fill="#1a2a3a" stroke="#445566" stroke-width="1"/>
+      <rect x="-40" y="40" width="80" height="8" rx="2" fill="#1a2a3a" stroke="#445566" stroke-width="1"/>
+      <!-- 状态灯 -->
+      <circle cx="-55" cy="15" r="3" fill="#00ff88" filter="url(#cyanGlow)"/>
+      <circle cx="-55" cy="30" r="3" fill="#00ff88" filter="url(#cyanGlow)"/>
+      <circle cx="-55" cy="45" r="3" fill="#00ffff" filter="url(#cyanGlow)"/>
+      <!-- 货舱标识 -->
+      <text x="0" y="55" text-anchor="middle" fill="#00ffff" font-family="monospace" font-size="8" opacity="0.8">CARGO-01</text>
+    </g>
+    
+    <!-- 主体机身 -->
+    <g id="mainBody">
+      <!-- 主体外壳 -->
+      <path d="M-70,100 L-60,-20 L-40,-80 L0,-100 L40,-80 L60,-20 L70,100 L40,120 L0,125 L-40,120 Z" 
+            fill="url(#hullGrad)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+      
+      <!-- 装甲板分割线 -->
+      <path d="M-60,-20 L60,-20" stroke="#445566" stroke-width="1" fill="none"/>
+      <path d="M-40,-80 L40,-80" stroke="#445566" stroke-width="1" fill="none"/>
+      <path d="M0,-100 L0,125" stroke="#445566" stroke-width="1" fill="none" opacity="0.5"/>
+      
+      <!-- 侧面装甲细节 -->
+      <rect x="-65" y="20" width="20" height="40" rx="3" fill="#1a2a3a" stroke="#556677" stroke-width="1"/>
+      <rect x="45" y="20" width="20" height="40" rx="3" fill="#1a2a3a" stroke="#556677" stroke-width="1"/>
+      
+      <!-- 散热格栅 -->
+      <g transform="translate(-55, 30)">
+        <line x1="0" y1="0" x2="15" y2="0" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+        <line x1="0" y1="8" x2="15" y2="8" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+        <line x1="0" y1="16" x2="15" y2="16" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+        <line x1="0" y1="24" x2="15" y2="24" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+      </g>
+      <g transform="translate(40, 30)">
+        <line x1="0" y1="0" x2="15" y2="0" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+        <line x1="0" y1="8" x2="15" y2="8" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+        <line x1="0" y1="16" x2="15" y2="16" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+        <line x1="0" y1="24" x2="15" y2="24" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+      </g>
+    </g>
+    
+    <!-- 驾驶舱 -->
+    <g id="cockpit" transform="translate(0, -40)">
+      <!-- 驾驶舱外壳 -->
+      <circle cx="0" cy="0" r="45" fill="url(#hullGrad)" stroke="#00ffff" stroke-width="3" filter="url(#cyanGlow)"/>
+      <!-- 玻璃罩 -->
+      <circle cx="0" cy="0" r="35" fill="url(#cockpitGrad)" stroke="#00ffff" stroke-width="1"/>
+      <!-- 内部结构剪影 -->
+      <path d="M-15,-10 L-5,5 L5,5 L15,-10 L10,20 L-10,20 Z" fill="#0a1a2a" opacity="0.7"/>
+      <!-- 高光反射 -->
+      <ellipse cx="-12" cy="-12" rx="8" ry="5" fill="#ffffff" opacity="0.4" transform="rotate(-45 -12 -12)"/>
+      <!-- 边框发光 -->
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.5" filter="url(#strongGlow)"/>
+    </g>
+    
+    <!-- 传感器阵列 -->
+    <g id="sensors">
+      <!-- 顶部主传感器 -->
+      <g transform="translate(0, -100)">
+        <rect x="-8" y="-25" width="16" height="25" rx="2" fill="url(#metalGrad)" stroke="#556677" stroke-width="1"/>
+        <circle cx="0" cy="-25" r="6" fill="#00ff88" filter="url(#cyanGlow)"/>
+        <!-- 扫描线效果 -->
+        <line x1="0" y1="-25" x2="0" y2="-60" stroke="#00ff88" stroke-width="1" opacity="0.5" stroke-dasharray="5,5"/>
+      </g>
+      <!-- 左侧传感器 -->
+      <g transform="translate(-70, -30)">
+        <rect x="-5" y="-15" width="10" height="20" rx="2" fill="url(#metalGrad)" stroke="#556677" stroke-width="1"/>
+        <circle cx="0" cy="-15" r="4" fill="#00ffff" filter="url(#cyanGlow)"/>
+      </g>
+      <!-- 右侧传感器 -->
+      <g transform="translate(70, -30)">
+        <rect x="-5" y="-15" width="10" height="20" rx="2" fill="url(#metalGrad)" stroke="#556677" stroke-width="1"/>
+        <circle cx="0" cy="-15" r="4" fill="#00ffff" filter="url(#cyanGlow)"/>
+      </g>
+    </g>
+    
+    <!-- 机械臂 -->
+    <g id="arms">
+      <!-- 左臂 -->
+      <g transform="translate(-90, 0)">
+        <!-- 肩关节 -->
+        <circle cx="0" cy="0" r="12" fill="url(#metalGrad)" stroke="#556677" stroke-width="2"/>
+        <!-- 上臂 -->
+        <rect x="-8" y="0" width="16" height="50" rx="4" fill="url(#hullGrad)" stroke="#445566" stroke-width="1"/>
+        <!-- 肘关节 -->
+        <circle cx="0" cy="50" r="10" fill="url(#metalGrad)" stroke="#556677" stroke-width="2"/>
+        <!-- 前臂 -->
+        <rect x="-6" y="50" width="12" height="40" rx="3" fill="url(#hullGrad)" stroke="#445566" stroke-width="1"/>
+        <!-- 采集器 -->
+        <g transform="translate(0, 90)">
+          <path d="M-15,0 L-8,25 L8,25 L15,0 Z" fill="url(#metalGrad)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+          <rect x="-12" y="5" width="24" height="15" fill="#1a2a3a"/>
+          <circle cx="0" cy="12" r="5" fill="#ff0044" opacity="0.8"/>
+          <!-- 爪子 -->
+          <path d="M-15,25 L-20,40 L-10,35 Z" fill="#3a4a5a" stroke="#556677" stroke-width="1"/>
+          <path d="M15,25 L20,40 L10,35 Z" fill="#3a4a5a" stroke="#556677" stroke-width="1"/>
+        </g>
+      </g>
+      
+      <!-- 右臂 -->
+      <g transform="translate(90, 0)">
+        <!-- 肩关节 -->
+        <circle cx="0" cy="0" r="12" fill="url(#metalGrad)" stroke="#556677" stroke-width="2"/>
+        <!-- 上臂 -->
+        <rect x="-8" y="0" width="16" height="50" rx="4" fill="url(#hullGrad)" stroke="#445566" stroke-width="1"/>
+        <!-- 肘关节 -->
+        <circle cx="0" cy="50" r="10" fill="url(#metalGrad)" stroke="#556677" stroke-width="2"/>
+        <!-- 前臂 -->
+        <rect x="-6" y="50" width="12" height="40" rx="3" fill="url(#hullGrad)" stroke="#445566" stroke-width="1"/>
+        <!-- 采矿激光 -->
+        <g transform="translate(0, 90)">
+          <rect x="-10" y="0" width="20" height="35" rx="3" fill="url(#metalGrad)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+          <rect x="-6" y="5" width="12" height="20" fill="#1a2a3a"/>
+          <!-- 激光发射口 -->
+          <ellipse cx="0" cy="35" rx="8" ry="3" fill="#ff0044" filter="url(#strongGlow)"/>
+          <!-- 能量指示 -->
+          <rect x="-4" y="8" width="8" height="3" fill="#ff0044" opacity="0.8"/>
+          <rect x="-4" y="14" width="8" height="3" fill="#ff8800" opacity="0.8"/>
+          <rect x="-4" y="20" width="8" height="3" fill="#00ff88" opacity="0.8"/>
+        </g>
+      </g>
+    </g>
+    
+    <!-- 装饰线条和文字 -->
+    <g id="decals" opacity="0.7">
+      <!-- 型号标识 -->
+      <text x="0" y="-65" text-anchor="middle" fill="#00ffff" font-family="monospace" font-size="10" font-weight="bold" filter="url(#cyanGlow)">MK.I</text>
+      <!-- 装饰线条 -->
+      <line x1="-30" y1="85" x2="30" y2="85" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+      <line x1="-25" y1="90" x2="25" y2="90" stroke="#00ffff" stroke-width="0.5" opacity="0.3"/>
+      <!-- 警告标识 -->
+      <text x="-50" y="-55" text-anchor="middle" fill="#ff8800" font-family="monospace" font-size="6" opacity="0.6">⚠ DEEP</text>
+      <text x="50" y="-55" text-anchor="middle" fill="#ff8800" font-family="monospace" font-size="6" opacity="0.6">SEA ⚠</text>
+    </g>
+    
+    <!-- 全息扫描效果 -->
+    <g id="hologram" opacity="0.3">
+      <line x1="-100" y1="-120" x2="100" y2="-120" stroke="#00ffff" stroke-width="0.5" stroke-dasharray="2,4">
+        <animate attributeName="y1" values="-120;180;-120" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-120;180;-120" dur="4s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+  
+  <!-- 标题 -->
+  <text x="200" y="480" text-anchor="middle" fill="#00ffff" font-family="monospace" font-size="14" font-weight="bold" filter="url(#cyanGlow)">SEBEJJ MK.I 深海探索机甲</text>
+</svg>

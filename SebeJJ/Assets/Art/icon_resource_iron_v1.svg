@@ -1,0 +1,29 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 铁矿图标 -->
+  <defs>
+    <linearGradient id="ironGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#99AABB"/>
+      <stop offset="50%" style="stop-color:#667788"/>
+      <stop offset="100%" style="stop-color:#445566"/>
+    </linearGradient>
+    <linearGradient id="ironShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#BBCCDD"/>
+      <stop offset="100%" style="stop-color:#99AABB"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 矿石主体 -->
+  <path d="M8 8 L16 6 L24 10 L26 18 L20 24 L12 26 L6 20 L4 12 Z" fill="url(#ironGrad)" stroke="#334455" stroke-width="1"/>
+  
+  <!-- 高光面 -->
+  <path d="M10 11 L16 9 L21 12 L22 17 L18 21 L13 22 L9 18 L8 13 Z" fill="url(#ironShine)" opacity="0.7"/>
+  
+  <!-- 矿石纹理 -->
+  <polygon points="12,14 14,12 16,14 14,16" fill="#445566" opacity="0.4"/>
+  <polygon points="18,16 20,14 22,16 20,18" fill="#445566" opacity="0.4"/>
+  <polygon points="14,20 16,18 18,20 16,22" fill="#445566" opacity="0.4"/>
+  
+  <!-- 标签 -->
+  <rect x="18" y="4" width="10" height="8" rx="1" fill="#001133" stroke="#99AABB" stroke-width="0.5"/>
+  <text x="23" y="10" font-family="monospace" font-size="5" fill="#99AABB" text-anchor="middle">Fe</text>
+</svg>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SebeJJ 赛博机甲 - 技术架构可视化</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #eaeaea;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e94560;
+        }
+        
+        .header h1 {
+            color: #e94560;
+            font-size: 2.5em;
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+        
+        .header p {
+            color: #a0a0a0;
+            margin-top: 10px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .nav-tab {
+            padding: 12px 24px;
+            background: rgba(233, 69, 96, 0.2);
+            border: 1px solid #e94560;
+            color: #eaeaea;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .nav-tab:hover {
+            background: rgba(233, 69, 96, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .nav-tab.active {
+            background: #e94560;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
+        }
+        
+        .content {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .diagram-container {
+            display: none;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        
+        .diagram-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .diagram-title {
+            color: #e94560;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        
+        .diagram-description {
+            color: #a0a0a0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .mermaid {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .legend {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .legend h3 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            color: #ccc;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            color: #e94560;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #a0a0a0;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid rgba(233, 69, 96, 0.3);
+            margin-top: 40px;
+        }
+        
+        /* Mermaid自定义样式 */
+        .mermaid .node rect {
+            fill: rgba(233, 69, 96, 0.2) !important;
+            stroke: #e94560 !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .node text {
+            fill: #eaeaea !important;
+        }
+        
+        .mermaid .edgeLabel {
+            background: rgba(0, 0, 0, 0.5) !important;
+            color: #eaeaea !important;
+        }
+        
+        .mermaid .cluster rect {
+            fill: rgba(0, 0, 0, 0.3) !important;
+            stroke: rgba(233, 69, 96, 0.5) !important;
+        }
+        
+        .mermaid .cluster text {
+            fill: #e94560 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔱 SebeJJ 赛博机甲</h1>
+        <p>技术架构可视化 | 架构可视化工程师 | 2026-02-27</p>
+    </div>
+    
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showTab('overview')">📊 系统概览</button>
+        <button class="nav-tab" onclick="showTab('core')">🔧 核心系统</button>
+        <button class="nav-tab" onclick="showTab('combat')">⚔️ 战斗系统</button>
+        <button class="nav-tab" onclick="showTab('ai')">🤖 AI系统</button>
+        <button class="nav-tab" onclick="showTab('mission')">📋 委托系统</button>
+        <button class="nav-tab" onclick="showTab('dataflow')">🌊 数据流</button>
+        <button class="nav-tab" onclick="showTab('class')">📦 类关系</button>
+    </div>
+    
+    <div class="content">
+        <!-- 系统概览 -->
+        <div id="overview" class="diagram-container active">
+            <h2 class="diagram-title">📊 项目统计概览</h2>
+            <div class="diagram-description">
+                SebeJJ赛博机甲项目是一个深海资源猎人题材的Roguelite游戏，包含完整的战斗、AI、委托和存档系统。
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">132</div>
+                    <div class="stat-label">C#脚本文件</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">系统模块</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">委托任务</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">AI状态</div>
+                </div>
+            </div>
+            
+            <pre class="mermaid">
+graph TB
+    subgraph Core["🎮 核心层"]
+        GM[GameManager]
+        SM[SaveManager]
+        UM[UIManager]
+    end
+
+    subgraph Systems["📋 系统层"]
+        MM[MissionManager]
+        RM[ResourceManager]
+        DM[DiveManager]
+    end
+
+    subgraph Combat["⚔️ 战斗系统"]
+        CM[CombatManager]
+        DC[DamageCalculator]
+        CF[CombatFeedback]
+    end
+
+    subgraph AI["🤖 AI系统"]
+        ASM[AIStateMachine]
+        AP[AIPerception]
+        ASP[AStarPathfinding]
+    end
+
+    subgraph Player["👤 玩家系统"]
+        PMC[MechController]
+        PMM[MechMovement]
+        PC[MechCollector]
+    end
+
+    GM --> SM
+    GM --> MM
+    GM --> RM
+    GM --> DM
+    GM --> UM
+    DM --> CM
+    CM --> DC
+    CM --> CF
+    ASM --> AP
+    ASM --> ASP
+            </pre>
+        </div>
+        
+        <!-- 核心系统 -->
+        <div id="core" class="diagram-container">
+            <h2 class="diagram-title">🔧 核心系统架构</h2>
+            <div class="diagram-description">
+                核心层包含游戏的基础管理器，采用单例模式设计，负责协调所有子系统的生命周期。
+            </div>
+            
+            <pre class="mermaid">
+graph TB
+    subgraph CoreLayer["核心层 Core"]
+        GM[GameManager<br/>游戏管理器]
+        SM[SaveManager<br/>存档管理器]
+        EM[EventSystem<br/>事件系统]
+        SL[ServiceLocator<br/>服务定位器]
+        CM2[ConfigManager<br/>配置管理器]
+    end
+
+    subgraph SystemLayer["系统层 Systems"]
+        MM[MissionManager<br/>委托管理器]
+        RM[ResourceManager<br/>资源管理器]
+        DM[DiveManager<br/>下潜管理器]
+    end
+
+    subgraph UILayer["UI层 UI"]
+        UM[UIManager<br/>UI管理器]
+    end
+
+    subgraph DataLayer["数据层 Data"]
+        GD[GameData<br/>游戏数据]
+        SD[SaveData<br/>存档数据]
+    end
+
+    GM -->|管理| SM
+    GM -->|管理| MM
+    GM -->|管理| RM
+    GM -->|管理| DM
+    GM -->|管理| UM
+    
+    SM -.->|保存/加载| SD
+    SM -.->|应用| GD
+    
+    MM -.->|事件| EM
+    RM -.->|事件| EM
+    DM -.->|事件| EM
+    
+    CM2 -->|配置| GM
+    SL -->|服务| GM
+            </pre>
+            
+            <div class="legend">
+                <h3>核心类说明</h3>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #e94560;"></div>
+                    <span>GameManager - 游戏全局管理器，单例模式，协调所有子系统</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #0f3460;"></div>
+                    <span>SaveManager - 存档管理器，支持原子性写入、备份恢复、版本兼容</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #533483;"></div>
+                    <span>UIManager - UI管理器，面板栈管理，层级控制</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 战斗系统 -->
+        <div id="combat" class="diagram-container">
+            <h2 class="diagram-title">⚔️ 战斗系统架构</h2>
+            <div class="diagram-description">
+                战斗系统采用分层设计，包含伤害计算、防御判定、武器系统和战斗反馈四大模块。
+            </div>
+            
+            <pre class="mermaid">
+graph TB
+    subgraph CombatFlow["战斗流程"]
+        Attack[攻击发起] --> DamageCalc[伤害计算]
+        DamageCalc --> Defense[防御判定]
+        Defense --> Apply[伤害应用]
+        Apply --> Feedback[反馈触发]
+    end
+
+    subgraph DamageSystem["伤害系统 DM"]
+        DI[DamageInfo<br/>伤害信息]
+        DC[DamageCalculator<br/>伤害计算器]
+        DT[DamageType<br/>伤害类型]
+        TT[TargetType<br/>目标类型]
+    end
+
+    subgraph DefenseSystem["防御系统 DF"]
+        AS[ArmorSystem<br/>护甲系统]
+        SS[ShieldSystem<br/>护盾系统]
+        DS[DefenseSystem<br/>防御系统]
+    end
+
+    subgraph FeedbackSystem["反馈系统 FB"]
+        CF[CombatFeedback<br/>战斗反馈]
+        HN[HitReaction<br/>受击反应]
+        KF[KillFeedback<br/>击杀反馈]
+        DN[DamageNumber<br/>伤害数字]
+    end
+
+    subgraph WeaponSystem["武器系统 WP"]
+        WB[WeaponBase<br/>武器基类]
+        MW[MeleeWeapon<br/>近战武器]
+        RW[RangedWeapon<br/>远程武器]
+        WC[WeaponCombo<br/>连击系统]
+    end
+
+    WB -->|创建| DI
+    DI --> DC
+    DC -->|计算| AS
+    DC -->|计算| SS
+    AS --> Apply
+    SS --> Apply
+    Apply --> CF
+    CF --> HN
+    CF --> KF
+    CF --> DN
+    MW -->|近战| DI
+    RW -->|远程| DI
+    WC --> MW
+            </pre>
+            
+            <div class="legend">
+                <h3>伤害类型克制表</h3>
+                <div class="legend-item">
+                    <span>🔴 动能(Kinetic) - 对装甲150%，对护盾75%</span>
+                </div>
+                <div class="legend-item">
+                    <span>🔵 能量(Energy) - 对装甲75%，对护盾150%</span>
+                </div>
+                <div class="legend-item">
+                    <span>💥 爆炸(Explosive) - 对装甲125%，对护盾125%</span>
+                </div>
+                <div class="legend-item">
+                    <span>☣️ 腐蚀(Corrosive) - 对生物150%</span>
+                </div>
+                <div class="legend-item">
+                    <span>⚪ 真实(True) - 无视防御</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI系统 -->
+        <div id="ai" class="diagram-container">
+            <h2 class="diagram-title">🤖 AI系统架构</h2>
+            <div class="diagram-description">
+                AI系统采用状态机模式，包含感知系统、寻路系统和状态管理三大核心模块。
+            </div>
+            
+            <pre class="mermaid">
+graph TB
+    subgraph AIFramework["AI框架"]
+        ASM[AIStateMachine<br/>状态机核心]
+        IAS[IAIState<br/>状态接口]
+        ASB[AIStateBase<br/>状态基类]
+    end
+
+    subgraph AIStates["AI状态"]
+        Idle[IdleState<br/>待机]
+        Patrol[PatrolState<br/>巡逻]
+        Alert[AlertState<br/>警戒]
+        Chase[ChaseState<br/>追击]
+        Attack[AttackState<br/>攻击]
+        Flee[FleeState<br/>逃跑]
+        Stun[StunState<br/>眩晕]
+        Dead[DeadState<br/>死亡]
+    end
+
+    subgraph Perception["感知系统 AI-004"]
+        AP[AIPerception<br/>感知系统]
+        PT[PerceptionTarget<br/>感知目标]
+    end
+
+    subgraph Pathfinding["寻路系统 AI-003"]
+        ASP[AStarPathfinding<br/>A*寻路]
+        PF[PathFollower<br/>路径跟随]
+    end
+
+    subgraph EnemyAI["敌人AI实现"]
+        EB[EnemyBase<br/>敌人基类]
+        MFA[MechFishAI<br/>机械鱼AI]
+        MCA[MechCrabAI<br/>机械蟹AI]
+        MJA[MechJellyfishAI<br/>机械水母AI]
+    end
+
+    ASM -->|管理| IAS
+    IAS -->|实现| ASB
+    ASB -->|派生| Idle
+    ASB -->|派生| Patrol
+    ASB -->|派生| Alert
+    ASB -->|派生| Chase
+    ASB -->|派生| Attack
+    ASB -->|派生| Flee
+    ASB -->|派生| Stun
+    ASB -->|派生| Dead
+    
+    AP -->|检测| PT
+    AP -.->|通知| ASM
+    
+    ASP -->|生成路径| PF
+    PF -.->|移动| ASM
+    
+    EB -->|包含| ASM
+    EB -->|包含| AP
+    EB -->|使用| ASP
+    MFA -->|继承| EB
+    MCA -->|继承| EB
+    MJA -->|继承| EB
+            </pre>
+            
+            <div class="legend">
+                <h3>感知类型</h3>
+                <div class="legend-item">
+                    <span>👁️ 视觉(Visual) - 视野范围检测，视线判定</span>
+                </div>
+                <div class="legend-item">
+                    <span>👂 听觉(Auditory) - 噪音检测，范围感知</span>
+                </div>
+                <div class="legend-item">
+                    <span>🧠 记忆(Memory) - 目标丢失后的记忆追踪</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 委托系统 -->
+        <div id="mission" class="diagram-container">
+            <h2 class="diagram-title">📋 委托系统架构</h2>
+            <div class="diagram-description">
+                委托系统采用数据驱动设计，支持多种委托类型和动态生成。
+            </div>
+            
+            <pre class="mermaid"
+graph TB
+    subgraph MissionCore["委托核心"]
+        MM[MissionManager<br/>委托管理器]
+        MD[MissionData<br/>委托数据SO]
+        M[Mission<br/>运行时委托]
+    end
+
+    subgraph MissionTypes["委托类型"]
+        MT[MissionType<br/>类型枚举]
+        Collection[Collection<br/>采集]
+        Exploration[Exploration<br/>探索]
+        Scan[Scan<br/>扫描]
+        Delivery[Delivery<br/>运送]
+        Elimination[Elimination<br/>清除]
+    end
+
+    subgraph MissionStatus["委托状态"]
+        MS[MissionStatus<br/>状态枚举]
+        Available[Available<br/>可用]
+        Active[Active<br/>进行中]
+        Completed[Completed<br/>已完成]
+        Failed[Failed<br/>失败]
+    end
+
+    subgraph Objectives["目标系统"]
+        MO[MissionObjective<br/>委托目标]
+        RI[RewardItem<br/>奖励物品]
+        MT2[MissionTracker<br/>委托追踪]
+    end
+
+    MM -->|管理| M
+    MD -->|实例化| M
+    MM -->|读取| MD
+    
+    MM -->|使用| MT
+    MT --> Collection
+    MT --> Exploration
+    MT --> Scan
+    MT --> Delivery
+    MT --> Elimination
+    
+    M -->|状态| MS
+    MS --> Available
+    MS --> Active
+    MS --> Completed
+    MS --> Failed
+    
+    M -->|包含| MO
+    M -->|包含| RI
+    MM -->|使用| MT2
+            </pre>
+            
+            <div class="legend">
+                <h3>委托事件流</h3>
+                <div class="legend-item">
+                    <span>📥 OnMissionAccepted - 委托被接取时触发</span>
+                </div>
+                <div class="legend-item">
+                    <span>✅ OnMissionCompleted - 委托完成时触发</span>
+                </div>
+                <div class="legend-item">
+                    <span>❌ OnMissionFailed - 委托失败时触发</span>
+                </div>
+                <div class="legend-item">
+                    <span>📝 OnMissionUpdated - 委托进度更新时触发</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 数据流 -->
+        <div id="dataflow" class="diagram-container">
+            <h2 class="diagram-title">🌊 数据流图</h2>
+            <div class="diagram-description">
+                展示游戏中关键数据流转过程，包括战斗、委托和存档数据流。
+            </div>
+            
+            <pre class="mermaid">
+sequenceDiagram
+    participant P as 玩家
+    participant W as 武器系统
+    participant D as 伤害计算
+    participant T as 目标
+    participant F as 反馈系统
+    participant U as UI系统
+
+    P->>W: 发起攻击
+    W->>W: 命中检测
+    W->>D: 创建DamageInfo
+    D->>D: 计算类型克制
+    D->>T: 查询防御属性
+    T-->>D: 返回护甲/护盾
+    D->>D: 应用防御减免
+    D->>T: 应用最终伤害
+    T->>F: 触发受击反馈
+    F->>U: 显示伤害数字
+            </pre>
+            
+            <pre class="mermaid">
+sequenceDiagram
+    participant P as 玩家
+    participant MM as MissionManager
+    participant M as Mission
+    participant RM as ResourceManager
+    participant SM as SaveManager
+
+    P->>MM: AcceptMission
+    MM->>M: 创建运行时实例
+    MM->>SM: 触发存档
+    
+    loop 委托进行中
+        P->>RM: 采集资源
+        RM->>MM: 更新进度
+        MM->>MM: CheckCompletion
+    end
+    
+    MM->>RM: 发放奖励
+    MM->>SM: 触发存档
+            </pre>
+        </div>
+        
+        <!-- 类关系 -->
+        <div id="class" class="diagram-container">
+            <h2 class="diagram-title">📦 类继承关系</h2>
+            <div class="diagram-description">
+                展示项目中主要类的继承关系和接口实现。
+            </div>
+            
+            <pre class="mermaid">
+graph TB
+    subgraph Unity["Unity基类"]
+        MB[MonoBehaviour]
+        SO[ScriptableObject]
+    end
+
+    subgraph Core["核心类"]
+        GM[GameManager]
+        SM[SaveManager]
+        UM[UIManager]
+    end
+
+    subgraph Combat["战斗类"]
+        WB[WeaponBase]
+        MW[MeleeWeapon]
+        RW[RangedWeapon]
+        EB[EnemyBase]
+    end
+
+    subgraph AI["AI类"]
+        ASM[AIStateMachine]
+        ASB[AIStateBase]
+        IAS[IAIState<br/>接口]
+    end
+
+    subgraph Data["数据类"]
+        MD[MissionData]
+        WD[WeaponData]
+    end
+
+    subgraph Enemy["敌人实现"]
+        MFA[MechFishAI]
+        MCA[MechCrabAI]
+        MJA[MechJellyfishAI]
+        ICB[IronClawBeastBoss]
+    end
+
+    MB --> GM
+    MB --> SM
+    MB --> UM
+    MB --> WB
+    MB --> EB
+    MB --> ASM
+    
+    SO --> MD
+    SO --> WD
+    
+    WB --> MW
+    WB --> RW
+    
+    IAS -->|实现| ASB
+    
+    EB --> MFA
+    EB --> MCA
+    EB --> MJA
+    EB --> ICB
+            </pre>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>SebeJJ 赛博机甲 - 技术架构可视化</p>
+        <p>生成时间: 2026-02-27 | 架构可视化工程师</p>
+    </div>
+    
+    <script>
+        // 初始化Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            sequence: {
+                useMaxWidth: true,
+                diagramMarginX: 50,
+                diagramMarginY: 10
+            }
+        });
+        
+        // Tab切换功能
+        function showTab(tabId) {
+            // 隐藏所有容器
+            const containers = document.querySelectorAll('.diagram-container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            // 移除所有tab的active类
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的容器
+            document.getElementById(tabId).classList.add('active');
+            
+            // 添加active类到点击的tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <!-- 发光滤镜 -->
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 渐变定义 -->
+    <linearGradient id="healthGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff0044"/>
+      <stop offset="50%" style="stop-color:#ff2244"/>
+      <stop offset="100%" style="stop-color:#ff4466"/>
+    </linearGradient>
+    <linearGradient id="energyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0088ff"/>
+      <stop offset="50%" style="stop-color:#00aaff"/>
+      <stop offset="100%" style="stop-color:#00ccff"/>
+    </linearGradient>
+    <linearGradient id="oxygenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00aa44"/>
+      <stop offset="50%" style="stop-color:#00cc66"/>
+      <stop offset="100%" style="stop-color:#00ff88"/>
+    </linearGradient>
+    
+    <!-- 扫描线图案 -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000000" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- 半透明黑色背景（模拟游戏画面） -->
+  <rect width="1920" height="1080" fill="#001122"/>
+  
+  <!-- ==================== 左上角：状态条区域 ==================== -->
+  <g id="statusBars" transform="translate(40, 40)">
+    <!-- 外框 -->
+    <rect x="-10" y="-10" width="320" height="140" rx="5" fill="rgba(0,17,34,0.8)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+    
+    <!-- 标题 -->
+    <text x="0" y="0" fill="#00ffff" font-family="monospace" font-size="12" font-weight="bold">SYSTEM STATUS</text>
+    
+    <!-- 生命值条 -->
+    <g transform="translate(0, 20)">
+      <!-- 标签 -->
+      <text x="0" y="12" fill="#ff4466" font-family="monospace" font-size="11" font-weight="bold">HP</text>
+      <!-- 背景条 -->
+      <rect x="30" y="2" width="250" height="16" rx="2" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <!-- 填充条 -->
+      <rect x="32" y="4" width="196" height="12" rx="1" fill="url(#healthGrad)" filter="url(#cyanGlow)"/>
+      <!-- 数值 -->
+      <text x="290" y="14" fill="#ffffff" font-family="monospace" font-size="10" text-anchor="end">78/100</text>
+      <!-- 刻度线 -->
+      <g opacity="0.3">
+        <line x1="80" y1="4" x2="80" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="130" y1="4" x2="130" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="180" y1="4" x2="180" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="230" y1="4" x2="230" y2="16" stroke="#ffffff" stroke-width="1"/>
+      </g>
+    </g>
+    
+    <!-- 能量条 -->
+    <g transform="translate(0, 45)">
+      <text x="0" y="12" fill="#00ccff" font-family="monospace" font-size="11" font-weight="bold">EN</text>
+      <rect x="30" y="2" width="250" height="16" rx="2" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="32" y="4" width="225" height="12" rx="1" fill="url(#energyGrad)" filter="url(#cyanGlow)"/>
+      <text x="290" y="14" fill="#ffffff" font-family="monospace" font-size="10" text-anchor="end">90/100</text>
+      <g opacity="0.3">
+        <line x1="80" y1="4" x2="80" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="130" y1="4" x2="130" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="180" y1="4" x2="180" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="230" y1="4" x2="230" y2="16" stroke="#ffffff" stroke-width="1"/>
+      </g>
+    </g>
+    
+    <!-- 氧气条 -->
+    <g transform="translate(0, 70)">
+      <text x="0" y="12" fill="#00ff88" font-family="monospace" font-size="11" font-weight="bold">O₂</text>
+      <rect x="30" y="2" width="250" height="16" rx="2" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="32" y="4" width="150" height="12" rx="1" fill="url(#oxygenGrad)" filter="url(#cyanGlow)"/>
+      <text x="290" y="14" fill="#ffffff" font-family="monospace" font-size="10" text-anchor="end">60/100</text>
+      <g opacity="0.3">
+        <line x1="80" y1="4" x2="80" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="130" y1="4" x2="130" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="180" y1="4" x2="180" y2="16" stroke="#ffffff" stroke-width="1"/>
+        <line x1="230" y1="4" x2="230" y2="16" stroke="#ffffff" stroke-width="1"/>
+      </g>
+    </g>
+    
+    <!-- 警告指示器 -->
+    <g transform="translate(0, 100)">
+      <!-- 压强警告 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="80" height="20" rx="2" fill="rgba(255,136,0,0.2)" stroke="#ff8800" stroke-width="1"/>
+        <text x="40" y="14" fill="#ff8800" font-family="monospace" font-size="9" text-anchor="middle">⚠ PRESSURE</text>
+      </g>
+      <!-- 系统正常 -->
+      <g transform="translate(90, 0)">
+        <rect x="0" y="0" width="80" height="20" rx="2" fill="rgba(0,255,136,0.2)" stroke="#00ff88" stroke-width="1"/>
+        <text x="40" y="14" fill="#00ff88" font-family="monospace" font-size="9" text-anchor="middle">✓ SYSTEMS</text>
+      </g>
+      <!-- 货舱状态 -->
+      <g transform="translate(180, 0)">
+        <rect x="0" y="0" width="80" height="20" rx="2" fill="rgba(0,170,255,0.2)" stroke="#00aaff" stroke-width="1"/>
+        <text x="40" y="14" fill="#00aaff" font-family="monospace" font-size="9" text-anchor="middle">CARGO 45%</text>
+      </g>
+    </g>
+  </g>
+  
+  
+  <!-- ==================== 右上角：深度计 ==================== -->
+  <g id="depthGauge" transform="translate(1700, 60)">
+    <!-- 外框 -->
+    <circle cx="0" cy="0" r="100" fill="rgba(0,17,34,0.9)" stroke="#00ffff" stroke-width="3" filter="url(#cyanGlow)"/>
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.3"/>
+    
+    <!-- 刻度 -->
+    <g stroke="#00ffff" stroke-width="1">
+      <!-- 主刻度 -->
+      <line x1="0" y1="-95" x2="0" y2="-85" stroke-width="2"/>
+      <line x1="67" y1="-67" x2="60" y2="-60"/>
+      <line x1="95" y1="0" x2="85" y2="0" stroke-width="2"/>
+      <line x1="67" y1="67" x2="60" y2="60"/>
+      <line x1="0" y1="95" x2="0" y2="85" stroke-width="2"/>
+      <line x1="-67" y1="67" x2="-60" y2="60"/>
+      <line x1="-95" y1="0" x2="-85" y2="0" stroke-width="2"/>
+      <line x1="-67" y1="-67" x2="-60" y2="-60"/>
+      
+      <!-- 小刻度 -->
+      <g opacity="0.5">
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(22.5)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(45)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(67.5)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(112.5)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(135)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(157.5)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(202.5)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(225)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(247.5)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(292.5)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(315)"/>
+        <line x1="0" y1="-95" x2="0" y2="-88" transform="rotate(337.5)"/>
+      </g>
+    </g>
+    
+    <!-- 深度标签 -->
+    <text x="0" y="-75" fill="#00ffff" font-family="monospace" font-size="8" text-anchor="middle" opacity="0.7">0m</text>
+    <text x="75" y="3" fill="#00ffff" font-family="monospace" font-size="8" text-anchor="middle" opacity="0.7">500</text>
+    <text x="0" y="85" fill="#00ffff" font-family="monospace" font-size="8" text-anchor="middle" opacity="0.7">1000m</text>
+    <text x="-75" y="3" fill="#00ffff" font-family="monospace" font-size="8" text-anchor="middle" opacity="0.7">500</text>
+    
+    <!-- 指针 -->
+    <g transform="rotate(135)">
+      <polygon points="0,-5 -4,-80 0,-90 4,-80" fill="#ff0044" filter="url(#strongGlow)"/>
+      <circle cx="0" cy="0" r="6" fill="#ff0044"/>
+    </g>
+    
+    <!-- 中心显示 -->
+    <circle cx="0" cy="0" r="35" fill="rgba(0,0,0,0.7)" stroke="#00ffff" stroke-width="2"/>
+    <text x="0" y="-5" fill="#00ffff" font-family="monospace" font-size="10" text-anchor="middle">DEPTH</text>
+    <text x="0" y="15" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">847m</text>
+  </g>
+  
+  
+  <!-- ==================== 左下角：货舱 ==================== -->
+  <g id="cargoPanel" transform="translate(40, 840)">
+    <!-- 外框 -->
+    <rect x="-10" y="-30" width="200" height="220" rx="5" fill="rgba(0,17,34,0.9)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+    
+    <!-- 标题 -->
+    <text x="0" y="-10" fill="#00ffff" font-family="monospace" font-size="12" font-weight="bold">CARGO BAY</text>
+    
+    <!-- 货舱格子 -->
+    <g transform="translate(0, 10)">
+      <!-- 第1行 -->
+      <rect x="0" y="0" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="0" y="0" width="50" height="50" rx="3" fill="rgba(255,204,0,0.3)" stroke="#ffcc00" stroke-width="2"/>
+      <text x="25" y="30" fill="#ffcc00" font-family="monospace" font-size="20" text-anchor="middle">⚙</text>
+      <text x="45" y="45" fill="#ffffff" font-family="monospace" font-size="8" text-anchor="end">x3</text>
+      
+      <rect x="60" y="0" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="60" y="0" width="50" height="50" rx="3" fill="rgba(0,170,255,0.3)" stroke="#00aaff" stroke-width="2"/>
+      <text x="85" y="30" fill="#00aaff" font-family="monospace" font-size="20" text-anchor="middle">💎</text>
+      <text x="105" y="45" fill="#ffffff" font-family="monospace" font-size="8" text-anchor="end">x2</text>
+      
+      <rect x="120" y="0" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      
+      <!-- 第2行 -->
+      <rect x="0" y="60" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="0" y="60" width="50" height="50" rx="3" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="2"/>
+      <text x="25" y="90" fill="#00ff88" font-family="monospace" font-size="20" text-anchor="middle">🧬</text>
+      <text x="45" y="105" fill="#ffffff" font-family="monospace" font-size="8" text-anchor="end">x1</text>
+      
+      <rect x="60" y="60" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="60" y="60" width="50" height="50" rx="3" fill="rgba(255,0,255,0.3)" stroke="#ff00ff" stroke-width="2"/>
+      <text x="85" y="90" fill="#ff00ff" font-family="monospace" font-size="20" text-anchor="middle">📀</text>
+      <text x="105" y="105" fill="#ffffff" font-family="monospace" font-size="8" text-anchor="end">x5</text>
+      
+      <rect x="120" y="60" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      
+      <!-- 第3行 -->
+      <rect x="0" y="120" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="60" y="120" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="120" y="120" width="50" height="50" rx="3" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+    </g>
+    
+    <!-- 容量指示 -->
+    <g transform="translate(0, 190)">
+      <text x="0" y="12" fill="#8899aa" font-family="monospace" font-size="10">CAPACITY</text>
+      <rect x="70" y="2" width="110" height="12" rx="2" fill="rgba(0,0,0,0.5)" stroke="#445566" stroke-width="1"/>
+      <rect x="72" y="4" width="55" height="8" rx="1" fill="#00aaff" filter="url(#cyanGlow)"/>
+      <text x="180" y="12" fill="#ffffff" font-family="monospace" font-size="10" text-anchor="end">50%</text>
+    </g>
+  </g>
+  
+  
+  <!-- ==================== 右下角：雷达 ==================== -->
+  <g id="radar" transform="translate(1760, 920)">
+    <!-- 外框 -->
+    <rect x="-120" y="-120" width="240" height="120" rx="5" fill="rgba(0,17,34,0.9)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+    
+    <!-- 标题 -->
+    <text x="-110" y="-100" fill="#00ffff" font-family="monospace" font-size="10" font-weight="bold">RADAR</text>
+    
+    <!-- 雷达屏幕 -->
+    <g transform="translate(0, -60)">
+      <!-- 背景 -->
+      <circle cx="0" cy="0" r="50" fill="rgba(0,34,0,0.5)" stroke="#00ff88" stroke-width="2"/>
+      
+      <!-- 扫描线 -->
+      <line x1="0" y1="0" x2="0" y2="-50" stroke="#00ff88" stroke-width="2" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+      </line>
+      
+      <!-- 同心圆 -->
+      <circle cx="0" cy="0" r="15" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.5"/>
+      
+      <!-- 十字线 -->
+      <line x1="-50" y1="0" x2="50" y2="0" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
+      <line x1="0" y1="-50" x2="0" y2="50" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
+      
+      <!-- 敌人标记 -->
+      <g fill="#ff0044" filter="url(#cyanGlow)">
+        <triangle points="25,-20 22,-26 28,-26"/>
+        <circle cx="25" cy="-23" r="3"/>
+        <circle cx="-30" cy="15" r="3"/>
+        <circle cx="35" cy="30" r="3"/>
+      </g>
+      
+      <!-- 资源标记 -->
+      <rect x="-15" y="-25" width="6" height="6" fill="#ffcc00" filter="url(#cyanGlow)"/>
+      <rect x="20" y="10" width="6" height="6" fill="#00aaff" filter="url(#cyanGlow)"/>
+      
+      <!-- 自己 -->
+      <circle cx="0" cy="0" r="4" fill="#00ffff" filter="url(#strongGlow)"/>
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.5">
+        <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- 图例 -->
+    <g transform="translate(-110, -25)">
+      <circle cx="5" cy="5" r="3" fill="#ff0044"/>
+      <text x="15" y="8" fill="#8899aa" font-family="monospace" font-size="8">ENEMY</text>
+      
+      <rect x="55" y="2" width="6" height="6" fill="#ffcc00"/>
+      <text x="65" y="8" fill="#8899aa" font-family="monospace" font-size="8">LOOT</text>
+      
+      <circle cx="100" cy="5" r="3" fill="#00ffff"/>
+      <text x="110" y="8" fill="#8899aa" font-family="monospace" font-size="8">YOU</text>
+    </g>
+  </g>
+  
+  
+  <!-- ==================== 底部中央：武器/装备栏 ==================== -->
+  <g id="weaponBar" transform="translate(960, 1020)">
+    <!-- 武器槽1 -->
+    <g transform="translate(-150, 0)">
+      <rect x="-40" y="-30" width="80" height="50" rx="3" fill="rgba(0,17,34,0.9)" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+      <text x="0" y="-15" fill="#00ffff" font-family="monospace" font-size="9" text-anchor="middle">[1] LASER</text>
+      <rect x="-30" y="-5" width="60" height="8" rx="2" fill="rgba(0,0,0,0.5)"/>
+      <rect x="-30" y="-5" width="45" height="8" rx="2" fill="#ff0044"/>
+    </g>
+    
+    <!-- 武器槽2 -->
+    <g transform="translate(-50, 0)">
+      <rect x="-40" y="-30" width="80" height="50" rx="3" fill="rgba(0,17,34,0.9)" stroke="#445566" stroke-width="1"/>
+      <text x="0" y="-15" fill="#8899aa" font-family="monospace" font-size="9" text-anchor="middle">[2] HARPOON</text>
+      <rect x="-30" y="-5" width="60" height="8" rx="2" fill="rgba(0,0,0,0.5)"/>
+      <rect x="-30" y="-5" width="60" height="8" rx="2" fill="#00aaff"/>
+    </g>
+    
+    <!-- 武器槽3 -->
+    <g transform="translate(50, 0)">
+      <rect x="-40" y="-30" width="80" height="50" rx="3" fill="rgba(0,17,34,0.9)" stroke="#445566" stroke-width="1"/>
+      <text x="0" y="-15" fill="#8899aa" font-family="monospace" font-size="9" text-anchor="middle">[3] TORPEDO</text>
+      <rect x="-30" y="-5" width="60" height="8" rx="2" fill="rgba(0,0,0,0.5)"/>
+      <rect x="-30" y="-5" width="20" height="8" rx="2" fill="#ff8800"/>
+    </g>
+    
+    <!-- 武器槽4 -->
+    <g transform="translate(150, 0)">
+      <rect x="-40" y="-30" width="80" height="50" rx="3" fill="rgba(0,17,34,0.9)" stroke="#445566" stroke-width="1"/>
+      <text x="0" y="-15" fill="#8899aa" font-family="monospace" font-size="9" text-anchor="middle">[4] SONIC</text>
+      <rect x="-30" y="-5" width="60" height="8" rx="2" fill="rgba(0,0,0,0.5)"/>
+      <rect x="-30" y="-5" width="0" height="8" rx="2" fill="#00ff88"/>
+    </g>
+  </g>
+  
+  
+  <!-- ==================== 中央准星 ==================== -->
+  <g id="crosshair" transform="translate(960, 540)" opacity="0.8">
+    <!-- 外圈 -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+    
+    <!-- 十字线 -->
+    <line x1="-40" y1="0" x2="-15" y2="0" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+    <line x1="15" y1="0" x2="40" y2="0" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+    <line x1="0" y1="-40" x2="0" y2="-15" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+    <line x1="0" y1="15" x2="0" y2="40" stroke="#00ffff" stroke-width="2" filter="url(#cyanGlow)"/>
+    
+    <!-- 中心点 -->
+    <circle cx="0" cy="0" r="3" fill="#00ffff" filter="url(#strongGlow)"/>
+    
+    <!-- 角度标记 -->
+    <text x="0" y="-35" fill="#00ffff" font-family="monospace" font-size="8" text-anchor="middle" opacity="0.6">0°</text>
+  </g>
+  
+  
+  <!-- ==================== 顶部中央：消息区域 ==================== -->
+  <g id="messageArea" transform="translate(960, 80)">
+    <!-- 消息框 -->
+    <rect x="-200" y="-20" width="400" height="40" rx="5" fill="rgba(0,17,34,0.9)" stroke="#00ffff" stroke-width="1" filter="url(#cyanGlow)"/>
+    
+    <!-- 消息内容 -->
+    <text x="0" y="5" fill="#00ffff" font-family="monospace" font-size="11" text-anchor="middle">⚠ 警告：检测到敌对生物信号</text>
+    
+    <!-- 扫描线效果 -->
+    <rect x="-200" y="-20" width="400" height="40" rx="5" fill="url(#scanlines)" opacity="0.3" pointer-events="none"/>
+  </g>
+  
+  
+  <!-- ==================== 装饰边框 ==================== -->
+  <g id="decorativeBorders" opacity="0.5">
+    <!-- 左上角装饰 -->
+    <path d="M20,20 L60,20 L60,25 L25,25 L25,60 L20,60 Z" fill="#00ffff"/>
+    
+    <!-- 右上角装饰 -->
+    <path d="M1900,20 L1860,20 L1860,25 L1895,25 L1895,60 L1900,60 Z" fill="#00ffff"/>
+    
+    <!-- 左下角装饰 -->
+    <path d="M20,1060 L25,1060 L25,1055 L60,1055 L60,1060 L20,1060 Z" fill="#00ffff"/>
+    
+    <!-- 右下角装饰 -->
+    <path d="M1900,1060 L1860,1060 L1860,1055 L1895,1055 L1895,1020 L1900,1020 Z" fill="#00ffff"/>
+  </g>
+  
+  
+  <!-- ==================== 底部信息栏 ==================== -->
+  <g id="bottomInfo" transform="translate(960, 1055)">
+    <text x="-400" y="0" fill="#556677" font-family="monospace" font-size="9" text-anchor="start">SEBEJJ v0.1.0 | BUILD 2026.02.26</text>
+    
+    <text x="400" y="0" fill="#556677" font-family="monospace" font-size="9" text-anchor="end">FPS: 60 | PING: 24ms</text>
+  </g>
+</svg>

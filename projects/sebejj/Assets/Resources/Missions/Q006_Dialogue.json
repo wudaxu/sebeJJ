@@ -1,0 +1,74 @@
+{
+  "missionId": "Q006",
+  "dialogues": [
+    {
+      "id": "start",
+      "speaker": "工程师",
+      "text": "嘿，驾驶员！我们需要一些稀有材料来升级你的机甲。在80米深度有一批钛合金矿藏，能帮我采集3个样本吗？",
+      "options": [
+        {
+          "text": "没问题！",
+          "next": "start_confirm"
+        },
+        {
+          "text": "钛合金有什么用？",
+          "next": "start_info"
+        }
+      ]
+    },
+    {
+      "id": "start_info",
+      "speaker": "工程师",
+      "text": "钛合金是制造高级机甲部件的核心材料。它轻量但极其坚固，能大幅提升你的机甲性能。采集到的样本我会用来为你打造新装备。",
+      "options": [
+        {
+          "text": "听起来不错，我去采集。",
+          "next": "start_confirm"
+        }
+      ]
+    },
+    {
+      "id": "start_confirm",
+      "speaker": "系统",
+      "text": "采集任务已接受。目标：在80米深度采集3个钛合金。",
+      "options": [],
+      "action": "start_mission"
+    },
+    {
+      "id": "collect_first",
+      "speaker": "系统",
+      "text": "发现钛合金矿脉。采集进行中...",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "collect_all",
+      "speaker": "系统",
+      "text": "钛合金样本采集完成。可以返回提交任务了。",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "complete",
+      "speaker": "工程师",
+      "text": "太棒了！这些钛合金的质量非常好。2500信用点是你的报酬，我会用这些材料为你的机甲制作一些升级部件。",
+      "options": [
+        {
+          "text": "期待新装备！",
+          "next": "end"
+        }
+      ]
+    },
+    {
+      "id": "fail",
+      "speaker": "工程师",
+      "text": "采集任务失败。别灰心，钛合金确实很难找，下次再试试。",
+      "options": [
+        {
+          "text": "我会再来的。",
+          "next": "end"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 面板渐变 -->
+    <linearGradient id="panelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#37474F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#263238;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 边框渐变 -->
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00E5FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2979FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 标题栏渐变 -->
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00B8D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00E5FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 格子背景 -->
+    <linearGradient id="slotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#455A64;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#37474F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 主面板背景 -->
+  <rect x="10" y="10" width="380" height="480" rx="8" fill="url(#panelGradient)" stroke="url(#borderGradient)" stroke-width="4"/>
+  
+  <!-- 标题栏 -->
+  <rect x="10" y="10" width="380" height="50" rx="8" fill="url(#headerGradient)"/>
+  <rect x="10" y="35" width="380" height="25" rx="0" fill="url(#headerGradient)"/>
+  
+  <!-- 标题文字区域 -->
+  <rect x="150" y="20" width="100" height="30" rx="4" fill="#263238"/>
+  
+  <!-- 关闭按钮 -->
+  <circle cx="370" cy="35" r="12" fill="#D32F2F"/>
+  <path d="M365 30 L375 40 M375 30 L365 40" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- 物品格子区域 -->
+  <g transform="translate(30, 80)">
+    <!-- 第1行 -->
+    <rect x="0" y="0" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="70" y="0" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="140" y="0" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="210" y="0" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="280" y="0" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    
+    <!-- 第2行 -->
+    <rect x="0" y="70" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="70" y="70" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="140" y="70" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="210" y="70" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="280" y="70" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    
+    <!-- 第3行 -->
+    <rect x="0" y="140" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="70" y="140" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="140" y="140" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="210" y="140" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="280" y="140" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    
+    <!-- 第4行 -->
+    <rect x="0" y="210" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="70" y="210" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="140" y="210" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="210" y="210" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+    <rect x="280" y="210" width="60" height="60" rx="4" fill="url(#slotGradient)" stroke="#607D8B" stroke-width="2"/>
+  </g>
+  
+  <!-- 装备区域 -->
+  <g transform="translate(30, 370)">
+    <!-- 装备槽标签 -->
+    <rect x="0" y="0" width="340" height="30" rx="4" fill="#455A64"/>
+    
+    <!-- 装备槽 -->
+    <rect x="0" y="40" width="70" height="70" rx="4" fill="url(#slotGradient)" stroke="#00E5FF" stroke-width="2"/>
+    <rect x="90" y="40" width="70" height="70" rx="4" fill="url(#slotGradient)" stroke="#00E5FF" stroke-width="2"/>
+    <rect x="180" y="40" width="70" height="70" rx="4" fill="url(#slotGradient)" stroke="#00E5FF" stroke-width="2"/>
+    <rect x="270" y="40" width="70" height="70" rx="4" fill="url(#slotGradient)" stroke="#00E5FF" stroke-width="2"/>
+  </g>
+  
+  <!-- 底部信息栏 -->
+  <rect x="30" y="460" width="340" height="20" rx="4" fill="#455A64"/>
+</svg>

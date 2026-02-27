@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 海水渐变 -->
+    <linearGradient id="shallowWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#29B6F6;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0288D1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#01579B;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阳光穿透效果 -->
+    <linearGradient id="sunRay" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF9C4;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#FFF59D;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFF176;stop-opacity:0" />
+    </linearGradient>
+    
+    <!-- 珊瑚渐变 -->
+    <linearGradient id="coralPink" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F50057;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="coralOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFCC80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6F00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="coralPurple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#CE93D8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B1FA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 沙地纹理 -->
+    <pattern id="sandPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#C2B280"/>
+      <circle cx="10" cy="10" r="1" fill="#A09060" opacity="0.5"/>
+      <circle cx="25" cy="30" r="1.5" fill="#A09060" opacity="0.4"/>
+      <circle cx="35" cy="15" r="1" fill="#A09060" opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <!-- 背景海水 -->
+  <rect width="1920" height="1080" fill="url(#shallowWater)"/>
+  
+  <!-- 阳光光束 -->
+  <g opacity="0.7">
+    <path d="M200 0 L100 1080 L300 1080 L400 0 Z" fill="url(#sunRay)"/>
+    <path d="M600 0 L500 1080 L700 1080 L800 0 Z" fill="url(#sunRay)"/>
+    <path d="M1000 0 L900 1080 L1100 1080 L1200 0 Z" fill="url(#sunRay)"/>
+    <path d="M1400 0 L1300 1080 L1500 1080 L1600 0 Z" fill="url(#sunRay)"/>
+    <path d="M1700 0 L1600 1080 L1800 1080 L1920 0 Z" fill="url(#sunRay)"/>
+  </g>
+  
+  <!-- 沙地地形 -->
+  <path d="M0 800 Q 480 750 960 780 T 1920 800 L 1920 1080 L 0 1080 Z" fill="url(#sandPattern)"/>
+  <path d="M0 900 Q 320 880 640 910 T 1280 920 T 1920 900 L 1920 1080 L 0 1080 Z" fill="#B8A870" opacity="0.7"/>
+  
+  <!-- 珊瑚礁群 - 左侧 -->
+  <g transform="translate(100, 750)">
+    <!-- 粉色珊瑚 -->
+    <path d="M0 200 Q 20 100 40 150 Q 60 80 80 140 Q 100 60 120 130 L 120 200 Z" fill="url(#coralPink)"/>
+    <ellipse cx="30" cy="140" rx="15" ry="25" fill="#FF4081"/>
+    <ellipse cx="70" cy="120" rx="12" ry="20" fill="#FF4081"/>
+    <ellipse cx="100" cy="110" rx="10" ry="18" fill="#FF4081"/>
+  </g>
+  
+  <!-- 橙色珊瑚 - 中央 -->
+  <g transform="translate(400, 700)">
+    <path d="M0 250 Q 30 150 60 200 Q 90 100 120 180 Q 150 120 180 190 Q 210 140 240 200 L 240 250 Z" fill="url(#coralOrange)"/>
+    <!-- 珊瑚分支 -->
+    <circle cx="50" cy="180" r="20" fill="#FF9800"/>
+    <circle cx="100" cy="160" r="18" fill="#FFB74D"/>
+    <circle cx="150" cy="170" r="22" fill="#FF9800"/>
+    <circle cx="200" cy="185" r="16" fill="#FFB74D"/>
+  </g>
+  
+  <!-- 紫色珊瑚 - 右侧 -->
+  <g transform="translate(1400, 720)">
+    <path d="M0 230 Q 25 130 50 180 Q 75 90 100 160 Q 125 110 150 170 Q 175 100 200 160 L 200 230 Z" fill="url(#coralPurple)"/>
+    <ellipse cx="40" cy="170" rx="18" ry="28" fill="#9C27B0"/>
+    <ellipse cx="90" cy="150" rx="15" ry="25" fill="#AB47BC"/>
+    <ellipse cx="140" cy="155" rx="16" ry="22" fill="#9C27B0"/>
+  </g>
+  
+  <!-- 小型珊瑚点缀 -->
+  <g transform="translate(800, 820)">
+    <circle cx="0" cy="0" r="30" fill="#4DB6AC"/>
+    <circle cx="40" cy="10" r="25" fill="#80CBC4"/>
+    <circle cx="80" cy="-5" r="28" fill="#26A69A"/>
+  </g>
+  
+  <g transform="translate(1100, 850)">
+    <circle cx="0" cy="0" r="20" fill="#EF5350"/>
+    <circle cx="30" cy="5" r="18" fill="#E57373"/>
+    <circle cx="55" cy="-3" r="22" fill="#EF5350"/>
+  </g>
+  
+  <!-- 海草 -->
+  <g transform="translate(250, 850)">
+    <path d="M0 150 Q -10 100 5 50 Q 10 20 0 0 Q -5 30 0 60 Q 5 100 0 150" stroke="#66BB6A" stroke-width="8" fill="none"/>
+    <path d="M20 150 Q 25 100 15 60 Q 10 30 20 10 Q 30 40 25 70 Q 20 100 20 150" stroke="#81C784" stroke-width="6" fill="none"/>
+    <path d="M40 150 Q 35 110 45 70 Q 50 40 40 20 Q 30 50 35 80 Q 40 110 40 150" stroke="#4CAF50" stroke-width="7" fill="none"/>
+  </g>
+  
+  <g transform="translate(1600, 830)">
+    <path d="M0 170 Q 10 120 -5 70 Q -10 40 0 20 Q 10 50 5 80 Q 0 120 0 170" stroke="#66BB6A" stroke-width="8" fill="none"/>
+    <path d="M25 170 Q 20 130 30 90 Q 35 60 25 40 Q 15 70 20 100 Q 25 130 25 170" stroke="#81C784" stroke-width="6" fill="none"/>
+  </g>
+  
+  <!-- 气泡 -->
+  <g fill="rgba(255,255,255,0.4)">
+    <circle cx="300" cy="600" r="8"/>
+    <circle cx="320" cy="550" r="6"/>
+    <circle cx="310" cy="510" r="4"/>
+    <circle cx="900" cy="650" r="10"/>
+    <circle cx="920" cy="590" r="7"/>
+    <circle cx="910" cy="540" r="5"/>
+    <circle cx="1500" cy="620" r="9"/>
+    <circle cx="1520" cy="560" r="6"/>
+    <circle cx="1510" cy="520" r="4"/>
+  </g>
+  
+  <!-- 小鱼群 -->
+  <g fill="#FFD54F">
+    <ellipse cx="500" cy="400" rx="15" ry="8"/>
+    <polygon points="485,400 475,395 475,405" fill="#FFD54F"/>
+    <ellipse cx="540" cy="380" rx="12" ry="6"/>
+    <polygon points="528,380 520,377 520,383" fill="#FFD54F"/>
+    <ellipse cx="480" cy="420" rx="10" ry="5"/>
+    <polygon points="470,420 463,418 463,422" fill="#FFD54F"/>
+  </g>
+  
+  <g fill="#FFAB91">
+    <ellipse cx="1300" cy="350" rx="14" ry="7"/>
+    <polygon points="1286,350 1277,346 1277,354" fill="#FFAB91"/>
+    <ellipse cx="1340" cy="370" rx="11" ry="5"/>
+    <polygon points="1329,370 1322,368 1322,372" fill="#FFAB91"/>
+  </g>
+</svg>

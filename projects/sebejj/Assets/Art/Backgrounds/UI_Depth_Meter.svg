@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="400" viewBox="0 0 120 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 深度计外壳渐变 -->
+    <linearGradient id="caseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#37474F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#455A64;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#37474F;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 深度渐变 - 从浅到深 -->
+    <linearGradient id="depthGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#29B6F6;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#0288D1;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#01579B;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#002855;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 警告区域 -->
+    <linearGradient id="warningGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEB3B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF9800;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 危险区域 -->
+    <linearGradient id="dangerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F44336;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 玻璃反光 -->
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 外壳 -->
+  <rect x="10" y="10" width="100" height="380" rx="10" fill="url(#caseGradient)" stroke="#263238" stroke-width="4"/>
+  
+  <!-- 深度刻度背景 -->
+  <rect x="20" y="30" width="80" height="340" rx="4" fill="#1C2529"/>
+  
+  <!-- 深度渐变条 -->
+  <rect x="30" y="40" width="60" height="320" fill="url(#depthGradient)"/>
+  
+  <!-- 安全区域标记 (0-1000m) -->
+  <rect x="25" y="40" width="5" height="160" fill="#4CAF50"/>
+  
+  <!-- 警告区域标记 (1000-1500m) -->
+  <rect x="25" y="200" width="5" height="80" fill="#FFEB3B"/>
+  
+  <!-- 危险区域标记 (1500m+) -->
+  <rect x="25" y="280" width="5" height="80" fill="#F44336"/>
+  
+  <!-- 刻度线 -->
+  <g stroke="#FFFFFF" stroke-width="1">
+    <!-- 0m -->
+    <line x1="30" y1="40" x2="90" y2="40"/>
+    
+    <!-- 500m -->
+    <line x1="30" y1="120" x2="90" y2="120"/>
+    
+    <!-- 1000m -->
+    <line x1="30" y1="200" x2="90" y2="200"/>
+    
+    <!-- 1500m -->
+    <line x1="30" y1="280" x2="90" y2="280"/>
+    
+    <!-- 2000m -->
+    <line x1="30" y1="360" x2="90" y2="360"/>
+  </g>
+  
+  <!-- 刻度数字 -->
+  <g fill="#FFFFFF" font-family="monospace" font-size="10">
+    <text x="92" y="44">0</text>
+    <text x="92" y="124">500</text>
+    <text x="92" y="204">1000</text>
+    <text x="92" y="284">1500</text>
+    <text x="92" y="364">2000</text>
+  </g>
+  
+  <!-- 当前深度指示器 -->
+  <g transform="translate(20, 200)">
+    <!-- 指示器背景 -->
+    <rect x="0" y="-10" width="80" height="20" rx="3" fill="#000000"/>
+    
+    <!-- 指示器边框 -->
+    <rect x="0" y="-10" width="80" height="20" rx="3" fill="none" stroke="#00E5FF" stroke-width="2"/>
+    
+    <!-- 左侧箭头 -->
+    <path d="M5 0 L15 -5 L15 5 Z" fill="#00E5FF"/>
+    
+    <!-- 右侧箭头 -->
+    <path d="M75 0 L65 -5 L65 5 Z" fill="#00E5FF"/>
+  </g>
+  
+  <!-- 玻璃反光 -->
+  <rect x="35" y="40" width="20" height="320" fill="url(#glassGradient)"/>
+  
+  <!-- 顶部标签 -->
+  <rect x="30" y="15" width="60" height="12" rx="2" fill="#263238"/>
+  
+  <!-- 底部装饰 -->
+  <circle cx="60" cy="375" r="8" fill="#37474F" stroke="#00E5FF" stroke-width="2"/>
+  <circle cx="60" cy="375" r="4" fill="#00E5FF"/>
+  
+  <!-- 螺丝装饰 -->
+  <circle cx="20" cy="20" r="3" fill="#546E7A"/>
+  <circle cx="100" cy="20" r="3" fill="#546E7A"/>
+  <circle cx="20" cy="380" r="3" fill="#546E7A"/>
+  <circle cx="100" cy="380" r="3" fill="#546E7A"/>
+</svg>

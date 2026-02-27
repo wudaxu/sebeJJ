@@ -1,0 +1,30 @@
+{
+  "missionId": "Q005",
+  "missionName": "清除威胁",
+  "missionType": "elimination",
+  "description": "深海区域出现机械鱼群威胁，需要清除它们以确保航道安全。",
+  "objectives": [
+    {
+      "id": 1,
+      "description": "击败5只机械鱼",
+      "type": "defeat_enemy",
+      "target": "mechanical_fish",
+      "count": 5,
+      "completed": false
+    }
+  ],
+  "rewards": {
+    "credits": 2000,
+    "experience": 400,
+    "unlocks": ["combat_missions"]
+  },
+  "requirements": {
+    "minDepth": 50,
+    "maxDepth": 150,
+    "prerequisites": ["Q004"]
+  },
+  "difficulty": 2,
+  "estimatedTime": 900,
+  "dialogueFile": "Q005_Dialogue.json",
+  "scriptFile": "Q005_Script.cs"
+}

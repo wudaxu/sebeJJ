@@ -1,0 +1,44 @@
+<svg viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 激光束特效 -->
+  <defs>
+    <linearGradient id="laserCore" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1"/>
+      <stop offset="20%" style="stop-color:#00FFFF;stop-opacity:0.9"/>
+      <stop offset="80%" style="stop-color:#00FFFF;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#00FFFF;stop-opacity:0"/>
+    </linearGradient>
+    
+    <linearGradient id="laserGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:0.8"/>
+      <stop offset="50%" style="stop-color:#0088FF;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#0044AA;stop-opacity:0"/>
+    </linearGradient>
+    
+    <filter id="laserBlur">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 激光外发光 -->
+  <rect x="0" y="12" width="64" height="8" fill="url(#laserGlow)" filter="url(#laserBlur)"/>
+  
+  <!-- 激光核心 -->
+  <rect x="0" y="14" width="60" height="4" fill="url(#laserCore)" filter="url(#laserBlur)"/>
+  
+  <!-- 能量脉冲 -->
+  <rect x="10" y="13" width="8" height="6" fill="#FFFFFF" opacity="0.8" filter="url(#laserBlur)"/>
+  <rect x="30" y="13" width="6" height="6" fill="#FFFFFF" opacity="0.6" filter="url(#laserBlur)"/>
+  <rect x="48" y="13" width="4" height="6" fill="#FFFFFF" opacity="0.4" filter="url(#laserBlur)"/>
+  
+  <!-- 发射端闪光 -->
+  <circle cx="4" cy="16" r="6" fill="#00FFFF" opacity="0.5" filter="url(#laserBlur)"/>
+  <circle cx="4" cy="16" r="3" fill="#FFFFFF" opacity="0.9"/>
+  
+  <!-- 击中点闪光 -->
+  <circle cx="60" cy="16" r="4" fill="#00FFFF" opacity="0.4" filter="url(#laserBlur)"/>
+</svg>

@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 896 128" width="896" height="128">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CD7F32"/>
+      <stop offset="50%" style="stop-color:#B87333"/>
+      <stop offset="100%" style="stop-color:#8B4513"/>
+    </linearGradient>
+    
+    <linearGradient id="ironGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C0C0C0"/>
+      <stop offset="50%" style="stop-color:#A0A0A0"/>
+      <stop offset="100%" style="stop-color:#696969"/>
+    </linearGradient>
+    
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8E8E8"/>
+      <stop offset="50%" style="stop-color:#C0C0C0"/>
+      <stop offset="100%" style="stop-color:#909090"/>
+    </linearGradient>
+    
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="50%" style="stop-color:#DAA520"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    
+    <linearGradient id="titaniumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E0E0"/>
+      <stop offset="50%" style="stop-color:#B8B8D1"/>
+      <stop offset="100%" style="stop-color:#7878A0"/>
+    </linearGradient>
+    
+    <linearGradient id="algaeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#39FF14"/>
+      <stop offset="50%" style="stop-color:#2ECC40"/>
+      <stop offset="100%" style="stop-color:#1E8C2A"/>
+    </linearGradient>
+    
+    <linearGradient id="crystalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F0FF"/>
+      <stop offset="50%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#4B0082"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 1. Copper Ore (铜矿) -->
+  <g transform="translate(0,0)">
+    <rect width="128" height="128" fill="#0A0A0F" rx="8" stroke="#CD7F32" stroke-width="2"/>
+    
+    <!-- Ore shape -->
+    <path d="M30 40 L50 30 L80 35 L100 55 L95 85 L70 100 L40 95 L25 70 Z" fill="url(#copperGrad)" stroke="#8B4513" stroke-width="1.5"/>
+    
+    <!-- Detail lines -->
+    <line x1="45" y1="45" x2="60" y2="55" stroke="#8B4513" stroke-width="1"/>
+    <line x1="70" y1="40" x2="75" y2="60" stroke="#8B4513" stroke-width="1"/>
+    <line x1="55" y1="70" x2="80" y2="75" stroke="#8B4513" stroke-width="1"/>
+    
+    <!-- Highlight -->
+    <ellipse cx="50" cy="45" rx="8" ry="4" fill="#FFFFFF" opacity="0.3" transform="rotate(-30 50 45)"/>
+    
+    <text x="64" y="118" fill="#CD7F32" font-family="monospace" font-size="10" text-anchor="middle">铜矿</text>
+  </g>
+  
+  <!-- 2. Iron Ore (铁矿) -->
+  <g transform="translate(128,0)">
+    <rect width="128" height="128" fill="#0A0A0F" rx="8" stroke="#A0A0A0" stroke-width="2"/>
+    
+    <path d="M35 35 L65 30 L90 40 L100 70 L85 95 L55 100 L30 85 L25 55 Z" fill="url(#ironGrad)" stroke="#696969" stroke-width="1.5"/>
+    
+    <line x1="50" y1="45" x2="70" y2="50" stroke="#696969" stroke-width="1"/>
+    <line x1="75" y1="40" x2="80" y2="65" stroke="#696969" stroke-width="1"/>
+    <line x1="45" y1="65" x2="75" y2="75" stroke="#696969" stroke-width="1"/>
+    
+    <ellipse cx="55" cy="42" rx="8" ry="4" fill="#FFFFFF" opacity="0.4" transform="rotate(-20 55 42)"/>
+    
+    <text x="64" y="118" fill="#C0C0C0" font-family="monospace" font-size="10" text-anchor="middle">铁矿</text>
+  </g>
+  
+  <!-- 3. Silver Ore (银矿) -->
+  <g transform="translate(256,0)">
+    <rect width="128" height="128" fill="#0A0A0F" rx="8" stroke="#C0C0C0" stroke-width="2"/>
+    
+    <path d="M40 35 L70 32 L95 45 L100 75 L80 98 L50 95 L28 75 L32 50 Z" fill="url(#silverGrad)" stroke="#707070" stroke-width="1.5"/>
+    
+    <line x1="55" y1="45" x2="75" y2="52" stroke="#707070" stroke-width="1"/>
+    <line x1="80" y1="48" x2="85" y2="72" stroke="#707070" stroke-width="1"/>
+    <line x1="50" y1="70" x2="80" y2="78" stroke="#707070" stroke-width="1"/>
+    
+    <ellipse cx="58" cy="45" rx="10" ry="5" fill="#FFFFFF" opacity="0.5" transform="rotate(-25 58 45)"/>
+    
+    <text x="64" y="118" fill="#E8E8E8" font-family="monospace" font-size="10" text-anchor="middle">银矿</text>
+  </g>
+  
+  <!-- 4. Gold Ore (金矿) -->
+  <g transform="translate(384,0)">
+    <rect width="128" height="128" fill="#0A0A0F" rx="8" stroke="#FFD700" stroke-width="2"/>
+    
+    <path d="M38 38 L68 32 L92 42 L102 68 L88 92 L58 98 L32 85 L28 58 Z" fill="url(#goldGrad)" stroke="#B8860B" stroke-width="1.5"/>
+    
+    <line x1="52" y1="48" x2="72" y2="54" stroke="#B8860B" stroke-width="1"/>
+    <line x1="78" y1="45" x2="82" y2="68" stroke="#B8860B" stroke-width="1"/>
+    <line x1="48" y1="70" x2="78" y2="76" stroke="#B8860B" stroke-width="1"/>
+    
+    <ellipse cx="55" cy="48" rx="10" ry="5" fill="#FFFFFF" opacity="0.6" transform="rotate(-20 55 48)"/>
+    
+    <!-- Glow effect -->
+    <circle cx="64" cy="65" r="35" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.3"/>
+    
+    <text x="64" y="118" fill="#FFD700" font-family="monospace" font-size="10" text-anchor="middle" filter="url(#glow)">金矿</text>
+  </g>
+  
+  <!-- 5. Titanium Ore (钛矿) -->
+  <g transform="translate(512,0)">
+    <rect width="128" height="128" fill="#0A0A0F" rx="8" stroke="#B8B8D1" stroke-width="2"/>
+    
+    <path d="M35 40 L60 32 L88 38 L105 62 L95 90 L68 102 L38 92 L25 65 Z" fill="url(#titaniumGrad)" stroke="#7878A0" stroke-width="1.5"/>
+    
+    <line x1="50" y1="48" x2="72" y2="54" stroke="#7878A0" stroke-width="1"/>
+    <line x1="78" y1="45" x2="85" y2="70" stroke="#7878A0" stroke-width="1"/>
+    <line x1="45" y1="72" x2="78" y2="80" stroke="#7878A0" stroke-width="1"/>
+    
+    <ellipse cx="52" cy="48" rx="9" ry="4" fill="#FFFFFF" opacity="0.5" transform="rotate(-25 52 48)"/>
+    
+    <!-- Tech pattern -->
+    <circle cx="70" cy="65" r="3" fill="#00F0FF" opacity="0.5"/>
+    
+    <line x1="70" y1="62" x2="70" y2="55" stroke="#00F0FF" stroke-width="0.5"/>
+    
+    <text x="64" y="118" fill="#B8B8D1" font-family="monospace" font-size="10" text-anchor="middle">钛矿</text>
+  </g>
+  
+  <!-- 6. Glowing Algae (发光藻) -->
+  <g transform="translate(640,0)">
+    <rect width="128" height="128" fill="#0A0A0F" rx="8" stroke="#39FF14" stroke-width="2"/>
+    
+    <!-- Algae cluster -->
+    <ellipse cx="50" cy="55" rx="12" ry="20" fill="url(#algaeGrad)" filter="url(#glow)"/>
+    
+    <ellipse cx="70" cy="50" rx="10" ry="18" fill="url(#algaeGrad)" filter="url(#glow)"/>
+    
+    <ellipse cx="85" cy="60" rx="8" ry="15" fill="url(#algaeGrad)" filter="url(#glow)"/>
+    
+    <ellipse cx="60" cy="75" rx="14" ry="12" fill="url(#algaeGrad)" filter="url(#glow)"/>
+    
+    <ellipse cx="80" cy="78" rx="10" ry="10" fill="url(#algaeGrad)" filter="url(#glow)"/>
+    
+    <ellipse cx="45" cy="78" rx="8" ry="10" fill="url(#algaeGrad)" filter="url(#glow)"/>
+    
+    <!-- Glow spots -->
+    <circle cx="50" cy="50" r="3" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="70" cy="48" r="2" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="60" cy="72" r="2.5" fill="#FFFFFF" opacity="0.6"/>
+    
+    <!-- Outer glow -->
+    <circle cx="64" cy="65" r="40" fill="none" stroke="#39FF14" stroke-width="1" opacity="0.2"/>
+    
+    <text x="64" y="118" fill="#39FF14" font-family="monospace" font-size="10" text-anchor="middle" filter="url(#glow)">发光藻</text>
+  </g>
+  
+  <!-- 7. Deep Sea Crystal (深海晶体) -->
+  <g transform="translate(768,0)">
+    <rect width="128" height="128" fill="#0A0A0F" rx="8" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Crystal shape -->
+    <polygon points="64,25 85,50 80,85 64,100 48,85 43,50" fill="url(#crystalGrad)" stroke="#00F0FF" stroke-width="1.5" filter="url(#glow)"/>
+    
+    <!-- Inner facets -->
+    <line x1="64" y1="25" x2="64" y2="100" stroke="#00F0FF" stroke-width="0.5" opacity="0.5"/>
+    
+    <line x1="43" y1="50" x2="85" y2="50" stroke="#00F0FF" stroke-width="0.5" opacity="0.5"/>
+    
+    <line x1="48" y1="85" x2="80" y2="85" stroke="#00F0FF" stroke-width="0.5" opacity="0.5"/>
+    
+    <line x1="48" y1="85" x2="64" y2="50" stroke="#8B5CF6" stroke-width="0.5"/>
+    
+    <line x1="80" y1="85" x2="64" y2="50" stroke="#8B5CF6" stroke-width="0.5"/>
+    
+    <line x1="43" y1="50" x2="64" y2="50" stroke="#8B5CF6" stroke-width="0.5"/>
+    
+    <line x1="85" y1="50" x2="64" y2="50" stroke="#8B5CF6" stroke-width="0.5"/>
+    
+    <!-- Core glow -->
+    <polygon points="64,45 72,55 68,70 64,75 60,70 56,55" fill="#FFFFFF" opacity="0.6"/>
+    
+    <!-- Outer glow rings -->
+    <circle cx="64" cy="62" r="45" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.15"/>
+    
+    <circle cx="64" cy="62" r="38" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.2"/>
+    
+    <text x="64" y="118" fill="#00F0FF" font-family="monospace" font-size="10" text-anchor="middle" filter="url(#glow)">深海晶体</text>
+  </g>
+</svg>

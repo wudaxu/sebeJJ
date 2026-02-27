@@ -1,0 +1,40 @@
+{
+    "version": "1.0",
+    "gameSettings": {
+        "targetFrameRate": 60,
+        "vSyncCount": 1,
+        "masterVolume": 1.0,
+        "musicVolume": 0.7,
+        "sfxVolume": 1.0,
+        "ambientVolume": 0.5
+    },
+    "saveSettings": {
+        "autoSaveInterval": 300,
+        "maxSaveSlots": 3,
+        "maxBackupCount": 3,
+        "enableAutoSave": true,
+        "autoSaveOnExit": true
+    },
+    "uiSettings": {
+        "baseSortingOrder": 0,
+        "panelSortingOrder": 10,
+        "popupSortingOrder": 20,
+        "notificationSortingOrder": 30,
+        "notificationDuration": 2.0,
+        "tooltipDelay": 0.5
+    },
+    "performanceSettings": {
+        "objectPoolInitialSize": 30,
+        "objectPoolMaxSize": 100,
+        "particleQuality": "high",
+        "shadowQuality": "medium",
+        "textureQuality": "high"
+    },
+    "cheatSettings": {
+        "enableCheats": false,
+        "infiniteOxygen": false,
+        "infiniteEnergy": false,
+        "godMode": false,
+        "instantCollect": false
+    }
+}

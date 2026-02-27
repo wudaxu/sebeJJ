@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 200">
+  <defs>
+    <linearGradient id="deepWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#001a33"/>
+      <stop offset="50%" style="stop-color:#000d1a"/>
+      <stop offset="100%" style="stop-color:#000508"/>
+    </linearGradient>
+    
+    <linearGradient id="terrainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a4a"/>
+      <stop offset="50%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#050a0f"/>
+    </linearGradient>
+    
+    <linearGradient id="ventGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a0000"/>
+      <stop offset="50%" style="stop-color:#2a0000"/>
+      <stop offset="100%" style="stop-color:#1a0000"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Deep water background -->
+  <rect x="0" y="0" width="1920" height="200" fill="url(#deepWater)"/>
+  
+  <!-- Distant terrain silhouette (parallax layer 3) -->
+  <path d="M0 120 
+           Q100 100 200 110 T400 105 T600 115 T800 100 T1000 110 T1200 95 T1400 105 T1600 100 T1800 110 T1920 100
+           L1920 200 L0 200 Z" 
+        fill="#000d1a" opacity="0.6"/>
+  
+  <!-- Mid-ground terrain (parallax layer 2) -->
+  <path d="M0 140 
+           Q80 130 150 145 T300 135 T450 150 T600 140 T750 155 T900 145 T1050 160 T1200 150 T1350 165 T1500 155 T1650 170 T1800 160 T1920 175
+           L1920 200 L0 200 Z" 
+        fill="#0a1520" opacity="0.8"/>
+  
+  <!-- Foreground terrain (parallax layer 1) -->
+  <path d="M0 160 
+           Q60 150 120 165 T250 155 T380 170 T520 160 T650 175 T800 165 T950 180 T1100 170 T1250 185 T1400 175 T1550 190 T1700 180 T1850 195 T1920 185
+           L1920 200 L0 200 Z" 
+        fill="url(#terrainGrad)"/>
+  
+  <!-- Terrain details - rocks and formations -->
+  <g opacity="0.7">
+    <!-- Rock cluster 1 -->
+    <path d="M150 165 L160 140 L180 135 L200 145 L210 170 Z" fill="#0D1B2A"/>
+    <!-- Rock cluster 2 -->
+    <path d="M450 170 L460 150 L480 145 L500 155 L510 175 Z" fill="#0D1B2A"/>
+    <!-- Rock cluster 3 -->
+    <path d="M850 175 L865 155 L890 150 L920 160 L930 180 Z" fill="#0D1B2A"/>
+    <!-- Rock cluster 4 -->
+    <path d="M1250 180 L1265 160 L1290 155 L1320 165 L1330 185 Z" fill="#0D1B2A"/>
+    <!-- Rock cluster 5 -->
+    <path d="M1650 185 L1665 165 L1690 160 L1720 170 L1730 190 Z" fill="#0D1B2A"/>
+  </g>
+  
+  <!-- Hydrothermal vents -->
+  <g>
+    <!-- Vent 1 -->
+    <g transform="translate(320,175)">
+      <path d="M-15 0 L-10 -25 L0 -35 L10 -25 L15 0 Z" fill="url(#ventGrad)"/>
+      <ellipse cx="0" cy="0" rx="15" ry="5" fill="#2a0000"/>
+      <ellipse cx="0" cy="-35" rx="8" ry="3" fill="#4a0000"/>
+      <!-- Smoke particles -->
+      <circle cx="-5" cy="-45" r="4" fill="#4a4a4a" opacity="0.4"/>
+      
+      <circle cx="8" cy="-55" r="5" fill="#4a4a4a" opacity="0.3"/>
+      
+      <circle cx="0" cy="-70" r="6" fill="#4a4a4a" opacity="0.2"/>
+    </g>
+    
+    <!-- Vent 2 -->
+    <g transform="translate(720,180)">
+      <path d="M-20 0 L-12 -30 L0 -40 L12 -30 L20 0 Z" fill="url(#ventGrad)"/>
+      <ellipse cx="0" cy="0" rx="20" ry="6" fill="#2a0000"/>
+      <ellipse cx="0" cy="-40" rx="10" ry="4" fill="#4a0000"/>
+      <!-- Smoke particles -->
+      <circle cx="-8" cy="-50" r="5" fill="#4a4a4a" opacity="0.4"/>
+      
+      <circle cx="10" cy="-65" r="6" fill="#4a4a4a" opacity="0.3"/>
+      
+      <circle cx="-3" cy="-85" r="7" fill="#4a4a4a" opacity="0.2"/>
+    </g>
+    
+    <!-- Vent 3 -->
+    <g transform="translate(1120,185)">
+      <path d="M-12 0 L-8 -20 L0 -28 L8 -20 L12 0 Z" fill="url(#ventGrad)"/>
+      <ellipse cx="0" cy="0" rx="12" ry="4" fill="#2a0000"/>
+      <ellipse cx="0" cy="-28" rx="6" ry="2" fill="#4a0000"/>
+      <!-- Smoke particles -->
+      <circle cx="-3" cy="-35" r="3" fill="#4a4a4a" opacity="0.4"/>
+      
+      <circle cx="5" cy="-45" r="4" fill="#4a4a4a" opacity="0.3"/>
+    </g>
+    
+    <!-- Vent 4 -->
+    <g transform="translate(1520,188)">
+      <path d="M-18 0 L-10 -28 L0 -38 L10 -28 L18 0 Z" fill="url(#ventGrad)"/>
+      <ellipse cx="0" cy="0" rx="18" ry="5" fill="#2a0000"/>
+      <ellipse cx="0" cy="-38" rx="9" ry="3" fill="#4a0000"/>
+      <!-- Smoke particles -->
+      <circle cx="-6" cy="-48" r="4" fill="#4a4a4a" opacity="0.4"/>
+      
+      <circle cx="8" cy="-60" r="5" fill="#4a4a4a" opacity="0.3"/>
+      
+      <circle cx="0" cy="-78" r="6" fill="#4a4a4a" opacity="0.2"/>
+    </g>
+  </g>
+  
+  <!-- Bioluminescent plants/coral -->
+  <g>
+    <!-- Plant 1 -->
+    <g transform="translate(80,190)">
+      <path d="M0 0 Q-5 -15 0 -25 Q5 -15 0 0" fill="#39FF14" opacity="0.4"/>
+      <path d="M-3 -5 Q-10 -20 -5 -30" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.5"/>
+      
+      <path d="M3 -5 Q10 -20 5 -30" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.5"/>
+    </g>
+    
+    <!-- Plant 2 -->
+    <g transform="translate(580,195)">
+      <path d="M0 0 Q-8 -20 -2 -35 Q8 -20 0 0" fill="#39FF14" opacity="0.35"/>
+      
+      <circle cx="-2" cy="-35" r="2" fill="#39FF14" opacity="0.8"/>
+    </g>
+    
+    <!-- Plant 3 -->
+    <g transform="translate(980,192)">
+      <path d="M0 0 Q-5 -12 0 -22 Q5 -12 0 0" fill="#39FF14" opacity="0.4"/>
+      
+      <path d="M-2 -8 Q-8 -18 -4 -28" fill="none" stroke="#39FF14" stroke-width="1.5" opacity="0.5"/>
+    </g>
+    
+    <!-- Plant 4 -->
+    <g transform="translate(1380,198)">
+      <path d="M0 0 Q-10 -25 0 -40 Q10 -25 0 0" fill="#39FF14" opacity="0.3"/>
+      
+      <path d="M-5 -10 Q-15 -30 -8 -45" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.4"/>
+      
+      <path d="M5 -10 Q15 -30 8 -45" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.4"/>
+      
+      <circle cx="-8" cy="-45" r="1.5" fill="#39FF14" opacity="0.7"/>
+      
+      <circle cx="8" cy="-45" r="1.5" fill="#39FF14" opacity="0.7"/>
+    </g>
+    
+    <!-- Plant 5 -->
+    <g transform="translate(1780,190)">
+      <path d="M0 0 Q-4 -10 0 -18 Q4 -10 0 0" fill="#39FF14" opacity="0.45"/>
+    </g>
+  </g>
+  
+  <!-- Ambient particles -->
+  <circle cx="200" cy="50" r="1" fill="#87CEEB" opacity="0.2"/>
+  
+  <circle cx="500" cy="80" r="1.5" fill="#87CEEB" opacity="0.15"/>
+  
+  <circle cx="800" cy="40" r="1" fill="#87CEEB" opacity="0.2"/>
+  
+  <circle cx="1100" cy="70" r="1.5" fill="#87CEEB" opacity="0.15"/>
+  
+  <circle cx="1400" cy="55" r="1" fill="#87CEEB" opacity="0.2"/>
+  
+  <circle cx="1700" cy="85" r="1.5" fill="#87CEEB" opacity="0.15"/>
+  
+  <circle cx="300" cy="120" r="1" fill="#87CEEB" opacity="0.1"/>
+  
+  <circle cx="900" cy="110" r="1" fill="#87CEEB" opacity="0.1"/>
+  
+  <circle cx="1600" cy="125" r="1" fill="#87CEEB" opacity="0.1"/>
+  
+  <!-- Label -->
+  <text x="960" y="20" text-anchor="middle" fill="#708090" font-family="monospace" font-size="12" opacity="0.5">BG_TERRAIN_1000M - 深海地形 (1920x200)</text>
+</svg>

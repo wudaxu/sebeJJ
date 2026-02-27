@@ -1,0 +1,68 @@
+{
+  "name": "UI_HUD_Framework",
+  "type": "ui",
+  "style": "cyberpunk_holographic",
+  "colors": {
+    "primary": "#00F0FF",
+    "danger": "#FF00A0",
+    "warning": "#FF6B00",
+    "rare": "#8B5CF6",
+    "background": "rgba(10, 10, 15, 0.85)",
+    "text": "#FFFFFF"
+  },
+  "elements": [
+    {
+      "name": "health_bar",
+      "type": "progress_bar",
+      "position": { "x": 20, "y": 20 },
+      "size": { "w": 200, "h": 20 },
+      "color": "#FF00A0",
+      "glow": true
+    },
+    {
+      "name": "energy_bar",
+      "type": "progress_bar",
+      "position": { "x": 20, "y": 50 },
+      "size": { "w": 200, "h": 15 },
+      "color": "#00F0FF",
+      "glow": true
+    },
+    {
+      "name": "oxygen_bar",
+      "type": "progress_bar",
+      "position": { "x": 20, "y": 75 },
+      "size": { "w": 150, "h": 12 },
+      "color": "#39FF14",
+      "glow": true
+    },
+    {
+      "name": "depth_meter",
+      "type": "digital_display",
+      "position": { "x": 1720, "y": 20 },
+      "size": { "w": 180, "h": 60 },
+      "font": "ShareTechMono",
+      "color": "#00F0FF"
+    },
+    {
+      "name": "cargo_grid",
+      "type": "inventory_grid",
+      "position": { "x": 1600, "y": 800 },
+      "size": { "w": 300, "h": 200 },
+      "slots": { "cols": 4, "rows": 3 },
+      "slot_size": 60
+    },
+    {
+      "name": "minimap",
+      "type": "radar",
+      "position": { "x": 1700, "y": 150 },
+      "size": { "w": 200, "h": 200 },
+      "style": "circular",
+      "color": "#00F0FF"
+    }
+  ],
+  "borders": {
+    "width": 2,
+    "style": "angular",
+    "corner_cut": 10
+  }
+}

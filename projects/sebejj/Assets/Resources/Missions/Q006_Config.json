@@ -1,0 +1,30 @@
+{
+  "missionId": "Q006",
+  "missionName": "稀有金属",
+  "missionType": "collection",
+  "description": "在80米深度区域采集稀有钛合金，用于机甲升级。",
+  "objectives": [
+    {
+      "id": 1,
+      "description": "采集3个钛合金",
+      "type": "collect_item",
+      "target": "titanium_alloy",
+      "count": 3,
+      "completed": false
+    }
+  ],
+  "rewards": {
+    "credits": 2500,
+    "experience": 500,
+    "items": ["titanium_alloy"]
+  },
+  "requirements": {
+    "minDepth": 80,
+    "maxDepth": 80,
+    "prerequisites": ["Q004"]
+  },
+  "difficulty": 2,
+  "estimatedTime": 1200,
+  "dialogueFile": "Q006_Dialogue.json",
+  "scriptFile": "Q006_Script.cs"
+}

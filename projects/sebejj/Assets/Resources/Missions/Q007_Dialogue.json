@@ -1,0 +1,88 @@
+{
+  "missionId": "Q007",
+  "dialogues": [
+    {
+      "id": "start",
+      "speaker": "科学家",
+      "text": "你好，驾驶员！我是深海生物研究所的李博士。我需要前往120米深度的研究站，但那里的机械鱼群让我无法安全通过。能请你护送我吗？",
+      "options": [
+        {
+          "text": "当然，我会保护你的安全。",
+          "next": "start_confirm"
+        },
+        {
+          "text": "研究站是做什么的？",
+          "next": "start_info"
+        }
+      ]
+    },
+    {
+      "id": "start_info",
+      "speaker": "科学家",
+      "text": "那个研究站是我们研究深海生态系统的前哨站。最近我们发现了一些异常的能量读数，需要亲自去调查。这可能会改变我们对深海的认识！",
+      "options": [
+        {
+          "text": "听起来很重要，我们出发吧。",
+          "next": "start_confirm"
+        }
+      ]
+    },
+    {
+      "id": "start_confirm",
+      "speaker": "系统",
+      "text": "护送任务已接受。目标：护送科学家到达120米研究站。注意：NPC会跟随玩家，请保护其安全。",
+      "options": [],
+      "action": "start_mission"
+    },
+    {
+      "id": "escort_start",
+      "speaker": "科学家",
+      "text": "我会紧跟在你身后。如果遇到危险，请一定要保护好我！",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "escort_warning",
+      "speaker": "系统",
+      "text": "警告：侦测到敌对信号。保护科学家！",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "scientist_danger",
+      "speaker": "科学家",
+      "text": "啊！我受到攻击了！请帮帮我！",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "escort_progress",
+      "speaker": "科学家",
+      "text": "我们走了一半了。前面应该就快到了，继续保持警惕！",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "complete",
+      "speaker": "科学家",
+      "text": "太感谢你了！安全到达研究站了。这是你的报酬3500信用点。研究站现在对你开放，随时欢迎你来参观我们的研究成果！",
+      "options": [
+        {
+          "text": "不客气，博士。祝研究顺利！",
+          "next": "end"
+        }
+      ]
+    },
+    {
+      "id": "fail_scientist_died",
+      "speaker": "系统",
+      "text": "任务失败：科学家阵亡。护送任务终止。",
+      "options": [
+        {
+          "text": "该死...",
+          "next": "end"
+        }
+      ]
+    }
+  ]
+}

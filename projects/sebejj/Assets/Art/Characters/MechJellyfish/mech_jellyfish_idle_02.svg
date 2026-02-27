@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tentacleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="50%" stop-color="#0D1B2A"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 机械水母 Idle 帧2 - 收缩上浮 -->
+  <g id="mech-jellyfish-idle-2" transform="translate(0, -5)">
+    <!-- 触手 - 收缩 -->
+    <path d="M 102 145 Q 92 170 97 195 Q 102 185 107 195 Q 112 170 102 145" fill="url(#tentacleGrad)" stroke="#8B5CF6" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <path d="M 117 150 Q 110 175 117 200 Q 122 190 127 200 Q 130 175 117 150" fill="url(#tentacleGrad)" stroke="#8B5CF6" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <path d="M 128 155 Q 125 180 128 205 Q 132 195 135 205 Q 138 180 128 155" fill="url(#tentacleGrad)" stroke="#8B5CF6" stroke-width="2" filter="url(#neonGlow)"/>
+    
+    <path d="M 143 150 Q 140 175 137 200 Q 142 190 147 200 Q 154 175 143 150" fill="url(#tentacleGrad)" stroke="#8B5CF6" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <path d="M 154 145 Q 156 170 163 195 Q 158 185 153 195 Q 148 170 154 145" fill="url(#tentacleGrad)" stroke="#8B5CF6" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <!-- 伞盖主体 - 收缩 -->
+    <ellipse cx="128" cy="118" rx="50" ry="40" fill="#0D1B2A" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <!-- 伞盖内纹理 -->
+    <ellipse cx="128" cy="118" rx="36" ry="27" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+    
+    <ellipse cx="128" cy="118" rx="22" ry="16" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.3"/>
+    
+    <!-- 伞盖分割线 -->
+    <line x1="128" y1="78" x2="128" y2="158" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+    
+    <line x1="78" y1="118" x2="178" y2="118" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+    
+    <!-- 核心 - 收缩发光 -->
+    <circle cx="128" cy="118" r="16" fill="url(#coreGlow)" opacity="0.9"/>
+    <circle cx="128" cy="118" r="9" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    
+    <!-- 发光节点 -->
+    <circle cx="102" cy="98" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="154" cy="98" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="88" cy="118" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="168" cy="118" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="102" cy="138" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="154" cy="138" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    
+    <!-- 触手发光点 -->
+    <circle cx="97" cy="185" r="2" fill="#8B5CF6" opacity="0.7"/>
+    <circle cx="117" cy="190" r="2" fill="#8B5CF6" opacity="0.7"/>
+    <circle cx="128" cy="195" r="2" fill="#8B5CF6" opacity="0.7"/>
+    <circle cx="143" cy="190" r="2" fill="#8B5CF6" opacity="0.7"/>
+    <circle cx="163" cy="185" r="2" fill="#8B5CF6" opacity="0.7"/>
+  </g>
+</svg>

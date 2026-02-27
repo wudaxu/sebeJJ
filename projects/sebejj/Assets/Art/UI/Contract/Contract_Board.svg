@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#0A0A0F"/>
+    </linearGradient>
+    
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00F0FF;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00F0FF;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#0A0A0F"/>
+  
+  <!-- Left Panel: Contract List -->
+  <rect x="50" y="80" width="600" height="950" fill="url(#panelGrad)" stroke="#00F0FF" stroke-width="2"/>
+  
+  <!-- List Header -->
+  <rect x="50" y="80" width="600" height="70" fill="url(#headerGrad)" stroke="#00F0FF" stroke-width="1"/>
+  <text x="350" y="125" fill="#00F0FF" font-family="monospace" font-size="28" text-anchor="middle" filter="url(#glow)">委托任务板</text>
+  
+  <!-- Contract Items -->
+  <!-- Item 1: Active/Selected -->
+  <rect x="70" y="170" width="560" height="100" fill="#00F0FF" opacity="0.1" stroke="#00F0FF" stroke-width="2"/>
+  <text x="100" y="210" fill="#00F0FF" font-family="monospace" font-size="20" font-weight="bold">[紧急] 深海救援信号</text>
+  <text x="100" y="240" fill="#888" font-family="monospace" font-size="14">难度: ★★★☆☆ | 奖励: 15,000 CR</text>
+  <circle cx="590" cy="220" r="15" fill="#FF6B00"/>
+  <text x="590" y="226" fill="#FFF" font-family="monospace" font-size="12" text-anchor="middle">!</text>
+  
+  <!-- Item 2 -->
+  <rect x="70" y="290" width="560" height="100" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.5"/>
+  <text x="100" y="330" fill="#AAA" font-family="monospace" font-size="18">采集任务: 发光藻样本</text>
+  <text x="100" y="360" fill="#666" font-family="monospace" font-size="14">难度: ★★☆☆☆ | 奖励: 8,000 CR</text>
+  
+  <!-- Item 3 -->
+  <rect x="70" y="410" width="560" height="100" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.5"/>
+  <text x="100" y="450" fill="#AAA" font-family="monospace" font-size="18">打捞任务: 沉船遗物</text>
+  <text x="100" y="480" fill="#666" font-family="monospace" font-size="14">难度: ★★★★☆ | 奖励: 25,000 CR</text>
+  
+  <!-- Item 4 -->
+  <rect x="70" y="530" width="560" height="100" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.5"/>
+  <text x="100" y="570" fill="#AAA" font-family="monospace" font-size="18">探索任务: 深渊遗迹</text>
+  <text x="100" y="600" fill="#666" font-family="monospace" font-size="14">难度: ★★★★★ | 奖励: 50,000 CR</text>
+  
+  <!-- Item 5 -->
+  <rect x="70" y="650" width="560" height="100" fill="none" stroke="#00F0FF" stroke-width="1" opacity="0.5"/>
+  <text x="100" y="690" fill="#AAA" font-family="monospace" font-size="18">运输任务: 钛矿交付</text>
+  <text x="100" y="720" fill="#666" font-family="monospace" font-size="14">难度: ★★☆☆☆ | 奖励: 12,000 CR</text>
+  
+  <!-- Scroll indicator -->
+  <rect x="630" y="170" width="6" height="200" fill="#00F0FF" opacity="0.5" rx="3"/>
+  
+  <!-- Right Panel: Contract Detail -->
+  <rect x="700" y="80" width="850" height="700" fill="url(#panelGrad)" stroke="#00F0FF" stroke-width="2"/>
+  
+  <!-- Detail Header -->
+  <rect x="700" y="80" width="850" height="80" fill="url(#headerGrad)" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1125" y="130" fill="#00F0FF" font-family="monospace" font-size="24" text-anchor="middle" filter="url(#glow)">任务详情</text>
+  
+  <!-- Mission Title -->
+  <text x="730" y="210" fill="#FF6B00" font-family="monospace" font-size="22" font-weight="bold">[紧急] 深海救援信号</text>
+  
+  <!-- Mission Description -->
+  <rect x="730" y="240" width="790" height="200" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1" opacity="0.5"/>
+  <text x="750" y="275" fill="#CCC" font-family="monospace" font-size="14">任务描述:</text>
+  <text x="750" y="305" fill="#AAA" font-family="monospace" font-size="13">在坐标 [X: 1247, Y: -892, Z: 1500m] 处探测到</text>
+  <text x="750" y="330" fill="#AAA" font-family="monospace" font-size="13">求救信号。疑似失联的勘探机甲。</text>
+  <text x="750" y="355" fill="#AAA" font-family="monospace" font-size="13">前往调查并带回任何有价值的资料。</text>
+  <text x="750" y="390" fill="#FF6B00" font-family="monospace" font-size="13">警告: 该区域有不明生物活动信号。</text>
+  
+  <!-- Mission Info -->
+  <text x="730" y="480" fill="#00F0FF" font-family="monospace" font-size="16">任务信息:</text>
+  
+  <rect x="730" y="500" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="750" y="524" fill="#AAA" font-family="monospace" font-size="14">目标深度: 1500m</text>
+  
+  <rect x="730" y="545" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="750" y="569" fill="#AAA" font-family="monospace" font-size="14">建议装备: 高级探照灯 + 护盾模块</text>
+  
+  <rect x="730" y="590" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="750" y="614" fill="#AAA" font-family="monospace" font-size="14">时间限制: 30分钟</text>
+  
+  <rect x="730" y="635" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="750" y="659" fill="#AAA" font-family="monospace" font-size="14">难度等级: ★★★☆☆</text>
+  
+  <!-- Objective List -->
+  <text x="1140" y="480" fill="#00F0FF" font-family="monospace" font-size="16">目标:</text>
+  
+  <rect x="1140" y="500" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1160" y="524" fill="#AAA" font-family="monospace" font-size="14">□ 抵达目标坐标</text>
+  
+  <rect x="1140" y="545" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1160" y="569" fill="#AAA" font-family="monospace" font-size="14">□ 调查求救信号来源</text>
+  
+  <rect x="1140" y="590" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1160" y="614" fill="#AAA" font-family="monospace" font-size="14">□ 回收黑匣子数据</text>
+  
+  <rect x="1140" y="635" width="380" height="35" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1160" y="659" fill="#AAA" font-family="monospace" font-size="14">□ 安全返回基地</text>
+  
+  <!-- Reward Panel -->
+  <rect x="700" y="810" width="850" height="220" fill="url(#panelGrad)" stroke="#00F0FF" stroke-width="2"/>
+  
+  <rect x="700" y="810" width="850" height="60" fill="url(#headerGrad)" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1125" y="850" fill="#FFD700" font-family="monospace" font-size="22" text-anchor="middle" filter="url(#glow)">任务奖励</text>
+  
+  <!-- Reward Items -->
+  <rect x="730" y="890" width="250" height="120" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="855" y="920" fill="#FFD700" font-family="monospace" font-size="18" text-anchor="middle">信用点</text>
+  <text x="855" y="970" fill="#FFD700" font-family="monospace" font-size="32" text-anchor="middle" font-weight="bold">15,000</text>
+  
+  <rect x="1000" y="890" width="250" height="120" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1125" y="920" fill="#8B5CF6" font-family="monospace" font-size="18" text-anchor="middle">声望值</text>
+  <text x="1125" y="970" fill="#8B5CF6" font-family="monospace" font-size="32" text-anchor="middle" font-weight="bold">+250</text>
+  
+  <rect x="1270" y="890" width="250" height="120" fill="#0A0A0F" stroke="#00F0FF" stroke-width="1"/>
+  <text x="1395" y="920" fill="#00F0FF" font-family="monospace" font-size="18" text-anchor="middle">额外奖励</text>
+  <text x="1395" y="965" fill="#AAA" font-family="monospace" font-size="14" text-anchor="middle">钛合金装甲</text>
+  <text x="1395" y="985" fill="#AAA" font-family="monospace" font-size="12" text-anchor="middle">(概率掉落)</text>
+  
+  <!-- Action Buttons -->
+  <rect x="1600" y="810" width="270" height="80" fill="none" stroke="#00F0FF" stroke-width="2"/>
+  <rect x="1604" y="814" width="262" height="72" fill="#00F0FF" opacity="0.1"/>
+  <text x="1735" y="858" fill="#00F0FF" font-family="monospace" font-size="22" text-anchor="middle" filter="url(#glow)">接受任务</text>
+  
+  <rect x="1600" y="910" width="270" height="80" fill="none" stroke="#FF00A0" stroke-width="2"/>
+  <text x="1735" y="958" fill="#FF00A0" font-family="monospace" font-size="22" text-anchor="middle">返回</text>
+  
+  <!-- Corner Decorations -->
+  <path d="M50 80 L90 80 L90 85 L55 85 L55 120 L50 120 Z" fill="#00F0FF"/>
+  <path d="M650 80 L610 80 L610 85 L645 85 L645 120 L650 120 Z" fill="#00F0FF"/>
+  <path d="M700 80 L740 80 L740 85 L705 85 L705 120 L700 120 Z" fill="#00F0FF"/>
+  <path d="M1550 80 L1510 80 L1510 85 L1545 85 L1545 120 L1550 120 Z" fill="#00F0FF"/>
+  
+  <!-- Scanlines -->
+  <g opacity="0.03">
+    <line x1="0" y1="100" x2="1920" y2="100" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1920" y2="200" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1920" y2="300" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1920" y2="400" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="500" x2="1920" y2="500" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="600" x2="1920" y2="600" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="700" x2="1920" y2="700" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="800" x2="1920" y2="800" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="900" x2="1920" y2="900" stroke="#00F0FF" stroke-width="1"/>
+    <line x1="0" y1="1000" x2="1920" y2="1000" stroke="#00F0FF" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,137 @@
+{
+  "areaId": "shipwreck_zone_500m",
+  "areaName": "沉船区",
+  "areaNameEn": "Shipwreck Zone",
+  "depth": 500,
+  "sceneConfig": {
+    "visibility": 0.4,
+    "pressureDamage": 3,
+    "pressureDamageInterval": 1.0,
+    "ambientColor": "#0d2535",
+    "fogDensity": 0.25,
+    "lightIntensity": 0.4,
+    "backgroundMusic": "bgm_shipwreck_tension"
+  },
+  "enemies": [
+    {
+      "enemyId": "mech_crab_nest",
+      "enemyName": "机械蟹巢穴",
+      "enemyNameEn": "Mech Crab Nest",
+      "spawnRate": 0.4,
+      "maxGroupSize": 8,
+      "minGroupSize": 4,
+      "aggroRange": 20.0,
+      "patrolRange": 30.0,
+      "nestHealth": 500,
+      "stats": {
+        "health": 80,
+        "damage": 20,
+        "speed": 4.0,
+        "armor": 25
+      },
+      "behaviors": ["nest_defense", "swarm", "burrow_ambush"],
+      "lootTable": ["crab_claw", "circuit_board", "hydraulic_piston"],
+      "nestLoot": ["nest_core", "rare_scrap", "ancient_blueprint"]
+    }
+  ],
+  "resources": [
+    {
+      "resourceId": "titanium_alloy",
+      "resourceName": "钛合金",
+      "resourceNameEn": "Titanium Alloy",
+      "spawnRate": 0.2,
+      "minQuantity": 2,
+      "maxQuantity": 5,
+      "respawnTime": 600,
+      "value": 150,
+      "rarity": "uncommon"
+    },
+    {
+      "resourceId": "ancient_parts",
+      "resourceName": "古代零件",
+      "resourceNameEn": "Ancient Parts",
+      "spawnRate": 0.15,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "respawnTime": 900,
+      "value": 200,
+      "rarity": "rare",
+      "specialEffect": "crafting_material"
+    }
+  ],
+  "specialMechanics": {
+    "mechanicId": "shipwreck_exploration",
+    "mechanicName": "沉船探索",
+    "description": "探索沉没的古代战舰，寻找珍贵物资和古代科技",
+    "properties": {
+      "shipwreckCount": 3,
+      "interiorRooms": 12,
+      "secretCompartments": 4,
+      "floodedSections": 6,
+      "intactSections": 3
+    },
+    "explorationElements": [
+      {
+        "elementId": "cargo_hold",
+        "elementName": "货舱",
+        "lootQuality": "high",
+        "hazardLevel": 2
+      },
+      {
+        "elementId": "engine_room",
+        "elementName": "引擎室",
+        "lootQuality": "very_high",
+        "hazardLevel": 4,
+        "puzzleRequired": true
+      },
+      {
+        "elementId": "captain_quarters",
+        "elementName": "船长室",
+        "lootQuality": "legendary",
+        "hazardLevel": 3,
+        "keyRequired": "captain_key"
+      }
+    ],
+    "hazards": [
+      {
+        "hazardId": "unstable_structure",
+        "hazardName": "不稳定结构",
+        "damage": 40,
+        "effect": "collapse",
+        "warningTime": 2.0
+      },
+      {
+        "hazardId": "toxic_leak",
+        "hazardName": "有毒泄漏",
+        "damage": 8,
+        "damageInterval": 1.0,
+        "effect": "poison",
+        "duration": 10.0
+      },
+      {
+        "hazardId": "electrical_surge",
+        "hazardName": "电流冲击",
+        "damage": 30,
+        "effect": "stun",
+        "duration": 2.0
+      }
+    ]
+  },
+  "unlockRequirements": {
+    "requiredDepth": 500,
+    "requiredMechLevel": 6,
+    "requiredQuest": "quest_reef_conqueror",
+    "requiredItems": ["pressure_suit_mk2", "deep_dive_certification"],
+    "requiredPreviousArea": "reef_zone_200m"
+  },
+  "checkpoint": {
+    "checkpointId": "shipwreck_safe_zone",
+    "position": { "x": 100, "y": -500, "z": 50 },
+    "radius": 12.0,
+    "healRate": 8,
+    "oxygenRefill": true,
+    "ammoRestock": true,
+    "savePoint": true,
+    "specialFeature": "workbench_access"
+  }
+}

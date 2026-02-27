@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- 锯齿金属渐变 -->
+    <linearGradient id="bladeMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C0C0C0"/>
+      <stop offset="50%" stop-color="#808080"/>
+      <stop offset="100%" stop-color="#404040"/>
+    </linearGradient>
+    
+    <!-- 锯齿锋利边缘 -->
+    <linearGradient id="bladeEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E0E0E0"/>
+      <stop offset="100%" stop-color="#A0A0A0"/>
+    </linearGradient>
+    
+    <!-- 运动模糊效果 -->
+    <filter id="motionBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3 0"/>
+    </filter>
+    
+    <!-- 火花发光 -->
+    <filter id="sparkGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="256" height="256" fill="none"/>
+  
+  <!-- 链锯主体圆环 -->
+  <g id="chainsaw-body">
+    <circle cx="128" cy="128" r="90" fill="none" stroke="url(#bladeMetal)" stroke-width="20"/>
+    <circle cx="128" cy="128" r="80" fill="none" stroke="#606060" stroke-width="2"/>
+    <circle cx="128" cy="128" r="100" fill="none" stroke="#404040" stroke-width="2"/>
+  </g>
+  
+  <!-- 锯齿组 - 外圈 -->
+  <g id="teeth-outer">
+    <!-- 12个锯齿 -->
+    <g transform="rotate(0 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(30 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(60 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(90 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(120 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(150 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(180 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(210 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(240 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(270 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(300 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+    <g transform="rotate(330 128 128)">
+      <path d="M128 28 L135 48 L128 38 L121 48 Z" fill="url(#bladeEdge)" stroke="#404040" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- 旋转运动模糊轨迹 -->
+  <g id="motion-trails" opacity="0.3" filter="url(#motionBlur)">
+    <path d="M128 38 A90 90 0 0 1 218 128" fill="none" stroke="#C0C0C0" stroke-width="4"/>
+    <path d="M218 128 A90 90 0 0 1 128 218" fill="none" stroke="#A0A0A0" stroke-width="3"/>
+    <path d="M128 218 A90 90 0 0 1 38 128" fill="none" stroke="#808080" stroke-width="2"/>
+  </g>
+  
+  <!-- 中心轴 -->
+  <g id="center-hub">
+    <circle cx="128" cy="128" r="25" fill="#404040"/>
+    <circle cx="128" cy="128" r="20" fill="#606060"/>
+    <circle cx="128" cy="128" r="15" fill="#808080"/>
+    <circle cx="128" cy="128" r="8" fill="#A0A0A0"/>
+    <!-- 轴孔 -->
+    <circle cx="128" cy="128" r="4" fill="#202020"/>
+  </g>
+  
+  <!-- 火花效果 -->
+  <g id="sparks" filter="url(#sparkGlow)">
+    <line x1="200" y1="80" x2="220" y2="60" stroke="#FFFF00" stroke-width="2" opacity="0.9"/>
+    <line x1="210" y1="90" x2="235" y2="75" stroke="#FF8800" stroke-width="1.5" opacity="0.8"/>
+    <line x1="190" y1="70" x2="205" y2="50" stroke="#FFFF00" stroke-width="1" opacity="0.7"/>
+    <line x1="80" y1="200" x2="60" y2="220" stroke="#FFFF00" stroke-width="2" opacity="0.9"/>
+    <line x1="90" y1="210" x2="75" y2="235" stroke="#FF8800" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="220" cy="60" r="3" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="235" cy="75" r="2" fill="#FFFF00" opacity="0.8"/>
+    <circle cx="60" cy="220" r="3" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="75" cy="235" r="2" fill="#FFFF00" opacity="0.8"/>
+  </g>
+  
+  <!-- 金属碎片 -->
+  <g id="metal-chips" fill="#C0C0C0">
+    <rect x="230" y="70" width="4" height="4" transform="rotate(45 232 72)"/>
+    <rect x="245" y="85" width="3" height="3" transform="rotate(30 246 86)"/>
+    <rect x="50" y="230" width="4" height="4" transform="rotate(60 52 232)"/>
+    <rect x="65" y="245" width="3" height="3" transform="rotate(20 66 246)"/>
+  </g>
+  
+  <!-- 旋转方向指示 -->
+  <g id="rotation-indicator" opacity="0.5">
+    <path d="M180 60 A85 85 0 0 1 210 90" fill="none" stroke="#00F0FF" stroke-width="2" stroke-dasharray="5 3"/>
+    <polygon points="210,90 205,82 215,85" fill="#00F0FF"/>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 护盾渐变 -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 机械蟹 Defend 帧1 - 防御姿态 -->
+  <g id="mech-crab-defend-1">
+    <!-- 护盾效果 -->
+    <ellipse cx="128" cy="135" rx="90" ry="70" fill="url(#shieldGrad)" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5,3" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- 护盾网格 -->
+    <line x1="60" y1="100" x2="196" y2="100" stroke="#8B5CF6" stroke-width="0.5" opacity="0.5"/>
+    <line x1="60" y1="135" x2="196" y2="135" stroke="#8B5CF6" stroke-width="0.5" opacity="0.5"/>
+    <line x1="60" y1="170" x2="196" y2="170" stroke="#8B5CF6" stroke-width="0.5" opacity="0.5"/>
+    <line x1="90" y1="75" x2="90" y2="195" stroke="#8B5CF6" stroke-width="0.5" opacity="0.5"/>
+    <line x1="128" y1="65" x2="128" y2="205" stroke="#8B5CF6" stroke-width="0.5" opacity="0.5"/>
+    <line x1="166" y1="75" x2="166" y2="195" stroke="#8B5CF6" stroke-width="0.5" opacity="0.5"/>
+    
+    <!-- 左后腿 -->
+    <path d="M 85 165 L 65 185 L 60 205" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="60" cy="205" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 右后腿 -->
+    <path d="M 171 165 L 191 185 L 196 205" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="196" cy="205" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 左中腿 -->
+    <path d="M 80 145 L 55 160 L 45 180" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="45" cy="180" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 右中腿 -->
+    <path d="M 176 145 L 201 160 L 211 180" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="211" cy="180" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 左前腿 -->
+    <path d="M 85 125 L 60 135 L 50 150" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="50" cy="150" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 右前腿 -->
+    <path d="M 171 125 L 196 135 L 206 150" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="206" cy="150" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 身体主体 - 降低 -->
+    <rect x="85" y="105" width="86" height="75" rx="10" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 身体装甲板块 -->
+    <rect x="95" y="115" width="22" height="22" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <rect x="125" y="115" width="22" height="22" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <rect x="95" y="145" width="22" height="22" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <rect x="125" y="145" width="22" height="22" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 核心反应堆 -->
+    <circle cx="128" cy="140" r="12" fill="url(#coreGlow)" opacity="0.9"/>
+    <circle cx="128" cy="140" r="7" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 左螯 - 护在身前 -->
+    <path d="M 85 120 L 55 110 L 45 95" fill="none" stroke="#00F0FF" stroke-width="4" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 45 95 L 35 85 L 50 90 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    <path d="M 45 95 L 40 105 L 55 100 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 右螯 - 护在身前 -->
+    <path d="M 171 120 L 201 110 L 211 95" fill="none" stroke="#00F0FF" stroke-width="4" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 211 95 L 221 85 L 206 90 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    <path d="M 211 95 L 216 105 L 201 100 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 眼睛 -->
+    <line x1="110" y1="110" x2="110" y2="100" stroke="#00F0FF" stroke-width="2"/>
+    <circle cx="110" cy="97" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <line x1="146" y1="110" x2="146" y2="100" stroke="#00F0FF" stroke-width="2"/>
+    <circle cx="146" cy="97" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 铆钉 -->
+    <circle cx="95" cy="125" r="1.5" fill="#00F0FF"/>
+    <circle cx="161" cy="125" r="1.5" fill="#00F0FF"/>
+    <circle cx="95" cy="158" r="1.5" fill="#00F0FF"/>
+    <circle cx="161" cy="158" r="1.5" fill="#00F0FF"/>
+  </g>
+</svg>

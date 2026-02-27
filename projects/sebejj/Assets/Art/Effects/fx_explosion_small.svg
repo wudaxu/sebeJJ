@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="explosionCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#FFFF88"/>
+      <stop offset="40%" stop-color="#FF8800"/>
+      <stop offset="60%" stop-color="#FF4400"/>
+      <stop offset="80%" stop-color="#880000"/>
+      <stop offset="100%" stop-color="#220000" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="explosionOuter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF8800" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FF4400" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF0040" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 小型爆炸特效 --
+       用于爆炸武器、地雷等
+       动画帧建议: 6-8帧，由小变大再消散
+  -->
+  
+  <g id="explosion-small">
+    <!-- 外圈烟雾 -->
+    <circle cx="64" cy="64" r="55" fill="url(#explosionOuter)" opacity="0.6"/>
+    
+    <!-- 爆炸主体 -->
+    <circle cx="64" cy="64" r="40" fill="url(#explosionCenter)" filter="url(#strongGlow)"/>
+    
+    <!-- 爆炸碎片 - 向外飞散 -->
+    <!-- 上 -->
+    <path d="M 64 15 L 68 35 L 64 40 L 60 35 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    <path d="M 55 20 L 58 32 L 55 36 L 52 30 Z" fill="#FF6600"/>
+    <path d="M 73 20 L 76 32 L 73 36 L 70 30 Z" fill="#FF6600"/>
+    
+    <!-- 下 -->
+    <path d="M 64 113 L 68 93 L 64 88 L 60 93 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    <path d="M 55 108 L 58 96 L 55 92 L 52 98 Z" fill="#FF6600"/>
+    <path d="M 73 108 L 76 96 L 73 92 L 70 98 Z" fill="#FF6600"/>
+    
+    <!-- 左 -->
+    <path d="M 15 64 L 35 68 L 40 64 L 35 60 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    <path d="M 20 55 L 32 58 L 36 55 L 30 52 Z" fill="#FF6600"/>
+    <path d="M 20 73 L 32 76 L 36 73 L 30 70 Z" fill="#FF6600"/>
+    
+    <!-- 右 -->
+    <path d="M 113 64 L 93 68 L 88 64 L 93 60 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    <path d="M 108 55 L 96 58 L 92 55 L 98 52 Z" fill="#FF6600"/>
+    <path d="M 108 73 L 96 76 L 92 73 L 98 70 Z" fill="#FF6600"/>
+    
+    <!-- 对角线碎片 -->
+    <path d="M 28 28 L 42 42 L 45 38 L 32 24 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <path d="M 100 28 L 86 42 L 83 38 L 96 24 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <path d="M 28 100 L 42 86 L 45 90 L 32 104 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <path d="M 100 100 L 86 86 L 83 90 L 96 104 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    
+    <!-- 小碎片 -->
+    <circle cx="22" cy="45" r="3" fill="#FFFFFF"/>
+    <circle cx="106" cy="38" r="3" fill="#FFFFFF"/>
+    <circle cx="35" cy="105" r="3" fill="#FFFFFF"/>
+    <circle cx="95" cy="108" r="3" fill="#FFFFFF"/>
+    <circle cx="18" cy="80" r="2" fill="#FFAA00"/>
+    <circle cx="110" cy="75" r="2" fill="#FFAA00"/>
+    <circle cx="50" cy="18" r="2" fill="#FFAA00"/>
+    <circle cx="78" cy="115" r="2" fill="#FFAA00"/>
+    
+    <!-- 中心强光 -->
+    <circle cx="64" cy="64" r="20" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="64" cy="64" r="12" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+</svg>

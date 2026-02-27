@@ -1,0 +1,59 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 机甲移动动画帧2 - 向前推进 -->
+  <defs>
+    <linearGradient id="mechBody2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#445566"/>
+      <stop offset="100%" style="stop-color:#223344"/>
+    </linearGradient>
+    <linearGradient id="cockpit2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FFFF"/>
+      <stop offset="100%" style="stop-color:#0088AA"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 推进器火焰 - 长 -->
+  <ellipse cx="18" cy="55" rx="4" ry="8" fill="#00FFFF" opacity="0.8"/>
+  <ellipse cx="46" cy="55" rx="4" ry="8" fill="#00FFFF" opacity="0.8"/>
+  <ellipse cx="24" cy="58" rx="3" ry="6" fill="#0088FF" opacity="0.7"/>
+  <ellipse cx="40" cy="58" rx="3" ry="6" fill="#0088FF" opacity="0.7"/>
+  <ellipse cx="18" cy="60" rx="2" ry="4" fill="#FFFFFF" opacity="0.5"/>
+  <ellipse cx="46" cy="60" rx="2" ry="4" fill="#FFFFFF" opacity="0.5"/>
+  
+  <!-- 机械臂左 - 向后摆动 -->
+  <rect x="6" y="28" width="10" height="6" rx="2" fill="url(#mechBody2)" transform="rotate(-10 11 31)"/>
+  <rect x="3" y="30" width="4" height="4" rx="1" fill="#556677"/>
+  
+  <!-- 机械臂右 - 向后摆动 -->
+  <rect x="48" y="28" width="10" height="6" rx="2" fill="url(#mechBody2)" transform="rotate(10 53 31)"/>
+  <rect x="57" y="30" width="4" height="4" rx="1" fill="#556677"/>
+  
+  <!-- 货舱 -->
+  <rect x="20" y="38" width="24" height="12" rx="2" fill="#334455"/>
+  <rect x="22" y="40" width="20" height="8" rx="1" fill="#223344"/>
+  
+  <!-- 主体框架 - 略微前倾 -->
+  <ellipse cx="32" cy="33" rx="18" ry="14" fill="url(#mechBody2)"/>
+  <ellipse cx="32" cy="33" rx="14" ry="10" fill="#2A3A4A"/>
+  
+  <!-- 驾驶舱 -->
+  <circle cx="32" cy="31" r="8" fill="url(#cockpit2)" filter="url(#glow2)"/>
+  <circle cx="32" cy="31" r="6" fill="#00FFFF" opacity="0.3"/>
+  
+  <!-- 传感器 -->
+  <circle cx="22" cy="25" r="2" fill="#00FF88" filter="url(#glow2)"/>
+  <circle cx="42" cy="25" r="2" fill="#00FF88" filter="url(#glow2)"/>
+  
+  <!-- 推进器主体 -->
+  <rect x="14" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  <rect x="42" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  
+  <!-- 装饰线条 -->
+  <line x1="28" y1="39" x2="36" y2="39" stroke="#00FFFF" stroke-width="1" opacity="0.5"/>
+</svg>

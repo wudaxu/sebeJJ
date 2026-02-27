@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+    </linearGradient>
+    
+    <radialGradient id="shieldCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 机械蟹防御护盾特效 -->
+  <!-- 用于机械蟹开启防御护盾时的效果 -->
+  <!-- 动画建议: 护盾展开后持续循环，包含脉冲效果 -->
+  
+  <g id="enemy-crab-shield">
+    <!-- 护盾外圈 -->
+    <circle cx="64" cy="64" r="55" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-dasharray="8,4" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- 护盾主体 -->
+    <circle cx="64" cy="64" r="50" fill="url(#shieldGrad)" opacity="0.5"/>
+    <circle cx="64" cy="64" r="45" fill="url(#shieldCore)"/>
+    
+    <!-- 护盾网格 -->
+    <g stroke="#8B5CF6" stroke-width="0.8" opacity="0.6">
+      <ellipse cx="64" cy="64" rx="50" ry="15" fill="none"/>
+      <ellipse cx="64" cy="64" rx="50" ry="30" fill="none"/>
+      <ellipse cx="64" cy="64" rx="50" ry="40" fill="none"/>
+      <ellipse cx="64" cy="64" rx="35" ry="50" fill="none"/>
+      <ellipse cx="64" cy="64" rx="20" ry="50" fill="none"/>
+      <line x1="14" y1="64" x2="114" y2="64"/>
+      <line x1="64" y1="14" x2="64" y2="114"/>
+    </g>
+    
+    <!-- 六边形护盾单元 -->
+    <g stroke="#00F0FF" stroke-width="1" fill="none" opacity="0.7" filter="url(#neonGlow)">
+      <polygon points="64,20 75,26 75,38 64,44 53,38 53,26"/>
+      <polygon points="64,108 75,102 75,90 64,84 53,90 53,102"/>
+      <polygon points="20,64 26,53 38,53 44,64 38,75 26,75"/>
+      <polygon points="108,64 102,53 90,53 84,64 90,75 102,75"/>
+      <polygon points="35,35 42,28 52,32 55,42 48,50 38,46"/>
+      <polygon points="93,35 100,28 110,32 113,42 106,50 96,46"/>
+      <polygon points="35,93 42,100 52,96 55,86 48,78 38,82"/>
+      <polygon points="93,93 100,100 110,96 113,86 106,78 96,82"/>
+    </g>
+    
+    <!-- 能量脉冲环 -->
+    <circle cx="64" cy="64" r="40" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.6" filter="url(#neonGlow)"/>
+    
+    <!-- 护盾能量点 -->
+    <circle cx="64" cy="14" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="64" cy="114" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="14" cy="64" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="114" cy="64" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="30" cy="30" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="98" cy="30" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="30" cy="98" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <circle cx="98" cy="98" r="3" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    
+    <!-- 中心蟹形标记 -->
+    <circle cx="64" cy="64" r="12" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+    <path d="M 58 58 L 60 64 L 58 70 M 70 58 L 68 64 L 70 70" fill="none" stroke="#00F0FF" stroke-width="1.5"/>
+    <path d="M 64 52 L 64 76" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- EMP核心渐变 -->
+    <radialGradient id="empCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#00FFFF"/>
+      <stop offset="60%" stop-color="#0080FF"/>
+      <stop offset="100%" stop-color="#000080" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- 电磁波纹渐变 -->
+    <radialGradient id="empWave" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#00FFFF" stop-opacity="0.8"/>
+      <stop offset="85%" stop-color="#0080FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0000FF" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- 干扰噪点滤镜 -->
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5"/>
+    </filter>
+    
+    <!-- 强烈发光 -->
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="512" height="512" fill="none"/>
+  
+  <!-- EMP核心爆发 -->
+  <g id="emp-core" filter="url(#strongGlow)">
+    <circle cx="256" cy="256" r="60" fill="url(#empCore)"/>
+    <circle cx="256" cy="256" r="40" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+  
+  <!-- 电磁波纹 - 第1波 -->
+  <g id="emp-wave-1" opacity="0.9">
+    <circle cx="256" cy="256" r="100" fill="none" stroke="#00FFFF" stroke-width="4" filter="url(#strongGlow)"/>
+    <circle cx="256" cy="256" r="100" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  </g>
+  
+  <!-- 电磁波纹 - 第2波 -->
+  <g id="emp-wave-2" opacity="0.7">
+    <circle cx="256" cy="256" r="150" fill="none" stroke="#00FFFF" stroke-width="3" filter="url(#strongGlow)"/>
+    <circle cx="256" cy="256" r="150" fill="none" stroke="#0080FF" stroke-width="1"/>
+  </g>
+  
+  <!-- 电磁波纹 - 第3波 -->
+  <g id="emp-wave-3" opacity="0.5">
+    <circle cx="256" cy="256" r="200" fill="none" stroke="#0080FF" stroke-width="2" filter="url(#strongGlow)"/>
+  </g>
+  
+  <!-- 电磁波纹 - 第4波 -->
+  <g id="emp-wave-4" opacity="0.3">
+    <circle cx="256" cy="256" r="240" fill="none" stroke="#0040FF" stroke-width="2" filter="url(#strongGlow)"/>
+  </g>
+  
+  <!-- 电磁干扰线 -->
+  <g id="emp-interference" stroke="#00FFFF" stroke-width="1" opacity="0.6" filter="url(#noise)">
+    <line x1="256" y1="50" x2="256" y2="100"/>
+    <line x1="256" y1="412" x2="256" y2="462"/>
+    <line x1="50" y1="256" x2="100" y2="256"/>
+    <line x1="412" y1="256" x2="462" y2="256"/>
+    <line x1="110" y1="110" x2="145" y2="145"/>
+    <line x1="367" y1="367" x2="402" y2="402"/>
+    <line x1="402" y1="110" x2="367" y2="145"/>
+    <line x1="145" y1="367" x2="110" y2="402"/>
+  </g>
+  
+  <!-- 电弧效果 -->
+  <g id="emp-arcs" fill="none" stroke="#00FFFF" stroke-width="2" filter="url(#strongGlow)">
+    <path d="M256 180 Q270 150 256 120 Q242 150 256 180" opacity="0.8"/>
+    <path d="M256 332 Q270 362 256 392 Q242 362 256 332" opacity="0.8"/>
+    <path d="M180 256 Q150 270 120 256 Q150 242 180 256" opacity="0.8"/>
+    <path d="M332 256 Q362 270 392 256 Q362 242 332 256" opacity="0.8"/>
+    <path d="M200 200 Q220 180 200 160 Q180 180 200 200" opacity="0.6"/>
+    <path d="M312 200 Q332 220 352 200 Q332 180 312 200" opacity="0.6"/>
+    <path d="M200 312 Q180 332 200 352 Q220 332 200 312" opacity="0.6"/>
+    <path d="M312 312 Q332 292 352 312 Q332 332 312 312" opacity="0.6"/>
+  </g>
+  
+  <!-- 受影响区域标记 -->
+  <g id="affected-zone" opacity="0.2">
+    <circle cx="256" cy="256" r="180" fill="url(#empWave)"/>
+  </g>
+  
+  <!-- 数字干扰效果 -->
+  <g id="digital-glitch" fill="#00FFFF" opacity="0.4" font-family="monospace" font-size="8">
+    <text x="180" y="180">0101</text>
+    <text x="320" y="180">1010</text>
+    <text x="180" y="340">1010</text>
+    <text x="320" y="340">0101</text>
+  </g>
+</svg>

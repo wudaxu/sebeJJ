@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="32" viewBox="0 0 128 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- 能量条渐变 -->
+    <linearGradient id="energyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00A8FF"/>
+      <stop offset="50%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#39FF14"/>
+    </linearGradient>
+    <!-- 能量耗尽渐变 -->
+    <linearGradient id="energyEmptyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A3A4A"/>
+      <stop offset="100%" stop-color="#0D2A3A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 9-patch 结构说明:
+       四角: 4x4px (固定)
+       四边: 可拉伸区域
+       中心: 填充区域
+  -->
+  
+  <!-- 外框背景 -->
+  <rect x="0" y="0" width="128" height="32" fill="#0A0A0F" stroke="#00F0FF" stroke-width="2" rx="2"/>
+  
+  <!-- 9-patch 拉伸区域标记 -->
+  <rect x="16" y="0" width="96" height="2" fill="#00F0FF" opacity="0.3"/>
+  <rect x="16" y="30" width="96" height="2" fill="#00F0FF" opacity="0.3"/>
+  <rect x="0" y="8" width="2" height="16" fill="#00F0FF" opacity="0.3"/>
+  <rect x="126" y="8" width="2" height="16" fill="#00F0FF" opacity="0.3"/>
+  
+  <!-- 填充区域示例 (100%能量) -->
+  <rect x="4" y="4" width="120" height="24" fill="url(#energyGrad)" rx="1" filter="url(#neonGlow)"/>
+  
+  <!-- 能量流动效果 (动态条纹) -->
+  <rect x="4" y="4" width="20" height="24" fill="#FFFFFF" opacity="0.15" rx="1">
+    <animate attributeName="x" values="4;104;4" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  
+  
+  <!-- 高光效果 -->
+  <rect x="4" y="4" width="120" height="12" fill="#FFFFFF" opacity="0.25" rx="1"/>
+  
+  <!-- 四角装饰 -->
+  <path d="M 2 8 L 2 2 L 8 2" fill="none" stroke="#39FF14" stroke-width="1"/>
+  <path d="M 120 2 L 126 2 L 126 8" fill="none" stroke="#39FF14" stroke-width="1"/>
+  <path d="M 2 24 L 2 30 L 8 30" fill="none" stroke="#39FF14" stroke-width="1"/>
+  <path d="M 120 30 L 126 30 L 126 24" fill="none" stroke="#39FF14" stroke-width="1"/>
+  
+  <!-- 刻度线 -->
+  <line x1="32" y1="4" x2="32" y2="28" stroke="#0A0A0F" stroke-width="1" opacity="0.3"/>
+  <line x1="64" y1="4" x2="64" y2="28" stroke="#0A0A0F" stroke-width="1" opacity="0.3"/>
+  <line x1="96" y1="4" x2="96" y2="28" stroke="#0A0A0F" stroke-width="1" opacity="0.3"/>
+</svg>

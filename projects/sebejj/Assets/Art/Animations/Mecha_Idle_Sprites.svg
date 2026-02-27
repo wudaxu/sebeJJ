@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" width="1024" height="256">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2332"/>
+      <stop offset="100%" style="stop-color:#0D1B2A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Frame 1: Idle Base -->
+  <g transform="translate(0,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    <!-- Thrusters -->
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <!-- Arms -->
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <!-- Body -->
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Core -->
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <!-- Cockpit -->
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <!-- Headlight -->
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 2: Idle Float Up -->
+  <g transform="translate(256,-3)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    <path d="M75 182 L105 182 L100 218 L80 218 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="218" rx="7" ry="4" fill="#00F0FF" filter="url(#glow)"/>
+    <path d="M151 182 L181 182 L176 218 L156 218 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="218" rx="7" ry="4" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="122" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <rect x="171" y="122" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <path d="M88 102 L168 102 L178 182 L78 182 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="137" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="137" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 72 L148 72 L155 102 L101 102 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 77 L144 77 L149 97 L107 97 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="70" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="70" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 3: Idle Base (repeat) -->
+  <g transform="translate(512,0)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 185 L105 185 L100 215 L80 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    <path d="M151 185 L181 185 L176 215 L156 215 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="215" rx="6" ry="3" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <rect x="171" y="125" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <path d="M88 105 L168 105 L178 185 L78 185 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="140" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="140" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 75 L148 75 L155 105 L101 105 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 80 L144 80 L149 100 L107 100 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="73" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="73" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Frame 4: Idle Float Down -->
+  <g transform="translate(768,3)">
+    <rect width="256" height="256" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.2"/>
+    
+    <path d="M75 188 L105 188 L100 212 L80 212 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="90" cy="212" rx="5" ry="2" fill="#00F0FF" filter="url(#glow)"/>
+    <path d="M151 188 L181 188 L176 212 L156 212 Z" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <ellipse cx="166" cy="212" rx="5" ry="2" fill="#00F0FF" filter="url(#glow)"/>
+    
+    <rect x="55" y="128" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    <rect x="171" y="128" width="30" height="55" rx="3" fill="url(#bodyGrad)" stroke="#00F0FF"/>
+    
+    <path d="M88 108 L168 108 L178 188 L78 188 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="143" r="15" fill="#00F0FF" filter="url(#glow)"/>
+    <circle cx="128" cy="143" r="5" fill="#FFFFFF"/>
+    
+    <path d="M108 78 L148 78 L155 108 L101 108 Z" fill="#0D1B2A" stroke="#00F0FF"/>
+    <path d="M112 83 L144 83 L149 103 L107 103 Z" fill="#00F0FF" opacity="0.3"/>
+    
+    <ellipse cx="128" cy="76" rx="18" ry="5" fill="#1a2332" stroke="#00F0FF"/>
+    <ellipse cx="128" cy="76" rx="10" ry="2.5" fill="#FFFFFF" filter="url(#glow)"/>
+  </g>
+</svg>

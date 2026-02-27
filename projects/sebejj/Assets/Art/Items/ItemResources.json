@@ -1,0 +1,63 @@
+{
+  "name": "Week2_ItemResources",
+  "version": "1.0",
+  "resources": [
+    {
+      "id": "copper",
+      "name": "铜矿",
+      "symbol": "Cu",
+      "rarity": "common",
+      "color": "#B87333",
+      "description": "常见的导电金属，广泛用于电子元件制造"
+    },
+    {
+      "id": "iron",
+      "name": "铁矿",
+      "symbol": "Fe",
+      "rarity": "common",
+      "color": "#708090",
+      "description": "基础结构材料，机甲装甲的主要成分"
+    },
+    {
+      "id": "silver",
+      "name": "银矿",
+      "symbol": "Ag",
+      "rarity": "uncommon",
+      "color": "#C0C0C0",
+      "description": "高导电贵金属，用于精密电子系统"
+    },
+    {
+      "id": "gold",
+      "name": "金矿",
+      "symbol": "Au",
+      "rarity": "rare",
+      "color": "#FFD700",
+      "description": "珍贵金属，高级电子元件和交易货币"
+    },
+    {
+      "id": "titanium",
+      "name": "钛矿",
+      "symbol": "Ti",
+      "rarity": "uncommon",
+      "color": "#4682B4",
+      "description": "高强度轻质金属，用于高级机甲部件"
+    },
+    {
+      "id": "glow_algae",
+      "name": "发光藻",
+      "symbol": "BIO",
+      "rarity": "uncommon",
+      "color": "#39FF14",
+      "description": "生物发光植物，可用于能源或照明"
+    },
+    {
+      "id": "deep_crystal",
+      "name": "深海晶体",
+      "symbol": "CRY",
+      "rarity": "rare",
+      "color": "#8B5CF6",
+      "description": "神秘的深海矿物，蕴含未知能量"
+    }
+  ],
+  "file": "Items/ITM_Resources_Common.svg"
+}

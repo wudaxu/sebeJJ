@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256">
+  <defs>
+    <!-- Glow Filters -->
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="coreGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradients -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a4a"/>
+      <stop offset="50%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#0a1520"/>
+    </linearGradient>
+    
+    <radialGradient id="coreGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="30%" style="stop-color:#00F0FF"/>
+      <stop offset="100%" style="stop-color:#00a0aa"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Frame 1: Base Position -->
+  <g transform="translate(0,0)">
+    <!-- Thruster flames -->
+    <ellipse cx="90" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Thruster -->
+    <path d="M75 200 L90 190 L105 200 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Thruster -->
+    <path d="M151 200 L166 190 L181 200 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Main Body -->
+    <path d="M90 130 L110 110 L146 110 L166 130 L156 190 L100 190 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Core Reactor -->
+    <circle cx="128" cy="145" r="18" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    <circle cx="128" cy="145" r="12" fill="#00F0FF" opacity="0.8"/>
+    
+    <!-- Cockpit -->
+    <path d="M108 95 L118 75 L138 75 L148 95 L138 110 L118 110 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    <ellipse cx="128" cy="90" rx="8" ry="6" fill="#00F0FF" opacity="0.4"/>
+    
+    <!-- Headlight -->
+    <path d="M118 72 L128 65 L138 72" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    <ellipse cx="128" cy="68" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Arm -->
+    <path d="M90 140 L70 130 L60 160 L65 190 L85 185 L95 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="62" y="150" width="20" height="8" fill="#00F0FF" opacity="0.5"/>
+    
+    <!-- Right Arm -->
+    <path d="M166 140 L186 130 L196 160 L191 190 L171 185 L161 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="174" y="150" width="20" height="8" fill="#00F0FF" opacity="0.5"/>
+    
+    <!-- Frame Label -->
+    <text x="128" y="250" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="12">IDLE 1</text>
+  </g>
+  
+  <!-- Frame 2: Float Up -->
+  <g transform="translate(256,-8)">
+    <!-- Thruster flames (slightly larger) -->
+    <ellipse cx="90" cy="222" rx="14" ry="7" fill="#00F0FF" opacity="0.7" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="222" rx="14" ry="7" fill="#00F0FF" opacity="0.7" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Thruster -->
+    <path d="M75 192 L90 182 L105 192 L100 212 L80 212 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Thruster -->
+    <path d="M151 192 L166 182 L181 192 L176 212 L156 212 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Main Body -->
+    <path d="M90 122 L110 102 L146 102 L166 122 L156 182 L100 182 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Core Reactor (brighter) -->
+    <circle cx="128" cy="137" r="19" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    <circle cx="128" cy="137" r="13" fill="#00F0FF" opacity="0.9"/>
+    
+    <!-- Cockpit -->
+    <path d="M108 87 L118 67 L138 67 L148 87 L138 102 L118 102 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    <ellipse cx="128" cy="82" rx="8" ry="6" fill="#00F0FF" opacity="0.5"/>
+    
+    <!-- Headlight -->
+    <path d="M118 64 L128 57 L138 64" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    <ellipse cx="128" cy="60" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Arm -->
+    <path d="M90 132 L70 122 L60 152 L65 182 L85 177 L95 152 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="62" y="142" width="20" height="8" fill="#00F0FF" opacity="0.6"/>
+    
+    <!-- Right Arm -->
+    <path d="M166 132 L186 122 L196 152 L191 182 L171 177 L161 152 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="174" y="142" width="20" height="8" fill="#00F0FF" opacity="0.6"/>
+    
+    <text x="128" y="242" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="12">IDLE 2</text>
+  </g>
+  
+  <!-- Frame 3: Peak Up -->
+  <g transform="translate(512,-12)">
+    <!-- Thruster flames -->
+    <ellipse cx="90" cy="218" rx="13" ry="6" fill="#00F0FF" opacity="0.65" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="218" rx="13" ry="6" fill="#00F0FF" opacity="0.65" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Thruster -->
+    <path d="M75 188 L90 178 L105 188 L100 208 L80 208 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Thruster -->
+    <path d="M151 188 L166 178 L181 188 L176 208 L156 208 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Main Body -->
+    <path d="M90 118 L110 98 L146 98 L166 118 L156 178 L100 178 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Core Reactor -->
+    <circle cx="128" cy="133" r="18" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    <circle cx="128" cy="133" r="12" fill="#00F0FF" opacity="0.85"/>
+    
+    <!-- Cockpit -->
+    <path d="M108 83 L118 63 L138 63 L148 83 L138 98 L118 98 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    <ellipse cx="128" cy="78" rx="8" ry="6" fill="#00F0FF" opacity="0.45"/>
+    
+    <!-- Headlight -->
+    <path d="M118 60 L128 53 L138 60" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    <ellipse cx="128" cy="56" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Arm -->
+    <path d="M90 128 L70 118 L60 148 L65 178 L85 173 L95 148 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="62" y="138" width="20" height="8" fill="#00F0FF" opacity="0.55"/>
+    
+    <!-- Right Arm -->
+    <path d="M166 128 L186 118 L196 148 L191 178 L171 173 L161 148 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="174" y="138" width="20" height="8" fill="#00F0FF" opacity="0.55"/>
+    
+    <text x="128" y="238" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="12">IDLE 3</text>
+  </g>
+  
+  <!-- Frame 4: Return -->
+  <g transform="translate(768,-4)">
+    <!-- Thruster flames -->
+    <ellipse cx="90" cy="226" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="226" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Thruster -->
+    <path d="M75 196 L90 186 L105 196 L100 216 L80 216 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Thruster -->
+    <path d="M151 196 L166 186 L181 196 L176 216 L156 216 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Main Body -->
+    <path d="M90 126 L110 106 L146 106 L166 126 L156 186 L100 186 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Core Reactor -->
+    <circle cx="128" cy="141" r="18" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    <circle cx="128" cy="141" r="12" fill="#00F0FF" opacity="0.8"/>
+    
+    <!-- Cockpit -->
+    <path d="M108 91 L118 71 L138 71 L148 91 L138 106 L118 106 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    <ellipse cx="128" cy="86" rx="8" ry="6" fill="#00F0FF" opacity="0.4"/>
+    
+    <!-- Headlight -->
+    <path d="M118 68 L128 61 L138 68" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    <ellipse cx="128" cy="64" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Arm -->
+    <path d="M90 136 L70 126 L60 156 L65 186 L85 181 L95 156 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="62" y="146" width="20" height="8" fill="#00F0FF" opacity="0.5"/>
+    
+    <!-- Right Arm -->
+    <path d="M166 136 L186 126 L196 156 L191 186 L171 181 L161 156 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    <rect x="174" y="146" width="20" height="8" fill="#00F0FF" opacity="0.5"/>
+    
+    <text x="128" y="246" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="12">IDLE 4</text>
+  </g>
+</svg>

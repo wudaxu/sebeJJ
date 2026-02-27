@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 铜矿渐变 -->
+    <linearGradient id="copperGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFAB91;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF7043;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D84315;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 铜矿纹理 -->
+    <pattern id="copperPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="url(#copperGradient)"/>
+      <circle cx="5" cy="5" r="2" fill="#BF360C" opacity="0.4"/>
+      <circle cx="15" cy="12" r="3" fill="#BF360C" opacity="0.3"/>
+      <circle cx="10" cy="18" r="1.5" fill="#FFCCBC" opacity="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- 铜矿脉主体 -->
+  <g transform="translate(14, 14)">
+    <!-- 主矿块 -->
+    <path d="M20 0 L80 10 L100 40 L90 80 L50 100 L10 70 L0 30 Z" 
+          fill="url(#copperPattern)" stroke="#BF360C" stroke-width="2"/>
+    
+    <!-- 矿脉纹理 -->
+    <path d="M25 20 L45 30 L35 50" stroke="#BF360C" stroke-width="2" fill="none"/>
+    <path d="M60 25 L75 35 L70 55" stroke="#BF360C" stroke-width="2" fill="none"/>
+    <path d="M40 60 L55 70 L50 85" stroke="#BF360C" stroke-width="2" fill="none"/>
+    
+    <!-- 高光 -->
+    <path d="M25 10 L60 15 L50 25 Z" fill="#FFCCBC" opacity="0.6"/>
+    <path d="M70 20 L85 30 L80 40 Z" fill="#FFCCBC" opacity="0.5"/>
+  </g>
+  
+  <!-- 小矿石点缀 -->
+  <circle cx="25" cy="25" r="4" fill="#FF7043"/>
+  <circle cx="95" cy="45" r="3" fill="#FF8A65"/>
+  <circle cx="70" cy="95" r="5" fill="#FF7043"/>
+</svg>

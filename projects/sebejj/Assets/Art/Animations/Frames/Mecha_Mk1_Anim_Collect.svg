@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 256">
+  <defs>
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="coreGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a4a"/>
+      <stop offset="50%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#0a1520"/>
+    </linearGradient>
+    
+    <radialGradient id="coreGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="30%" style="stop-color:#00F0FF"/>
+      <stop offset="100%" style="stop-color:#00a0aa"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Frame 1: Approach -->
+  <g transform="translate(0,0)">
+    <ellipse cx="90" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <path d="M75 200 L90 190 L105 200 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M151 200 L166 190 L181 200 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M90 130 L110 110 L146 110 L166 130 L156 190 L100 190 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="145" r="18" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    
+    <path d="M108 95 L118 75 L138 75 L148 95 L138 110 L118 110 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    
+    <path d="M118 72 L128 65 L138 72" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <ellipse cx="128" cy="68" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <!-- Left Arm (relaxed) -->
+    <path d="M90 140 L70 130 L60 160 L65 190 L85 185 L95 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Arm (extending) -->
+    <path d="M166 140 L200 120 L210 140 L205 170 L175 175 L161 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Claw opening -->
+    <path d="M200 120 L220 100 L225 110 L210 130" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <path d="M210 140 L230 150 L225 160 L205 150" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <text x="128" y="250" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 1</text>
+  </g>
+  
+  <!-- Frame 2: Extend -->
+  <g transform="translate(256,0)">
+    <ellipse cx="90" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <path d="M75 200 L90 190 L105 200 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M151 200 L166 190 L181 200 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M90 130 L110 110 L146 110 L166 130 L156 190 L100 190 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="145" r="18" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    
+    <path d="M108 95 L118 75 L138 75 L148 95 L138 110 L118 110 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    
+    <path d="M118 72 L128 65 L138 72" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <ellipse cx="128" cy="68" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <path d="M90 140 L70 130 L60 160 L65 190 L85 185 L95 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Arm (fully extended) -->
+    <path d="M166 140 L220 110 L235 130 L225 165 L180 175 L161 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Claw open -->
+    <path d="M220 110 L250 85 L255 95 L230 120" fill="none" stroke="#00F0FF" stroke-width="2.5"/>
+    
+    <path d="M235 130 L260 140 L255 155 L230 145" fill="none" stroke="#00F0FF" stroke-width="2.5"/>
+    
+    <text x="128" y="250" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 2</text>
+  </g>
+  
+  <!-- Frame 3: Grab -->
+  <g transform="translate(512,0)">
+    <ellipse cx="90" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <path d="M75 200 L90 190 L105 200 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M151 200 L166 190 L181 200 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M90 130 L110 110 L146 110 L166 130 L156 190 L100 190 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="145" r="20" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    
+    <path d="M108 95 L118 75 L138 75 L148 95 L138 110 L118 110 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    
+    <path d="M118 72 L128 65 L138 72" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <ellipse cx="128" cy="68" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <path d="M90 140 L70 130 L60 160 L65 190 L85 185 L95 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Arm (grabbing) -->
+    <path d="M166 140 L220 110 L235 130 L225 165 L180 175 L161 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Claw closing -->
+    <path d="M220 110 L245 95 L248 102 L230 115" fill="none" stroke="#00F0FF" stroke-width="3"/>
+    
+    <path d="M235 130 L252 138 L248 145 L230 140" fill="none" stroke="#00F0FF" stroke-width="3"/>
+    
+    <!-- Item being grabbed -->
+    <circle cx="245" cy="120" r="10" fill="#8B5CF6" stroke="#00F0FF" stroke-width="1.5" filter="url(#cyanGlow)"/>
+    
+    <text x="128" y="250" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 3</text>
+  </g>
+  
+  <!-- Frame 4: Lift -->
+  <g transform="translate(768,0)">
+    <ellipse cx="90" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <path d="M75 200 L90 190 L105 200 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M151 200 L166 190 L181 200 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M90 130 L110 110 L146 110 L166 130 L156 190 L100 190 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="145" r="19" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    
+    <path d="M108 95 L118 75 L138 75 L148 95 L138 110 L118 110 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    
+    <path d="M118 72 L128 65 L138 72" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <ellipse cx="128" cy="68" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <path d="M90 140 L70 130 L60 160 L65 190 L85 185 L95 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Arm (lifting) -->
+    <path d="M166 140 L210 115 L225 125 L215 155 L180 170 L161 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Claw holding item -->
+    <path d="M210 115 L230 105 L232 112 L220 120" fill="none" stroke="#00F0FF" stroke-width="3"/>
+    
+    <path d="M225 125 L240 130 L238 138 L220 132" fill="none" stroke="#00F0FF" stroke-width="3"/>
+    
+    <!-- Item -->
+    <circle cx="235" cy="120" r="10" fill="#8B5CF6" stroke="#00F0FF" stroke-width="1.5" filter="url(#cyanGlow)"/>
+    
+    <text x="128" y="250" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 4</text>
+  </g>
+  
+  <!-- Frame 5: Retract -->
+  <g transform="translate(1024,0)">
+    <ellipse cx="90" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <path d="M75 200 L90 190 L105 200 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M151 200 L166 190 L181 200 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M90 130 L110 110 L146 110 L166 130 L156 190 L100 190 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="145" r="18" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    
+    <path d="M108 95 L118 75 L138 75 L148 95 L138 110 L118 110 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    
+    <path d="M118 72 L128 65 L138 72" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <ellipse cx="128" cy="68" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <path d="M90 140 L70 130 L60 160 L65 190 L85 185 L95 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Arm (retracting) -->
+    <path d="M166 140 L195 125 L205 135 L200 160 L175 170 L161 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Claw with item -->
+    <path d="M195 125 L210 118 L212 124 L202 130" fill="none" stroke="#00F0FF" stroke-width="2.5"/>
+    
+    <path d="M205 135 L218 138 L216 144 L202 140" fill="none" stroke="#00F0FF" stroke-width="2.5"/>
+    
+    <!-- Item -->
+    <circle cx="215" cy="130" r="8" fill="#8B5CF6" stroke="#00F0FF" stroke-width="1.5" filter="url(#cyanGlow)"/>
+    
+    <text x="128" y="250" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 5</text>
+  </g>
+  
+  <!-- Frame 6: Store -->
+  <g transform="translate(1280,0)">
+    <ellipse cx="90" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    <ellipse cx="166" cy="230" rx="12" ry="6" fill="#00F0FF" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <path d="M75 200 L90 190 L105 200 L100 220 L80 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M151 200 L166 190 L181 200 L176 220 L156 220 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <path d="M90 130 L110 110 L146 110 L166 130 L156 190 L100 190 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="2"/>
+    
+    <circle cx="128" cy="145" r="18" fill="url(#coreGrad)" filter="url(#coreGlow)"/>
+    
+    <path d="M108 95 L118 75 L138 75 L148 95 L138 110 L118 110 Z" fill="#1a3a4a" stroke="#00F0FF" stroke-width="1.5" opacity="0.9"/>
+    
+    <path d="M118 72 L128 65 L138 72" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    
+    <ellipse cx="128" cy="68" rx="6" ry="4" fill="#ffffff" filter="url(#cyanGlow)"/>
+    
+    <path d="M90 140 L70 130 L60 160 L65 190 L85 185 L95 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <!-- Right Arm (returned) -->
+    <path d="M166 140 L186 130 L196 160 L191 190 L171 185 L161 160 Z" fill="url(#bodyGrad)" stroke="#00F0FF" stroke-width="1.5"/>
+    
+    <rect x="174" y="150" width="20" height="8" fill="#00F0FF" opacity="0.5"/>
+    
+    <!-- Collect sparkle effect -->
+    <circle cx="180" cy="140" r="15" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.6" filter="url(#cyanGlow)"/>
+    
+    <path d="M180 120 L180 160 M160 140 L200 140" stroke="#8B5CF6" stroke-width="2" opacity="0.4" filter="url(#cyanGlow)"/>
+    
+    <text x="128" y="250" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 6</text>
+  </g>
+</svg>

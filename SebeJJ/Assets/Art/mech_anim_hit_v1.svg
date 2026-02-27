@@ -1,0 +1,76 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 机甲受击动画帧 -->
+  <defs>
+    <linearGradient id="mechBody4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#445566"/>
+      <stop offset="100%" style="stop-color:#223344"/>
+    </linearGradient>
+    <linearGradient id="cockpit4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FFFF"/>
+      <stop offset="100%" style="stop-color:#0088AA"/>
+    </linearGradient>
+    <filter id="glow4">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="damageGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 伤害闪光效果 -->
+  <rect x="0" y="0" width="64" height="64" fill="#FF0044" opacity="0.2"/>
+  
+  <!-- 冲击波 -->
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#FF0044" stroke-width="2" opacity="0.5" filter="url(#damageGlow)"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#FF8800" stroke-width="1" opacity="0.4"/>
+  
+  <!-- 火花 -->
+  <line x1="10" y1="20" x2="5" y2="15" stroke="#FFAA00" stroke-width="2"/>
+  <line x1="54" y1="20" x2="59" y2="15" stroke="#FFAA00" stroke-width="2"/>
+  <line x1="15" y1="45" x2="10" y2="50" stroke="#FF4400" stroke-width="2"/>
+  <line x1="49" y1="45" x2="54" y2="50" stroke="#FF4400" stroke-width="2"/>
+  
+  <!-- 推进器火焰 - 紊乱 -->
+  <ellipse cx="16" cy="50" rx="4" ry="6" fill="#FF4400" opacity="0.7" transform="rotate(-15 16 50)"/>
+  <ellipse cx="48" cy="50" rx="4" ry="6" fill="#FF4400" opacity="0.7" transform="rotate(15 48 50)"/>
+  
+  <!-- 机械臂左 - 震动偏移 -->
+  <rect x="6" y="26" width="10" height="6" rx="2" fill="url(#mechBody4)" transform="rotate(-5 11 29)"/>
+  <rect x="4" y="28" width="4" height="4" rx="1" fill="#556677"/>
+  
+  <!-- 机械臂右 - 震动偏移 -->
+  <rect x="48" y="30" width="10" height="6" rx="2" fill="url(#mechBody4)" transform="rotate(5 53 33)"/>
+  <rect x="56" y="32" width="4" height="4" rx="1" fill="#556677"/>
+  
+  <!-- 货舱 -->
+  <rect x="20" y="38" width="24" height="12" rx="2" fill="#334455"/>
+  <rect x="22" y="40" width="20" height="8" rx="1" fill="#223344"/>
+  
+  <!-- 主体框架 - 震动 -->
+  <ellipse cx="32" cy="33" rx="18" ry="14" fill="url(#mechBody4)"/>
+  <ellipse cx="32" cy="33" rx="14" ry="10" fill="#2A3A4A"/>
+  
+  <!-- 驾驶舱 - 红色警报 -->
+  <circle cx="32" cy="31" r="8" fill="#FF0044" opacity="0.5" filter="url(#damageGlow)"/>
+  <circle cx="32" cy="31" r="8" fill="url(#cockpit4)" opacity="0.7"/>
+  
+  <!-- 传感器 - 红色闪烁 -->
+  <circle cx="22" cy="25" r="2" fill="#FF0044" filter="url(#damageGlow)"/>
+  <circle cx="42" cy="25" r="2" fill="#FF0044" filter="url(#damageGlow)"/>
+  
+  <!-- 推进器主体 -->
+  <rect x="14" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  <rect x="42" y="46" width="8" height="6" rx="2" fill="#445566"/>
+  
+  <!-- 警告标志 -->
+  <text x="32" y="14" font-family="monospace" font-size="7" fill="#FF0044" text-anchor="middle" filter="url(#damageGlow)">⚠</text>
+</svg>

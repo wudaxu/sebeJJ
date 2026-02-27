@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 发光渐变 -->
+    <linearGradient id="glowCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00E5FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2979FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="glowOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9100;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF3D00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 透明背景 -->
+  <rect width="1920" height="1080" fill="transparent"/>
+  
+  <!-- 近景装饰 - 左侧海草 -->
+  <g transform="translate(50, 600)">
+    <path d="M0 480 Q -20 400 10 320 Q 25 250 0 180 Q -15 120 5 80" 
+          stroke="#1B5E20" stroke-width="15" fill="none"/>
+    <path d="M30 480 Q 50 400 20 320 Q 5 250 30 180 Q 45 120 25 80" 
+          stroke="#2E7D32" stroke-width="12" fill="none"/>
+    <path d="M60 480 Q 40 400 70 320 Q 85 250 60 180 Q 45 120 65 80" 
+          stroke="#388E3C" stroke-width="10" fill="none"/>
+  </g>
+  
+  <!-- 近景装饰 - 右侧海草 -->
+  <g transform="translate(1800, 650)">
+    <path d="M0 430 Q 20 350 -10 270 Q -25 200 0 130 Q 15 70 -5 30" 
+          stroke="#1B5E20" stroke-width="15" fill="none"/>
+    <path d="M-30 430 Q -50 350 -20 270 Q -5 200 -30 130 Q -45 70 -25 30" 
+          stroke="#2E7D32" stroke-width="12" fill="none"/>
+    <path d="M-60 430 Q -40 350 -70 270 Q -85 200 -60 130 Q -45 70 -65 30" 
+          stroke="#388E3C" stroke-width="10" fill="none"/>
+  </g>
+  
+  <!-- 前景岩石 - 左下角 -->
+  <g transform="translate(0, 900)">
+    <path d="M0 180 L150 120 L300 150 L450 100 L600 140 L0 180 Z" 
+          fill="#1C2529"/>
+    
+    <!-- 岩石高光 -->
+    <path d="M20 160 L100 130 L80 140 Z" fill="#37474F" opacity="0.5"/>
+    <path d="M320 140 L400 110 L380 120 Z" fill="#37474F" opacity="0.5"/>
+  </g>
+  
+  <!-- 前景岩石 - 右下角 -->
+  <g transform="translate(1300, 920)">
+    <path d="M0 160 L200 110 L400 140 L620 90 L620 160 L0 160 Z" 
+          fill="#1C2529"/>
+    
+    <!-- 岩石高光 -->
+    <path d="M30 145 L150 120 L120 130 Z" fill="#37474F" opacity="0.5"/>
+    <path d="M450 125 L580 100 L550 110 Z" fill="#37474F" opacity="0.5"/>
+  </g>
+  
+  <!-- 发光珊瑚 - 左下 -->
+  <g transform="translate(200, 850)">
+    <path d="M0 100 Q 10 50 0 20 Q -5 0 5 -10" 
+          stroke="url(#glowCyan)" stroke-width="6" fill="none" opacity="0.8"/>
+    <path d="M20 100 Q 25 60 15 30 Q 10 10 20 0" 
+          stroke="url(#glowCyan)" stroke-width="5" fill="none" opacity="0.7"/>
+    <path d="M40 100 Q 35 55 45 25 Q 50 5 40 -5" 
+          stroke="url(#glowCyan)" stroke-width="6" fill="none" opacity="0.8"/>
+    
+    <!-- 发光点 -->
+    <circle cx="0" cy="20" r="5" fill="#00E5FF" opacity="0.9"/>
+    <circle cx="15" cy="30" r="4" fill="#00E5FF" opacity="0.8"/>
+    <circle cx="45" cy="25" r="5" fill="#00E5FF" opacity="0.9"/>
+  </g>
+  
+  <!-- 发光珊瑚 - 右下 -->
+  <g transform="translate(1600, 880)">
+    <path d="M0 100 Q -10 50 5 20 Q 10 0 0 -10" 
+          stroke="url(#glowOrange)" stroke-width="6" fill="none" opacity="0.8"/>
+    <path d="M-25 100 Q -30 60 -15 30 Q -10 10 -20 0" 
+          stroke="url(#glowOrange)" stroke-width="5" fill="none" opacity="0.7"/>
+    <path d="M-50 100 Q -45 55 -55 25 Q -60 5 -50 -5" 
+          stroke="url(#glowOrange)" stroke-width="6" fill="none" opacity="0.8"/>
+    
+    <!-- 发光点 -->
+    <circle cx="5" cy="20" r="5" fill="#FF9100" opacity="0.9"/>
+    <circle cx="-15" cy="30" r="4" fill="#FF9100" opacity="0.8"/>
+    <circle cx="-55" cy="25" r="5" fill="#FF9100" opacity="0.9"/>
+  </g>
+  
+  <!-- 悬浮粒子 - 发光浮游生物 -->
+  <g fill="#00E5FF">
+    <circle cx="300" cy="700" r="3" opacity="0.8"/>
+    <circle cx="450" cy="600" r="2" opacity="0.6"/>
+    <circle cx="600" cy="750" r="4" opacity="0.7"/>
+    <circle cx="800" cy="650" r="2" opacity="0.5"/>
+    <circle cx="1000" cy="700" r="3" opacity="0.8"/>
+    <circle cx="1200" cy="600" r="2" opacity="0.6"/>
+    <circle cx="1400" cy="720" r="3" opacity="0.7"/>
+    <circle cx="1600" cy="680" r="2" opacity="0.5"/>
+    <circle cx="500" cy="800" r="2" opacity="0.4"/>
+    <circle cx="1100" cy="820" r="3" opacity="0.6"/>
+    <circle cx="1500" cy="780" r="2" opacity="0.5"/>
+  </g>
+  
+  <!-- 机械残骸 - 前景 -->
+  <g transform="translate(700, 950)">
+    <rect x="0" y="0" width="80" height="40" fill="#37474F"/>
+    <rect x="10" y="5" width="20" height="15" fill="#263238"/>
+    <rect x="45" y="8" width="25" height="10" fill="#263238"/>
+    
+    <!-- 电缆 -->
+    <path d="M80 20 Q 100 10 120 30" stroke="#455A64" stroke-width="4" fill="none"/>
+    <path d="M80 30 Q 110 40 130 25" stroke="#455A64" stroke-width="3" fill="none"/
+  </g>
+  
+  <!-- 管道结构 -->
+  <g transform="translate(100, 750)">
+    <rect x="0" y="0" width="200" height="20" fill="#455A64"/>
+    <rect x="0" y="5" width="200" height="10" fill="#607D8B" opacity="0.5"/>
+    
+    <!-- 螺栓 -->
+    <circle cx="20" cy="10" r="4" fill="#263238"/>
+    <circle cx="100" cy="10" r="4" fill="#263238"/>
+    <circle cx="180" cy="10" r="4" fill="#263238"/>
+  </g>
+  
+  <!-- 气泡群 -->
+  <g fill="rgba(255,255,255,0.3)">
+    <circle cx="400" cy="900" r="8"/>
+    <circle cx="420" cy="850" r="6"/>
+    <circle cx="410" cy="810" r="4"/>
+    <circle cx="1300" cy="920" r="10"/>
+    <circle cx="1320" cy="860" r="7"/>
+    <circle cx="1310" cy="820" r="5"/>
+  </g>
+</svg>

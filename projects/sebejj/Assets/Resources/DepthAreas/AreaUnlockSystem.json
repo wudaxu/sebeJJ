@@ -1,0 +1,151 @@
+{
+  "systemId": "depth_area_unlock_system",
+  "systemName": "深度区域解锁系统",
+  "systemNameEn": "Depth Area Unlock System",
+  "version": "1.0.0",
+  "depthLimits": {
+    "initialMaxDepth": 150,
+    "depthLimitIncreasePerUpgrade": 100,
+    "maxPossibleDepth": 5000
+  },
+  "unlockConditions": {
+    "depthRequirement": {
+      "description": "机甲需要达到指定深度等级才能进入相应区域",
+      "tiers": [
+        { "depth": 200, "requiredMechLevel": 3, "requiredUpgrade": "pressure_suit_mk1" },
+        { "depth": 500, "requiredMechLevel": 6, "requiredUpgrade": "pressure_suit_mk2" },
+        { "depth": 1000, "requiredMechLevel": 10, "requiredUpgrade": "pressure_suit_mk3" },
+        { "depth": 2000, "requiredMechLevel": 15, "requiredUpgrade": "pressure_suit_mk4" },
+        { "depth": 5000, "requiredMechLevel": 25, "requiredUpgrade": "pressure_suit_mk5" }
+      ]
+    },
+    "questRequirement": {
+      "description": "需要完成特定任务链才能解锁区域",
+      "questChains": [
+        {
+          "areaId": "reef_zone_200m",
+          "questChain": ["quest_deep_dive_init", "quest_reef_exploration"]
+        },
+        {
+          "areaId": "shipwreck_zone_500m",
+          "questChain": ["quest_reef_conqueror", "quest_wreck_hunter"]
+        },
+        {
+          "areaId": "abyss_entrance_1000m",
+          "questChain": ["quest_shipwreck_master", "quest_abyss_preparation"]
+        }
+      ]
+    },
+    "itemRequirement": {
+      "description": "需要特定物品才能进入区域",
+      "itemsByArea": {
+        "reef_zone_200m": ["pressure_suit_mk1"],
+        "shipwreck_zone_500m": ["pressure_suit_mk2", "deep_dive_certification"],
+        "abyss_entrance_1000m": ["pressure_suit_mk3", "abyss_dive_permit", "guardian_key_fragment"]
+      }
+    },
+    "progressiveUnlock": {
+      "description": "必须按顺序解锁区域，不能跳过",
+      "areaSequence": ["reef_zone_200m", "shipwreck_zone_500m", "abyss_entrance_1000m"]
+    }
+  },
+  "safeZoneCheckpoints": {
+    "description": "安全区检查点系统，提供补给和存档功能",
+    "globalSettings": {
+      "healRateBase": 5,
+      "healRatePerArea": 3,
+      "oxygenRefillSpeed": 20,
+      "ammoRestockMultiplier": 1.0,
+      "saveCooldown": 60
+    },
+    "checkpoints": [
+      {
+        "checkpointId": "surface_base",
+        "areaId": "surface",
+        "position": { "x": 0, "y": 0, "z": 0 },
+        "radius": 30,
+        "features": ["full_heal", "oxygen_refill", "ammo_restock", "save", "upgrade_station", "shop", "mission_board"]
+      },
+      {
+        "checkpointId": "reef_safe_zone",
+        "areaId": "reef_zone_200m",
+        "position": { "x": 0, "y": -200, "z": 0 },
+        "radius": 15,
+        "features": ["heal", "oxygen_refill", "ammo_restock", "save"]
+      },
+      {
+        "checkpointId": "shipwreck_safe_zone",
+        "areaId": "shipwreck_zone_500m",
+        "position": { "x": 100, "y": -500, "z": 50 },
+        "radius": 12,
+        "features": ["heal", "oxygen_refill", "ammo_restock", "save", "workbench"]
+      },
+      {
+        "checkpointId": "abyss_safe_zone",
+        "areaId": "abyss_entrance_1000m",
+        "position": { "x": 200, "y": -1000, "z": 100 },
+        "radius": 10,
+        "features": ["heal", "oxygen_refill", "ammo_restock", "save", "boss_teleport"]
+      }
+    ]
+  },
+  "areaProgression": {
+    "description": "区域进度追踪系统",
+    "progressionMetrics": [
+      {
+        "metricId": "exploration_percent",
+        "metricName": "探索度",
+        "description": "已探索区域百分比"
+      },
+      {
+        "metricId": "resources_collected",
+        "metricName": "资源收集",
+        "description": "该区域收集的资源数量"
+      },
+      {
+        "metricId": "enemies_defeated",
+        "metricName": "敌人击败",
+        "description": "该区域击败的敌人数量"
+      },
+      {
+        "metricId": "secrets_found",
+        "metricName": "秘密发现",
+        "description": "发现的隐藏要素数量"
+      },
+      {
+        "metricId": "boss_defeated",
+        "metricName": "Boss击败",
+        "description": "是否击败区域Boss"
+      }
+    ],
+    "completionRewards": {
+      "reef_zone_200m": {
+        "exploration_50": ["reef_explorer_badge", "silver_ingot_x5"],
+        "exploration_100": ["reef_master_title", "glowing_algae_lantern"],
+        "boss_defeated": ["reef_conqueror_badge", "shark_fin_blade"]
+      },
+      "shipwreck_zone_500m": {
+        "exploration_50": ["wreck_diver_badge", "titanium_plate_x3"],
+        "exploration_100": ["wreck_master_title", "ancient_tech_blueprint"],
+        "boss_defeated": ["shipwreck_conqueror_badge", "crab_shell_armor"]
+      },
+      "abyss_entrance_1000m": {
+        "exploration_50": ["abyss_walker_badge", "abyss_crystal_x2"],
+        "exploration_100": ["abyss_master_title", "living_metal_plate"],
+        "boss_defeated": ["abyss_guardian_slayer_title", "guardian_core_weapon"]
+      }
+    }
+  },
+  "uiNotifications": {
+    "unlockMessages": {
+      "depth_unlocked": "新深度已解锁！您现在可以潜至 {depth} 米。",
+      "area_unlocked": "新区域已解锁！{areaName} 现在可以进入了。",
+      "checkpoint_unlocked": "新检查点已激活！"
+    },
+    "restrictionMessages": {
+      "depth_limit": "警告：当前机甲无法承受此深度的压强。需要升级抗压服。",
+      "area_locked": "该区域尚未解锁。完成前置任务以解锁。",
+      "missing_item": "缺少必要物品：{itemName}"
+    }
+  }
+}

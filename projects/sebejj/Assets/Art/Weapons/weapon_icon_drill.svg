@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 武器图标 - 钻头 --
+       用于近战钻头武器
+  -->
+  
+  <g id="weapon-drill">
+    <!-- 背景框 -->
+    <rect x="4" y="4" width="56" height="56" rx="4" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 钻头主体 -->
+    <!-- 连接部 -->
+    <rect x="26" y="8" width="12" height="12" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 钻头锥形 -->
+    <polygon points="32,20 38,35 36,50 32,56 28,50 26,35" fill="#2A2A3E" stroke="#00F0FF" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <!-- 钻头螺纹 -->
+    <line x1="28" y1="38" x2="36" y2="42" stroke="#00F0FF" stroke-width="1"/>
+    
+    <line x1="27" y1="44" x2="37" y2="48" stroke="#00F0FF" stroke-width="1"/>
+    
+    <line x1="28" y1="32" x2="36" y2="36" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 旋转指示 -->
+    <path d="M 20 32 Q 16 32 16 28" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <path d="M 44 32 Q 48 32 48 28" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <!-- 火花效果 -->
+    <circle cx="32" cy="52" r="2" fill="#FFAA00" filter="url(#neonGlow)"/>
+    
+    <!-- 高光 -->
+    <polygon points="32,22 35,32 33,40 32,50 31,40 29,32" fill="#FFFFFF" opacity="0.3"/>
+  </g>
+</svg>

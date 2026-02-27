@@ -1,0 +1,56 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 导弹尾焰特效 -->
+  <defs>
+    <linearGradient id="flameCore" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="20%" style="stop-color:#FFFF88"/>
+      <stop offset="40%" style="stop-color:#FF8800"/>
+      <stop offset="70%" style="stop-color:#FF4400"/>
+      <stop offset="100%" style="stop-color:#FF0044;stop-opacity:0"/>
+    </linearGradient>
+    
+    <linearGradient id="flameOuter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8800;stop-opacity:0.8"/>
+      <stop offset="50%" style="stop-color:#FF4400;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#FF0044;stop-opacity:0"/>
+    </linearGradient>
+    
+    <filter id="flameBlur">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 导弹主体 -->
+  <rect x="28" y="4" width="8" height="20" rx="4" fill="#556677"/>
+  <triangle points="32,4 28,10 36,10" fill="#445566"/>
+  
+  <!-- 尾焰外层 -->
+  <ellipse cx="32" cy="40" rx="14" ry="20" fill="url(#flameOuter)" filter="url(#flameBlur)" opacity="0.6"/>
+  
+  <!-- 尾焰中层 -->
+  <ellipse cx="32" cy="38" rx="10" ry="16" fill="#FF6600" opacity="0.5" filter="url(#flameBlur)"/>
+  
+  <!-- 尾焰核心 -->
+  <ellipse cx="32" cy="36" rx="6" ry="12" fill="url(#flameCore)" filter="url(#flameBlur)"/>
+  
+  <!-- 火焰纹理 -->
+  <path d="M28 28 Q24 38 28 48" stroke="#FFAA00" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M36 28 Q40 38 36 48" stroke="#FFAA00" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M32 26 Q26 38 32 50" stroke="#FFFF88" stroke-width="1.5" fill="none" opacity="0.8"/>
+  
+  <!-- 火花粒子 -->
+  <circle cx="24" cy="45" r="1.5" fill="#FFAA00" opacity="0.8"/>
+  <circle cx="40" cy="42" r="1" fill="#FF8800" opacity="0.7"/>
+  <circle cx="32" cy="52" r="1.2" fill="#FFFF88" opacity="0.6"/>
+  <circle cx="20" cy="38" r="0.8" fill="#FF4400" opacity="0.5"/>
+  <circle cx="44" cy="36" r="0.8" fill="#FF4400" opacity="0.5"/
+  
+  <!-- 烟雾 -->
+  <circle cx="28" cy="50" r="4" fill="#444444" opacity="0.3" filter="url(#flameBlur)"/>
+  <circle cx="36" cy="52" r="3" fill="#444444" opacity="0.2" filter="url(#flameBlur)"/>
+</svg>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- 狂暴红色渐变 -->
+    <linearGradient id="rageRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF0000"/>
+      <stop offset="50%" stop-color="#FF4040"/>
+      <stop offset="100%" stop-color="#FF0000"/>
+    </linearGradient>
+    
+    <!-- 描边发光 -->
+    <filter id="outlineGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="redBlur"/>
+      <feMerge>
+        <feMergeNode in="redBlur"/>
+        <feMergeNode in="redBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    
+    <!-- 强烈脉冲 -->
+    <filter id="ragePulse" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="256" height="256" fill="none"/>
+  
+  <!-- 敌人轮廓描边 - 外 -->
+  <g id="enemy-outline-outer" filter="url(#outlineGlow)">
+    <!-- 模拟敌人轮廓 -->
+    <path d="M128 30 L180 60 L180 120 L200 140 L200 200 L160 220 L128 210 L96 220 L56 200 L56 140 L76 120 L76 60 Z" 
+          fill="none" stroke="#FF0000" stroke-width="6" opacity="0.9"/>
+  </g>
+  
+  <!-- 敌人轮廓描边 - 中 -->
+  <g id="enemy-outline-mid" filter="url(#outlineGlow)">
+    <path d="M128 35 L175 62 L175 118 L195 138 L195 198 L158 216 L128 206 L98 216 L61 198 L61 138 L81 118 L81 62 Z" 
+          fill="none" stroke="#FF4040" stroke-width="3" opacity="0.8"/>
+  </g>
+  
+  <!-- 敌人轮廓描边 - 内 -->
+  <g id="enemy-outline-inner">
+    <path d="M128 40 L170 65 L170 115 L190 135 L190 195 L156 212 L128 202 L100 212 L66 195 L66 135 L86 115 L86 65 Z" 
+          fill="none" stroke="#FF8080" stroke-width="1" opacity="0.7"/>
+  </g>
+  
+  <!-- 狂暴能量溢出 -->
+  <g id="rage-energy" opacity="0.6" filter="url(#ragePulse)">
+    <path d="M60 130 L50 120 L55 135 L45 140 L60 145" fill="none" stroke="#FF0000" stroke-width="2"/>
+    <path d="M196 130 L206 120 L201 135 L211 140 L196 145" fill="none" stroke="#FF0000" stroke-width="2"/>
+    <path d="M128 25 L128 10 L135 20 L128 15 L121 20" fill="none" stroke="#FF0000" stroke-width="2"/>
+    <path d="M128 225 L128 240 L135 230 L128 235 L121 230" fill="none" stroke="#FF0000" stroke-width="2"/>
+  </g>
+  
+  <!-- 红色蒸汽/怒气 -->
+  <g id="rage-steam" opacity="0.4" filter="url(#ragePulse)">
+    <circle cx="100" cy="50" r="8" fill="#FF4040"/>
+    <circle cx="156" cy="45" r="6" fill="#FF6060"/>
+    <circle cx="80" cy="80" r="5" fill="#FF4040"/>
+    <circle cx="176" cy="75" r="7" fill="#FF6060"/>
+  </g>
+  
+  <!-- 眼睛红光 -->
+  <g id="rage-eyes" filter="url(#outlineGlow)">
+    <ellipse cx="110" cy="90" rx="12" ry="8" fill="#FF0000"/>
+    <ellipse cx="146" cy="90" rx="12" ry="8" fill="#FF0000"/>
+    <circle cx="110" cy="90" r="4" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="146" cy="90" r="4" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  
+  <!-- 脉动效果 -->
+  <g id="pulse-effect" opacity="0.3">
+    <path d="M128 20 L185 55 L185 125 L205 145 L205 205 L160 228 L128 218 L96 228 L51 205 L51 145 L71 125 L71 55 Z" 
+          fill="none" stroke="#FF0000" stroke-width="2"/>
+  </g>
+  
+  <!-- 狂暴图标 -->
+  <g id="rage-icon" fill="#FF0000" filter="url(#ragePulse)">
+    <polygon points="128,50 135,70 128,65 121,70"/>
+    <polygon points="70,100 90,105 85,100 90,95"/>
+    <polygon points="186,100 166,105 171,100 166,95"/>
+  </g>
+  
+  <!-- 闪电效果 -->
+  <g id="rage-lightning" stroke="#FF0000" stroke-width="2" fill="none" opacity="0.7" filter="url(#ragePulse)">
+    <path d="M40 100 L50 110 L45 120 L55 130"/>
+    <path d="M216 100 L206 110 L211 120 L201 130"/>
+    <path d="M100 20 L110 30 L105 40 L115 50"/>
+    <path d="M156 20 L146 30 L151 40 L141 50"/>
+  </g>
+  
+  <!-- 粒子效果 -->
+  <g id="rage-particles" fill="#FF0000">
+    <circle cx="60" cy="60" r="2" opacity="0.8"/>
+    <circle cx="196" cy="55" r="3" opacity="0.7"/>
+    <circle cx="50" cy="180" r="2" opacity="0.6"/>
+    <circle cx="206" cy="185" r="2" opacity="0.8"/>
+    <circle cx="128" cy="15" r="2" opacity="0.9"/>
+    <circle cx="30" cy="128" r="2" opacity="0.5"/>
+    <circle cx="226" cy="128" r="2" opacity="0.6"/>
+  </g>
+</svg>

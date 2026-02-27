@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 面板渐变 -->
+    <linearGradient id="panelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#37474F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#263238;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 边框渐变 -->
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00E5FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2979FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 内部高光 -->
+    <linearGradient id="innerGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#455A64;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#37474F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 9-patch 面板设计 - 展示所有区域 -->
+  
+  <!-- 左上角 (固定) -->
+  <rect x="0" y="0" width="32" height="32" fill="url(#panelGradient)"/>
+  <path d="M0 0 L32 0 L32 4 L4 4 L4 32 L0 32 Z" fill="url(#borderGradient)"/>
+  
+  <!-- 上边 (横向拉伸) -->
+  <rect x="32" y="0" width="192" height="32" fill="url(#panelGradient)"/>
+  <rect x="32" y="0" width="192" height="4" fill="url(#borderGradient)"/>
+  
+  <!-- 右上角 (固定) -->
+  <rect x="224" y="0" width="32" height="32" fill="url(#panelGradient)"/>
+  <path d="M224 0 L256 0 L256 32 L252 32 L252 4 L224 4 Z" fill="url(#borderGradient)"/>
+  
+  <!-- 左边 (纵向拉伸) -->
+  <rect x="0" y="32" width="32" height="192" fill="url(#panelGradient)"/>
+  <rect x="0" y="32" width="4" height="192" fill="url(#borderGradient)"/>
+  
+  <!-- 中心 (自由拉伸) -->
+  <rect x="32" y="32" width="192" height="192" fill="url(#innerGlow)"/>
+  
+  <!-- 装饰线条 -->
+  <line x1="48" y1="48" x2="208" y2="48" stroke="#455A64" stroke-width="1"/>
+  <line x1="48" y1="208" x2="208" y2="208" stroke="#455A64" stroke-width="1"/>
+  <line x1="48" y1="48" x2="48" y2="208" stroke="#455A64" stroke-width="1"/>
+  <line x1="208" y1="48" x2="208" y2="208" stroke="#455A64" stroke-width="1"/>
+  
+  <!-- 右边 (纵向拉伸) -->
+  <rect x="224" y="32" width="32" height="192" fill="url(#panelGradient)"/>
+  <rect x="252" y="32" width="4" height="192" fill="url(#borderGradient)"/>
+  
+  <!-- 左下角 (固定) -->
+  <rect x="0" y="224" width="32" height="32" fill="url(#panelGradient)"/>
+  <path d="M0 224 L4 224 L4 252 L32 252 L32 256 L0 256 Z" fill="url(#borderGradient)"/>
+  
+  <!-- 下边 (横向拉伸) -->
+  <rect x="32" y="224" width="192" height="32" fill="url(#panelGradient)"/>
+  <rect x="32" y="252" width="192" height="4" fill="url(#borderGradient)"/>
+  
+  <!-- 右下角 (固定) -->
+  <rect x="224" y="224" width="32" height="32" fill="url(#panelGradient)"/>
+  <path d="M224 252 L252 252 L252 224 L256 224 L256 256 L224 256 Z" fill="url(#borderGradient)"/>
+  
+  <!-- 角落装饰 - 螺丝钉效果 -->
+  <circle cx="16" cy="16" r="4" fill="#455A64"/>
+  <circle cx="16" cy="16" r="2" fill="#78909C"/>
+  
+  <circle cx="240" cy="16" r="4" fill="#455A64"/>
+  <circle cx="240" cy="16" r="2" fill="#78909C"/>
+  
+  <circle cx="16" cy="240" r="4" fill="#455A64"/>
+  <circle cx="16" cy="240" r="2" fill="#78909C"/>
+  
+  <circle cx="240" cy="240" r="4" fill="#455A64"/>
+  <circle cx="240" cy="240" r="2" fill="#78909C"/>
+  
+  <!-- 9-patch 标记 (仅用于设计参考，实际导出时移除) -->
+  <!-- 黑色像素标记拉伸区域 -->
+  <rect x="32" y="0" width="192" height="1" fill="#000000" opacity="0.5"/>
+  <rect x="0" y="32" width="1" height="192" fill="#000000" opacity="0.5"/>
+</svg>

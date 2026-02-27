@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 128">
+  <defs>
+    <filter id="collectGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="collectGrad1" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="30%" style="stop-color:#00F0FF"/>
+      <stop offset="70%" style="stop-color:#8B5CF6;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0"/>
+    </radialGradient>
+    
+    <radialGradient id="collectGrad2" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="40%" style="stop-color:#39FF14"/>
+      <stop offset="100%" style="stop-color:#39FF14;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Collect Effect 1: Sparkle Burst -->
+  <g transform="translate(64,64)">
+    <circle cx="0" cy="0" r="40" fill="url(#collectGrad1)" opacity="0.6" filter="url(#collectGlow)"/>
+    
+    <circle cx="0" cy="0" r="25" fill="#00F0FF" opacity="0.4" filter="url(#collectGlow)"/>
+    
+    <circle cx="0" cy="0" r="10" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Sparkle rays -->
+    <line x1="0" y1="-55" x2="0" y2="-35" stroke="#00F0FF" stroke-width="3" filter="url(#collectGlow)"/>
+    
+    <line x1="0" y1="55" x2="0" y2="35" stroke="#00F0FF" stroke-width="3" filter="url(#collectGlow)"/>
+    
+    <line x1="-55" y1="0" x2="-35" y2="0" stroke="#00F0FF" stroke-width="3" filter="url(#collectGlow)"/>
+    
+    <line x1="55" y1="0" x2="35" y2="0" stroke="#00F0FF" stroke-width="3" filter="url(#collectGlow)"/>
+    
+    <line x1="-40" y1="-40" x2="-25" y2="-25" stroke="#8B5CF6" stroke-width="2" filter="url(#collectGlow)"/>
+    
+    <line x1="40" y1="-40" x2="25" y2="-25" stroke="#8B5CF6" stroke-width="2" filter="url(#collectGlow)"/>
+    
+    <line x1="-40" y1="40" x2="-25" y2="25" stroke="#8B5CF6" stroke-width="2" filter="url(#collectGlow)"/>
+    
+    <line x1="40" y1="40" x2="25" y2="25" stroke="#8B5CF6" stroke-width="2" filter="url(#collectGlow)"/>
+    
+    <text x="0" y="75" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 1</text>
+  </g>
+  
+  <!-- Collect Effect 2: Ring Expansion -->
+  <g transform="translate(192,64)">
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.4" filter="url(#collectGlow)"/>
+    
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#8B5CF6" stroke-width="3" opacity="0.6" filter="url(#collectGlow)"/>
+    
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+    
+    <circle cx="0" cy="0" r="8" fill="#00F0FF" filter="url(#collectGlow)"/>
+    
+    <!-- Particles -->
+    <circle cx="-45" cy="-20" r="4" fill="#8B5CF6" opacity="0.8"/>
+    
+    <circle cx="45" cy="-25" r="3" fill="#00F0FF" opacity="0.8"/>
+    
+    <circle cx="-30" cy="40" r="3" fill="#00F0FF" opacity="0.8"/>
+    
+    <circle cx="35" cy="38" r="4" fill="#8B5CF6" opacity="0.8"/>
+    
+    <circle cx="0" cy="-50" r="3" fill="#ffffff" opacity="0.9"/>
+    
+    <text x="0" y="75" text-anchor="middle" fill="#00F0FF" font-family="monospace" font-size="10">COLLECT 2</text>
+  </g>
+  
+  <!-- Collect Effect 3: Bio Glow -->
+  <g transform="translate(320,64)">
+    <circle cx="0" cy="0" r="45" fill="url(#collectGrad2)" opacity="0.5" filter="url(#collectGlow)"/>
+    
+    <ellipse cx="0" cy="0" rx="30" ry="35" fill="#39FF14" opacity="0.3" filter="url(#collectGlow)"/>
+    
+    <ellipse cx="0" cy="0" rx="15" ry="20" fill="#39FF14" opacity="0.5" filter="url(#collectGlow)"/>
+    
+    <circle cx="0" cy="0" r="8" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Organic particles -->
+    <ellipse cx="-40" cy="-10" rx="6" ry="3" fill="#39FF14" opacity="0.7" transform="rotate(-20,-40,-10)"/>
+    
+    <ellipse cx="40" cy="-15" rx="5" ry="3" fill="#39FF14" opacity="0.7" transform="rotate(30,40,-15)"/>
+    
+    <ellipse cx="-25" cy="35" rx="4" ry="2" fill="#39FF14" opacity="0.7" transform="rotate(-45,-25,35)"/>
+    
+    <ellipse cx="30" cy="32" rx="5" ry="3" fill="#39FF14" opacity="0.7" transform="rotate(15,30,32)"/>
+    
+    <text x="0" y="75" text-anchor="middle" fill="#39FF14" font-family="monospace" font-size="10">COLLECT 3</text>
+  </g>
+</svg>

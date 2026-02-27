@@ -1,0 +1,324 @@
+{
+  "sceneName": "BossBattle_Arena",
+  "version": "1.0.0",
+  "description": "赛博机甲SebeJJ - Boss战场景配置",
+  
+  "arena": {
+    "size": {
+      "width": 60,
+      "height": 40,
+      "unit": "meters"
+    },
+    "ground": {
+      "type": "metal_platform",
+      "texture": "textures/arena/metal_grate_diffuse",
+      "normalMap": "textures/arena/metal_grate_normal",
+      "emissive": "textures/arena/metal_grate_emissive",
+      "emissiveColor": [0.2, 0.4, 0.8],
+      "emissiveIntensity": 0.5
+    },
+    "boundary": {
+      "type": "instant_death_zone",
+      "name": "Abyss",
+      "damageType": "fall",
+      "killMessage": "你坠入了深渊..."
+    }
+  },
+
+  "spawnPoints": {
+    "boss": {
+      "id": "boss_spawn",
+      "name": "Boss出生点",
+      "position": [0, 2, 0],
+      "rotation": [0, 0, 0],
+      "delay": 3.0,
+      "effects": {
+        "spawn": "fx/boss_spawn_teleport",
+        "sound": "sfx/boss_spawn_roar"
+      }
+    },
+    "players": [
+      {
+        "id": "player_spawn_north",
+        "name": "玩家出生点-北",
+        "position": [0, 0, -15],
+        "rotation": [0, 180, 0]
+      },
+      {
+        "id": "player_spawn_south",
+        "name": "玩家出生点-南",
+        "position": [0, 0, 15],
+        "rotation": [0, 0, 0]
+      },
+      {
+        "id": "player_spawn_east",
+        "name": "玩家出生点-东",
+        "position": [20, 0, 0],
+        "rotation": [0, -90, 0]
+      },
+      {
+        "id": "player_spawn_west",
+        "name": "玩家出生点-西",
+        "position": [-20, 0, 0],
+        "rotation": [0, 90, 0]
+      }
+    ]
+  },
+
+  "coverObjects": {
+    "type": "destructible_rock",
+    "totalCount": 6,
+    "health": 3,
+    "items": [
+      {
+        "id": "cover_01",
+        "position": [-15, 0, -8],
+        "rotation": [0, 30, 0],
+        "scale": [1.2, 1.5, 1.2],
+        "model": "models/environment/rock_cover_01"
+      },
+      {
+        "id": "cover_02",
+        "position": [15, 0, -8],
+        "rotation": [0, -45, 0],
+        "scale": [1.0, 1.3, 1.0],
+        "model": "models/environment/rock_cover_02"
+      },
+      {
+        "id": "cover_03",
+        "position": [-18, 0, 5],
+        "rotation": [0, 60, 0],
+        "scale": [1.3, 1.4, 1.3],
+        "model": "models/environment/rock_cover_01"
+      },
+      {
+        "id": "cover_04",
+        "position": [18, 0, 5],
+        "rotation": [0, -30, 0],
+        "scale": [1.1, 1.2, 1.1],
+        "model": "models/environment/rock_cover_03"
+      },
+      {
+        "id": "cover_05",
+        "position": [-8, 0, 12],
+        "rotation": [0, 15, 0],
+        "scale": [1.0, 1.0, 1.0],
+        "model": "models/environment/rock_cover_02"
+      },
+      {
+        "id": "cover_06",
+        "position": [8, 0, 12],
+        "rotation": [0, -75, 0],
+        "scale": [1.2, 1.3, 1.2],
+        "model": "models/environment/rock_cover_03"
+      }
+    ],
+    "damageStates": [
+      {
+        "healthThreshold": 3,
+        "modelVariant": "intact",
+        "effect": null
+      },
+      {
+        "healthThreshold": 2,
+        "modelVariant": "damaged",
+        "effect": "fx/rock_hit_sparks",
+        "sound": "sfx/rock_crack_01"
+      },
+      {
+        "healthThreshold": 1,
+        "modelVariant": "critical",
+        "effect": "fx/rock_hit_sparks_heavy",
+        "sound": "sfx/rock_crack_02"
+      },
+      {
+        "healthThreshold": 0,
+        "modelVariant": "destroyed",
+        "effect": "fx/rock_explosion",
+        "sound": "sfx/rock_destroy",
+        "spawnDebris": true,
+        "debrisCount": 8
+      }
+    ]
+  },
+
+  "cameraEffects": {
+    "screenShake": {
+      "enabled": true,
+      "triggers": [
+        {
+          "name": "boss_earthquake",
+          "triggerEvent": "BossSkill_Earthquake",
+          "intensity": 0.8,
+          "duration": 2.0,
+          "frequency": 15.0,
+          "falloff": "exponential"
+        },
+        {
+          "name": "boss_stomp",
+          "triggerEvent": "BossSkill_Stomp",
+          "intensity": 0.5,
+          "duration": 0.8,
+          "frequency": 20.0,
+          "falloff": "linear"
+        },
+        {
+          "name": "boss_phase_transition",
+          "triggerEvent": "BossPhaseChange",
+          "intensity": 1.0,
+          "duration": 3.0,
+          "frequency": 10.0,
+          "falloff": "smooth"
+        }
+      ]
+    }
+  },
+
+  "encounterPhases": {
+    "preBoss": {
+      "name": "战前清理",
+      "description": "清理3只机械蟹",
+      "enemies": [
+        {
+          "type": "mech_crab",
+          "count": 3,
+          "spawnPoints": ["cover_01", "cover_03", "cover_05"],
+          "spawnDelay": 0.5,
+          "aiBehavior": "aggressive"
+        }
+      ],
+      "completionCondition": "allEnemiesDefeated",
+      "nextPhase": "boss_phase_1"
+    },
+    "boss_phase_1": {
+      "name": "Boss战-第一阶段",
+      "description": "Boss以常规攻击模式战斗",
+      "bossHealthPercent": [100, 70],
+      "bossAbilities": ["melee_combo", "energy_blast", "dash_attack"],
+      "environmentEffects": [],
+      "nextPhase": "boss_phase_2"
+    },
+    "boss_phase_2": {
+      "name": "Boss战-第二阶段",
+      "description": "Boss进入狂暴状态，攻击频率增加",
+      "bossHealthPercent": [70, 30],
+      "bossAbilities": ["melee_combo", "energy_blast", "dash_attack", "ground_stomp", "laser_sweep"],
+      "environmentEffects": ["screenShake"],
+      "nextPhase": "boss_phase_3"
+    },
+    "boss_phase_3": {
+      "name": "Boss战-第三阶段",
+      "description": "Boss进入绝望模式，全技能可用",
+      "bossHealthPercent": [30, 0],
+      "bossAbilities": ["melee_combo", "energy_blast", "dash_attack", "ground_stomp", "laser_sweep", "earthquake", "summon_drones"],
+      "environmentEffects": ["screenShake", "arena_damage_zones"],
+      "nextPhase": "victory"
+    },
+    "victory": {
+      "name": "胜利",
+      "description": "Boss被击败，传送门出现",
+      "events": [
+        {
+          "type": "spawnPortal",
+          "position": [0, 0, 0],
+          "destination": "NextLevel",
+          "delay": 2.0,
+          "effects": {
+            "spawn": "fx/portal_open",
+            "ambient": "fx/portal_ambient",
+            "sound": "sfx/portal_activate"
+          }
+        },
+        {
+          "type": "playCutscene",
+          "cutsceneId": "boss_defeat_victory",
+          "skippable": true
+        }
+      ]
+    }
+  },
+
+  "lighting": {
+    "ambient": {
+      "color": [0.1, 0.12, 0.15],
+      "intensity": 0.3
+    },
+    "mainLights": [
+      {
+        "type": "directional",
+        "color": [0.9, 0.95, 1.0],
+        "intensity": 1.2,
+        "direction": [-0.5, -1, -0.3],
+        "shadows": true
+      }
+    ],
+    "pointLights": [
+      {
+        "position": [-20, 8, -12],
+        "color": [0.8, 0.3, 0.1],
+        "intensity": 2.0,
+        "range": 15
+      },
+      {
+        "position": [20, 8, -12],
+        "color": [0.1, 0.5, 0.9],
+        "intensity": 2.0,
+        "range": 15
+      },
+      {
+        "position": [-20, 8, 12],
+        "color": [0.9, 0.8, 0.1],
+        "intensity": 2.0,
+        "range": 15
+      },
+      {
+        "position": [20, 8, 12],
+        "color": [0.2, 0.8, 0.3],
+        "intensity": 2.0,
+        "range": 15
+      }
+    ]
+  },
+
+  "audio": {
+    "ambient": {
+      "track": "audio/ambient/cyber_arena_hum",
+      "volume": 0.4,
+      "loop": true
+    },
+    "battleMusic": {
+      "phases": [
+        {
+          "phase": "preBoss",
+          "track": "audio/music/tension_build",
+          "volume": 0.6,
+          "loop": true
+        },
+        {
+          "phase": "boss_phase_1",
+          "track": "audio/music/boss_battle_01",
+          "volume": 0.7,
+          "loop": true
+        },
+        {
+          "phase": "boss_phase_2",
+          "track": "audio/music/boss_battle_02_intense",
+          "volume": 0.8,
+          "loop": true
+        },
+        {
+          "phase": "boss_phase_3",
+          "track": "audio/music/boss_battle_03_climax",
+          "volume": 0.9,
+          "loop": true
+        },
+        {
+          "phase": "victory",
+          "track": "audio/music/victory_fanfare",
+          "volume": 0.7,
+          "loop": false
+        }
+      ]
+    }
+  }
+}

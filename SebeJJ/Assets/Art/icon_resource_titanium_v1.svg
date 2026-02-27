@@ -1,0 +1,33 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 钛矿图标 -->
+  <defs>
+    <linearGradient id="titaniumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DDDDDD"/>
+      <stop offset="30%" style="stop-color:#8899AA"/>
+      <stop offset="60%" style="stop-color:#556677"/>
+      <stop offset="100%" style="stop-color:#334455"/>
+    </linearGradient>
+    <linearGradient id="titaniumShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#AABBCC"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 矿石主体 - 六边形 -->
+  <polygon points="16,4 26,9 26,19 16,24 6,19 6,9" fill="url(#titaniumGrad)" stroke="#223344" stroke-width="1"/>
+  
+  <!-- 内六边形 -->
+  <polygon points="16,8 22,11 22,17 16,20 10,17 10,11" fill="url(#titaniumShine)" opacity="0.6"/>
+  
+  <!-- 钛金属纹理 - 六边形网格 -->
+  <line x1="16" y1="8" x2="16" y2="20" stroke="#445566" stroke-width="0.5" opacity="0.5"/>
+  <line x1="10" y1="11" x2="22" y2="17" stroke="#445566" stroke-width="0.5" opacity="0.5"/>
+  <line x1="22" y1="11" x2="10" y2="17" stroke="#445566" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- 高光点 -->
+  <circle cx="12" cy="10" r="1.5" fill="#FFFFFF" opacity="0.7"/>
+  
+  <!-- 标签 -->
+  <rect x="18" y="4" width="10" height="8" rx="1" fill="#001133" stroke="#AABBCC" stroke-width="0.5"/>
+  <text x="23" y="10" font-family="monospace" font-size="5" fill="#AABBCC" text-anchor="middle">Ti</text>
+</svg>

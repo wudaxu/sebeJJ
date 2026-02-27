@@ -1,0 +1,42 @@
+{
+  "name": "Mecha_Mk1_Animations",
+  "sprite_size": { "w": 256, "h": 256 },
+  "animations": {
+    "idle": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true,
+      "description": "悬浮待机动画，轻微上下浮动"
+    },
+    "move": {
+      "frames": 6,
+      "fps": 12,
+      "loop": true,
+      "description": "推进器喷射，机甲前倾"
+    },
+    "drill": {
+      "frames": 8,
+      "fps": 16,
+      "loop": true,
+      "description": "右臂钻头旋转，身体震动"
+    },
+    "collect": {
+      "frames": 6,
+      "fps": 10,
+      "loop": false,
+      "description": "机械爪抓取动作"
+    },
+    "hit": {
+      "frames": 3,
+      "fps": 12,
+      "loop": false,
+      "description": "受击闪烁，向后位移"
+    },
+    "damage": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true,
+      "description": "受损状态，火花特效"
+    }
+  }
+}

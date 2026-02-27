@@ -1,0 +1,36 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 金矿图标 -->
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFDD44"/>
+      <stop offset="50%" style="stop-color:#DDBB22"/>
+      <stop offset="100%" style="stop-color:#AA8800"/>
+    </linearGradient>
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEE66"/>
+      <stop offset="100%" style="stop-color:#FFDD44"/>
+    </linearGradient>
+    <filter id="goldGlow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 矿石主体 -->
+  <path d="M6 10 L12 6 L20 6 L26 12 L26 20 L20 26 L12 26 L6 20 Z" fill="url(#goldGrad)" stroke="#886600" stroke-width="1"/>
+  
+  <!-- 高光面 -->
+  <path d="M9 12 L14 9 L19 9 L23 13 L23 19 L19 23 L14 23 L9 19 Z" fill="url(#goldShine)" opacity="0.8"/>
+  
+  <!-- 金色闪光 -->
+  <path d="M11 11 L13 13 L11 15 L9 13 Z" fill="#FFFF88" opacity="0.9"/>
+  <path d="M18 8 L20 10 L18 12 L16 10 Z" fill="#FFFF88" opacity="0.9"/>
+  <path d="M22 16 L24 18 L22 20 L20 18 Z" fill="#FFFF88" opacity="0.9"/>
+  
+  <!-- 标签 -->
+  <rect x="18" y="4" width="10" height="8" rx="1" fill="#001133" stroke="#FFDD44" stroke-width="0.5"/>
+  <text x="23" y="10" font-family="monospace" font-size="5" fill="#FFDD44" text-anchor="middle" filter="url(#goldGlow)">Au</text>
+</svg>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 武器图标 - 机械爪 --
+       用于抓取/近战武器
+  -->
+  
+  <g id="weapon-claw">
+    <!-- 背景框 -->
+    <rect x="4" y="4" width="56" height="56" rx="4" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 机械爪主体 -->
+    <!-- 连接部 -->
+    <rect x="28" y="8" width="8" height="12" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 左爪臂 -->
+    <path d="M 28 20 L 18 30 L 16 45 L 22 48 L 26 35 L 28 25" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <!-- 右爪臂 -->
+    <path d="M 36 20 L 46 30 L 48 45 L 42 48 L 38 35 L 36 25" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1.5" filter="url(#neonGlow)"/>
+    
+    <!-- 左爪尖 -->
+    <path d="M 16 45 L 12 52 L 18 50 L 22 48" fill="#2A2A3E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 右爪尖 -->
+    <path d="M 48 45 L 52 52 L 46 50 L 42 48" fill="#2A2A3E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 关节 -->
+    <circle cx="18" cy="30" r="2" fill="#00F0FF"/>
+    
+    <circle cx="46" cy="30" r="2" fill="#00F0FF"/>
+    
+    <circle cx="16" cy="45" r="2" fill="#00F0FF"/>
+    
+    <circle cx="48" cy="45" r="2" fill="#00F0FF"/>
+    
+    <!-- 液压杆 -->
+    <line x1="24" y1="28" x2="24" y2="38" stroke="#00F0FF" stroke-width="1" opacity="0.6"/>
+    
+    <line x1="40" y1="28" x2="40" y2="38" stroke="#00F0FF" stroke-width="1" opacity="0.6"/>
+    
+    <!-- 中心连接 -->
+    <circle cx="32" cy="25" r="3" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 高光 -->
+    <path d="M 20 32 L 18 42" stroke="#FFFFFF" stroke-width="1" opacity="0.4"/>
+    
+    <path d="M 44 32 L 46 42" stroke="#FFFFFF" stroke-width="1" opacity="0.4"/>
+  </g>
+</svg>

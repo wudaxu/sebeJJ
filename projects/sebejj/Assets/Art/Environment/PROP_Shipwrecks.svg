@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300">
+  <defs>
+    <linearGradient id="shipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568"/>
+      <stop offset="50%" style="stop-color:#2d3748"/>
+      <stop offset="100%" style="stop-color:#1a202c"/>
+    </linearGradient>
+    
+    <linearGradient id="rustGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513"/>
+      <stop offset="50%" style="stop-color:#654321"/>
+      <stop offset="100%" style="stop-color:#3d2914"/>
+    </linearGradient>
+    
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#001a33"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background water -->
+  <rect x="0" y="0" width="960" height="300" fill="url(#waterGrad)"/>
+  
+  <!-- Shipwreck 1: Small Cargo Ship -->
+  <g transform="translate(160,150)">
+    <!-- Ship hull (tilted) -->
+    <g transform="rotate(-15,0,0)">
+      <!-- Main hull -->
+      <path d="M-100 50 L-90 -20 L-60 -40 L60 -30 L90 0 L100 50 Z" fill="url(#shipGrad)" stroke="#1a202c" stroke-width="2"/>
+      
+      <!-- Rust patches -->
+      <path d="M-80 30 L-70 10 L-50 15 L-60 35 Z" fill="url(#rustGrad)" opacity="0.7"/>
+      
+      <path d="M20 -10 L40 -5 L50 15 L30 10 Z" fill="url(#rustGrad)" opacity="0.6"/>
+      
+      <path d="M60 20 L75 25 L80 40 L65 35 Z" fill="url(#rustGrad)" opacity="0.5"/>
+      
+      <!-- Hull details -->
+      <rect x="-70" y="-10" width="25" height="15" fill="#1a202c" opacity="0.5"/>
+      
+      <rect x="-30" y="-5" width="25" height="15" fill="#1a202c" opacity="0.5"/>
+      
+      <rect x="10" y="0" width="25" height="15" fill="#1a202c" opacity="0.5"/>
+      
+      <!-- Deck structure -->
+      <rect x="-40" y="-55" width="50" height="25" fill="#2d3748" stroke="#1a202c" stroke-width="1"/>
+      
+      <rect x="-35" y="-50" width="15" height="12" fill="#0D1B2A" opacity="0.6"/>
+      
+      <rect x="-10" y="-50" width="15" height="12" fill="#0D1B2A" opacity="0.6"/>
+      
+      <!-- Broken mast -->
+      <line x1="-15" y1="-55" x2="-25" y2="-80" stroke="#4a5568" stroke-width="3"/>
+      
+      <line x1="-25" y1="-80" x2="-35" y2="-70" stroke="#4a5568" stroke-width="2"/>
+      
+      <!-- Hull damage/hole -->
+      <path d="M-20 20 L0 15 L10 30 L-10 35 Z" fill="#0D1B2A"/>
+    </g>
+    
+    <!-- Debris around ship -->
+    <rect x="-120" y="60" width="20" height="8" fill="#2d3748" transform="rotate(20,-110,64)"/>
+    
+    <rect x="90" y="55" width="15" height="6" fill="#2d3748" transform="rotate(-15,97,58)"/>
+    
+    <circle cx="110" cy="70" r="5" fill="#4a5568"/>
+    
+    <text x="0" y="110" text-anchor="middle" fill="#708090" font-family="monospace" font-size="10">SHIPWRECK 01</text>
+  </g>
+  
+  <!-- Shipwreck 2: Submarine -->
+  <g transform="translate(480,160)">
+    <g transform="rotate(10,0,0)">
+      <!-- Main hull -->
+      <ellipse cx="0" cy="0" rx="90" ry="35" fill="url(#shipGrad)" stroke="#1a202c" stroke-width="2"/>
+      
+      <!-- Conning tower -->
+      <rect x="-20" y="-55" width="40" height="30" fill="#2d3748" stroke="#1a202c" stroke-width="1.5"/>
+      
+      <polygon points="-20,-55 0,-65 20,-55" fill="#4a5568" stroke="#1a202c" stroke-width="1"/>
+      
+      <!-- Periscope (bent) -->
+      <line x1="0" y1="-65" x2="0" y2="-85" stroke="#4a5568" stroke-width="4"/>
+      
+      <line x1="0" y1="-85" x2="15" y2="-90" stroke="#4a5568" stroke-width="3"/>
+      
+      <ellipse cx="18" cy="-90" rx="5" ry="3" fill="#0D1B2A"/>
+      
+      <!-- Hull details -->
+      <line x1="-60" y1="0" x2="60" y2="0" stroke="#1a202c" stroke-width="1" opacity="0.5"/>
+      
+      <line x1="-50" y1="-15" x2="50" y2="-15" stroke="#1a202c" stroke-width="1" opacity="0.3"/>
+      
+      <line x1="-50" y1="15" x2="50" y2="15" stroke="#1a202c" stroke-width="1" opacity="0.3"/>
+      
+      <!-- Propeller area -->
+      <ellipse cx="-90" cy="0" rx="10" ry="20" fill="#1a202c"/>
+      
+      <!-- Broken propeller blades -->
+      <line x1="-95" y1="-5" x2="-110" y2="-15" stroke="#4a5568" stroke-width="2"/>
+      
+      <line x1="-95" y1="5" x2="-105" y2="12" stroke="#4a5568" stroke-width="2"/>
+      
+      <!-- Rust and damage -->
+      <path d="M30 -20 L50 -15 L55 0 L40 -5 Z" fill="url(#rustGrad)" opacity="0.6"/>
+      
+      <path d="M-40 15 L-20 20 L-15 30 L-35 25 Z" fill="#0D1B2A"/>
+      
+      <ellipse cx="60" cy="10" rx="8" ry="5" fill="#0D1B2A" opacity="0.7"/>
+    </g>
+    
+    <!-- Debris -->
+    <rect x="-110" y="40" width="12" height="6" fill="#2d3748" transform="rotate(30,-104,43)"/>
+    
+    <rect x="100" y="30" width="10" height="5" fill="#2d3748" transform="rotate(-20,105,32)"/>
+    
+    <circle cx="-130" cy="50" r="4" fill="#4a5568"/>
+    
+    <text x="0" y="100" text-anchor="middle" fill="#708090" font-family="monospace" font-size="10">SHIPWRECK 02</text>
+  </g>
+  
+  <!-- Shipwreck 3: Ancient Vessel -->
+  <g transform="translate(800,150)">
+    <g transform="rotate(-5,0,0)">
+      <!-- Wooden hull remains -->
+      <path d="M-80 40 L-70 0 L-40 -25 L40 -20 L75 10 L85 40 Z" fill="#5D4037" stroke="#3E2723" stroke-width="2"/>
+      
+      <!-- Plank texture -->
+      <line x1="-60" y1="10" x2="-55" y2="35" stroke="#3E2723" stroke-width="1" opacity="0.5"/>
+      
+      <line x1="-30" y1="-10" x2="-25" y2="38" stroke="#3E2723" stroke-width="1" opacity="0.5"/>
+      
+      <line x1="0" y1="-15" x2="5" y2="38" stroke="#3E2723" stroke-width="1" opacity="0.5"/>
+      
+      <line x1="30" y1="-5" x2="35" y2="38" stroke="#3E2723" stroke-width="1" opacity="0.5"/>
+      
+      <line x1="60" y1="15" x2="65" y2="38" stroke="#3E2723" stroke-width="1" opacity="0.5"/>
+      
+      <!-- Broken mast -->
+      <line x1="0" y1="-25" x2="-10" y2="-70" stroke="#5D4037" stroke-width="4"/>
+      
+      <line x1="-10" y1="-70" x2="-30" y2="-60" stroke="#5D4037" stroke-width="3"/>
+      
+      <!-- Tattered sail remnants -->
+      <path d="M-8 -65 L-25 -55 L-20 -40 L-5 -50 Z" fill="#8D6E63" opacity="0.6"/>
+      
+      <!-- Heavy algae growth -->
+      <path d="M-70 35 Q-60 20 -50 35 T-30 35" fill="none" stroke="#2E7D32" stroke-width="3" opacity="0.7"/>
+      
+      <path d="M20 35 Q30 15 40 35 T60 35" fill="none" stroke="#2E7D32" stroke-width="3" opacity="0.7"/>
+      
+      <ellipse cx="-50" cy="30" rx="10" ry="5" fill="#388E3C" opacity="0.5"/>
+      
+      <ellipse cx="50" cy="25" rx="8" ry="4" fill="#388E3C" opacity="0.5"/>
+      
+      <ellipse cx="0" cy="35" rx="15" ry="6" fill="#2E7D32" opacity="0.4"/>
+      
+      <!-- Hole in hull -->
+      <path d="M-20 15 L10 10 L15 25 L-10 30 Z" fill="#0D1B2A"/>
+      
+      <!-- Scattered cargo -->
+      <rect x="-100" y="50" width="15" height="12" fill="#5D4037" transform="rotate(15,-92,56)"/>
+      
+      <rect x="90" y="45" width="12" height="10" fill="#5D4037" transform="rotate(-25,96,50)"/>
+    </g>
+    
+    <text x="0" y="100" text-anchor="middle" fill="#708090" font-family="monospace" font-size="10">SHIPWRECK 03</text>
+  </g>
+  
+  <!-- Ambient particles -->
+  <circle cx="50" cy="250" r="2" fill="#87CEEB" opacity="0.3"/>
+  
+  <circle cx="250" cy="280" r="1.5" fill="#87CEEB" opacity="0.2"/>
+  
+  <circle cx="400" cy="260" r="2" fill="#87CEEB" opacity="0.25"/>
+  
+  <circle cx="600" cy="270" r="1.5" fill="#87CEEB" opacity="0.3"/>
+  
+  <circle cx="750" cy="250" r="2" fill="#87CEEB" opacity="0.2"/>
+  
+  <circle cx="900" cy="280" r="1.5" fill="#87CEEB" opacity="0.25"/>
+</svg>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="electricGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFF00" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#00F0FF" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#0080FF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0040FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 机械水母电击范围指示特效 -->
+  <!-- 用于机械水母电击攻击的范围预警 -->
+  <!-- 动画建议: 范围圈由小变大循环，电击效果闪烁 -->
+  
+  <g id="enemy-jellyfish-electric">
+    <!-- 最外圈范围指示 -->
+    <circle cx="128" cy="128" r="120" fill="none" stroke="#0080FF" stroke-width="2" stroke-dasharray="15,8" opacity="0.4" filter="url(#neonGlow)"/>
+    
+    <!-- 中圈范围 -->
+    <circle cx="128" cy="128" r="90" fill="none" stroke="#00F0FF" stroke-width="2" stroke-dasharray="10,5" opacity="0.5" filter="url(#neonGlow)"/>
+    
+    <!-- 内圈危险区 -->
+    <circle cx="128" cy="128" r="60" fill="url(#electricGrad)" opacity="0.3"/>
+    <circle cx="128" cy="128" r="60" fill="none" stroke="#FFFF00" stroke-width="2" stroke-dasharray="8,4" opacity="0.6" filter="url(#neonGlow)"/>
+    
+    <!-- 核心区域 -->
+    <circle cx="128" cy="128" r="30" fill="#FFFF00" opacity="0.2" filter="url(#neonGlow)"/>
+    <circle cx="128" cy="128" r="30" fill="none" stroke="#FFFF00" stroke-width="3" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- 电击波纹 -->
+    <circle cx="128" cy="128" r="45" fill="none" stroke="#00F0FF" stroke-width="1.5" opacity="0.5" filter="url(#neonGlow)"/>
+    
+    <circle cx="128" cy="128" r="75" fill="none" stroke="#0080FF" stroke-width="1" opacity="0.4"/>
+    
+    <!-- 电击闪电效果 -->
+    <g stroke="#FFFF00" stroke-width="2" fill="none" opacity="0.8" filter="url(#strongGlow)">
+      <path d="M 128 128 L 100 80 L 110 60 L 90 40"/>
+      <path d="M 128 128 L 156 80 L 146 60 L 166 40"/>
+      <path d="M 128 128 L 100 176 L 110 196 L 90 216"/>
+      <path d="M 128 128 L 156 176 L 146 196 L 166 216"/>
+      <path d="M 128 128 L 80 100 L 60 110 L 40 90"/>
+      <path d="M 128 128 L 176 100 L 196 110 L 216 90"/>
+      <path d="M 128 128 L 80 156 L 60 146 L 40 166"/>
+      <path d="M 128 128 L 176 156 L 196 146 L 216 166"/>
+    </g>
+    
+    <!-- 次级闪电 -->
+    <g stroke="#00F0FF" stroke-width="1.5" fill="none" opacity="0.6" filter="url(#neonGlow)">
+      <path d="M 128 98 L 115 70 L 125 50"/>
+      <path d="M 128 98 L 141 70 L 131 50"/>
+      <path d="M 128 158 L 115 186 L 125 206"/>
+      <path d="M 128 158 L 141 186 L 131 206"/>
+      <path d="M 98 128 L 70 115 L 50 125"/>
+      <path d="M 98 128 L 70 141 L 50 131"/>
+      <path d="M 158 128 L 186 115 L 206 125"/>
+      <path d="M 158 128 L 186 141 L 206 131"/>
+    </g>
+    
+    <!-- 能量节点 -->
+    <circle cx="128" cy="128" r="8" fill="#FFFFFF" filter="url(#strongGlow)"/>
+    <circle cx="128" cy="128" r="15" fill="none" stroke="#FFFF00" stroke-width="2" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <!-- 外围能量点 -->
+    <circle cx="128" cy="40" r="4" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <circle cx="128" cy="216" r="4" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <circle cx="40" cy="128" r="4" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <circle cx="216" cy="128" r="4" fill="#FFFF00" filter="url(#neonGlow)"/>
+    
+    <circle cx="70" cy="70" r="3" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="186" cy="70" r="3" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="70" cy="186" r="3" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <circle cx="186" cy="186" r="3" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 警告标记 -->
+    <g fill="#FF0040" opacity="0.6">
+      <path d="M 128 8 L 132 18 L 128 16 L 124 18 Z"/>
+      <path d="M 128 248 L 132 238 L 128 240 L 124 238 Z"/>
+      <path d="M 8 128 L 18 132 L 16 128 L 18 124 Z"/>
+      <path d="M 248 128 L 238 132 L 240 128 L 238 124 Z"/>
+    </g>
+  </g>
+</svg>

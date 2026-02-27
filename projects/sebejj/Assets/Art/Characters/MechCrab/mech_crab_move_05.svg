@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 机械蟹 Move 帧5 - 交替循环 -->
+  <g id="mech-crab-move-5">
+    <!-- 左后腿 - 抬起 -->
+    <path d="M 103 158 L 85 175 L 82 190" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="82" cy="190" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 右后腿 -->
+    <path d="M 178 160 L 200 180 L 208 200" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="208" cy="200" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 左中腿 -->
+    <path d="M 98 138 L 75 153 L 65 173" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="65" cy="173" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 右中腿 - 抬起 -->
+    <path d="M 183 135 L 211 150 L 225 165" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="225" cy="165" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 左前腿 -->
+    <path d="M 103 118 L 82 130 L 75 145" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="75" cy="145" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 右前腿 - 抬起 -->
+    <path d="M 178 115 L 203 122 L 215 132" fill="none" stroke="#00F0FF" stroke-width="3" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <circle cx="215" cy="132" r="4" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 身体主体 -->
+    <rect x="103" y="95" width="76" height="70" rx="10" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 身体装甲板块 -->
+    <rect x="113" y="105" width="20" height="20" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <rect x="141" y="105" width="20" height="20" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <rect x="113" y="133" width="20" height="20" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <rect x="141" y="133" width="20" height="20" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 核心反应堆 -->
+    <circle cx="141" cy="130" r="11" fill="url(#coreGlow)" opacity="1"/>
+    <circle cx="141" cy="130" r="7" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 左螯 -->
+    <path d="M 103 110 L 73 95 L 68 80" fill="none" stroke="#00F0FF" stroke-width="4" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 68 80 L 58 70 L 73 75 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    <path d="M 68 80 L 63 90 L 78 85 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 右螯 -->
+    <path d="M 179 110 L 209 95 L 214 80" fill="none" stroke="#00F0FF" stroke-width="4" stroke-linecap="round" filter="url(#neonGlow)"/>
+    <path d="M 214 80 L 224 70 L 209 75 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    <path d="M 214 80 L 219 90 L 204 85 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 眼睛 -->
+    <line x1="128" y1="100" x2="128" y2="90" stroke="#00F0FF" stroke-width="2"/>
+    <circle cx="128" cy="87" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <line x1="154" y1="100" x2="154" y2="90" stroke="#00F0FF" stroke-width="2"/>
+    <circle cx="154" cy="87" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 铆钉 -->
+    <circle cx="113" cy="115" r="1.5" fill="#00F0FF"/>
+    <circle cx="169" cy="115" r="1.5" fill="#00F0FF"/>
+    <circle cx="113" cy="145" r="1.5" fill="#00F0FF"/>
+    <circle cx="169" cy="145" r="1.5" fill="#00F0FF"/>
+  </g>
+</svg>

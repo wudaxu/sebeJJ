@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 中层海水渐变 - 更暗 -->
+    <linearGradient id="midWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#01579B;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#013D7A;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#002855;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#001230;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 微弱光线 -->
+    <linearGradient id="dimLight" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#E3F2FD;stop-opacity:0" />
+    </linearGradient>
+    
+    <!-- 暗礁岩石渐变 -->
+    <linearGradient id="rockDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#37474F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#263238;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#102027;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 锈迹纹理 -->
+    <pattern id="rustPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#5D4037"/>
+      <circle cx="15" cy="20" r="8" fill="#8D6E63" opacity="0.6"/>
+      <circle cx="40" cy="45" r="12" fill="#4E342E" opacity="0.7"/>
+      <circle cx="50" cy="15" r="6" fill="#6D4C41" opacity="0.5"/>
+    </pattern>
+    
+    <!-- 金属质感 -->
+    <linearGradient id="metalRust" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#78909C;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#5D4037;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#455A64;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#37474F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景海水 -->
+  <rect width="1920" height="1080" fill="url(#midWater)"/>
+  
+  <!-- 微弱光线 -->
+  <g opacity="0.4">
+    <path d="M400 0 L300 1080 L500 1080 L600 0 Z" fill="url(#dimLight)"/>
+    <path d="M1000 0 L900 1080 L1100 1080 L1200 0 Z" fill="url(#dimLight)"/>
+    <path d="M1600 0 L1500 1080 L1700 1080 L1800 0 Z" fill="url(#dimLight)"/>
+  </g>
+  
+  <!-- 暗礁地形 - 左侧 -->
+  <g transform="translate(0, 600)">
+    <path d="M0 480 L0 200 Q 100 150 200 180 Q 300 120 400 160 Q 500 100 600 140 L 600 480 Z" fill="url(#rockDark)"/>
+    <!-- 岩石细节 -->
+    <path d="M50 250 L80 220 L110 260 L90 290 Z" fill="#263238"/>
+    <path d="M150 200 L180 170 L210 210 L190 240 Z" fill="#1C2529"/>
+    <path d="M300 180 L340 140 L380 190 L350 230 Z" fill="#263238"/>
+    <path d="M450 160 L480 130 L510 170 L490 200 Z" fill="#1C2529"/>
+  </g>
+  
+  <!-- 暗礁地形 - 右侧 -->
+  <g transform="translate(1320, 650)">
+    <path d="M0 430 L0 100 Q 150 80 300 120 Q 450 60 600 100 L 600 430 Z" fill="url(#rockDark)"/>
+    <!-- 岩石细节 -->
+    <path d="M80 200 L120 160 L160 210 L130 250 Z" fill="#263238"/>
+    <path d="M250 180 L290 140 L330 190 L300 230 Z" fill="#1C2529"/>
+    <path d="M420 160 L460 120 L500 170 L470 210 Z" fill="#263238"/>
+  </g>
+  
+  <!-- 沉船 - 中央偏右 -->
+  <g transform="translate(700, 500) rotate(-15)">
+    <!-- 船体 -->
+    <path d="M0 200 L50 100 L450 100 L500 200 L480 280 L20 280 Z" fill="url(#metalRust)"/>
+    <!-- 船体锈迹 -->
+    <path d="M60 120 L100 120 L90 180 L70 180 Z" fill="url(#rustPattern)" opacity="0.8"/>
+    <path d="M200 110 L280 110 L270 190 L210 190 Z" fill="url(#rustPattern)" opacity="0.7"/>
+    <path d="M380 120 L430 120 L420 180 L390 180 Z" fill="url(#rustPattern)" opacity="0.8"/>
+    
+    <!-- 船舱 -->
+    <rect x="100" y="40" width="120" height="60" fill="#546E7A"/>
+    <rect x="110" y="50" width="30" height="20" fill="#263238"/>
+    <rect x="160" y="50" width="30" height="20" fill="#263238"/>
+    <rect x="210" y="50" width="30" height="20" fill="#263238"/>
+    
+    <!-- 桅杆 - 折断 -->
+    <rect x="240" y="-80" width="15" height="120" fill="#4E342E"/>
+    <rect x="200" y="-60" width="100" height="10" fill="#3E2723" transform="rotate(-30 250 -55)"/>
+    
+    <!-- 破洞 -->
+    <ellipse cx="350" cy="200" rx="40" ry="30" fill="#001230"/>
+    <ellipse cx="150" cy="240" rx="30" ry="20" fill="#001230"/>
+    
+    <!-- 船锚 -->
+    <path d="M450 280 L450 350 M420 330 Q 450 360 480 330" stroke="#37474F" stroke-width="8" fill="none"/>
+  </g>
+  
+  <!-- 散落的货物箱 -->
+  <g transform="translate(550, 750)">
+    <rect x="0" y="0" width="60" height="50" fill="#5D4037" stroke="#3E2723" stroke-width="2"/>
+    <rect x="5" y="5" width="50" height="40" fill="none" stroke="#8D6E63" stroke-width="1"/>
+    <line x1="0" y1="25" x2="60" y2="25" stroke="#3E2723" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(650, 800) rotate(20)">
+    <rect x="0" y="0" width="50" height="40" fill="#6D4C41" stroke="#3E2723" stroke-width="2"/>
+    <line x1="0" y1="20" x2="50" y2="20" stroke="#3E2723" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(1200, 780) rotate(-10)">
+    <rect x="0" y="0" width="70" height="55" fill="#5D4037" stroke="#3E2723" stroke-width="2"/>
+    <line x1="0" y1="27" x2="70" y2="27" stroke="#3E2723" stroke-width="2"/>
+    <line x1="35" y1="0" x2="35" y2="55" stroke="#3E2723" stroke-width="2"/>
+  </g>
+  
+  <!-- 深海植物 -->
+  <g transform="translate(200, 850)">
+    <path d="M0 150 Q 15 100 0 50 Q -10 20 5 0 Q 20 30 10 60 Q 5 100 20 150" stroke="#1B5E20" stroke-width="6" fill="none"/>
+    <path d="M30 150 Q 20 110 35 70 Q 40 40 30 20 Q 45 50 40 80 Q 35 110 50 150" stroke="#2E7D32" stroke-width="5" fill="none"/>
+  </g>
+  
+  <g transform="translate(1500, 880)">
+    <path d="M0 150 Q -10 100 10 50 Q 20 20 5 0 Q -5 40 5 70 Q 10 110 0 150" stroke="#1B5E20" stroke-width="7" fill="none"/>
+    <path d="M40 150 Q 50 100 30 60 Q 20 30 35 10 Q 45 50 40 80 Q 35 120 50 150" stroke="#2E7D32" stroke-width="5" fill="none"/>
+  </g>
+  
+  <!-- 发光水母 -->
+  <g transform="translate(300, 400)">
+    <ellipse cx="0" cy="0" rx="25" ry="35" fill="rgba(186, 104, 200, 0.6)"/>
+    <path d="M-20 20 Q -25 50 -15 70" stroke="#CE93D8" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M-5 25 Q -10 55 0 75" stroke="#CE93D8" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M10 25 Q 5 55 15 75" stroke="#CE93D8" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M20 20 Q 25 50 25 70" stroke="#CE93D8" stroke-width="2" fill="none" opacity="0.7"/>
+    <!-- 发光效果 -->
+    <circle cx="0" cy="0" r="40" fill="url(#dimLight)" opacity="0.3"/>
+  </g>
+  
+  <g transform="translate(1400, 500)">
+    <ellipse cx="0" cy="0" rx="20" ry="30" fill="rgba(128, 222, 234, 0.5)"/>
+    <path d="M-15 15 Q -20 40 -10 60" stroke="#80DEEA" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M0 18 Q -5 45 5 65" stroke="#80DEEA" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M15 15 Q 20 40 15 60" stroke="#80DEEA" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+  
+  <!-- 悬浮颗粒 -->
+  <g fill="rgba(255,255,255,0.15)">
+    <circle cx="100" cy="300" r="3"/>
+    <circle cx="250" cy="450" r="2"/>
+    <circle cx="500" cy="350" r="4"/>
+    <circle cx="750" cy="500" r="2"/>
+    <circle cx="1000" cy="400" r="3"/>
+    <circle cx="1250" cy="550" r="2"/>
+    <circle cx="1500" cy="380" r="3"/>
+    <circle cx="1750" cy="480" r="2"/>
+    <circle cx="200" cy="600" r="2"/>
+    <circle cx="1800" cy="600" r="3"/>
+  </g>
+</svg>

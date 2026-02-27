@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- 符文发光渐变 -->
+    <linearGradient id="runeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFFF"/>
+      <stop offset="50%" stop-color="#0080FF"/>
+      <stop offset="100%" stop-color="#4000FF"/>
+    </linearGradient>
+    
+    <!-- 古代能量渐变 -->
+    <radialGradient id="ancientEnergy" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FFFF"/>
+      <stop offset="50%" stop-color="#0080FF"/>
+      <stop offset="100%" stop-color="#004080" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- 强烈发光 -->
+    <filter id="runeLight" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    
+    <!-- 脉动效果 -->
+    <filter id="pulseLight" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="256" height="256" fill="none"/>
+  
+  <!-- 符文圆环 -->
+  <g id="rune-circle" filter="url(#runeLight)">
+    <circle cx="128" cy="128" r="100" fill="none" stroke="url(#runeGlow)" stroke-width="3"/>
+    <circle cx="128" cy="128" r="95" fill="none" stroke="#00FFFF" stroke-width="1" stroke-dasharray="10 5"/>
+    <circle cx="128" cy="128" r="80" fill="none" stroke="#0080FF" stroke-width="2"/>
+  </g>
+  
+  <!-- 中心符文 -->
+  <g id="center-rune" filter="url(#runeLight)">
+    <polygon points="128,60 140,90 170,90 146,110 156,140 128,120 100,140 110,110 86,90 116,90" fill="none" stroke="url(#runeGlow)" stroke-width="2"/>
+    <circle cx="128" cy="105" r="15" fill="none" stroke="#00FFFF" stroke-width="2"/>
+    <circle cx="128" cy="105" r="8" fill="#00FFFF" opacity="0.5"/>
+  </g>
+  
+  <!-- 外围符文1 - 上 -->
+  <g id="rune-north" transform="translate(0, -60)" filter="url(#runeLight)">
+    <path d="M128 50 L135 70 L128 65 L121 70 Z" fill="none" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="128" y1="65" x2="128" y2="85" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="118" y1="75" x2="138" y2="75" stroke="#00FFFF" stroke-width="2"/>
+  </g>
+  
+  <!-- 外围符文2 - 右 -->
+  <g id="rune-east" transform="translate(60, 0)" filter="url(#runeLight)">
+    <path d="M170 128 L150 135 L155 128 L150 121 Z" fill="none" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="155" y1="128" x2="135" y2="128" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="145" y1="118" x2="145" y2="138" stroke="#00FFFF" stroke-width="2"/>
+  </g>
+  
+  <!-- 外围符文3 - 下 -->
+  <g id="rune-south" transform="translate(0, 60)" filter="url(#runeLight)">
+    <path d="M128 206 L121 186 L128 191 L135 186 Z" fill="none" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="128" y1="191" x2="128" y2="171" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="118" y1="181" x2="138" y2="181" stroke="#00FFFF" stroke-width="2"/>
+  </g>
+  
+  <!-- 外围符文4 - 左 -->
+  <g id="rune-west" transform="translate(-60, 0)" filter="url(#runeLight)">
+    <path d="M86 128 L106 121 L101 128 L106 135 Z" fill="none" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="101" y1="128" x2="121" y2="128" stroke="#00FFFF" stroke-width="2"/>
+    <line x1="111" y1="118" x2="111" y2="138" stroke="#00FFFF" stroke-width="2"/>
+  </g>
+  
+  <!-- 对角符文 -->
+  <g id="rune-diagonal" filter="url(#runeLight)">
+    <!-- 东北 -->
+    <g transform="translate(42, -42)">
+      <circle cx="128" cy="128" r="8" fill="none" stroke="#0080FF" stroke-width="2"/>
+      <line x1="128" y1="120" x2="128" y2="136" stroke="#0080FF" stroke-width="1"/>
+      <line x1="120" y1="128" x2="136" y2="128" stroke="#0080FF" stroke-width="1"/>
+    </g>
+    
+    <!-- 东南 -->
+    <g transform="translate(42, 42)">
+      <circle cx="128" cy="128" r="8" fill="none" stroke="#0080FF" stroke-width="2"/>
+      <line x1="128" y1="120" x2="128" y2="136" stroke="#0080FF" stroke-width="1"/>
+      <line x1="120" y1="128" x2="136" y2="128" stroke="#0080FF" stroke-width="1"/>
+    </g>
+    
+    <!-- 西南 -->
+    <g transform="translate(-42, 42)">
+      <circle cx="128" cy="128" r="8" fill="none" stroke="#0080FF" stroke-width="2"/>
+      <line x1="128" y1="120" x2="128" y2="136" stroke="#0080FF" stroke-width="1"/>
+      <line x1="120" y1="128" x2="136" y2="128" stroke="#0080FF" stroke-width="1"/>
+    </g>
+    
+    <!-- 西北 -->
+    <g transform="translate(-42, -42)">
+      <circle cx="128" cy="128" r="8" fill="none" stroke="#0080FF" stroke-width="2"/>
+      <line x1="128" y1="120" x2="128" y2="136" stroke="#0080FF" stroke-width="1"/>
+      <line x1="120" y1="128" x2="136" y2="128" stroke="#0080FF" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- 连接线 -->
+  <g id="connecting-lines" stroke="#0080FF" stroke-width="1" opacity="0.6">
+    <line x1="128" y1="68" x2="170" y2="128"/>
+    <line x1="170" y1="128" x2="128" y2="188"/>
+    <line x1="128" y1="188" x2="86" y2="128"/>
+    <line x1="86" y1="128" x2="128" y2="68"/>
+  </g>
+  
+  <!-- 能量粒子 -->
+  <g id="energy-particles" filter="url(#pulseLight)">
+    <circle cx="128" cy="40" r="3" fill="#00FFFF" opacity="0.8"/>
+    <circle cx="216" cy="128" r="3" fill="#0080FF" opacity="0.7"/>
+    <circle cx="128" cy="216" r="3" fill="#00FFFF" opacity="0.8"/>
+    <circle cx="40" cy="128" r="3" fill="#0080FF" opacity="0.7"/>
+    <circle cx="170" cy="86" r="2" fill="#00F0FF" opacity="0.6"/>
+    <circle cx="170" cy="170" r="2" fill="#00F0FF" opacity="0.6"/>
+    <circle cx="86" cy="170" r="2" fill="#00F0FF" opacity="0.6"/>
+    <circle cx="86" cy="86" r="2" fill="#00F0FF" opacity="0.6"/>
+  </g>
+  
+  <!-- 外环装饰 -->
+  <g id="outer-decoration" stroke="#004080" stroke-width="1" opacity="0.5">
+    <circle cx="128" cy="128" r="115" fill="none" stroke-dasharray="5 10"/>
+    <circle cx="128" cy="128" r="65" fill="none" stroke-dasharray="3 6"/>
+  </g>
+  
+  <!-- 古代文字符号 -->
+  <g id="ancient-symbols" fill="#00FFFF" opacity="0.7" filter="url(#pulseLight)">
+    <text x="128" y="235" text-anchor="middle" font-family="serif" font-size="10">◊ ◊ ◊</text>
+    <text x="128" y="30" text-anchor="middle" font-family="serif" font-size="10">◊ ◊ ◊</text>
+    <text x="30" y="132" text-anchor="middle" font-family="serif" font-size="10">◊</text>
+    <text x="226" y="132" text-anchor="middle" font-family="serif" font-size="10">◊</text>
+  </g>
+  
+  <!-- 核心能量球 -->
+  <g id="core-orb" filter="url(#runeLight)">
+    <circle cx="128" cy="128" r="25" fill="url(#ancientEnergy)" opacity="0.6"/>
+    <circle cx="128" cy="128" r="15" fill="#00FFFF" opacity="0.4"/>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 武器发光 -->
+    <linearGradient id="weaponGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF00A0" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF00A0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 机械鱼 Attack 帧1 - 蓄力 -->
+  <g id="mech-fish-attack-1">
+    <!-- 尾鳍 - 收紧 -->
+    <path d="M 35 128 L 15 115 L 18 140 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2" filter="url(#neonGlow)"/>
+    
+    <!-- 身体主体 - 后缩 -->
+    <ellipse cx="118" cy="128" rx="65" ry="34" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 身体装甲板块 -->
+    <path d="M 80 108 L 100 108 L 95 128 L 85 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <path d="M 105 108 L 125 108 L 120 128 L 110 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <path d="M 130 108 L 150 108 L 145 128 L 135 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 下装甲 -->
+    <path d="M 90 148 L 110 148 L 105 128 L 95 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    <path d="M 115 148 L 135 148 L 130 128 L 120 128 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="1"/>
+    
+    <!-- 背鳍 -->
+    <path d="M 118 94 L 128 72 L 138 94 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2" filter="url(#neonGlow)"/>
+    
+    <!-- 侧鳍 - 收起 -->
+    <path d="M 108 142 L 115 160 L 125 142 Z" fill="#1A1A2E" stroke="#00F0FF" stroke-width="2" filter="url(#neonGlow)"/>
+    
+    <!-- 头部 - 略微后仰 -->
+    <ellipse cx="175" cy="125" rx="25" ry="22" fill="#0D1B2A" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- 探照灯/眼睛 - 变红 -->
+    <circle cx="185" cy="119" r="6" fill="#FF00A0" filter="url(#neonGlow)"/>
+    <circle cx="185" cy="131" r="4" fill="#FF00A0" filter="url(#neonGlow)"/>
+    
+    <!-- 核心反应堆 - 高亮 -->
+    <circle cx="118" cy="128" r="15" fill="url(#coreGlow)" opacity="1"/>
+    <circle cx="118" cy="128" r="10" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 机械细节 -->
+    <circle cx="80" cy="118" r="2" fill="#00F0FF"/>
+    <circle cx="150" cy="118" r="2" fill="#00F0FF"/>
+    <circle cx="80" cy="138" r="2" fill="#00F0FF"/>
+    <circle cx="150" cy="138" r="2" fill="#00F0FF"/>
+    
+    <!-- 武器系统 - 蓄力中 -->
+    <rect x="195" y="120" width="20" height="16" fill="#1A1A2E" stroke="#FF00A0" stroke-width="2" filter="url(#neonGlow)"/>
+    <circle cx="215" cy="128" r="5" fill="#FF00A0" opacity="0.6" filter="url(#neonGlow)"/>
+    
+    <!-- 蓄力光效 -->
+    <circle cx="215" cy="128" r="12" fill="url(#weaponGlow)" opacity="0.4"/>
+    
+    <!-- 推进器喷口 -->
+    <ellipse cx="38" cy="128" rx="8" ry="10" fill="#00F0FF" opacity="0.5" filter="url(#neonGlow)"/>
+  </g>
+</svg>

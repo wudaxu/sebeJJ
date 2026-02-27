@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="pickupCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#FFFF00"/>
+      <stop offset="60%" stop-color="#FFAA00"/>
+      <stop offset="100%" stop-color="#FF8800" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 拾取反馈特效 -->
+  <!-- 用于玩家拾取资源时的反馈效果 -->
+  <!-- 动画建议: 快速扩散后消失，6-8帧 -->
+  
+  <g id="item-pickup">
+    <!-- 外圈扩散环 -->
+    <circle cx="64" cy="64" r="55" fill="none" stroke="#FFAA00" stroke-width="2" opacity="0.5" filter="url(#neonGlow)"/>
+    
+    <circle cx="64" cy="64" r="48" fill="none" stroke="#FFFF00" stroke-width="2.5" opacity="0.6" filter="url(#neonGlow)"/>
+    
+    <!-- 中圈光晕 -->
+    <circle cx="64" cy="64" r="40" fill="none" stroke="#FFFF00" stroke-width="3" opacity="0.7" filter="url(#neonGlow)"/>
+    
+    <circle cx="64" cy="64" r="32" fill="url(#pickupCenter)" opacity="0.5"/>
+    
+    <!-- 核心爆发 -->
+    <circle cx="64" cy="64" r="25" fill="#FFFFFF" opacity="0.6" filter="url(#strongGlow)"/>
+    
+    <circle cx="64" cy="64" r="15" fill="#FFFFFF" opacity="0.8"/>
+    
+    <!-- 拾取文字/符号背景 -->
+    <circle cx="64" cy="64" r="20" fill="none" stroke="#FFAA00" stroke-width="2"/>
+    
+    <!-- 向上箭头 -->
+    <path d="M 64 35 L 72 50 L 68 50 L 68 58 L 60 58 L 60 50 L 56 50 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    
+    <path d="M 64 40 L 68 48 L 65 48 L 65 55 L 63 55 L 63 48 L 60 48 Z" fill="#FFFFFF"/>
+    
+    <!-- 闪光射线 -->
+    <path d="M 64 10 L 66 25 L 64 30 L 62 25 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <path d="M 64 118 L 66 103 L 64 98 L 62 103 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <path d="M 10 64 L 25 66 L 30 64 L 25 62 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    <path d="M 118 64 L 103 66 L 98 64 L 103 62 Z" fill="#FFFF00" filter="url(#neonGlow)"/>
+    
+    <!-- 对角射线 -->
+    <path d="M 22 22 L 32 32 L 34 29 L 25 19 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    <path d="M 106 22 L 96 32 L 94 29 L 103 19 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    <path d="M 22 106 L 32 96 L 34 99 L 25 109 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    <path d="M 106 106 L 96 96 L 94 99 L 103 109 Z" fill="#FFAA00" filter="url(#neonGlow)"/>
+    
+    <!-- 能量粒子 -->
+    <circle cx="35" cy="45" r="3" fill="#FFFFFF"/>
+    <circle cx="93" cy="50" r="3" fill="#FFFFFF"/>
+    <circle cx="45" cy="95" r="3" fill="#FFFFFF"/>
+    <circle cx="85" cy="90" r="3" fill="#FFFFFF"/>
+    
+    <circle cx="25" cy="70" r="2" fill="#FFFF00"/>
+    <circle cx="103" cy="65" r="2" fill="#FFFF00"/>
+    <circle cx="55" cy="25" r="2" fill="#FFFF00"/>
+    <circle cx="75" cy="105" r="2" fill="#FFFF00"/>
+    
+    <!-- 上升粒子轨迹 -->
+    <circle cx="50" cy="80" r="1.5" fill="#FFAA00" opacity="0.7"/>
+    <circle cx="78" cy="75" r="1.5" fill="#FFAA00" opacity="0.7"/>
+    <circle cx="64" cy="90" r="1.5" fill="#FFAA00" opacity="0.7"/>
+    
+    <circle cx="40" cy="95" r="1" fill="#FF8800" opacity="0.5"/>
+    <circle cx="88" cy="92" r="1" fill="#FF8800" opacity="0.5"/>
+  </g>
+</svg>

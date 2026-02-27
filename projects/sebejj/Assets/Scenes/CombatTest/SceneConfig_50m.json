@@ -1,0 +1,189 @@
+{
+  "sceneName": "50米深度测试区",
+  "sceneId": "CombatTest_50m",
+  "description": "赛博机甲SebeJJ的第一个可玩战斗测试场景，位于水下50米深度",
+  "version": "1.0.0",
+  
+  "environment": {
+    "depth": 50,
+    "depthEffects": {
+      "oxygenConsumptionMultiplier": 1.2,
+      "visibilityRange": 25,
+      "lightLevel": 0.6,
+      "pressureDamage": 0
+    },
+    "boundaries": {
+      "size": 30,
+      "type": "BoxCollider2D",
+      "wrapAround": false
+    }
+  },
+
+  "player": {
+    "spawnPosition": {"x": 0, "y": 0, "z": 0},
+    "initialStats": {
+      "health": 100,
+      "shield": 50,
+      "armor": 30,
+      "oxygen": 100,
+      "energy": 100
+    },
+    "startingWeapons": [
+      {
+        "weaponId": "basic_cannon",
+        "weaponName": "基础火炮",
+        "damageType": "Kinetic",
+        "baseDamage": 15,
+        "cooldown": 0.5,
+        "projectileSpeed": 15
+      }
+    ]
+  },
+
+  "enemies": {
+    "spawnMode": "WaveBased",
+    "waves": [
+      {
+        "waveId": 1,
+        "waveName": "初次接触",
+        "delayBeforeSpawn": 2.0,
+        "enemies": [
+          {
+            "type": "MechFish",
+            "count": 2,
+            "spawnInterval": 1.0,
+            "spawnPoints": ["random"]
+          }
+        ],
+        "waitForClear": true
+      },
+      {
+        "waveId": 2,
+        "waveName": "增援到达",
+        "delayBeforeSpawn": 3.0,
+        "enemies": [
+          {
+            "type": "MechFish",
+            "count": 1,
+            "spawnInterval": 0.5,
+            "spawnPoints": ["random"]
+          },
+          {
+            "type": "MechCrab",
+            "count": 1,
+            "spawnInterval": 0.5,
+            "spawnPoints": ["random"]
+          }
+        ],
+        "waitForClear": true
+      }
+    ],
+    
+    "enemyStats": {
+      "MechFish": {
+        "health": 60,
+        "moveSpeed": 3.5,
+        "attackDamage": 12,
+        "attackCooldown": 1.5,
+        "attackRange": 2.0,
+        "detectionRange": 12,
+        "defenseReduction": 0.1
+      },
+      "MechCrab": {
+        "health": 100,
+        "moveSpeed": 2.0,
+        "attackDamage": 20,
+        "attackCooldown": 2.0,
+        "attackRange": 1.5,
+        "detectionRange": 10,
+        "defenseReduction": 0.3
+      }
+    }
+  },
+
+  "loot": {
+    "dropMode": "OnDeath",
+    "tables": {
+      "MechFish": {
+        "guaranteedDrops": [
+          {
+            "itemId": "fish_scrap",
+            "itemName": "机械鱼残骸",
+            "type": "TechScrap",
+            "quantity": {"min": 1, "max": 2},
+            "dropChance": 1.0
+          }
+        ],
+        "randomDrops": [
+          {
+            "itemId": "metal_fragment",
+            "itemName": "金属碎片",
+            "type": "Mineral",
+            "quantity": {"min": 1, "max": 3},
+            "dropChance": 0.5
+          },
+          {
+            "itemId": "energy_cell",
+            "itemName": "能量电池",
+            "type": "TechScrap",
+            "quantity": {"min": 1, "max": 1},
+            "dropChance": 0.3
+          }
+        ],
+        "creditsDrop": {"min": 10, "max": 20}
+      },
+      "MechCrab": {
+        "guaranteedDrops": [
+          {
+            "itemId": "crab_shell",
+            "itemName": "机械蟹壳",
+            "type": "TechScrap",
+            "quantity": {"min": 1, "max": 1},
+            "dropChance": 1.0
+          }
+        ],
+        "randomDrops": [
+          {
+            "itemId": "armor_plate",
+            "itemName": "装甲板",
+            "type": "TechScrap",
+            "quantity": {"min": 1, "max": 2},
+            "dropChance": 0.4
+          }
+        ],
+        "creditsDrop": {"min": 20, "max": 35}
+      }
+    }
+  },
+
+  "objectives": {
+    "primary": "消灭所有敌人",
+    "secondary": [
+      "不死亡完成战斗",
+      "收集所有掉落资源"
+    ],
+    "successConditions": [
+      "AllEnemiesDefeated",
+      "PlayerSurvived"
+    ],
+    "failureConditions": [
+      "PlayerDied"
+    ]
+  },
+
+  "ui": {
+    "showHealthBar": true,
+    "showShieldBar": true,
+    "showOxygenBar": true,
+    "showEnergyBar": true,
+    "showMinimap": true,
+    "showEnemyCount": true,
+    "showWaveIndicator": true
+  },
+
+  "audio": {
+    "backgroundMusic": "ambient_deep_sea",
+    "combatMusic": "combat_intense",
+    "ambientSounds": ["water_flow", "sonar_ping"]
+  }
+}

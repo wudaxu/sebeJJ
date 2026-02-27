@@ -1,0 +1,29 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 银矿图标 -->
+  <defs>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E0E0"/>
+      <stop offset="50%" style="stop-color:#B0B0B0"/>
+      <stop offset="100%" style="stop-color:#808080"/>
+    </linearGradient>
+    <linearGradient id="silverShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#E0E0E0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 矿石主体 -->
+  <path d="M7 9 L14 5 L22 7 L27 13 L25 21 L18 27 L10 25 L5 19 L5 13 Z" fill="url(#silverGrad)" stroke="#606060" stroke-width="1"/>
+  
+  <!-- 高光面 -->
+  <path d="M9 12 L14 9 L20 11 L23 15 L21 20 L16 24 L11 22 L8 17 Z" fill="url(#silverShine)" opacity="0.8"/>
+  
+  <!-- 银色反光条纹 -->
+  <line x1="10" y1="10" x2="12" y2="14" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="16" y1="8" x2="18" y2="12" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="20" y1="14" x2="22" y2="18" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- 标签 -->
+  <rect x="18" y="4" width="10" height="8" rx="1" fill="#001133" stroke="#E0E0E0" stroke-width="0.5"/>
+  <text x="23" y="10" font-family="monospace" font-size="5" fill="#E0E0E0" text-anchor="middle">Ag</text>
+</svg>

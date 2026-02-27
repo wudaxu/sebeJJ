@@ -1,0 +1,46 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 海底岩石 -->
+  <defs>
+    <linearGradient id="rockGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#556677"/>
+      <stop offset="100%" style="stop-color:#334455"/>
+    </linearGradient>
+    
+    <linearGradient id="rockGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#445566"/>
+      <stop offset="100%" style="stop-color:#223344"/>
+    </linearGradient>
+    
+    <linearGradient id="rockGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667788"/>
+      <stop offset="100%" style="stop-color:#445566"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 主岩石 -->
+  <path d="M8 56 L12 40 L20 28 L32 24 L48 28 L56 40 L60 56 Z" fill="url(#rockGrad1)" stroke="#223344" stroke-width="1"/>
+  
+  <!-- 岩石面1 -->
+  <path d="M12 40 L20 28 L32 24 L30 40 L20 52 Z" fill="url(#rockGrad2)"/>
+  
+  <!-- 岩石面2 -->
+  <path d="M32 24 L48 28 L56 40 L50 52 L30 40 Z" fill="url(#rockGrad3)"/>
+  
+  <!-- 裂缝 -->
+  <line x1="20" y1="28" x2="24" y2="38" stroke="#223344" stroke-width="1" opacity="0.6"/>
+  <line x1="40" y1="30" x2="38" y2="42" stroke="#223344" stroke-width="0.5" opacity="0.5"/>
+  <line x1="48" y1="28" x2="52" y2="36" stroke="#223344" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- 小石块 -->
+  <polygon points="4,58 8,52 14,56 10,60" fill="#445566" stroke="#223344" stroke-width="0.5"/>
+  <polygon points="58,56 62,52 64,58 60,60" fill="#445566" stroke="#223344" stroke-width="0.5"/>
+  
+  <!-- 苔藓/珊瑚 -->
+  <ellipse cx="18" cy="48" rx="3" ry="2" fill="#2A4A3A" opacity="0.6"/>
+  <ellipse cx="24" cy="44" rx="2" ry="1.5" fill="#3A5A4A" opacity="0.5"/>
+  <ellipse cx="46" cy="46" rx="2.5" ry="2" fill="#2A4A3A" opacity="0.6"/>
+  
+  <!-- 矿石露头 -->
+  <polygon points="28,26 30,22 34,24 32,28" fill="#CC6633" opacity="0.8"/>
+  <polygon points="50,32 52,28 54,32 52,36" fill="#DDBB22" opacity="0.7"/>
+</svg>

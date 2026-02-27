@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="64" viewBox="0 0 256 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="laserBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF00A0"/>
+      <stop offset="50%" stop-color="#FF00FF"/>
+      <stop offset="100%" stop-color="#FF00A0" stop-opacity="0"/>
+    </linearGradient>
+    
+    <linearGradient id="laserCoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#FFAAFF"/>
+      <stop offset="100%" stop-color="#FF00FF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 激光束特效 --
+       用于激光武器发射
+       动画帧建议: 2-4帧循环，添加闪烁效果
+  -->
+  
+  
+  <g id="laser-beam">
+    <!-- 激光外圈光晕 -->
+    <rect x="0" y="26" width="256" height="12" fill="url(#laserBeamGrad)" opacity="0.6" filter="url(#neonGlow)"/>
+    
+    <!-- 激光主体 -->
+    <rect x="0" y="29" width="256" height="6" fill="url(#laserCoreGrad)" filter="url(#neonGlow)"/>
+    
+    <!-- 激光核心 -->
+    <rect x="0" y="31" width="256" height="2" fill="#FFFFFF" opacity="0.9"/>
+    
+    <!-- 能量脉冲 (动态效果) -->
+    <rect x="20" y="28" width="30" height="8" fill="#FFFFFF" opacity="0.5" filter="url(#neonGlow)">
+      <animate attributeName="x" values="20;200;20" dur="0.3s" repeatCount="indefinite"/>
+    </rect>
+    
+    
+    <rect x="80" y="28" width="20" height="8" fill="#FFFFFF" opacity="0.3" filter="url(#neonGlow)">
+      <animate attributeName="x" values="80;220;80" dur="0.4s" repeatCount="indefinite"/>
+    </rect>
+    
+    
+    <!-- 起点光晕 -->
+    <circle cx="10" cy="32" r="15" fill="#FF00A0" opacity="0.5" filter="url(#neonGlow)"/>
+    
+    <circle cx="10" cy="32" r="8" fill="#FF00FF" opacity="0.8" filter="url(#neonGlow)"/>
+    
+    <circle cx="10" cy="32" r="4" fill="#FFFFFF"/>
+    
+    <!-- 终点消散 -->
+    <rect x="240" y="30" width="16" height="4" fill="#FF00FF" opacity="0.3" filter="url(#neonGlow)"/>
+    
+    <!-- 粒子效果 -->
+    <circle cx="50" cy="24" r="1.5" fill="#FFAAFF"/>
+    <circle cx="120" cy="40" r="1.5" fill="#FFAAFF"/>
+    <circle cx="180" cy="22" r="1.5" fill="#FFAAFF"/>
+    <circle cx="220" cy="42" r="1.5" fill="#FFAAFF"/>
+  </g>
+</svg>

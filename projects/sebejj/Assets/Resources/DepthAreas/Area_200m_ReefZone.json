@@ -1,0 +1,102 @@
+{
+  "areaId": "reef_zone_200m",
+  "areaName": "暗礁区",
+  "areaNameEn": "Reef Zone",
+  "depth": 200,
+  "sceneConfig": {
+    "visibility": 0.6,
+    "pressureDamage": 2,
+    "pressureDamageInterval": 1.0,
+    "ambientColor": "#1a3a4a",
+    "fogDensity": 0.15,
+    "lightIntensity": 0.6,
+    "backgroundMusic": "bgm_reef_ambient"
+  },
+  "enemies": [
+    {
+      "enemyId": "mech_shark_swarm",
+      "enemyName": "机械鲨鱼群",
+      "enemyNameEn": "Mech Shark Swarm",
+      "spawnRate": 0.35,
+      "maxGroupSize": 5,
+      "minGroupSize": 2,
+      "aggroRange": 25.0,
+      "patrolRange": 40.0,
+      "stats": {
+        "health": 150,
+        "damage": 25,
+        "speed": 8.0,
+        "armor": 10
+      },
+      "behaviors": ["swarm", "charge_attack", "circle_prey"],
+      "lootTable": ["shark_tooth", "hydraulic_fluid", "scrap_metal"]
+    }
+  ],
+  "resources": [
+    {
+      "resourceId": "silver_ore",
+      "resourceName": "银矿",
+      "resourceNameEn": "Silver Ore",
+      "spawnRate": 0.25,
+      "minQuantity": 3,
+      "maxQuantity": 8,
+      "respawnTime": 300,
+      "value": 50,
+      "rarity": "common"
+    },
+    {
+      "resourceId": "glowing_algae",
+      "resourceName": "发光藻",
+      "resourceNameEn": "Glowing Algae",
+      "spawnRate": 0.4,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "respawnTime": 180,
+      "value": 30,
+      "rarity": "common",
+      "specialEffect": "light_source"
+    }
+  ],
+  "specialMechanics": {
+    "mechanicId": "reef_maze",
+    "mechanicName": "暗礁迷宫",
+    "description": "复杂的珊瑚礁结构形成天然迷宫，玩家需要找到正确路径才能到达出口",
+    "properties": {
+      "mazeComplexity": 3,
+      "deadEndCount": 5,
+      "shortcutCount": 2,
+      "trapCount": 3,
+      "treasureRooms": 2
+    },
+    "hazards": [
+      {
+        "hazardId": "coral_trap",
+        "hazardName": "珊瑚陷阱",
+        "damage": 15,
+        "effect": "snare",
+        "duration": 3.0
+      },
+      {
+        "hazardId": "strong_current",
+        "hazardName": "强水流",
+        "effect": "push",
+        "force": 10.0
+      }
+    ]
+  },
+  "unlockRequirements": {
+    "requiredDepth": 200,
+    "requiredMechLevel": 3,
+    "requiredQuest": "quest_deep_dive_init",
+    "requiredItems": ["pressure_suit_mk1"]
+  },
+  "checkpoint": {
+    "checkpointId": "reef_safe_zone",
+    "position": { "x": 0, "y": -200, "z": 0 },
+    "radius": 15.0,
+    "healRate": 5,
+    "oxygenRefill": true,
+    "ammoRestock": true,
+    "savePoint": true
+  }
+}

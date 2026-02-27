@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="scanGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="80%" style="stop-color:#00F0FF;stop-opacity:0"/>
+      <stop offset="90%" style="stop-color:#00F0FF;stop-opacity:0.5"/>
+      <stop offset="95%" style="stop-color:#00F0FF;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00F0FF;stop-opacity:1"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Scan Wave Rings -->
+  <circle cx="128" cy="128" r="120" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.1"/>
+  <circle cx="128" cy="128" r="100" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.2"/>
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.3"/>
+  <circle cx="128" cy="128" r="60" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.5"/>
+  <circle cx="128" cy="128" r="40" fill="none" stroke="#00F0FF" stroke-width="3" opacity="0.7"/>
+  <circle cx="128" cy="128" r="20" fill="none" stroke="#00F0FF" stroke-width="4"/>
+  
+  <!-- Active Scan Ring -->
+  <circle cx="128" cy="128" r="90" fill="none" stroke="#00F0FF" stroke-width="4" opacity="0.8"/>
+  
+  <!-- Crosshair Lines -->
+  <line x1="128" y1="8" x2="128" y2="248" stroke="#00F0FF" stroke-width="1" opacity="0.3"/>
+  <line x1="8" y1="128" x2="248" y2="128" stroke="#00F0FF" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Corner Brackets -->
+  <path d="M20 20 L50 20 L50 25 L25 25 L25 50 L20 50 Z" fill="#00F0FF"/>
+  <path d="M236 20 L206 20 L206 25 L231 25 L231 50 L236 50 Z" fill="#00F0FF"/>
+  <path d="M20 236 L50 236 L50 231 L25 231 L25 206 L20 206 Z" fill="#00F0FF"/>
+  <path d="M236 236 L206 236 L206 231 L231 231 L231 206 L236 206 Z" fill="#00F0FF"/>
+  
+  <!-- Center Dot -->
+  <circle cx="128" cy="128" r="6" fill="#00F0FF"/>
+  <circle cx="128" cy="128" r="3" fill="#FFFFFF"/>
+</svg>

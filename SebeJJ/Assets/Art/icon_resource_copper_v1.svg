@@ -1,0 +1,29 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 铜矿图标 -->
+  <defs>
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9966"/>
+      <stop offset="50%" style="stop-color:#CC6633"/>
+      <stop offset="100%" style="stop-color:#994422"/>
+    </linearGradient>
+    <linearGradient id="copperShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFBB88"/>
+      <stop offset="100%" style="stop-color:#FF9966"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 矿石主体 -->
+  <path d="M6 10 L12 6 L20 8 L26 14 L24 22 L16 26 L8 24 L4 16 Z" fill="url(#copperGrad)" stroke="#773311" stroke-width="1"/>
+  
+  <!-- 高光面 -->
+  <path d="M8 12 L12 9 L18 11 L22 15 L20 20 L14 23 L9 21 L7 16 Z" fill="url(#copperShine)" opacity="0.7"/>
+  
+  <!-- 矿石纹理 -->
+  <line x1="10" y1="14" x2="14" y2="16" stroke="#773311" stroke-width="0.5" opacity="0.5"/>
+  <line x1="16" y1="12" x2="18" y2="18" stroke="#773311" stroke-width="0.5" opacity="0.5"/>
+  <line x1="12" y1="20" x2="20" y2="16" stroke="#773311" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- 标签 -->
+  <rect x="18" y="4" width="10" height="8" rx="1" fill="#001133" stroke="#FF9966" stroke-width="0.5"/>
+  <text x="23" y="10" font-family="monospace" font-size="5" fill="#FF9966" text-anchor="middle">Cu</text>
+</svg>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- 等离子核心渐变 -->
+    <radialGradient id="plasmaCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#00FFFF"/>
+      <stop offset="50%" stop-color="#0080FF"/>
+      <stop offset="80%" stop-color="#4000FF"/>
+      <stop offset="100%" stop-color="#000040" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- 能量环渐变 -->
+    <linearGradient id="energyRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFFF"/>
+      <stop offset="50%" stop-color="#0080FF"/>
+      <stop offset="100%" stop-color="#00FFFF"/>
+    </linearGradient>
+    
+    <!-- 电弧效果 -->
+    <filter id="electricArc" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/>
+    </filter>
+    
+    <!-- 发光效果 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="256" height="256" fill="none"/>
+  
+  <!-- 充能阶段1: 能量核心 -->
+  <g id="charge-phase-1">
+    <circle cx="128" cy="128" r="30" fill="url(#plasmaCore)" filter="url(#glow)"/>
+    <circle cx="128" cy="128" r="20" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  
+  <!-- 充能阶段2: 能量环 -->
+  <g id="charge-phase-2">
+    <circle cx="128" cy="128" r="50" fill="none" stroke="url(#energyRing)" stroke-width="3" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="128" cy="128" r="65" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.6" stroke-dasharray="20 10"/>
+  </g>
+  
+  <!-- 充能阶段3: 电弧 -->
+  <g id="charge-phase-3" filter="url(#electricArc)">
+    <path d="M128 60 L125 45 L132 30 L128 15" stroke="#00FFFF" stroke-width="2" fill="none" opacity="0.9"/>
+    <path d="M128 196 L131 211 L124 226 L128 241" stroke="#00FFFF" stroke-width="2" fill="none" opacity="0.9"/>
+    <path d="M60 128 L45 125 L30 132 L15 128" stroke="#00FFFF" stroke-width="2" fill="none" opacity="0.9"/>
+    <path d="M196 128 L211 131 L226 124 L241 128" stroke="#00FFFF" stroke-width="2" fill="none" opacity="0.9"/>
+    <path d="M80 80 L70 70 L60 55" stroke="#0080FF" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M176 80 L186 70 L196 55" stroke="#0080FF" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M80 176 L70 186 L60 201" stroke="#0080FF" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M176 176 L186 186 L196 201" stroke="#0080FF" stroke-width="2" fill="none" opacity="0.7"/>
+  </g>
+  
+  <!-- 充能阶段4: 粒子效果 -->
+  <g id="charge-phase-4">
+    <circle cx="100" cy="100" r="3" fill="#00FFFF" opacity="0.8"/>
+    <circle cx="156" cy="95" r="4" fill="#0080FF" opacity="0.7"/>
+    <circle cx="95" cy="156" r="2" fill="#00FFFF" opacity="0.9"/>
+    <circle cx="161" cy="161" r="3" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="128" cy="85" r="2" fill="#00FFFF" opacity="0.8"/>
+    <circle cx="85" cy="128" r="3" fill="#0080FF" opacity="0.7"/>
+    <circle cx="171" cy="128" r="2" fill="#00FFFF" opacity="0.9"/>
+    <circle cx="128" cy="171" r="3" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+  
+  <!-- 发射口能量聚集 -->
+  <g id="muzzle-gather">
+    <ellipse cx="128" cy="128" rx="80" ry="20" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.4" transform="rotate(0 128 128)"/>
+    <ellipse cx="128" cy="128" rx="80" ry="20" fill="none" stroke="#0080FF" stroke-width="1" opacity="0.3" transform="rotate(45 128 128)"/>
+    <ellipse cx="128" cy="128" rx="80" ry="20" fill="none" stroke="#0040FF" stroke-width="1" opacity="0.3" transform="rotate(90 128 128)"/>
+    <ellipse cx="128" cy="128" rx="80" ry="20" fill="none" stroke="#0080FF" stroke-width="1" opacity="0.3" transform="rotate(135 128 128)"/>
+  </g>
+</svg>

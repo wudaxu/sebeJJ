@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- 危险红渐变 -->
+    <radialGradient id="dangerRed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF0000" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#FF0000" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FF0000" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- 警告环渐变 -->
+    <linearGradient id="warningRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF0000"/>
+      <stop offset="50%" stop-color="#FF4040"/>
+      <stop offset="100%" stop-color="#FF0000"/>
+    </linearGradient>
+    
+    <!-- 激光指示渐变 -->
+    <linearGradient id="laserIndicator" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF0000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FF0000" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF0000" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- 脉冲发光 -->
+    <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="512" height="512" fill="none"/>
+  
+  <!-- 技能范围红圈 - 外圈 -->
+  <g id="warning-circle-outer" opacity="0.6">
+    <circle cx="256" cy="256" r="200" fill="none" stroke="#FF0000" stroke-width="3" filter="url(#pulseGlow)"/>
+    <circle cx="256" cy="256" r="200" fill="none" stroke="#FF4040" stroke-width="1" stroke-dasharray="15 10"/>
+  </g>
+  
+  <!-- 技能范围红圈 - 中圈 -->
+  <g id="warning-circle-mid" opacity="0.8">
+    <circle cx="256" cy="256" r="150" fill="none" stroke="#FF0000" stroke-width="4" filter="url(#pulseGlow)"/>
+    <circle cx="256" cy="256" r="150" fill="url(#dangerRed)" opacity="0.2"/>
+  </g>
+  
+  <!-- 技能范围红圈 - 内圈 -->
+  <g id="warning-circle-inner" opacity="0.9">
+    <circle cx="256" cy="256" r="100" fill="none" stroke="#FF0000" stroke-width="5" filter="url(#pulseGlow)"/>
+    <circle cx="256" cy="256" r="100" fill="none" stroke="#FF8080" stroke-width="2" stroke-dasharray="8 4"/>
+  </g>
+  
+  <!-- 危险区域填充 -->
+  <g id="danger-zone" opacity="0.15">
+    <circle cx="256" cy="256" r="180" fill="#FF0000"/>
+  </g>
+  
+  <!-- 激光指示器 - 水平 -->
+  <g id="laser-h" opacity="0.7">
+    <rect x="0" y="252" width="512" height="8" fill="url(#laserIndicator)" filter="url(#pulseGlow)"/>
+    <rect x="0" y="254" width="512" height="4" fill="#FF0000"/>
+    <!-- 激光扫描线 -->
+    <line x1="100" y1="256" x2="412" y2="256" stroke="#FFFFFF" stroke-width="1" opacity="0.8" stroke-dasharray="20 10"/>
+  </g>
+  
+  <!-- 激光指示器 - 垂直 -->
+  <g id="laser-v" opacity="0.7">
+    <rect x="252" y="0" width="8" height="512" fill="url(#laserIndicator)" filter="url(#pulseGlow)"/>
+    <rect x="254" y="0" width="4" height="512" fill="#FF0000"/>
+    <!-- 激光扫描线 -->
+    <line x1="256" y1="100" x2="256" y2="412" stroke="#FFFFFF" stroke-width="1" opacity="0.8" stroke-dasharray="20 10"/>
+  </g>
+  
+  <!-- 交叉瞄准 -->
+  <g id="crosshair" stroke="#FF0000" stroke-width="2" filter="url(#pulseGlow)">
+    <line x1="256" y1="50" x2="256" y2="100"/>
+    <line x1="256" y1="412" x2="256" y2="462"/>
+    <line x1="50" y1="256" x2="100" y2="256"/>
+    <line x1="412" y1="256" x2="462" y2="256"/>
+    <circle cx="256" cy="256" r="30" fill="none" stroke-width="2"/>
+    <circle cx="256" cy="256" r="20" fill="none" stroke-width="1"/>
+  </g>
+  
+  <!-- 预警倒计时数字 -->
+  <g id="countdown" fill="#FF0000" font-family="Arial Black, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" filter="url(#pulseGlow)">
+    <text x="256" y="270">3</text>
+  </g>
+  
+  <!-- 脉冲波纹 -->
+  <g id="pulse-waves" opacity="0.4">
+    <circle cx="256" cy="256" r="120" fill="none" stroke="#FF0000" stroke-width="2"/>
+    <circle cx="256" cy="256" r="140" fill="none" stroke="#FF4040" stroke-width="1"/>
+    <circle cx="256" cy="256" r="160" fill="none" stroke="#FF0000" stroke-width="1"/>
+  </g>
+  
+  <!-- 警告图标 -->
+  <g id="warning-icon" fill="#FF0000" filter="url(#pulseGlow)">
+    <triangle points="256,80 276,120 236,120"/>
+    <polygon points="256,100 266,115 246,115" fill="#000000"/>
+    <rect x="252" y="105" width="8" height="8" fill="#000000"/>
+  </g>
+  
+  <!-- 扇形预警区域 -->
+  <g id="sector-warning" opacity="0.3">
+    <path d="M256 256 L400 150 A180 180 0 0 1 400 362 Z" fill="#FF0000"/>
+  </g>
+  
+  <!-- 方向指示箭头 -->
+  <g id="direction-arrows" fill="#FF0000" opacity="0.6">
+    <polygon points="256,30 266,50 256,45 246,50"/>
+    <polygon points="256,482 266,462 256,467 246,462"/>
+    <polygon points="30,256 50,266 45,256 50,246"/>
+    <polygon points="482,256 462,266 467,256 462,246"/>
+  </g>
+</svg>

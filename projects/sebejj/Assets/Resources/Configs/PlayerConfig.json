@@ -1,0 +1,84 @@
+{
+    "version": "1.0",
+    "playerStats": {
+        "baseMoveSpeed": 5.0,
+        "baseOxygenCapacity": 100.0,
+        "baseEnergyCapacity": 100.0,
+        "baseInventoryWeight": 50.0,
+        "baseScanRange": 10.0,
+        "baseHealth": 100.0
+    },
+    "consumptionRates": {
+        "oxygenDepletionRate": 1.0,
+        "energyRechargeRate": 2.0,
+        "energyCostPerMove": 0.1,
+        "energyCostPerBoost": 0.5,
+        "energyCostPerScan": 5.0,
+        "energyCostPerCollect": 3.0
+    },
+    "depthModifiers": [
+        {
+            "depth": 0,
+            "oxygenMultiplier": 1.0,
+            "pressure": 1.0,
+            "dangerLevel": 0
+        },
+        {
+            "depth": 100,
+            "oxygenMultiplier": 1.2,
+            "pressure": 11.0,
+            "dangerLevel": 0
+        },
+        {
+            "depth": 250,
+            "oxygenMultiplier": 1.35,
+            "pressure": 26.0,
+            "dangerLevel": 1
+        },
+        {
+            "depth": 500,
+            "oxygenMultiplier": 1.5,
+            "pressure": 51.0,
+            "dangerLevel": 2
+        },
+        {
+            "depth": 800,
+            "oxygenMultiplier": 2.0,
+            "pressure": 81.0,
+            "dangerLevel": 3
+        },
+        {
+            "depth": 1000,
+            "oxygenMultiplier": 2.5,
+            "pressure": 101.0,
+            "dangerLevel": 3
+        }
+    ],
+    "upgradeCosts": {
+        "oxygenCapacity": {
+            "baseCost": 100,
+            "costMultiplier": 1.5,
+            "valuePerLevel": 20.0
+        },
+        "energyCapacity": {
+            "baseCost": 100,
+            "costMultiplier": 1.5,
+            "valuePerLevel": 20.0
+        },
+        "moveSpeed": {
+            "baseCost": 150,
+            "costMultiplier": 1.6,
+            "valuePerLevel": 0.5
+        },
+        "scanRange": {
+            "baseCost": 200,
+            "costMultiplier": 1.7,
+            "valuePerLevel": 2.0
+        },
+        "inventoryCapacity": {
+            "baseCost": 100,
+            "costMultiplier": 1.5,
+            "valuePerLevel": 10.0
+        }
+    }
+}

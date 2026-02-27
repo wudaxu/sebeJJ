@@ -1,0 +1,118 @@
+{
+  "missionId": "Q008",
+  "dialogues": [
+    {
+      "id": "start",
+      "speaker": "指挥官",
+      "text": "驾驶员，你完成了一系列出色的任务。现在，是时候面对真正的挑战了。我们的探测器在180米深度发现了一个巨大的机械生命体——'铁钳巨兽'。它可能是所有机械鱼失控的源头。",
+      "options": [
+        {
+          "text": "我去解决它！",
+          "next": "start_confirm"
+        },
+        {
+          "text": "铁钳巨兽是什么？",
+          "next": "start_info"
+        }
+      ]
+    },
+    {
+      "id": "start_info",
+      "speaker": "指挥官",
+      "text": "铁钳巨兽是一个巨大的机械蟹型生物，据估计高度超过20米。它拥有极其坚硬的外壳和毁灭性的攻击力。之前的探测队都没有回来...但你不同，你已经证明了自己的实力。",
+      "options": [
+        {
+          "text": "我会小心的。",
+          "next": "start_info2"
+        }
+      ]
+    },
+    {
+      "id": "start_info2",
+      "speaker": "工程师",
+      "text": "等等！我分析了之前传回的数据，发现铁钳巨兽对电击伤害特别敏感。带上你的电击武器，这可能会给你优势！",
+      "options": [
+        {
+          "text": "收到，准备出发！",
+          "next": "start_confirm"
+        }
+      ]
+    },
+    {
+      "id": "start_confirm",
+      "speaker": "系统",
+      "text": "狩猎任务已接受。目标：击败Boss'铁钳巨兽'。警告：这是一场艰难的战斗，请做好充分准备。",
+      "options": [],
+      "action": "start_mission"
+    },
+    {
+      "id": "boss_intro",
+      "speaker": "系统",
+      "text": "警告：侦测到巨大能量反应！目标出现！",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "boss_phase2",
+      "speaker": "铁钳巨兽",
+      "text": "*发出震耳欲聋的机械咆哮*",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "boss_phase3",
+      "speaker": "系统",
+      "text": "警告：目标能量水平急剧上升！它要拼命了！",
+      "options": [],
+      "autoContinue": true
+    },
+    {
+      "id": "complete",
+      "speaker": "指挥官",
+      "text": "难以置信...你真的做到了！铁钳巨兽被击败了！海域的威胁终于解除了。8000信用点是你的奖励，同时你将获得传奇装备的制作权限。你是真正的英雄！",
+      "options": [
+        {
+          "text": "这是团队的功劳，指挥官。",
+          "next": "complete_humble"
+        },
+        {
+          "text": "还有更多挑战吗？",
+          "next": "complete_eager"
+        }
+      ]
+    },
+    {
+      "id": "complete_humble",
+      "speaker": "指挥官",
+      "text": "谦虚是美德，但这份荣耀属于你。休息一下吧，英雄。当你准备好时，更广阔的深海在等待着你。",
+      "options": [
+        {
+          "text": "随时待命！",
+          "next": "end"
+        }
+      ]
+    },
+    {
+      "id": "complete_eager",
+      "speaker": "指挥官",
+      "text": "哈哈哈！我就知道你会这么说。放心，深海中还有更多秘密等待揭开。准备好后，来找我领取新的任务。",
+      "options": [
+        {
+          "text": "我随时准备好！",
+          "next": "end"
+        }
+      ]
+    },
+    {
+      "id": "fail",
+      "speaker": "指挥官",
+      "text": "任务失败...立即撤退！不要白白牺牲！我们会重新制定作战计划。",
+      "options": [
+        {
+          "text": "撤退中...",
+          "next": "end"
+        }
+      ]
+    }
+  ]
+}

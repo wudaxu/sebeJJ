@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.6"/>
+    </linearGradient>
+    
+    <radialGradient id="impactGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#00F0FF"/>
+      <stop offset="70%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 护盾受击特效 --
+       用于护盾被击中时的涟漪效果
+       动画帧建议: 4-6帧，涟漪扩散
+  -->
+  
+  <g id="shield-impact">
+    <!-- 护盾主体 -->
+    <circle cx="64" cy="64" r="50" fill="url(#shieldGrad)" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4,2" opacity="0.7" filter="url(#neonGlow)"/>
+    
+    <!-- 护盾网格 -->
+    <g stroke="#8B5CF6" stroke-width="0.5" opacity="0.4">
+      <ellipse cx="64" cy="64" rx="50" ry="20" fill="none"/>
+      <ellipse cx="64" cy="64" rx="50" ry="35" fill="none"/>
+      <ellipse cx="64" cy="64" rx="35" ry="50" fill="none"/>
+      <ellipse cx="64" cy="64" rx="20" ry="50" fill="none"/>
+      <line x1="14" y1="64" x2="114" y2="64"/>
+      <line x1="64" y1="14" x2="64" y2="114"/>
+    </g>
+    
+    <!-- 受击点涟漪 - 从中心向外扩散 -->
+    <circle cx="64" cy="64" r="15" fill="none" stroke="#00F0FF" stroke-width="3" filter="url(#neonGlow)"/>
+    
+    <circle cx="64" cy="64" r="25" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.7" filter="url(#neonGlow)"/>
+    
+    <circle cx="64" cy="64" r="35" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.5" filter="url(#neonGlow)"/>
+    
+    <!-- 受击闪光 -->
+    <circle cx="64" cy="64" r="20" fill="url(#impactGlow)" opacity="0.8"/>
+    
+    <!-- 能量飞溅 -->
+    <path d="M 64 35 L 66 45 L 64 50 L 62 45 Z" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <path d="M 64 93 L 66 83 L 64 78 L 62 83 Z" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <path d="M 35 64 L 45 66 L 50 64 L 45 62 Z" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <path d="M 93 64 L 83 66 L 78 64 L 83 62 Z" fill="#00F0FF" filter="url(#neonGlow)"/>
+    
+    <!-- 对角飞溅 -->
+    <path d="M 43 43 L 50 50 L 52 47 L 46 40 Z" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <path d="M 85 43 L 78 50 L 76 47 L 82 40 Z" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <path d="M 43 85 L 50 78 L 52 81 L 46 88 Z" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    <path d="M 85 85 L 78 78 L 76 81 L 82 88 Z" fill="#8B5CF6" filter="url(#neonGlow)"/>
+    
+    <!-- 碎片粒子 -->
+    <circle cx="30" cy="55" r="2" fill="#FFFFFF"/>
+    <circle cx="98" cy="60" r="2" fill="#FFFFFF"/>
+    <circle cx="50" cy="100" r="2" fill="#FFFFFF"/>
+    <circle cx="80" cy="28" r="2" fill="#FFFFFF"/>
+    
+    <!-- 六边形装饰 (科技护盾感) -->
+    <polygon points="64,30 75,35 75,47 64,52 53,47 53,35" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+    <polygon points="64,98 75,93 75,81 64,76 53,81 53,93" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+    <polygon points="30,64 35,53 47,53 52,64 47,75 35,75" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+    <polygon points="98,64 93,53 81,53 76,64 81,75 93,75" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  </g>
+</svg>

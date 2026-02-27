@@ -1,0 +1,35 @@
+{
+  "missionId": "Q007",
+  "missionName": "护送科学家",
+  "missionType": "escort",
+  "description": "护送科学家到达120米深度的研究站，确保其安全抵达。",
+  "objectives": [
+    {
+      "id": 1,
+      "description": "护送科学家到达120米研究站",
+      "type": "escort_npc",
+      "target": "scientist",
+      "destination": "research_station_120m",
+      "completed": false
+    }
+  ],
+  "rewards": {
+    "credits": 3500,
+    "experience": 700,
+    "unlocks": ["research_station_access"]
+  },
+  "requirements": {
+    "minDepth": 0,
+    "maxDepth": 120,
+    "prerequisites": ["Q005", "Q006"]
+  },
+  "difficulty": 3,
+  "estimatedTime": 1500,
+  "specialMechanics": {
+    "npcFollow": true,
+    "npcHealth": 100,
+    "npcSpeed": 0.8
+  },
+  "dialogueFile": "Q007_Dialogue.json",
+  "scriptFile": "Q007_Script.cs"
+}

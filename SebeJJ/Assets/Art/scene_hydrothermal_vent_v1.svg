@@ -1,0 +1,88 @@
+<svg viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg">
+  <!-- 热液喷口 - Hydrothermal Vent --
+  <defs>
+    <linearGradient id="ventBase" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#334455"/>
+      <stop offset="50%" style="stop-color:#556677"/>
+      <stop offset="100%" style="stop-color:#334455"/>
+    </linearGradient>
+    
+    <linearGradient id="ventChimney" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2A1A1A"/>
+      <stop offset="30%" style="stop-color:#4A3A3A"/>
+      <stop offset="70%" style="stop-color:#3A2A2A"/>
+      <stop offset="100%" style="stop-color:#1A0A0A"/>
+    </linearGradient>
+    
+    <linearGradient id="plumeGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.3"/>
+      <stop offset="30%" style="stop-color:#CCCCCC;stop-opacity:0.2"/>
+      <stop offset="60%" style="stop-color:#888888;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#444444;stop-opacity:0"/>
+    </linearGradient>
+    
+    <linearGradient id="heatGlow" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF4400;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#FF8800;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#FFAA00;stop-opacity:0"/>
+    </linearGradient>
+    
+    <filter id="plumeBlur">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 喷口羽流 -->
+  <ellipse cx="32" cy="20" rx="20" ry="16" fill="url(#plumeGrad)" filter="url(#plumeBlur)"/>
+  <ellipse cx="32" cy="8" rx="14" ry="10" fill="url(#plumeGrad)" opacity="0.7" filter="url(#plumeBlur)"/>
+  <ellipse cx="32" cy="-2" rx="8" ry="6" fill="#FFFFFF" opacity="0.2" filter="url(#plumeBlur)"/>
+  
+  <!-- 热量发光 -->
+  <ellipse cx="32" cy="32" rx="12" ry="8" fill="url(#heatGlow)" filter="url(#plumeBlur)"/>
+  
+  <!-- 喷口主体 -->
+  <path d="M20 32 L24 16 L40 16 L44 32 L42 48 L22 48 Z" fill="url(#ventChimney)" stroke="#1A0A0A" stroke-width="1"/>
+  
+  <!-- 喷口分层 -->
+  <rect x="22" y="36" width="20" height="4" fill="#3A2A2A"/>
+  <rect x="24" y="40" width="16" height="4" fill="#2A1A1A"/>
+  
+  <!-- 喷口顶部开口 -->
+  <ellipse cx="32" cy="16" rx="8" ry="3" fill="#FF6600" opacity="0.8" filter="url(#plumeBlur)"/>
+  <ellipse cx="32" cy="16" rx="6" ry="2" fill="#FFAA00" opacity="0.9"/>
+  
+  <!-- 基座 -->
+  <path d="M12 48 L16 40 L48 40 L52 48 L56 64 L56 80 L52 96 L12 96 L8 80 L8 64 Z" fill="url(#ventBase)" stroke="#223344" stroke-width="1"/>
+  
+  <!-- 基座纹理 -->
+  <line x1="16" y1="56" x2="48" y2="56" stroke="#223344" stroke-width="0.5" opacity="0.5"/>
+  <line x1="14" y1="72" x2="50" y2="72" stroke="#223344" stroke-width="0.5" opacity="0.5"/>
+  <line x1="12" y1="88" x2="52" y2="88" stroke="#223344" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- 矿物质沉积 -->
+  <polygon points="16,48 20,44 24,48" fill="#994422" opacity="0.7"/>
+  <polygon points="40,48 44,44 48,48" fill="#994422" opacity="0.7"/>
+  <ellipse cx="32" cy="52" rx="4" ry="2" fill="#AA5522" opacity="0.6"/>
+  
+  <!-- 周围生物 --
+  <!-- 管虫 -->
+  <rect x="10" y="80" width="3" height="12" rx="1" fill="#AA4444"/
+  <rect x="11" y="82" width="1" height="2" fill="#FF6666" opacity="0.8"/
+  
+  <rect x="50" y="78" width="3" height="14" rx="1" fill="#AA4444"/
+  <rect x="51" y="80" width="1" height="2" fill="#FF6666" opacity="0.8"/
+  
+  <!-- 白色盲虾 -->
+  <ellipse cx="20" cy="90" rx="4" ry="2" fill="#DDDDDD" opacity="0.8"/
+  <line x1="16" y1="90" x2="12" y2="88" stroke="#DDDDDD" stroke-width="1" opacity="0.6"/
+  <line x1="16" y1="90" x2="12" y2="92" stroke="#DDDDDD" stroke-width="1" opacity="0.6"/
+  
+  <!-- 气泡 -->
+  <circle cx="28" cy="12" r="1" fill="#FFFFFF" opacity="0.4"/
+  <circle cx="36" cy="8" r="1.2" fill="#FFFFFF" opacity="0.3"/
+  <circle cx="32" cy="4" r="0.8" fill="#FFFFFF" opacity="0.5"/
+</svg>
