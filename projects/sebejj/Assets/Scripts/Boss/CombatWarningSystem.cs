@@ -26,11 +26,11 @@ namespace SebeJJ.Boss
     }
 
     /// <summary>
-    /// 战斗预警系统
+    /// Boss战斗预警系统
     /// </summary>
-    public class CombatWarningSystem : MonoBehaviour
+    public class BossWarningSystem : MonoBehaviour
     {
-        public static CombatWarningSystem Instance { get; private set; }
+        public static BossWarningSystem Instance { get; private set; }
 
         [Header("=== 预警预制体 ===")]
         [SerializeField] private GameObject attackWarningPrefab;

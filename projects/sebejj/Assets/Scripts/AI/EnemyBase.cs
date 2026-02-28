@@ -122,6 +122,11 @@ namespace SebeJJ.Enemies
         protected float _lastAttackTime = -999f;
         
         /// <summary>
+        /// 出生点位置
+        /// </summary>
+        protected Vector3 spawnPosition;
+        
+        /// <summary>
         /// 是否处于无敌状态
         /// </summary>
         protected bool _isInvincible = false;

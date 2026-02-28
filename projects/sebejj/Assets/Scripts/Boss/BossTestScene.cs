@@ -8,6 +8,7 @@
 
 using UnityEngine;
 using SebeJJ.AI;
+using SebeJJ.Combat;
 
 namespace SebeJJ.Boss
 {

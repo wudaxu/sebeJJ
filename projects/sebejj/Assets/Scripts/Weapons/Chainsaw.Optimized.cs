@@ -244,7 +244,7 @@ namespace SebeJJ.Combat
             
             feelController?.TriggerHitFeedback(damageInfo.IsCritical, isKill);
             
-            var hitReaction = target.GetComponent<SebeJJ.Enemy.EnemyHitReaction>();
+            var hitReaction = target.GetComponent<SebeJJ.Enemies.EnemyHitReaction>();
             hitReaction?.ProcessHitReaction(damageInfo.BaseDamage, hitDirection, weaponData.knockbackForce);
         }
 
