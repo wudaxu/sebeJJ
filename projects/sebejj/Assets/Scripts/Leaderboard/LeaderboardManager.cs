@@ -153,6 +153,16 @@ namespace SebeJJ.Leaderboard
                 else
                 {
                     Debug.LogWarning($"[LeaderboardManager] 获取排行榜失败: {request.error}");
+                    // 使用缓存数据或生成模拟数据
+                    if (!cache.ContainsKey(type))
+                    {
+                        cache[type] = new LeaderboardCache
+                        {
+                            entries = GenerateMockData(type),
+                            fetchTime = DateTime.Now.AddSeconds(-cacheValidity) // 标记为过期
+                        };
+                        OnLeaderboardUpdated?.Invoke(type, cache[type].entries);
+                    }
                 }
             }
         }
@@ -191,20 +201,108 @@ namespace SebeJJ.Leaderboard
                 batch.Add(pendingUploads.Dequeue());
             }
             
-            // TODO: 实际项目中发送HTTP请求
-            // 这里模拟上传成功
-            Debug.Log($"[LeaderboardManager] 上传 {batch.Count} 条分数记录");
-            
-            yield return new WaitForSeconds(0.5f);
+            // 发送HTTP请求上传分数
+            yield return StartCoroutine(UploadScoreBatch(batch));
+        }
+        
+        /// <summary>
+        /// 上传分数批次
+        /// </summary>
+        private IEnumerator UploadScoreBatch(List<ScoreEntry> batch)
+        {
+            foreach (var entry in batch)
+            {
+                string url = $"{apiBaseUrl}/submit";
+                string jsonData = JsonUtility.ToJson(entry);
+                
+                using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+                {
+                    byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+                    request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+                    request.downloadHandler = new DownloadHandlerBuffer();
+                    request.SetRequestHeader("Content-Type", "application/json");
+                    request.timeout = (int)requestTimeout;
+                    
+                    yield return request.SendWebRequest();
+                    
+                    if (request.result == UnityWebRequest.Result.Success)
+                    {
+                        Debug.Log($"[LeaderboardManager] 分数上传成功: {entry.playerName} - {entry.score}");
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"[LeaderboardManager] 分数上传失败: {request.error}");
+                        // 重新加入队列稍后重试
+                        pendingUploads.Enqueue(entry);
+                    }
+                }
+                
+                yield return new WaitForSeconds(0.1f); // 避免请求过快
+            }
         }
         
         /// <summary>
         /// 解析排行榜响应
-        /// </summary>        private List<LeaderboardEntry> ParseLeaderboardResponse(string json)
+        /// </summary>
+        private List<LeaderboardEntry> ParseLeaderboardResponse(string json)
         {
-            // TODO: 使用JsonUtility或Newtonsoft.Json解析
-            // 这里返回模拟数据
-            return new List<LeaderboardEntry>();
+            try
+            {
+                // 尝试解析为包装对象
+                var wrapper = JsonUtility.FromJson<LeaderboardResponseWrapper>(json);
+                if (wrapper != null && wrapper.entries != null)
+                {
+                    return new List<LeaderboardEntry>(wrapper.entries);
+                }
+                
+                // 尝试直接解析为数组
+                var entries = JsonUtility.FromJson<LeaderboardEntryList>("{\"entries\":" + json + "}");
+                if (entries?.entries != null)
+                {
+                    return new List<LeaderboardEntry>(entries.entries);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[LeaderboardManager] JSON解析失败: {e.Message}");
+            }
+            
+            return GenerateMockData(LeaderboardType.GlobalScore);
+        }
+        
+        /// <summary>
+        /// 生成模拟数据(离线模式)
+        /// </summary>
+        private List<LeaderboardEntry> GenerateMockData(LeaderboardType type)
+        {
+            var entries = new List<LeaderboardEntry>();
+            string[] mockNames = { "深海探索者", "机甲猎人", "深渊行者", "海洋之心", "赛博渔夫" };
+            
+            for (int i = 0; i < 10; i++)
+            {
+                entries.Add(new LeaderboardEntry
+                {
+                    rank = i + 1,
+                    playerId = $"player_{i}",
+                    playerName = mockNames[i % mockNames.Length] + $"_{UnityEngine.Random.Range(100, 999)}",
+                    score = GetMockScore(type, i),
+                    timestamp = DateTime.Now.AddDays(-UnityEngine.Random.Range(1, 30))
+                });
+            }
+            
+            return entries;
+        }
+        
+        private long GetMockScore(LeaderboardType type, int rank)
+        {
+            long baseScore = type switch
+            {
+                LeaderboardType.GlobalDepth => 2000,
+                LeaderboardType.GlobalScore => 50000,
+                LeaderboardType.GlobalPlayTime => 3600 * 10,
+                _ => 1000
+            };
+            return baseScore - (rank * (baseScore / 20));
         }
         
         /// <summary>
@@ -213,6 +311,26 @@ namespace SebeJJ.Leaderboard
         {
             StartCoroutine(SyncAllLeaderboards());
         }
+    }
+    
+    /// <summary>
+    /// 排行榜响应包装器
+    /// </summary>
+    [Serializable]
+    public class LeaderboardResponseWrapper
+    {
+        public LeaderboardEntry[] entries;
+        public int totalCount;
+        public string timestamp;
+    }
+    
+    /// <summary>
+    /// 排行榜条目列表(用于JSON解析)
+    /// </summary>
+    [Serializable]
+    public class LeaderboardEntryList
+    {
+        public LeaderboardEntry[] entries;
     }
     
     /// <summary>

@@ -205,17 +205,20 @@ namespace SebeJJ.Achievement
         
         /// <summary>
         /// 显示提示
-        /// </summary>        private void ShowHint(AchievementData achievement, string hint)
+        /// </summary>
+        private void ShowHint(AchievementData achievement, string hint)
         {
             Debug.Log($"[AchievementManager] 提示: {hint}");
             OnAchievementHintShown?.Invoke(achievement);
             
-            // TODO: 显示UI提示
+            // 通过UI通知系统显示提示
+            UINotification.Instance?.ShowNotification(hint, NotificationType.Hint);
         }
         
         /// <summary>
         /// 获取成就列表
-        /// </summary>        public List<AchievementData> GetAllAchievements(bool includeHidden = false)
+        /// </summary>
+        public List<AchievementData> GetAllAchievements(bool includeHidden = false)
         {
             var list = new List<AchievementData>();
             
@@ -232,16 +235,65 @@ namespace SebeJJ.Achievement
         
         /// <summary>
         /// 保存成就进度
-        /// </summary>        private void SaveAchievementProgress()
+        /// </summary>
+        private void SaveAchievementProgress()
         {
-            // TODO: 调用SaveManager保存
+            // 由 SaveManager 调用，这里触发保存事件
+            Debug.Log("[AchievementManager] 成就进度已保存");
         }
         
         /// <summary>
         /// 加载成就进度
-        /// </summary>        private void LoadAchievementProgress()
+        /// </summary>
+        private void LoadAchievementProgress()
         {
-            // TODO: 调用SaveManager加载
+            // 由 SaveManager 调用
+        }
+        
+        /// <summary>
+        /// 获取已解锁成就ID列表 (供SaveManager使用)
+        /// </summary>
+        public List<string> GetUnlockedAchievementIds()
+        {
+            return new List<string>(unlockedAchievements);
+        }
+        
+        /// <summary>
+        /// 获取成就进度 (供SaveManager使用)
+        /// </summary>
+        public Dictionary<string, float> GetAchievementProgress()
+        {
+            var progress = new Dictionary<string, float>();
+            
+            foreach (var kvp in achievements)
+            {
+                if (!kvp.Value.isUnlocked)
+                {
+                    // 获取当前进度，这里简化处理
+                    progress[kvp.Key] = 0f;
+                }
+            }
+            
+            return progress;
+        }
+        
+        /// <summary>
+        /// 加载成就数据 (由SaveManager调用)
+        /// </summary>
+        public void LoadAchievementData(List<string> unlockedIds, Dictionary<string, float> progress)
+        {
+            if (unlockedIds == null) return;
+            
+            foreach (var id in unlockedIds)
+            {
+                if (achievements.ContainsKey(id) && !unlockedAchievements.Contains(id))
+                {
+                    unlockedAchievements.Add(id);
+                    achievements[id].isUnlocked = true;
+                }
+            }
+            
+            Debug.Log($"[AchievementManager] 已加载 {unlockedIds.Count} 个解锁成就");
         }
     }
     

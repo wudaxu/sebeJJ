@@ -547,7 +547,11 @@ namespace SebeJJ.Core
                 maxDepthReached = GameManager.Instance?.diveManager?.MaxDepthReached ?? 0f,
                 
                 // 保存背包数据
-                inventoryData = GameManager.Instance?.resourceManager?.GetInventorySaveData()
+                inventoryData = GameManager.Instance?.resourceManager?.GetInventorySaveData(),
+                
+                // 保存成就数据
+                unlockedAchievements = Achievement.AchievementManager.Instance?.GetUnlockedAchievementIds() ?? new System.Collections.Generic.List<string>(),
+                achievementProgress = Achievement.AchievementManager.Instance?.GetAchievementProgress() ?? new System.Collections.Generic.Dictionary<string, float>()
             };
         }
         
@@ -566,6 +570,12 @@ namespace SebeJJ.Core
             if (GameManager.Instance?.diveManager != null)
             {
                 GameManager.Instance.diveManager.LoadFromSave(saveData);
+            }
+            
+            // 加载成就数据
+            if (Achievement.AchievementManager.Instance != null)
+            {
+                Achievement.AchievementManager.Instance.LoadAchievementData(saveData.unlockedAchievements, saveData.achievementProgress);
             }
         }
         
@@ -623,6 +633,10 @@ namespace SebeJJ.Core
         
         // 背包数据 (JSON字符串)
         public string inventoryData;
+        
+        // 成就数据
+        public System.Collections.Generic.List<string> unlockedAchievements;
+        public System.Collections.Generic.Dictionary<string, float> achievementProgress;
     }
     
     /// <summary>
