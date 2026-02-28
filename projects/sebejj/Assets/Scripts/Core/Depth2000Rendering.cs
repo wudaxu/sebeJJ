@@ -4,7 +4,8 @@ namespace SebeJJ.Rendering
 {
     /// <summary>
     /// 2000米深度区域渲染优化 - 解决部分显卡渲染问题
-    /// </summary>    public class Depth2000Rendering : MonoBehaviour
+    /// </summary>
+    public class Depth2000Rendering : MonoBehaviour
     {
         [Header("渲染质量等级")]
         [Tooltip("根据显卡性能自动调整")]
@@ -71,7 +72,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 检测硬件能力
-        /// </summary>        private void DetectHardwareCapabilities()
+        /// </summary>
+    private void DetectHardwareCapabilities()
         {
             // 获取显卡信息
             string gpuName = SystemInfo.graphicsDeviceName.ToLower();
@@ -100,7 +102,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 判断是否为低端GPU
-        /// </summary>        private bool IsLowEndGPU(string gpuName, int vramMB)
+        /// </summary>
+    private bool IsLowEndGPU(string gpuName, int vramMB)
         {
             // 集成显卡
             if (gpuName.Contains("intel") && !gpuName.Contains("arc"))
@@ -123,7 +126,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 判断是否为中端GPU
-        /// </summary>        private bool IsMidRangeGPU(string gpuName, int vramMB)
+        /// </summary>
+    private bool IsMidRangeGPU(string gpuName, int vramMB)
         {
             string[] midRangeGPUs = { 
                 "gtx 750", "gtx 760", "gtx 950", "gtx 960", "gtx 1050",
@@ -145,7 +149,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 应用质量设置
-        /// </summary>        private void ApplyQualitySettings()
+        /// </summary>
+    private void ApplyQualitySettings()
         {
             switch (CurrentQualityLevel)
             {
@@ -163,7 +168,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 低质量设置
-        /// </summary>        private void ApplyLowQuality()
+        /// </summary>
+    private void ApplyLowQuality()
         {
             // 降低阴影质量
             QualitySettings.shadows = ShadowQuality.Disable;
@@ -193,7 +199,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 中质量设置
-        /// </summary>        private void ApplyMediumQuality()
+        /// </summary>
+    private void ApplyMediumQuality()
         {
             QualitySettings.shadows = ShadowQuality.HardOnly;
             QualitySettings.shadowResolution = ShadowResolution.Low;
@@ -214,7 +221,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 高质量设置
-        /// </summary>        private void ApplyHighQuality()
+        /// </summary>
+    private void ApplyHighQuality()
         {
             QualitySettings.shadows = ShadowQuality.All;
             QualitySettings.shadowResolution = ShadowResolution.High;
@@ -235,7 +243,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 性能监控
-        /// </summary>        private void MonitorPerformance()
+        /// </summary>
+    private void MonitorPerformance()
         {
             frameCount++;
             fpsTimer += Time.deltaTime;
@@ -258,7 +267,8 @@ namespace SebeJJ.Rendering
         
         /// <summary>
         /// 获取当前质量设置
-        /// </summary>        public string GetCurrentQualityInfo()
+        /// </summary>
+    public string GetCurrentQualityInfo()
         {
             string[] qualityNames = { "低", "中", "高" };
             return $"质量等级: {qualityNames[CurrentQualityLevel]}, 当前FPS: {currentFps:F1}";

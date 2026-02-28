@@ -7,7 +7,8 @@ namespace SebeJJ.UI
 {
     /// <summary>
     /// 设置面板UI控制器
-    /// </summary>    public class SettingsPanel : MonoBehaviour
+    /// </summary>
+    public class SettingsPanel : MonoBehaviour
     {
         [Header("音频设置")]
         public Slider masterVolumeSlider;

@@ -6,7 +6,8 @@ namespace SebeJJ.Core
 {
     /// <summary>
     /// 游戏设置管理器 - 管理音量、画质、控制等玩家设置
-    /// </summary>    public class SettingsManager : MonoBehaviour
+    /// </summary>
+    public class SettingsManager : MonoBehaviour
     {
         public static SettingsManager Instance { get; private set; }
         
@@ -45,7 +46,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置主音量
-        /// </summary>        public void SetMasterVolume(float volume)
+        /// </summary>
+    public void SetMasterVolume(float volume)
         {
             CurrentSettings.masterVolume = Mathf.Clamp01(volume);
             ApplyAudioSettings();
@@ -54,7 +56,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置音乐音量
-        /// </summary>        public void SetMusicVolume(float volume)
+        /// </summary>
+    public void SetMusicVolume(float volume)
         {
             CurrentSettings.musicVolume = Mathf.Clamp01(volume);
             ApplyAudioSettings();
@@ -63,7 +66,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置音效音量
-        /// </summary>        public void SetSFXVolume(float volume)
+        /// </summary>
+    public void SetSFXVolume(float volume)
         {
             CurrentSettings.sfxVolume = Mathf.Clamp01(volume);
             ApplyAudioSettings();
@@ -72,7 +76,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 应用音频设置
-        /// </summary>        private void ApplyAudioSettings()
+        /// </summary>
+    private void ApplyAudioSettings()
         {
             if (audioMixer != null)
             {
@@ -95,7 +100,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置画质等级
-        /// </summary>        public void SetQualityLevel(int level)
+        /// </summary>
+    public void SetQualityLevel(int level)
         {
             CurrentSettings.qualityLevel = Mathf.Clamp(level, 0, QualitySettings.names.Length - 1);
             QualitySettings.SetQualityLevel(CurrentSettings.qualityLevel, true);
@@ -105,7 +111,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置分辨率
-        /// </summary>        public void SetResolution(int width, int height, bool fullscreen)
+        /// </summary>
+    public void SetResolution(int width, int height, bool fullscreen)
         {
             CurrentSettings.resolutionWidth = width;
             CurrentSettings.resolutionHeight = height;
@@ -118,7 +125,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置帧率限制
-        /// </summary>        public void SetTargetFrameRate(int fps)
+        /// </summary>
+    public void SetTargetFrameRate(int fps)
         {
             CurrentSettings.targetFrameRate = fps;
             Application.targetFrameRate = fps;
@@ -128,7 +136,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置垂直同步
-        /// </summary>        public void SetVSync(bool enabled)
+        /// </summary>
+    public void SetVSync(bool enabled)
         {
             CurrentSettings.vSync = enabled;
             QualitySettings.vSyncCount = enabled ? 1 : 0;
@@ -142,7 +151,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置鼠标灵敏度
-        /// </summary>        public void SetMouseSensitivity(float sensitivity)
+        /// </summary>
+    public void SetMouseSensitivity(float sensitivity)
         {
             CurrentSettings.mouseSensitivity = Mathf.Clamp(sensitivity, 0.1f, 3f);
             SaveSettings();
@@ -151,7 +161,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置震动开关
-        /// </summary>        public void SetVibration(bool enabled)
+        /// </summary>
+    public void SetVibration(bool enabled)
         {
             CurrentSettings.vibrationEnabled = enabled;
             SaveSettings();
@@ -160,7 +171,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置字幕开关
-        /// </summary>        public void SetSubtitles(bool enabled)
+        /// </summary>
+    public void SetSubtitles(bool enabled)
         {
             CurrentSettings.subtitlesEnabled = enabled;
             SaveSettings();
@@ -169,7 +181,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置语言
-        /// </summary>        public void SetLanguage(string language)
+        /// </summary>
+    public void SetLanguage(string language)
         {
             CurrentSettings.language = language;
             // TODO: 应用语言变更
@@ -183,7 +196,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 保存设置
-        /// </summary>        public void SaveSettings()
+        /// </summary>
+    public void SaveSettings()
         {
             string json = JsonUtility.ToJson(CurrentSettings);
             PlayerPrefs.SetString(SETTINGS_KEY, json);
@@ -195,7 +209,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 加载设置
-        /// </summary>        public void LoadSettings()
+        /// </summary>
+    public void LoadSettings()
         {
             if (PlayerPrefs.HasKey(SETTINGS_KEY))
             {
@@ -222,7 +237,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 应用所有设置
-        /// </summary>        private void ApplyAllSettings()
+        /// </summary>
+    private void ApplyAllSettings()
         {
             ApplyAudioSettings();
             
@@ -245,7 +261,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 重置为默认设置
-        /// </summary>        public void ResetToDefault()
+        /// </summary>
+    public void ResetToDefault()
         {
             CurrentSettings = new SettingsData(defaultSettings);
             ApplyAllSettings();
@@ -258,7 +275,8 @@ namespace SebeJJ.Core
     
     /// <summary>
     /// 设置数据结构
-    /// </summary>    [Serializable]
+    /// </summary>
+[Serializable]
     public class SettingsData
     {
         // 音频

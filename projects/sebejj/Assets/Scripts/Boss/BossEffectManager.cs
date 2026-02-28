@@ -6,7 +6,8 @@ namespace SebeJJ.Utils
 {
     /// <summary>
     /// Boss特效管理器 - 统一管理Boss战的各种特效
-    /// </summary>    public class BossEffectManager : MonoBehaviour
+    /// </summary>
+    public class BossEffectManager : MonoBehaviour
     {
         public static BossEffectManager Instance { get; private set; }
         
@@ -59,7 +60,8 @@ namespace SebeJJ.Utils
         
         /// <summary>
         /// 显示冲撞预警线
-        /// </summary>        public void ShowChargeWarningLine(Vector3 startPos, Vector3 direction, float distance, float duration)
+        /// </summary>
+    public void ShowChargeWarningLine(Vector3 startPos, Vector3 direction, float distance, float duration)
         {
             if (chargeWarningLinePrefab == null) return;
             
@@ -100,7 +102,8 @@ namespace SebeJJ.Utils
         
         /// <summary>
         /// 播放冲撞撞击特效
-        /// </summary>        public void PlayChargeImpact(Vector3 position, Vector3 normal)
+        /// </summary>
+    public void PlayChargeImpact(Vector3 position, Vector3 normal)
         {
             if (chargeImpactPrefab == null) return;
             
@@ -126,7 +129,8 @@ namespace SebeJJ.Utils
         
         /// <summary>
         /// 播放地震波特效
-        /// </summary>        public void PlayEarthquakeWave(Vector3 center, float radius, int waveCount = 3)
+        /// </summary>
+    public void PlayEarthquakeWave(Vector3 center, float radius, int waveCount = 3)
         {
             StartCoroutine(EarthquakeWaveCoroutine(center, radius, waveCount));
         }
@@ -177,7 +181,8 @@ namespace SebeJJ.Utils
         
         /// <summary>
         /// 显示伤害数字
-        /// </summary>        public void ShowDamageNumber(Vector3 worldPosition, float damage, bool isCritical = false)
+        /// </summary>
+    public void ShowDamageNumber(Vector3 worldPosition, float damage, bool isCritical = false)
         {
             if (damageNumberPrefab == null) return;
             

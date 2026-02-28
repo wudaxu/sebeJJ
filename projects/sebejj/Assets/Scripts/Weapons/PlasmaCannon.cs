@@ -6,7 +6,8 @@ namespace SebeJJ.Combat
 {
     /// <summary>
     /// 等离子炮武器实现 - 发射穿透性等离子球
-    /// </summary>    public class PlasmaCannon : WeaponBase
+    /// </summary>
+    public class PlasmaCannon : WeaponBase
     {
         [Header("等离子炮设置")]
         [SerializeField] private Transform muzzlePoint;

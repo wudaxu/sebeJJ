@@ -9,7 +9,8 @@ namespace SebeJJ.Core
 {
     /// <summary>
     /// UI通知系统 - 显示游戏内通知、成就提示、任务完成等
-    /// </summary>    public class UINotification : MonoBehaviour
+    /// </summary>
+    public class UINotification : MonoBehaviour
     {
         public static UINotification Instance { get; private set; }
         
@@ -63,14 +64,16 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 显示普通通知
-        /// </summary>        public void ShowNotification(string message, NotificationType type = NotificationType.Info)
+        /// </summary>
+    public void ShowNotification(string message, NotificationType type = NotificationType.Info)
         {
             ShowNotification(message, type, null);
         }
         
         /// <summary>
         /// 显示带图标的通知
-        /// </summary>        public void ShowNotification(string message, NotificationType type, Sprite icon)
+        /// </summary>
+    public void ShowNotification(string message, NotificationType type, Sprite icon)
         {
             var data = new NotificationData
             {
@@ -90,7 +93,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 处理通知队列
-        /// </summary>        private IEnumerator ProcessNotificationQueue()
+        /// </summary>
+    private IEnumerator ProcessNotificationQueue()
         {
             isProcessingQueue = true;
             
@@ -111,7 +115,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 显示单个通知
-        /// </summary>        private IEnumerator DisplayNotification(NotificationData data)
+        /// </summary>
+    private IEnumerator DisplayNotification(NotificationData data)
         {
             if (notificationPrefab == null) yield break;
             
@@ -155,7 +160,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 设置通知内容
-        /// </summary>        private void SetupNotificationContent(GameObject notification, NotificationData data)
+        /// </summary>
+    private void SetupNotificationContent(GameObject notification, NotificationData data)
         {
             // 设置文本
             TextMeshProUGUI text = notification.GetComponentInChildren<TextMeshProUGUI>();
@@ -194,7 +200,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 显示成就解锁通知
-        /// </summary>        private void ShowAchievementNotification(Achievement.AchievementData achievement)
+        /// </summary>
+    private void ShowAchievementNotification(Achievement.AchievementData achievement)
         {
             if (achievementNotificationPrefab == null) return;
             
@@ -203,7 +210,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 显示成就提示
-        /// </summary>        private void ShowAchievementHint(Achievement.AchievementData achievement)
+        /// </summary>
+    private void ShowAchievementHint(Achievement.AchievementData achievement)
         {
             // 显示一个更 subtle 的提示
             string hintMessage = $"💡 隐藏成就线索: {achievement.name}";
@@ -212,7 +220,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 显示成就解锁通知
-        /// </summary>        private IEnumerator DisplayAchievementNotification(Achievement.AchievementData achievement)
+        /// </summary>
+    private IEnumerator DisplayAchievementNotification(Achievement.AchievementData achievement)
         {
             GameObject notification = Instantiate(achievementNotificationPrefab, achievementContainer);
             
@@ -265,7 +274,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 显示任务完成
-        /// </summary>        public void ShowMissionComplete(string missionName, string rewardText)
+        /// </summary>
+    public void ShowMissionComplete(string missionName, string rewardText)
         {
             if (missionCompletePrefab == null)
             {
@@ -278,7 +288,8 @@ namespace SebeJJ.Core
         
         /// <summary>
         /// 显示任务完成
-        /// </summary>        private IEnumerator DisplayMissionComplete(string missionName, string rewardText)
+        /// </summary>
+    private IEnumerator DisplayMissionComplete(string missionName, string rewardText)
         {
             GameObject notification = Instantiate(missionCompletePrefab, notificationContainer);
             
@@ -334,7 +345,8 @@ namespace SebeJJ.Core
     
     /// <summary>
     /// 通知数据
-    /// </summary>    public class NotificationData
+    /// </summary>
+    public class NotificationData
     {
         public string message;
         public NotificationType type;
@@ -344,7 +356,8 @@ namespace SebeJJ.Core
     
     /// <summary>
     /// 通知类型
-    /// </summary>    public enum NotificationType
+    /// </summary>
+    public enum NotificationType
     {
         Info,
         Success,

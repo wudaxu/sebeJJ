@@ -8,7 +8,8 @@ namespace SebeJJ.Leaderboard
 {
     /// <summary>
     /// 排行榜管理器 - 解决数据同步延迟问题
-    /// </summary>    public class LeaderboardManager : MonoBehaviour
+    /// </summary>
+    public class LeaderboardManager : MonoBehaviour
     {
         public static LeaderboardManager Instance { get; private set; }
         
@@ -62,7 +63,8 @@ namespace SebeJJ.Leaderboard
         
         /// <summary>
         /// 自动同步协程
-        /// </summary>        private IEnumerator AutoSyncRoutine()
+        /// </summary>
+    private IEnumerator AutoSyncRoutine()
         {
             while (true)
             {
@@ -78,7 +80,8 @@ namespace SebeJJ.Leaderboard
         
         /// <summary>
         /// 同步所有排行榜
-        /// </summary>        private IEnumerator SyncAllLeaderboards()
+        /// </summary>
+    private IEnumerator SyncAllLeaderboards()
         {
             if (IsSyncing) yield break;
             
@@ -106,7 +109,8 @@ namespace SebeJJ.Leaderboard
         
         /// <summary>
         /// 获取排行榜
-        /// </summary>        public List<LeaderboardEntry> GetLeaderboard(LeaderboardType type, bool forceRefresh = false)
+        /// </summary>
+    public List<LeaderboardEntry> GetLeaderboard(LeaderboardType type, bool forceRefresh = false)
         {
             // 检查缓存
             if (!forceRefresh && cache.ContainsKey(type))
@@ -127,7 +131,8 @@ namespace SebeJJ.Leaderboard
         
         /// <summary>
         /// 从服务器获取排行榜
-        /// </summary>        private IEnumerator FetchLeaderboard(LeaderboardType type, int limit)
+        /// </summary>
+    private IEnumerator FetchLeaderboard(LeaderboardType type, int limit)
         {
             string url = $"{apiBaseUrl}/{type.ToString().ToLower()}?limit={limit}";
             
@@ -169,7 +174,8 @@ namespace SebeJJ.Leaderboard
         
         /// <summary>
         /// 提交分数
-        /// </summary>        public void SubmitScore(LeaderboardType type, string playerName, long score, Dictionary<string, object> metadata = null)
+        /// </summary>
+    public void SubmitScore(LeaderboardType type, string playerName, long score, Dictionary<string, object> metadata = null)
         {
             var entry = new ScoreEntry
             {
@@ -191,7 +197,8 @@ namespace SebeJJ.Leaderboard
         
         /// <summary>
         /// 上传待处理分数
-        /// </summary>        private IEnumerator UploadPendingScores()
+        /// </summary>
+    private IEnumerator UploadPendingScores()
         {
             if (pendingUploads.Count == 0) yield break;
             
@@ -307,7 +314,8 @@ namespace SebeJJ.Leaderboard
         
         /// <summary>
         /// 手动触发同步
-        /// </summary>        public void ForceSync()
+        /// </summary>
+    public void ForceSync()
         {
             StartCoroutine(SyncAllLeaderboards());
         }
@@ -335,7 +343,8 @@ namespace SebeJJ.Leaderboard
     
     /// <summary>
     /// 排行榜类型
-    /// </summary>    public enum LeaderboardType
+    /// </summary>
+    public enum LeaderboardType
     {
         GlobalDepth,        // 全球最深下潜
         GlobalScore,        // 全球最高分数
@@ -349,7 +358,8 @@ namespace SebeJJ.Leaderboard
     
     /// <summary>
     /// 排行榜条目
-    /// </summary>    [Serializable]
+    /// </summary>
+[Serializable]
     public class LeaderboardEntry
     {
         public int rank;
@@ -362,7 +372,8 @@ namespace SebeJJ.Leaderboard
     
     /// <summary>
     /// 分数条目
-    /// </summary>    public class ScoreEntry
+    /// </summary>
+    public class ScoreEntry
     {
         public LeaderboardType type;
         public string playerName;
@@ -373,7 +384,8 @@ namespace SebeJJ.Leaderboard
     
     /// <summary>
     /// 排行榜缓存
-    /// </summary>    public class LeaderboardCache
+    /// </summary>
+    public class LeaderboardCache
     {
         public List<LeaderboardEntry> entries;
         public DateTime fetchTime;

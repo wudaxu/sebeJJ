@@ -7,7 +7,8 @@ namespace SebeJJ.Networking
 {
     /// <summary>
     /// 网络对象同步器 - 解决位置/状态同步的延迟波动
-    /// </summary>    public class NetworkSync : MonoBehaviour
+    /// </summary>
+    public class NetworkSync : MonoBehaviour
     {
         [Header("同步配置")]
         [Tooltip("同步间隔(秒)")]
@@ -151,7 +152,8 @@ namespace SebeJJ.Networking
     
     /// <summary>
     /// 同步快照
-    /// </summary>    public struct SyncSnapshot
+    /// </summary>
+    public struct SyncSnapshot
     {
         public float timestamp;
         public Vector3 position;
