@@ -6,7 +6,8 @@ namespace SebeJJ.Achievement
 {
     /// <summary>
     /// 成就管理器 - 解决隐藏成就触发条件过于隐蔽的问题
-    /// </summary>    public class AchievementManager : MonoBehaviour
+    /// </summary>
+    public class AchievementManager : MonoBehaviour
     {
         public static AchievementManager Instance { get; private set; }
         
@@ -46,7 +47,8 @@ namespace SebeJJ.Achievement
         
         /// <summary>
         /// 初始化所有成就
-        /// </summary>        private void InitializeAchievements()
+        /// </summary>
+        private void InitializeAchievements()
         {
             // 隐藏成就 - 添加渐进式提示
             RegisterAchievement(new AchievementData
@@ -124,14 +126,16 @@ namespace SebeJJ.Achievement
         
         /// <summary>
         /// 注册成就
-        /// </summary>        public void RegisterAchievement(AchievementData achievement)
+        /// </summary>
+        public void RegisterAchievement(AchievementData achievement)
         {
             achievements[achievement.id] = achievement;
         }
         
         /// <summary>
         /// 解锁成就
-        /// </summary>        public bool UnlockAchievement(string id)
+        /// </summary>
+        public bool UnlockAchievement(string id)
         {
             if (unlockedAchievements.Contains(id))
                 return false;
@@ -155,7 +159,8 @@ namespace SebeJJ.Achievement
         
         /// <summary>
         /// 检查并显示提示
-        /// </summary>        public void CheckAndShowHint(string achievementId, float progress)
+        /// </summary>
+        public void CheckAndShowHint(string achievementId, float progress)
         {
             if (!showProximityHints) return;
             
@@ -183,7 +188,8 @@ namespace SebeJJ.Achievement
         
         /// <summary>
         /// 获取对应进度的提示
-        /// </summary>        private string GetHintForProgress(AchievementData achievement, float progress)
+        /// </summary>
+        private string GetHintForProgress(AchievementData achievement, float progress)
         {
             if (achievement.hintProgression == null || achievement.hintProgression.Count == 0)
                 return null;
@@ -299,7 +305,8 @@ namespace SebeJJ.Achievement
     
     /// <summary>
     /// 成就数据
-    /// </summary>    [Serializable]
+    /// </summary>
+    [Serializable]
     public class AchievementData
     {
         public string id;
@@ -315,7 +322,8 @@ namespace SebeJJ.Achievement
     
     /// <summary>
     /// 提示等级
-    /// </summary>    [Serializable]
+    /// </summary>
+    [Serializable]
     public class HintLevel
     {
         [Range(0f, 1f)]
