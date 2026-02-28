@@ -19,6 +19,10 @@ namespace SebeJJ.Combat
         [SerializeField] private float blockCooldown = 0.2f;
         [SerializeField] private float staminaCostPerBlock = 10f;
         
+        [Header("格挡特效")]
+        [SerializeField] private GameObject blockEffectPrefab;
+        [SerializeField] private AudioClip blockSound;
+        
         // BUG-006修复: 格挡状态
         private bool isBlocking = false;
         private bool canBlock = true;
@@ -165,8 +169,24 @@ namespace SebeJJ.Combat
         private void PlayBlockEffect()
         {
             // 实例化格挡特效
-            // TODO: 实现特效播放
+            if (blockEffectPrefab != null)
+            {
+                GameObject effect = Instantiate(blockEffectPrefab, transform.position, Quaternion.identity);
+                Destroy(effect, 1f);
+            }
+            
+            // 播放音效
+            if (blockSound != null)
+            {
+                AudioManager.Instance?.PlaySFX(blockSound);
+            }
+            
+            // 屏幕震动
+            CameraShake?.Invoke(0.1f, 0.1f);
         }
+        
+        // 相机震动事件
+        public static System.Action<float, float> CameraShake;
         
         /// <summary>
         /// BUG-006修复: 恢复耐力

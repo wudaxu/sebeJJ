@@ -288,8 +288,8 @@ namespace SebeJJ.Core
         {
             Debug.Log($"[UI通知] {message}");
             
-            // TODO: 实现通知系统
-            // 创建通知UI并设置高层级
+            // 使用新的通知系统
+            UINotification.Instance?.ShowNotification(message, NotificationType.Info);
         }
         
         /// <summary>
@@ -299,7 +299,8 @@ namespace SebeJJ.Core
         {
             Debug.Log($"[任务完成] {missionName} - 奖励: {reward}");
             
-            // TODO: 实现任务完成弹窗
+            // 使用新的通知系统
+            UINotification.Instance?.ShowMissionComplete(missionName, $"奖励: {reward} 信用点");
         }
         
         #endregion

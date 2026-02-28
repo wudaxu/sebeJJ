@@ -27,6 +27,11 @@ namespace SebeJJ.Player
         public Color scannedColor = Color.white;
         public Color highlightedColor = Color.cyan;
         
+        [Header("扫描特效")]
+        public GameObject scanEffectPrefab;
+        public AudioClip scanSound;
+        public float scanEffectDuration = 1f;
+        
         // 事件
         public event Action OnResourceScanned;
         public event Action OnResourceCollected;
@@ -134,8 +139,21 @@ namespace SebeJJ.Player
         /// </summary>
         private void ShowScanEffect()
         {
-            // TODO: 实例化扫描特效
-            Debug.Log($"[CollectibleResource] 播放扫描特效");
+            // 实例化扫描特效
+            if (scanEffectPrefab != null)
+            {
+                GameObject effect = Instantiate(scanEffectPrefab, transform.position, Quaternion.identity);
+                effect.transform.SetParent(transform);
+                Destroy(effect, scanEffectDuration);
+            }
+            
+            // 播放音效
+            if (scanSound != null)
+            {
+                AudioManager.Instance?.PlaySFX(scanSound);
+            }
+            
+            Debug.Log($"[CollectibleResource] 播放扫描特效: {resourceName}");
         }
         
         /// <summary>

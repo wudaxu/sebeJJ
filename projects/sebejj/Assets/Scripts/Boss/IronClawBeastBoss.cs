@@ -599,12 +599,13 @@ namespace SebeJJ.Boss
         {
             // 创建预警红线
             Vector3 startPos = transform.position;
-            Vector3 endPos = startPos + transform.right * chargeDistance;
+            Vector3 direction = transform.right;
             
             // 使用LineRenderer或Debug绘制
-            Debug.DrawLine(startPos, endPos, Color.red, chargeWarningTime);
+            Debug.DrawLine(startPos, startPos + direction * chargeDistance, Color.red, chargeWarningTime);
             
-            // TODO: 实例化预警线特效
+            // 实例化预警线特效
+            BossEffectManager.Instance?.ShowChargeWarningLine(startPos, direction, chargeDistance, chargeWarningTime);
         }
 
         private void CheckChargeCollision(Vector3 direction)
@@ -630,7 +631,7 @@ namespace SebeJJ.Boss
             // 可以添加眩晕效果
             
             // 创建撞击特效
-            // TODO: 实例化撞击特效
+            BossEffectManager.Instance?.PlayChargeImpact(hitPoint, -transform.right);
         }
 
         /// <summary>
@@ -940,7 +941,7 @@ namespace SebeJJ.Boss
             }
             
             // 创建地震波视觉特效
-            // TODO: 实例化地震波特效
+            BossEffectManager.Instance?.PlayEarthquakeWave(transform.position, 15f, 3);
         }
 
         /// <summary>

@@ -32,6 +32,16 @@ namespace SebeJJ.Systems
         public Color deepColor = new Color(0.05f, 0.05f, 0.2f);
         public Color dangerColor = new Color(0.3f, 0f, 0f);
         
+        [Header("光照和雾效")]
+        public Light mainLight;
+        public float surfaceLightIntensity = 1f;
+        public float deepLightIntensity = 0.2f;
+        public bool enableFog = true;
+        public Color surfaceFogColor = new Color(0.4f, 0.7f, 0.9f);
+        public Color deepFogColor = new Color(0.02f, 0.02f, 0.1f);
+        public float surfaceFogDensity = 0.001f;
+        public float deepFogDensity = 0.05f;
+        
         // 当前状态
         public float CurrentDepth { get; private set; }
         public float MaxDepthReached { get; private set; }
@@ -205,7 +215,25 @@ namespace SebeJJ.Systems
             
             mainCamera.backgroundColor = Color.Lerp(mainCamera.backgroundColor, targetColor, Time.deltaTime * 2f);
             
-            // TODO: 调整光照、雾效等
+            // 调整光照强度
+            if (mainLight != null)
+            {
+                float targetIntensity = Mathf.Lerp(surfaceLightIntensity, deepLightIntensity, depthRatio);
+                mainLight.intensity = Mathf.Lerp(mainLight.intensity, targetIntensity, Time.deltaTime * 2f);
+            }
+            
+            // 调整雾效
+            if (enableFog)
+            {
+                RenderSettings.fog = true;
+                RenderSettings.fogMode = FogMode.ExponentialSquared;
+                
+                Color targetFogColor = Color.Lerp(surfaceFogColor, deepFogColor, depthRatio);
+                RenderSettings.fogColor = Color.Lerp(RenderSettings.fogColor, targetFogColor, Time.deltaTime * 2f);
+                
+                float targetFogDensity = Mathf.Lerp(surfaceFogDensity, deepFogDensity, depthRatio);
+                RenderSettings.fogDensity = Mathf.Lerp(RenderSettings.fogDensity, targetFogDensity, Time.deltaTime * 2f);
+            }
         }
         
         /// <summary>

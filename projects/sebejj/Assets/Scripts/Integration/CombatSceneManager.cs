@@ -440,8 +440,17 @@ namespace SebeJJ.Integration
         /// </summary>
         private void ShowCompletionUI()
         {
-            // TODO: 显示胜利UI
             Debug.Log("[CombatSceneManager] 显示完成UI");
+            
+            // 使用通知系统显示胜利
+            UINotification.Instance?.ShowNotification("🎉 战斗胜利！所有波次已完成！", NotificationType.Success);
+            
+            // 显示统计信息
+            string stats = $"总击杀: {totalEnemiesKilled} | 最高连击: {maxCombo} | 剩余生命: {playerLives}";
+            UINotification.Instance?.ShowNotification(stats, NotificationType.Info);
+            
+            // 触发游戏事件
+            GameEvents.TriggerNotification("战斗场景完成！");
         }
 
         #endregion

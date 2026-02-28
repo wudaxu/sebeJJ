@@ -235,9 +235,16 @@ namespace SebeJJ.Boss
             _isBossFightActive = true;
             
             // 生成Boss
-            if (boss == null && bossSpawnPoint != null)
+            if (boss == null && bossSpawnPoint != null && bossPrefab != null)
             {
-                // TODO: 从Prefab生成Boss
+                boss = Instantiate(bossPrefab, bossSpawnPoint.position, bossSpawnPoint.rotation);
+                
+                // 初始化Boss
+                var bossComponent = boss.GetComponent<IronClawBeastBoss>();
+                if (bossComponent != null)
+                {
+                    bossComponent.OnDefeated += OnBossDefeated;
+                }
             }
             
             // 关闭入口，防止逃跑
@@ -253,7 +260,28 @@ namespace SebeJJ.Boss
         private void CloseArenaEntrance()
         {
             // 创建屏障或关闭门
-            // TODO: 实现入口关闭逻辑
+            if (entranceBarrier != null)
+            {
+                entranceBarrier.SetActive(true);
+                
+                // 播放关闭动画
+                Animator barrierAnimator = entranceBarrier.GetComponent<Animator>();
+                if (barrierAnimator != null)
+                {
+                    barrierAnimator.SetTrigger("Close");
+                }
+                
+                // 播放音效
+                AudioManager.Instance?.PlaySFX("barrier_close");
+            }
+            
+            // 创建视觉屏障
+            if (entranceBarrierEffect != null)
+            {
+                entranceBarrierEffect.SetActive(true);
+            }
+            
+            Debug.Log("[BossArena] 竞技场入口已关闭");
         }
 
         private void KeepBossInArena()
@@ -368,7 +396,29 @@ namespace SebeJJ.Boss
         private void OpenArenaExit()
         {
             // 打开出口，允许玩家离开
-            // TODO: 实现出口打开逻辑
+            if (exitBarrier != null)
+            {
+                exitBarrier.SetActive(false);
+                
+                // 播放打开动画
+                Animator barrierAnimator = exitBarrier.GetComponent<Animator>();
+                if (barrierAnimator != null)
+                {
+                    barrierAnimator.SetTrigger("Open");
+                }
+            }
+            
+            // 禁用视觉屏障
+            if (exitBarrierEffect != null)
+            {
+                exitBarrierEffect.SetActive(false);
+            }
+            
+            // 显示出口开启提示
+            UINotification.Instance?.ShowNotification("出口已开启！", NotificationType.Success);
+            
+            Debug.Log("[BossArena] 竞技场出口已打开");
+        }
         }
 
         #endregion
@@ -609,9 +659,15 @@ namespace SebeJJ.Boss
         [SerializeField] private KeyCode interactionKey = KeyCode.E;
         [SerializeField] private bool autoTeleport = false;
         [SerializeField] private float autoTeleportDelay = 3f;
+        
+        [Header("=== 倒计时UI ===")]
+        [SerializeField] private TMPro.TextMeshProUGUI countdownText;
+        [SerializeField] private GameObject countdownPanel;
 
         private bool _isActive = false;
         private bool _isPlayerInRange = false;
+        private float _countdownTimer = 0f;
+        private bool _isCountingDown = false;
 
         public bool IsActive => _isActive;
 
@@ -631,13 +687,53 @@ namespace SebeJJ.Boss
                 if (autoTeleport)
                 {
                     // 自动传送倒计时
-                    // TODO: 实现倒计时UI
+                    UpdateCountdown();
                 }
                 else if (Input.GetKeyDown(interactionKey))
                 {
                     TeleportPlayer();
                 }
             }
+            else
+            {
+                // 玩家离开范围，重置倒计时
+                ResetCountdown();
+            }
+        }
+        
+        private void UpdateCountdown()
+        {
+            if (!_isCountingDown)
+            {
+                _isCountingDown = true;
+                _countdownTimer = autoTeleportDelay;
+                
+                if (countdownPanel != null)
+                    countdownPanel.SetActive(true);
+            }
+            
+            _countdownTimer -= Time.deltaTime;
+            
+            // 更新UI
+            if (countdownText != null)
+            {
+                countdownText.text = Mathf.CeilToInt(_countdownTimer).ToString();
+            }
+            
+            // 倒计时结束，传送
+            if (_countdownTimer <= 0)
+            {
+                TeleportPlayer();
+            }
+        }
+        
+        private void ResetCountdown()
+        {
+            _isCountingDown = false;
+            _countdownTimer = 0f;
+            
+            if (countdownPanel != null)
+                countdownPanel.SetActive(false);
         }
 
         public void Activate()
@@ -703,7 +799,21 @@ namespace SebeJJ.Boss
             }
             
             // 播放传送特效
-            // TODO: 实例化传送特效
+            if (BossEffectManager.Instance != null)
+            {
+                // 创建传送特效
+                GameObject teleportEffect = new GameObject("TeleportEffect");
+                teleportEffect.transform.position = transform.position;
+                
+                // 添加粒子系统
+                ParticleSystem ps = teleportEffect.AddComponent<ParticleSystem>();
+                var main = ps.main;
+                main.startColor = Color.cyan;
+                main.startSize = 2f;
+                main.duration = 2f;
+                
+                Destroy(teleportEffect, 2f);
+            }
             
             // 加载下一关
             GameEvents.TriggerNotification("传送中...");
@@ -715,12 +825,38 @@ namespace SebeJJ.Boss
         private System.Collections.IEnumerator LoadSceneCoroutine()
         {
             // 淡出效果
-            // TODO: 实现场景淡出
+            yield return StartCoroutine(SceneFadeOut());
             
             yield return new WaitForSeconds(1f);
             
             // 加载场景
             UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+        }
+        
+        private System.Collections.IEnumerator SceneFadeOut()
+        {
+            // 创建全屏淡出面罩
+            GameObject fadePanel = new GameObject("FadePanel");
+            Canvas canvas = fadePanel.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 9999;
+            
+            UnityEngine.UI.Image image = fadePanel.AddComponent<UnityEngine.UI.Image>();
+            image.color = new Color(0, 0, 0, 0);
+            
+            // 渐变到黑色
+            float timer = 0f;
+            float duration = 1f;
+            
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                float alpha = timer / duration;
+                image.color = new Color(0, 0, 0, alpha);
+                yield return null;
+            }
+            
+            image.color = Color.black;
         }
 
         private void OnDrawGizmos()

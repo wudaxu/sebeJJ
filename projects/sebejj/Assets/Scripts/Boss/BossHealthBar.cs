@@ -393,8 +393,13 @@ namespace SebeJJ.Boss
 
         private void ShowDamageNumber(float damage)
         {
-            // 实例化伤害数字
-            // TODO: 实现伤害数字显示
+            // 使用BossEffectManager显示伤害数字
+            if (BossEffectManager.Instance != null)
+            {
+                // 在Boss头顶上方显示
+                Vector3 showPosition = transform.position + Vector3.up * 2f;
+                BossEffectManager.Instance.ShowDamageNumber(showPosition, damage, damage > 500);
+            }
         }
 
         #endregion
